@@ -27,7 +27,7 @@ class CodiceFiscaleTestCase(unittest.TestCase):
         ]
 
         for obj in data:
-            # with self.subTest(obj=bj):
+            # with self.subTest(obj=obj):
             self.assertEqual(
                 codicefiscale.encode_surname(obj['input']),
                 obj['result'])
@@ -70,7 +70,7 @@ class CodiceFiscaleTestCase(unittest.TestCase):
         ]
 
         for obj in data:
-            # with self.subTest(obj=bj):
+            # with self.subTest(obj=obj):
             self.assertEqual(
                 codicefiscale.encode_name(obj['input']),
                 obj['result'])
@@ -141,7 +141,7 @@ class CodiceFiscaleTestCase(unittest.TestCase):
         ]
 
         for obj in data:
-            # with self.subTest(obj=bj):
+            # with self.subTest(obj=obj):
             self.assertEqual(
                 codicefiscale.encode_birthdate(obj['input'], 'M'),
                 obj['result'])
@@ -160,7 +160,7 @@ class CodiceFiscaleTestCase(unittest.TestCase):
         ]
 
         for obj in data:
-            # with self.subTest(obj=bj):
+            # with self.subTest(obj=obj):
             self.assertEqual(
                 codicefiscale.encode_birthdate(*obj['input']),
                 obj['result'])
@@ -191,7 +191,7 @@ class CodiceFiscaleTestCase(unittest.TestCase):
         ]
 
         for obj in data:
-            # with self.subTest(obj=bj):
+            # with self.subTest(obj=obj):
             self.assertEqual(
                 codicefiscale.encode_birthplace(obj['input']),
                 obj['result'])
@@ -214,7 +214,7 @@ class CodiceFiscaleTestCase(unittest.TestCase):
         ]
 
         for obj in data:
-            # with self.subTest(obj=bj):
+            # with self.subTest(obj=obj):
             self.assertEqual(
                 codicefiscale.encode_birthplace(obj['input']),
                 obj['result'])
@@ -229,7 +229,7 @@ class CodiceFiscaleTestCase(unittest.TestCase):
         ]
 
         for obj in data:
-            # with self.subTest(obj=bj):
+            # with self.subTest(obj=obj):
             self.assertEqual(
                 codicefiscale.encode_cin(obj['input']),
                 obj['result'])
@@ -276,7 +276,7 @@ class CodiceFiscaleTestCase(unittest.TestCase):
         ]
 
         for obj in data:
-            # with self.subTest(obj=bj):
+            # with self.subTest(obj=obj):
             self.assertEqual(
                 codicefiscale.encode(**obj['input']),
                 obj['result'])
@@ -323,7 +323,7 @@ class CodiceFiscaleTestCase(unittest.TestCase):
         ]
 
         for obj in data:
-            # with self.subTest(obj=bj):
+            # with self.subTest(obj=obj):
 
             obj_decoded = codicefiscale.decode(obj['input'])
             # print(obj_decoded)
@@ -378,7 +378,7 @@ class CodiceFiscaleTestCase(unittest.TestCase):
         ]
 
         for obj in data:
-            # with self.subTest(obj=bj):
+            # with self.subTest(obj=obj):
 
             obj_decoded = codicefiscale.decode(obj['input'])
             # print(obj_decoded)
