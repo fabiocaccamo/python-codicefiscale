@@ -10,7 +10,7 @@ python-codicefiscale is a tiny library for encode/decode Italian fiscal code - *
 
 ## Features
 - **Transliteration** for name/surname
-- **Multiple** birthdate formats (datetime/string) *(you can see all the supported string formats in tests/tests.py)*
+- **Multiple** birthdate formats (datetime/string) *(you can see all the supported string formats in* `tests/tests.py` *)*
 - **Automatic** birthplace city/country code detection
 - **Omocodia** support
 
@@ -18,40 +18,54 @@ python-codicefiscale is a tiny library for encode/decode Italian fiscal code - *
 `pip install python-codicefiscale`
 
 ## Usage
-
-#### Encoding
+#### Import
 ```python
 from codicefiscale import codicefiscale
-
+```
+#### Encode
+```python
 codicefiscale.encode(surname='Caccamo', name='Fabio', sex='M', birthdate='03/04/1985', birthplace='Torino')
 
-# returns 'CCCFBA85D03L219P'
+# 'CCCFBA85D03L219P'
 ```
+***"birthdate"*** *argument can be a string or a datetime object*
 
-#### Decoding
+***"birthplace"*** *argument can be the city/country name or code*
+
+#### Decode
 ```python
-from codicefiscale import codicefiscale
-
 codicefiscale.decode('CCCFBA85D03L219P')
 
-# returns a dict contaning: 'code', 'sex' ('M' or 'F'), 'birthdate' (datetime), 'birthplace' (dict), 'cin'
+# { 
+#     'code': 'CCCFBA85D03L219P', 
+#     'sex': 'M', 
+#     'birthdate': datetime(1985, 4, 3), 
+#     'birthplace': {
+#         'province': 'TO', 
+#         'code': 'L219', 
+#         'name': 'TORINO', 
+#     }, 
+#     'cin': 'P',
+# }
 ```
 
-#### Checking
+#### Check
 ```python
-from codicefiscale import codicefiscale
-
 codicefiscale.is_valid('CCCFBA85D03L219P')
 
-# returns True
+# True
 ```
 
-#### Testing
+#### Test
 ```python
 python -m unittest tests.tests
-# or
-python setup.py test
-# or
+```
+*or*
+```python
+setup.py test
+```
+*or*
+```python
 tox
 ```
 ---
