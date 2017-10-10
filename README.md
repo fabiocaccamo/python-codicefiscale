@@ -18,6 +18,7 @@ python-codicefiscale is a tiny library for encode/decode Italian fiscal code - *
 `pip install python-codicefiscale`
 
 ## Usage
+
 #### Import
 ```python
 from codicefiscale import codicefiscale
@@ -28,9 +29,6 @@ codicefiscale.encode(surname='Caccamo', name='Fabio', sex='M', birthdate='03/04/
 
 # 'CCCFBA85D03L219P'
 ```
-***"birthdate"*** *argument can be a string or a datetime object*
-
-***"birthplace"*** *argument can be the city/country name or code*
 
 #### Decode
 ```python
