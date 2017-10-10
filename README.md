@@ -10,7 +10,7 @@ python-codicefiscale is a tiny library for encode/decode Italian fiscal code - *
 
 ## Features
 - **Transliteration** for name/surname
-- **Multiple** birthdate formats (datetime/string) *(you can see all the supported formats in tests/tests.py)*
+- **Multiple** birthdate formats (datetime/string) *(you can see all the supported string formats in tests/tests.py)*
 - **Automatic** birthplace city/country code detection
 - **Omocodia** support
 
@@ -22,15 +22,8 @@ python-codicefiscale is a tiny library for encode/decode Italian fiscal code - *
 #### Encoding
 ```python
 from codicefiscale import codicefiscale
-from datetime import datetime
 
 codicefiscale.encode(surname='Caccamo', name='Fabio', sex='M', birthdate='03/04/1985', birthplace='Torino')
-# or
-codicefiscale.encode(surname='Caccamo', name='Fabio', sex='M', birthdate='03/04/1985', birthplace='L219')
-# or
-codicefiscale.encode(surname='Caccamo', name='Fabio', sex='M', birthdate='1985/04/03', birthplace='L219')
-# or
-codicefiscale.encode(surname='Caccamo', name='Fabio', sex='M', birthdate=datetime(1985, 4, 3), birthplace='L219')
 
 # returns 'CCCFBA85D03L219P'
 ```
