@@ -3,6 +3,7 @@
 from datetime import datetime
 
 from codicefiscale import codicefiscale
+from codicefiscale import version
 
 import unittest
 
@@ -146,6 +147,20 @@ class CodiceFiscaleTestCase(unittest.TestCase):
                 codicefiscale.encode_birthdate(obj['input'], 'M'),
                 obj['result'])
 
+    def test_encode_birthdate_invalid_arguments(self):
+
+        with self.assertRaises(ValueError):
+            codicefiscale.encode_birthdate(None, 'M')
+
+        with self.assertRaises(ValueError):
+            codicefiscale.encode_birthdate('03/04/1985', None)
+
+        with self.assertRaises(ValueError):
+            codicefiscale.encode_birthdate('03/04/1985', 'X')
+
+        with self.assertRaises(ValueError):
+            codicefiscale.encode_birthdate('1985/1985/1985', 'M')
+
     def test_encode_birthdate_sex(self):
 
         data = [
@@ -219,6 +234,14 @@ class CodiceFiscaleTestCase(unittest.TestCase):
                 codicefiscale.encode_birthplace(obj['input']),
                 obj['result'])
 
+    def test_encode_birthplace_invalid_arguments(self):
+
+        with self.assertRaises(ValueError):
+            codicefiscale.encode_birthplace(None)
+
+        with self.assertRaises(ValueError):
+            codicefiscale.encode_birthplace('Area 51')
+
     def test_encode_cin(self):
 
         data = [
@@ -233,6 +256,14 @@ class CodiceFiscaleTestCase(unittest.TestCase):
             self.assertEqual(
                 codicefiscale.encode_cin(obj['input']),
                 obj['result'])
+
+    def test_encode_cin_invalid_arguments(self):
+
+        with self.assertRaises(ValueError):
+            codicefiscale.encode_cin(None)
+
+        with self.assertRaises(ValueError):
+            codicefiscale.encode_cin('CCCFBA85D03')
 
     def test_encode(self):
 
@@ -339,6 +370,28 @@ class CodiceFiscaleTestCase(unittest.TestCase):
             self.assertEqual(
                 obj_decoded['birthplace']['name'].upper(),
                 obj['result']['birthplace'].upper())
+
+    def test_decode_invalid_syntax(self):
+
+        # invalid surname
+        with self.assertRaises(ValueError):
+            codicefiscale.decode('CC0FBA85X03L219P')
+
+        # invalid name
+        with self.assertRaises(ValueError):
+            codicefiscale.decode('CCCFB085X03L219P')
+
+        # invalid date-year
+        with self.assertRaises(ValueError):
+            codicefiscale.decode('CCCFBA8XD03L219S')
+
+        # invalid date-month
+        with self.assertRaises(ValueError):
+            codicefiscale.decode('CCCFBA85X03L219P')
+
+        # invalid date-day
+        with self.assertRaises(ValueError):
+            codicefiscale.decode('CCCFBA85D00L219P')
 
     def test_omocodia(self):
 
