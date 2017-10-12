@@ -55,17 +55,9 @@ codicefiscale.is_valid('CCCFBA85D03L219P')
 ```
 
 #### Test
-```python
-python -m unittest tests.tests
-```
-*or*
-```python
-setup.py test
-```
-*or*
-```python
-tox
-```
+
+`tox` / `python setup.py test` / `python -m unittest tests.tests` 
+
 ---
 
 ## License
