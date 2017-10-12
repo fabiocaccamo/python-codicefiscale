@@ -74,10 +74,10 @@ def __get_vowels(s):
     return [char for char in s if char in __VOWELS]
 
 
-def __get_consonants_and_vowels_code(consonants, vowels):
+def __encode_consonants_and_vowels(consonants, vowels):
     return ''.join(list(
         consonants[:3] + vowels[:3] + (['X'] * 3)
-        )[:3]).upper()
+    )[:3]).upper()
 
 
 def encode_surname(surname):
@@ -85,7 +85,7 @@ def encode_surname(surname):
     surname_slug = slugify(surname)
     surname_consonants = __get_consonants(surname_slug)
     surname_vowels = __get_vowels(surname_slug)
-    surname_code = __get_consonants_and_vowels_code(
+    surname_code = __encode_consonants_and_vowels(
         surname_consonants, surname_vowels)
     return surname_code
 
@@ -99,7 +99,7 @@ def encode_name(name):
         del name_consonants[1]
 
     name_vowels = __get_vowels(name_slug)
-    name_code = __get_consonants_and_vowels_code(
+    name_code = __encode_consonants_and_vowels(
         name_consonants, name_vowels)
     return name_code
 
