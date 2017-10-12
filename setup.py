@@ -23,7 +23,7 @@ setup(
     packages=find_packages(exclude=['contrib', 'docs', 'tests*']),
     include_package_data=True,
     version=__version__,
-    description='python-codicefiscale is a tiny library for encode/decode Italian fiscal codes - codifica/decodifica del Codice Fiscale.',
+    description='python-codicefiscale is a tiny library for encode/decode Italian fiscal code - codifica/decodifica del Codice Fiscale.',
     long_description=long_description,
     author='Fabio Caccamo',
     author_email='fabio.caccamo@gmail.com',
