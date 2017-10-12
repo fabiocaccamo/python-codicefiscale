@@ -162,6 +162,11 @@ def encode_birthplace(birthplace):
         find_birthplace_code(birthplace) or \
         find_birthplace_code(re.split(r',|\(', birthplace)[0])
 
+    if birthplace_code == '':
+        raise ValueError('[codicefiscale] '
+                         '"birthplace" argument not mapped to code: '
+                         '("%s" -> "")' % (birthplace, ))
+
     return birthplace_code
 
 
