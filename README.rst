@@ -10,9 +10,8 @@ Features
 --------
 
 -  **Transliteration** for name/surname
--  **Multiple** birthdate formats (datetime/string) *(you can see all
-   the supported string formats in tests/tests.py)*
--  **Automatic** birthplace city/country code detection
+-  **Multiple** birthdate formats (datetime/string) *(you can see all the supported string formats in* ``tests/tests.py`` *)*
+-  **Automatic** birthplace city/foreign-country code detection from name
 -  **Omocodia** support
 
 Installation
@@ -23,49 +22,78 @@ Installation
 Usage
 -----
 
-Encoding
-^^^^^^^^
+Import
+^^^^^^
 
 .. code:: python
 
     from codicefiscale import codicefiscale
+
+Encode
+^^^^^^
+
+.. code:: python
 
     codicefiscale.encode(surname='Caccamo', name='Fabio', sex='M', birthdate='03/04/1985', birthplace='Torino')
 
-    # returns 'CCCFBA85D03L219P'
+    # 'CCCFBA85D03L219P'
 
-Decoding
-^^^^^^^^
+Decode
+^^^^^^
 
 .. code:: python
-
-    from codicefiscale import codicefiscale
 
     codicefiscale.decode('CCCFBA85D03L219P')
 
-    # returns a dict contaning: 'code', 'sex' ('M' or 'F'), 'birthdate' (datetime), 'birthplace' (dict), 'cin'
+    # {
+    #     'surname': 'CCC',
+    #     'name': 'FBA',
+    #     'sex': 'M',
+    #     'birthdate': datetime.datetime(1985, 4, 3, 0, 0),
+    #     'birthplace': {
+    #         'province': 'TO',
+    #         'code': 'L219',
+    #         'name': 'TORINO'
+    #     },
+    #     'cin': 'P',
+    #     'code': 'CCCFBA85D03L219P',
+    #     'omocodes': [
+    #         'CCCFBA85D03L219P',
+    #         'CCCFBA85D03L21VE',
+    #         'CCCFBA85D03L2MVP',
+    #         'CCCFBA85D03LNMVE',
+    #         'CCCFBA85D0PLNMVA',
+    #         'CCCFBA85DLPLNMVL',
+    #         'CCCFBA8RDLPLNMVX',
+    #         'CCCFBAURDLPLNMVU'
+    #     ],
+    # }
 
-Checking
-^^^^^^^^
+Check
+^^^^^
 
 .. code:: python
-
-    from codicefiscale import codicefiscale
 
     codicefiscale.is_valid('CCCFBA85D03L219P')
 
-    # returns True
-
-Testing
-^^^^^^^
+    # True
 
 .. code:: python
 
-    python -m unittest tests.tests
-    # or
-    python setup.py test
-    # or
-    tox
+    codicefiscale.is_omocode('CCCFBA85D03L219P')
+
+    # False
+
+.. code:: python
+
+    codicefiscale.is_omocode('CCCFBA85D03L21VE')
+
+    # True
+
+Test
+~~~~
+
+``tox`` / ``python setup.py test`` / ``python -m unittest tests.tests``
 
 --------------
 
