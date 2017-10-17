@@ -11,7 +11,7 @@ python-codicefiscale is a tiny library for encode/decode Italian fiscal code - *
 ## Features
 - **Transliteration** for name/surname
 - **Multiple** birthdate formats (datetime/string) *(you can see all the supported string formats in* `tests/tests.py` *)*
-- **Automatic** birthplace city/country code detection
+- **Automatic** birthplace city/foreign-country code detection from name
 - **Omocodia** support
 
 ## Installation
@@ -34,22 +34,44 @@ codicefiscale.encode(surname='Caccamo', name='Fabio', sex='M', birthdate='03/04/
 ```python
 codicefiscale.decode('CCCFBA85D03L219P')
 
-# { 
-#     'code': 'CCCFBA85D03L219P', 
+# {
+#     'surname': 'CCC', 
+#     'name': 'FBA', 
 #     'sex': 'M', 
-#     'birthdate': datetime(1985, 4, 3), 
+#     'birthdate': datetime.datetime(1985, 4, 3, 0, 0), 
 #     'birthplace': {
 #         'province': 'TO', 
 #         'code': 'L219', 
-#         'name': 'TORINO', 
+#         'name': 'TORINO'
 #     }, 
-#     'cin': 'P',
+#     'cin': 'P', 
+#     'code': 'CCCFBA85D03L219P', 
+#     'omocodes': [
+#         'CCCFBA85D03L219P', 
+#         'CCCFBA85D03L21VE', 
+#         'CCCFBA85D03L2MVP', 
+#         'CCCFBA85D03LNMVE', 
+#         'CCCFBA85D0PLNMVA', 
+#         'CCCFBA85DLPLNMVL', 
+#         'CCCFBA8RDLPLNMVX', 
+#         'CCCFBAURDLPLNMVU'
+#     ],
 # }
 ```
 
 #### Check
 ```python
 codicefiscale.is_valid('CCCFBA85D03L219P')
+
+# True
+```
+```python
+codicefiscale.is_omocode('CCCFBA85D03L219P')
+
+# False
+```
+```python
+codicefiscale.is_omocode('CCCFBA85D03L21VE')
 
 # True
 ```
