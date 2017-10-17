@@ -356,20 +356,23 @@ class CodiceFiscaleTestCase(unittest.TestCase):
         for obj in data:
             # with self.subTest(obj=obj):
 
+            result = obj['result']
             obj_decoded = codicefiscale.decode(obj['input'])
             # print(obj_decoded)
 
-            self.assertEqual(
-                obj_decoded['sex'],
-                obj['result']['sex'])
+            sex = obj_decoded.get('sex')
+            self.assertFalse(sex is None)
+            self.assertEqual(sex, result['sex'])
 
-            self.assertEqual(
-                obj_decoded['birthdate'],
-                datetime.strptime(obj['result']['birthdate'], '%d/%m/%Y'))
+            birthdate = obj_decoded.get('birthdate')
+            self.assertFalse(birthdate is None)
+            self.assertEqual(birthdate,
+                datetime.strptime(result['birthdate'], '%d/%m/%Y'))
 
-            self.assertEqual(
-                obj_decoded['birthplace']['name'].upper(),
-                obj['result']['birthplace'].upper())
+            birthplace = obj_decoded.get('birthplace')
+            self.assertFalse(birthplace is None)
+            self.assertEqual(birthplace['name'].upper(),
+                result['birthplace'].upper())
 
     def test_decode_invalid_syntax(self):
 
@@ -393,8 +396,7 @@ class CodiceFiscaleTestCase(unittest.TestCase):
         with self.assertRaises(ValueError):
             codicefiscale.decode('CCCFBA85D00L219P')
 
-    def test_omocodia(self):
-
+    def test_decode_omocodia(self):
         data = [
             {
                 'input':'CCCFBA85D03L219P',
@@ -430,23 +432,43 @@ class CodiceFiscaleTestCase(unittest.TestCase):
             },
         ]
 
+        codes = [obj['input'] for obj in data]
+
         for obj in data:
             # with self.subTest(obj=obj):
 
-            obj_decoded = codicefiscale.decode(obj['input'])
-            # print(obj_decoded)
+            code = obj['input']
+            result = obj['result']
+            obj_decoded = codicefiscale.decode(code)
 
-            self.assertEqual(
-                obj_decoded['sex'],
-                obj['result']['sex'])
+            sex = obj_decoded.get('sex')
+            self.assertFalse(sex is None)
+            self.assertEqual(sex, result['sex'])
 
-            self.assertEqual(
-                obj_decoded['birthdate'],
-                datetime.strptime(obj['result']['birthdate'], '%d/%m/%Y'))
+            birthdate = obj_decoded.get('birthdate')
+            self.assertFalse(birthdate is None)
+            self.assertEqual(birthdate,
+                datetime.strptime(result['birthdate'], '%d/%m/%Y'))
 
-            self.assertEqual(
-                obj_decoded['birthplace']['name'].upper(),
-                obj['result']['birthplace'].upper())
+            birthplace = obj_decoded.get('birthplace')
+            self.assertFalse(birthplace is None)
+            self.assertEqual(birthplace['name'].upper(),
+                result['birthplace'].upper())
+
+            omocodes = obj_decoded.get('omocodes', [])
+            self.assertEqual(8, len(omocodes))
+            self.assertEqual(omocodes, codes)
+
+    def test_is_omocode(self):
+
+        self.assertFalse(codicefiscale.is_omocode('CCCFBA85D03L219P'))
+        self.assertTrue(codicefiscale.is_omocode('CCCFBA85D03L21VE'))
+        self.assertTrue(codicefiscale.is_omocode('CCCFBA85D03L2MVP'))
+        self.assertTrue(codicefiscale.is_omocode('CCCFBA85D03LNMVE'))
+        self.assertTrue(codicefiscale.is_omocode('CCCFBA85D0PLNMVA'))
+        self.assertTrue(codicefiscale.is_omocode('CCCFBA85DLPLNMVL'))
+        self.assertTrue(codicefiscale.is_omocode('CCCFBA8RDLPLNMVX'))
+        self.assertTrue(codicefiscale.is_omocode('CCCFBAURDLPLNMVU'))
 
     def test_is_valid(self):
 
