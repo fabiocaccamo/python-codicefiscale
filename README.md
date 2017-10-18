@@ -53,9 +53,9 @@ codicefiscale.decode('CCCFBA85D03L219P')
 #     'sex': 'M',
 #     'birthdate': datetime.datetime(1985, 4, 3, 0, 0),
 #     'birthplace': {
+#         'name': 'TORINO'
 #         'province': 'TO',
 #         'code': 'L219',
-#         'name': 'TORINO'
 #     },
 #     'omocodes': [
 #         'CCCFBA85D03L219P',
@@ -65,18 +65,18 @@ codicefiscale.decode('CCCFBA85D03L219P')
 #         'CCCFBA85D0PLNMVA',
 #         'CCCFBA85DLPLNMVL',
 #         'CCCFBA8RDLPLNMVX',
-#         'CCCFBAURDLPLNMVU'
+#         'CCCFBAURDLPLNMVU',
 #     ],
 #     'raw': {
-#         'birthplace': 'L219',
 #         'code': 'CCCFBA85D03L219P',
 #         'surname': 'CCC',
 #         'name': 'FBA',
-#         'birthdate_month': 'D',
-#         'birthdate_day': '03',
-#         'cin': 'P',
 #         'birthdate': '85D03',
 #         'birthdate_year': '85'
+#         'birthdate_month': 'D',
+#         'birthdate_day': '03',
+#         'birthplace': 'L219',
+#         'cin': 'P',
 #     },
 # }
 ```
