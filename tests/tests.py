@@ -308,9 +308,15 @@ class CodiceFiscaleTestCase(unittest.TestCase):
 
         for obj in data:
             # with self.subTest(obj=obj):
-            self.assertEqual(
-                codicefiscale.encode(**obj['input']),
-                obj['result'])
+            code = codicefiscale.encode(**obj['input'])
+            self.assertEqual(code, obj['result'])
+
+        for obj in data:
+            obj['input']['omocodes'] = True
+            # with self.subTest(obj=obj):
+            codes = codicefiscale.encode(**obj['input'])
+            self.assertEqual(8, len(codes))
+            self.assertEqual(codes[0], obj['result'])
 
     def test_decode(self):
 

@@ -155,8 +155,8 @@ def encode_birthdate(birthdate, sex):
     year_code = str(date_obj.year)[2:]
     month_code = __MONTHS[date_obj.month - 1]
     day_code = str(date_obj.day + (40 if sex == 'F' else 0)).zfill(2).upper()
-
-    return year_code + month_code + day_code
+    date_code = year_code + month_code + day_code
+    return date_code
 
 
 def encode_birthplace(birthplace):
@@ -166,16 +166,20 @@ def encode_birthplace(birthplace):
                          '"birthplace" argument cant be None')
 
     def find_birthplace_code(birthplace):
+
         birthplace_slug = slugify(birthplace)
         birthplace_code = ''
+
         if len(birthplace_slug) == 4:
             birthplace_code = \
                 birthplace_slug[0].upper() + \
                 birthplace_slug[1:].translate(__OMOCODIA_DECODE_TRANS)
+
         birthplace_data = __DATA['municipalities'].get(
             birthplace_slug, __DATA['countries'].get(
                 birthplace_slug, __DATA['codes'].get(
                     birthplace_code, {})))
+
         return birthplace_data.get('code', '')
 
     birthplace_code = \
@@ -209,7 +213,7 @@ def encode_cin(code):
     return cin_code
 
 
-def encode(surname, name, sex, birthdate, birthplace):
+def encode(surname, name, sex, birthdate, birthplace, omocodes=False):
 
     code = ''
     code += encode_surname(surname)
@@ -219,12 +223,15 @@ def encode(surname, name, sex, birthdate, birthplace):
     code += encode_cin(code)
 
     # raise ValueError if code is not valid
-    decode(code)
+    data = decode(code)
 
-    return code
+    if omocodes:
+        return data['omocodes']
+    else:
+        return data['code']
 
 
-def decode(code):
+def decode_raw(code):
 
     code = slugify(code)
     code = code.replace('-', '')
@@ -238,12 +245,33 @@ def decode(code):
     g = m.groups()
     # print(g)
 
-    surname_code = g[0]
-    name_code = g[1]
-    birthdate_code = g[2]
-    birthdate_year = g[3].translate(__OMOCODIA_DECODE_TRANS)
-    birthdate_month = __MONTHS.index(g[4]) + 1
-    birthdate_day = int(g[5].translate(__OMOCODIA_DECODE_TRANS))
+    data = {
+        'code': code,
+        'surname': g[0],
+        'name': g[1],
+        'birthdate': g[2],
+        'birthdate_year': g[3],
+        'birthdate_month': g[4],
+        'birthdate_day': g[5],
+        'birthplace': g[6],
+        'cin': g[7],
+    }
+
+    return data
+
+
+def decode(code):
+
+    raw = decode_raw(code)
+
+    code = raw['code']
+
+    birthdate_year = \
+        raw['birthdate_year'].translate(__OMOCODIA_DECODE_TRANS)
+    birthdate_month = __MONTHS.index(
+        raw['birthdate_month']) + 1
+    birthdate_day = int(
+        raw['birthdate_day'].translate(__OMOCODIA_DECODE_TRANS))
 
     if birthdate_day > 40:
         birthdate_day -= 40
@@ -261,28 +289,25 @@ def decode(code):
         raise ValueError('[codicefiscale] '
                          'invalid date: %s' % (birthdate_str, ))
 
-    birthplace_code = g[6]
     birthplace = __DATA['codes'].get(
-        birthplace_code[0] +
-        birthplace_code[1:].translate(__OMOCODIA_DECODE_TRANS))
+        raw['birthplace'][0] +
+        raw['birthplace'][1:].translate(__OMOCODIA_DECODE_TRANS))
 
-    cin = g[7]
+    cin = raw['cin']
     cin_check = encode_cin(code)
     # print(cin, cin_check)
     if cin != cin_check:
         raise ValueError('[codicefiscale] '
                          'wrong CIN (Control Internal Number): '
-                         'expected "%s", found "%s"' % (cin_check, cin))
+                         'expected "%s", found "%s"' % (cin_check, cin, ))
 
     data = {
         'code': code,
         'omocodes': __get_omocodes(code),
-        'surname': surname_code,
-        'name': name_code,
         'sex': sex,
         'birthdate': birthdate,
         'birthplace': birthplace,
-        'cin': cin,
+        'raw': raw,
     }
 
     # print(data)
@@ -291,7 +316,7 @@ def decode(code):
 
 def is_omocode(code):
     data = decode(code)
-    codes = data.get('omocodes')
+    codes = data['omocodes']
     codes.pop(0)
     return (code in codes)
 
