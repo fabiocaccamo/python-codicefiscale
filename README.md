@@ -1,6 +1,7 @@
 [![Build Status](https://travis-ci.org/fabiocaccamo/python-codicefiscale.svg?branch=master)](https://travis-ci.org/fabiocaccamo/python-codicefiscale)
 [![codecov](https://codecov.io/gh/fabiocaccamo/python-codicefiscale/branch/master/graph/badge.svg)](https://codecov.io/gh/fabiocaccamo/python-codicefiscale)
 [![Code Health](https://landscape.io/github/fabiocaccamo/python-codicefiscale/master/landscape.svg?style=flat)](https://landscape.io/github/fabiocaccamo/python-codicefiscale/master)
+[![Requirements Status](https://requires.io/github/fabiocaccamo/python-codicefiscale/requirements.svg?branch=master)](https://requires.io/github/fabiocaccamo/python-codicefiscale/requirements/?branch=master)
 [![PyPI version](https://badge.fury.io/py/python-codicefiscale.svg)](https://badge.fury.io/py/python-codicefiscale)
 [![Py versions](https://img.shields.io/pypi/pyversions/python-codicefiscale.svg)](https://img.shields.io/pypi/pyversions/python-codicefiscale.svg)
 [![License](https://img.shields.io/pypi/l/python-codicefiscale.svg)](https://img.shields.io/pypi/l/python-codicefiscale.svg)
