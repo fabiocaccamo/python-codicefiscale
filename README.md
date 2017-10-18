@@ -35,27 +35,35 @@ codicefiscale.encode(surname='Caccamo', name='Fabio', sex='M', birthdate='03/04/
 codicefiscale.decode('CCCFBA85D03L219P')
 
 # {
-#     'surname': 'CCC', 
-#     'name': 'FBA', 
-#     'sex': 'M', 
-#     'birthdate': datetime.datetime(1985, 4, 3, 0, 0), 
+#     'code': 'CCCFBA85D03L219P',
+#     'sex': 'M',
+#     'birthdate': datetime.datetime(1985, 4, 3, 0, 0),
 #     'birthplace': {
-#         'province': 'TO', 
-#         'code': 'L219', 
+#         'province': 'TO',
+#         'code': 'L219',
 #         'name': 'TORINO'
-#     }, 
-#     'cin': 'P', 
-#     'code': 'CCCFBA85D03L219P', 
+#     },
 #     'omocodes': [
-#         'CCCFBA85D03L219P', 
-#         'CCCFBA85D03L21VE', 
-#         'CCCFBA85D03L2MVP', 
-#         'CCCFBA85D03LNMVE', 
-#         'CCCFBA85D0PLNMVA', 
-#         'CCCFBA85DLPLNMVL', 
-#         'CCCFBA8RDLPLNMVX', 
+#         'CCCFBA85D03L219P',
+#         'CCCFBA85D03L21VE',
+#         'CCCFBA85D03L2MVP',
+#         'CCCFBA85D03LNMVE',
+#         'CCCFBA85D0PLNMVA',
+#         'CCCFBA85DLPLNMVL',
+#         'CCCFBA8RDLPLNMVX',
 #         'CCCFBAURDLPLNMVU'
 #     ],
+#     'raw': {
+#         'birthplace': 'L219',
+#         'code': 'CCCFBA85D03L219P',
+#         'surname': 'CCC',
+#         'name': 'FBA',
+#         'birthdate_month': 'D',
+#         'birthdate_day': '03',
+#         'cin': 'P',
+#         'birthdate': '85D03',
+#         'birthdate_year': '85'
+#     },
 # }
 ```
 
@@ -70,15 +78,10 @@ codicefiscale.is_omocode('CCCFBA85D03L219P')
 
 # False
 ```
-```python
-codicefiscale.is_omocode('CCCFBA85D03L21VE')
-
-# True
-```
 
 ### Test
 
-`tox` / `python setup.py test` / `python -m unittest tests.tests` 
+`tox` / `python setup.py test` / `python -m unittest tests.tests`
 
 ---
 

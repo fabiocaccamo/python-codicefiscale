@@ -46,8 +46,7 @@ Decode
     codicefiscale.decode('CCCFBA85D03L219P')
 
     # {
-    #     'surname': 'CCC',
-    #     'name': 'FBA',
+    #     'code': 'CCCFBA85D03L219P',
     #     'sex': 'M',
     #     'birthdate': datetime.datetime(1985, 4, 3, 0, 0),
     #     'birthplace': {
@@ -55,8 +54,6 @@ Decode
     #         'code': 'L219',
     #         'name': 'TORINO'
     #     },
-    #     'cin': 'P',
-    #     'code': 'CCCFBA85D03L219P',
     #     'omocodes': [
     #         'CCCFBA85D03L219P',
     #         'CCCFBA85D03L21VE',
@@ -67,6 +64,17 @@ Decode
     #         'CCCFBA8RDLPLNMVX',
     #         'CCCFBAURDLPLNMVU'
     #     ],
+    #     'raw': {
+    #         'birthplace': 'L219',
+    #         'code': 'CCCFBA85D03L219P',
+    #         'surname': 'CCC',
+    #         'name': 'FBA',
+    #         'birthdate_month': 'D',
+    #         'birthdate_day': '03',
+    #         'cin': 'P',
+    #         'birthdate': '85D03',
+    #         'birthdate_year': '85'
+    #     },
     # }
 
 Check
@@ -83,12 +91,6 @@ Check
     codicefiscale.is_omocode('CCCFBA85D03L219P')
 
     # False
-
-.. code:: python
-
-    codicefiscale.is_omocode('CCCFBA85D03L21VE')
-
-    # True
 
 Test
 ~~~~
