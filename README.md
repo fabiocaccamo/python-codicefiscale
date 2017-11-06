@@ -30,19 +30,6 @@ codicefiscale.encode(surname='Caccamo', name='Fabio', sex='M', birthdate='03/04/
 
 # 'CCCFBA85D03L219P'
 ```
-```python
-codicefiscale.encode(surname='Caccamo', name='Fabio', sex='M', birthdate='03/04/1985', birthplace='Torino', omocodes=True)
-
-# [
-#     'CCCFBA85D03L219P',
-#     'CCCFBA85D03L21VE',
-#     'CCCFBA85D03L2MVP',
-#     'CCCFBA85D03LNMVE',
-#     'CCCFBA85D0PLNMVA',
-#     'CCCFBA85DLPLNMVL',
-#     'CCCFBA8RDLPLNMVX',
-#     'CCCFBAURDLPLNMVU'
-# ]
 ```
 #### Decode
 ```python

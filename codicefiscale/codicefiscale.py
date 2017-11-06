@@ -213,7 +213,7 @@ def encode_cin(code):
     return cin_code
 
 
-def encode(surname, name, sex, birthdate, birthplace, omocodes=False):
+def encode(surname, name, sex, birthdate, birthplace):
 
     code = ''
     code += encode_surname(surname)
@@ -224,11 +224,7 @@ def encode(surname, name, sex, birthdate, birthplace, omocodes=False):
 
     # raise ValueError if code is not valid
     data = decode(code)
-
-    if omocodes:
-        return data['omocodes']
-    else:
-        return data['code']
+    return data['code']
 
 
 def decode_raw(code):
