@@ -30,7 +30,6 @@ codicefiscale.encode(surname='Caccamo', name='Fabio', sex='M', birthdate='03/04/
 
 # 'CCCFBA85D03L219P'
 ```
-```
 #### Decode
 ```python
 codicefiscale.decode('CCCFBA85D03L219P')
