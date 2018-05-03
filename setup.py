@@ -31,7 +31,7 @@ setup(
     download_url='%s/%s/archive/%s.tar.gz' % (github_url, package_name, __version__, ),
     keywords=['codicefiscale', 'codice', 'fiscale', 'cf', 'fiscal code', ],
     install_requires=[
-        'python-dateutil >= 2.6.0, < 2.7.0',
+        'python-dateutil >= 2.6.0, < 2.8.0',
         'python-slugify >= 1.2.0, < 1.3.0',
     ],
     classifiers=[
