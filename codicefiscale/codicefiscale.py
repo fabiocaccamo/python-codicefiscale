@@ -16,10 +16,10 @@ except AttributeError:
 from . import data
 
 
-__CONSONANTS = list('bcdfghjklmnpqrstvwxyz')
-__VOWELS = list('aeiou')
-__MONTHS = list('ABCDEHLMPRST')
-__CIN_ODDS = {
+_CONSONANTS = list('bcdfghjklmnpqrstvwxyz')
+_VOWELS = list('aeiou')
+_MONTHS = list('ABCDEHLMPRST')
+_CIN_ODDS = {
     '0': 1, '1': 0, '2': 5, '3': 7, '4': 9,
     '5': 13, '6': 15, '7': 17, '8': 19, '9': 21,
     'A': 1, 'B': 0, 'C': 5, 'D': 7, 'E': 9,
@@ -29,7 +29,7 @@ __CIN_ODDS = {
     'U': 16, 'V': 10, 'W': 22, 'X': 25, 'Y': 24,
     'Z': 23,
 }
-__CIN_EVENS = {
+_CIN_EVENS = {
     '0': 0, '1': 1, '2': 2, '3': 3, '4': 4,
     '5': 5, '6': 6, '7': 7, '8': 8, '9': 9,
     'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4,
@@ -39,19 +39,19 @@ __CIN_EVENS = {
     'U': 20, 'V': 21, 'W': 22, 'X': 23, 'Y': 24,
     'Z': 25,
 }
-__CIN_REMAINDERS = list(string.ascii_uppercase)
+_CIN_REMAINDERS = list(string.ascii_uppercase)
 
-__OMOCODIA = {
+_OMOCODIA = {
     '0': 'L', '1': 'M', '2': 'N', '3': 'P', '4': 'Q',
     '5': 'R', '6': 'S', '7': 'T', '8': 'U', '9': 'V',
 }
-__OMOCODIA_DIGITS = ''.join([digit for digit in __OMOCODIA])
-__OMOCODIA_LETTERS = ''.join([__OMOCODIA[digit] for digit in __OMOCODIA])
-__OMOCODIA_ENCODE_TRANS = maketrans(__OMOCODIA_DIGITS, __OMOCODIA_LETTERS)
-__OMOCODIA_DECODE_TRANS = maketrans(__OMOCODIA_LETTERS, __OMOCODIA_DIGITS)
-__OMOCODIA_SUBS_INDEXES = [6, 7, 9, 10, 12, 13, 14]
+_OMOCODIA_DIGITS = ''.join([digit for digit in _OMOCODIA])
+_OMOCODIA_LETTERS = ''.join([_OMOCODIA[digit] for digit in _OMOCODIA])
+_OMOCODIA_ENCODE_TRANS = maketrans(_OMOCODIA_DIGITS, _OMOCODIA_LETTERS)
+_OMOCODIA_DECODE_TRANS = maketrans(_OMOCODIA_LETTERS, _OMOCODIA_DIGITS)
+_OMOCODIA_SUBS_INDEXES = [6, 7, 9, 10, 12, 13, 14]
 
-__DATA = data.get_indexed_data(slugify)
+_DATA = data.get_indexed_data(slugify)
 
 CODICEFISCALE_RE = re.compile(r'^'
                               '([a-z]{3})'
@@ -61,35 +61,35 @@ CODICEFISCALE_RE = re.compile(r'^'
                               '([a-z]{1})$', re.IGNORECASE)
 
 
-def __get_consonants(s):
-    return [char for char in s if char in __CONSONANTS]
+def _get_consonants(s):
+    return [char for char in s if char in _CONSONANTS]
 
 
-def __get_vowels(s):
-    return [char for char in s if char in __VOWELS]
+def _get_vowels(s):
+    return [char for char in s if char in _VOWELS]
 
 
-def __get_consonants_and_vowels(consonants, vowels):
+def _get_consonants_and_vowels(consonants, vowels):
     return ''.join(list(
         consonants[:3] + vowels[:3] + (['X'] * 3)
     )[:3]).upper()
 
 
-def __get_omocodes(code):
+def _get_omocodes(code):
 
     code_chars = list(code[0:15])
     codes = []
 
-    for i in reversed(__OMOCODIA_SUBS_INDEXES):
-        code_chars[i] = code_chars[i].translate(__OMOCODIA_DECODE_TRANS)
+    for i in reversed(_OMOCODIA_SUBS_INDEXES):
+        code_chars[i] = code_chars[i].translate(_OMOCODIA_DECODE_TRANS)
 
     code = ''.join(code_chars)
     code_cin = encode_cin(code)
     code += code_cin
     codes.append(code)
 
-    for i in reversed(__OMOCODIA_SUBS_INDEXES):
-        code_chars[i] = code_chars[i].translate(__OMOCODIA_ENCODE_TRANS)
+    for i in reversed(_OMOCODIA_SUBS_INDEXES):
+        code_chars[i] = code_chars[i].translate(_OMOCODIA_ENCODE_TRANS)
 
         code = ''.join(code_chars)
         code_cin = encode_cin(code)
@@ -102,9 +102,9 @@ def __get_omocodes(code):
 def encode_surname(surname):
 
     surname_slug = slugify(surname)
-    surname_consonants = __get_consonants(surname_slug)
-    surname_vowels = __get_vowels(surname_slug)
-    surname_code = __get_consonants_and_vowels(
+    surname_consonants = _get_consonants(surname_slug)
+    surname_vowels = _get_vowels(surname_slug)
+    surname_code = _get_consonants_and_vowels(
         surname_consonants, surname_vowels)
     return surname_code
 
@@ -112,13 +112,13 @@ def encode_surname(surname):
 def encode_name(name):
 
     name_slug = slugify(name)
-    name_consonants = __get_consonants(name_slug)
+    name_consonants = _get_consonants(name_slug)
 
     if len(name_consonants) > 3:
         del name_consonants[1]
 
-    name_vowels = __get_vowels(name_slug)
-    name_code = __get_consonants_and_vowels(
+    name_vowels = _get_vowels(name_slug)
+    name_code = _get_consonants_and_vowels(
         name_consonants, name_vowels)
     return name_code
 
@@ -153,7 +153,7 @@ def encode_birthdate(birthdate, sex):
             raise ValueError('[codicefiscale] %s' % (str(e), ))
 
     year_code = str(date_obj.year)[2:]
-    month_code = __MONTHS[date_obj.month - 1]
+    month_code = _MONTHS[date_obj.month - 1]
     day_code = str(date_obj.day + (40 if sex == 'F' else 0)).zfill(2).upper()
     date_code = year_code + month_code + day_code
     return date_code
@@ -173,11 +173,11 @@ def encode_birthplace(birthplace):
         if len(birthplace_slug) == 4:
             birthplace_code = \
                 birthplace_slug[0].upper() + \
-                birthplace_slug[1:].translate(__OMOCODIA_DECODE_TRANS)
+                birthplace_slug[1:].translate(_OMOCODIA_DECODE_TRANS)
 
-        birthplace_data = __DATA['municipalities'].get(
-            birthplace_slug, __DATA['countries'].get(
-                birthplace_slug, __DATA['codes'].get(
+        birthplace_data = _DATA['municipalities'].get(
+            birthplace_slug, _DATA['countries'].get(
+                birthplace_slug, _DATA['codes'].get(
                     birthplace_code, {})))
 
         return birthplace_data.get('code', '')
@@ -206,8 +206,8 @@ def encode_cin(code):
 
     cin_tot = 0
     for i, char in enumerate(code[0:15]):
-        cin_tot += __CIN_ODDS[char] if (i + 1) % 2 else __CIN_EVENS[char]
-    cin_code = __CIN_REMAINDERS[cin_tot % 26]
+        cin_tot += _CIN_ODDS[char] if (i + 1) % 2 else _CIN_EVENS[char]
+    cin_code = _CIN_REMAINDERS[cin_tot % 26]
 
     # print(cin_code)
     return cin_code
@@ -263,11 +263,11 @@ def decode(code):
     code = raw['code']
 
     birthdate_year = \
-        raw['birthdate_year'].translate(__OMOCODIA_DECODE_TRANS)
-    birthdate_month = __MONTHS.index(
+        raw['birthdate_year'].translate(_OMOCODIA_DECODE_TRANS)
+    birthdate_month = _MONTHS.index(
         raw['birthdate_month']) + 1
     birthdate_day = int(
-        raw['birthdate_day'].translate(__OMOCODIA_DECODE_TRANS))
+        raw['birthdate_day'].translate(_OMOCODIA_DECODE_TRANS))
 
     if birthdate_day > 40:
         birthdate_day -= 40
@@ -285,9 +285,9 @@ def decode(code):
         raise ValueError('[codicefiscale] '
                          'invalid date: %s' % (birthdate_str, ))
 
-    birthplace = __DATA['codes'].get(
+    birthplace = _DATA['codes'].get(
         raw['birthplace'][0] +
-        raw['birthplace'][1:].translate(__OMOCODIA_DECODE_TRANS))
+        raw['birthplace'][1:].translate(_OMOCODIA_DECODE_TRANS))
 
     cin = raw['cin']
     cin_check = encode_cin(code)
@@ -299,7 +299,7 @@ def decode(code):
 
     data = {
         'code': code,
-        'omocodes': __get_omocodes(code),
+        'omocodes': _get_omocodes(code),
         'sex': sex,
         'birthdate': birthdate,
         'birthplace': birthplace,

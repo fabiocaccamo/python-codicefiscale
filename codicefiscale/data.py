@@ -9,7 +9,7 @@ def get_indexed_data(key_func):
         'codes': {},
     }
 
-    for municipality in __MUNICIPALITIES:
+    for municipality in _MUNICIPALITIES:
         code = municipality['code']
         names = municipality['name'].replace('(soppresso)', '').strip().split('/')
         province = municipality['province'].lower()
@@ -19,7 +19,7 @@ def get_indexed_data(key_func):
             data['municipalities'][key + '-' + province] = municipality
         data['codes'][code] = municipality
 
-    for country in __COUNTRIES:
+    for country in _COUNTRIES:
         code = country['code']
         names = country['name'].strip().split('/')
         for name in names:
@@ -30,7 +30,7 @@ def get_indexed_data(key_func):
     return data
 
 
-__MUNICIPALITIES = [
+_MUNICIPALITIES = [
     { "code":"A001", "province":"PD", "name":"ABANO TERME" },
     { "code":"A004", "province":"LO", "name":"ABBADIA CERRETO" },
     { "code":"A005", "province":"LC", "name":"ABBADIA LARIANA" },
@@ -8209,7 +8209,7 @@ __MUNICIPALITIES = [
     { "code":"M204", "province":"VV", "name":"ZUNGRI" },
 ]
 
-__COUNTRIES = [
+_COUNTRIES = [
     { "code":"Z100", "province":"EE", "name":"ALBANIA", },
     { "code":"Z101", "province":"EE", "name":"ANDORRA", },
     { "code":"Z102", "province":"EE", "name":"AUSTRIA", },
