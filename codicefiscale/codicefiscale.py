@@ -275,12 +275,18 @@ def decode(code):
     else:
         sex = 'M'
 
+    current_year = datetime.now().year
+    birthdate_year_int = int('%s%s' % (str(current_year)[0:-2], birthdate_year, ))
+    if birthdate_year_int > current_year:
+        birthdate_year_int -= 100
+    birthdate_year = str(birthdate_year_int)
+
     birthdate_str = '%s/%s/%s' % (birthdate_year,
                                   birthdate_month,
                                   birthdate_day, )
 
     try:
-        birthdate = datetime.strptime(birthdate_str, '%y/%m/%d')
+        birthdate = datetime.strptime(birthdate_str, '%Y/%m/%d')
     except ValueError:
         raise ValueError('[codicefiscale] '
                          'invalid date: %s' % (birthdate_str, ))

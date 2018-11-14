@@ -350,6 +350,10 @@ class CodiceFiscaleTestCase(unittest.TestCase):
                 'input':'TKKYKU87B68L219F',
                 'result': { 'sex':'F', 'birthdate':'28/02/1987', 'birthplace':'Torino' },
             },
+            {
+                'input':'RSSMRA68A01H501Y',
+                'result': { 'sex':'M', 'birthdate':'01/01/1968', 'birthplace':'Roma' },
+            },
         ]
 
         for obj in data:
