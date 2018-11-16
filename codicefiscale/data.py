@@ -5361,6 +5361,7 @@ _MUNICIPALITIES = [
     { "code":"G705", "province":"TO", "name":"PISCINA" },
     { "code":"M291", "province":"CI", "name":"PISCINAS" },
     { "code":"G707", "province":"SA", "name":"PISCIOTTA" },
+    { "code":"G701", "province":"CA", "name":"PIRRI (soppresso)" },
     { "code":"G710", "province":"BS", "name":"PISOGNE" },
     { "code":"G704", "province":"RM", "name":"PISONIANO" },
     { "code":"G712", "province":"MT", "name":"PISTICCI" },
