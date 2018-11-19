@@ -1398,6 +1398,7 @@ _MUNICIPALITIES = [
     { "code":"B740", "province":"NA", "name":"CARBONARA DI NOLA" },
     { "code":"B739", "province":"MN", "name":"CARBONARA DI PO" },
     { "code":"B736", "province":"AL", "name":"CARBONARA SCRIVIA" },
+    { "code":"B737", "province":"BA", "name":"BARI DELLE PUGLIE (soppresso)" },
     { "code":"B742", "province":"CO", "name":"CARBONATE" },
     { "code":"B743", "province":"PZ", "name":"CARBONE" },
     { "code":"B744", "province":"TV", "name":"CARBONERA" },
