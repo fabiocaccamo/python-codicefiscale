@@ -32,7 +32,7 @@ setup(
     keywords=['codicefiscale', 'codice', 'fiscale', 'cf', 'fiscal code', ],
     install_requires=[
         'python-dateutil >= 2.6.0, < 2.9.0',
-        'python-slugify >= 1.2.0, < 1.3.0',
+        'python-slugify >= 1.2.0, < 2.1.0',
     ],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
