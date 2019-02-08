@@ -3,6 +3,7 @@
 [![Code Health](https://landscape.io/github/fabiocaccamo/python-codicefiscale/master/landscape.svg?style=flat)](https://landscape.io/github/fabiocaccamo/python-codicefiscale/master)
 [![Requirements Status](https://requires.io/github/fabiocaccamo/python-codicefiscale/requirements.svg?branch=master)](https://requires.io/github/fabiocaccamo/python-codicefiscale/requirements/?branch=master)
 [![PyPI version](https://badge.fury.io/py/python-codicefiscale.svg)](https://badge.fury.io/py/python-codicefiscale)
+[![PyPI downloads](https://img.shields.io/pypi/dm/python-codicefiscale.svg)](https://img.shields.io/pypi/dm/python-codicefiscale.svg)
 [![Py versions](https://img.shields.io/pypi/pyversions/python-codicefiscale.svg)](https://img.shields.io/pypi/pyversions/python-codicefiscale.svg)
 [![License](https://img.shields.io/pypi/l/python-codicefiscale.svg)](https://img.shields.io/pypi/l/python-codicefiscale.svg)
 
