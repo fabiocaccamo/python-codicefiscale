@@ -1,4 +1,4 @@
-|Build Status| |codecov| |Code Health| |Requirements Status| |PyPI version| |PyPI downloads| |Py versions| |License|
+|Build Status| |codecov| |Codacy| |Requirements Status| |PyPI version| |PyPI downloads| |Py versions| |License|
 
 python-codicefiscale
 ====================
@@ -108,7 +108,7 @@ Released under `MIT License`_.
 
 .. |Build Status| image:: https://travis-ci.org/fabiocaccamo/python-codicefiscale.svg?branch=master
 .. |codecov| image:: https://codecov.io/gh/fabiocaccamo/python-codicefiscale/branch/master/graph/badge.svg
-.. |Code Health| image:: https://landscape.io/github/fabiocaccamo/python-codicefiscale/master/landscape.svg?style=flat
+.. |Codacy| image:: https://api.codacy.com/project/badge/Grade/375ce4fc87dc44e88271f7da9f5f69d1
 .. |Requirements Status| image:: https://requires.io/github/fabiocaccamo/python-codicefiscale/requirements.svg?branch=master
 .. |PyPI version| image:: https://badge.fury.io/py/python-codicefiscale.svg
 .. |PyPI downloads| image:: https://img.shields.io/pypi/dm/python-codicefiscale.svg
