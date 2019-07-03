@@ -10,7 +10,8 @@ exec(open('codicefiscale/version.py').read())
 github_url = 'https://github.com/fabiocaccamo'
 package_name = 'python-codicefiscale'
 package_path = os.path.abspath(os.path.dirname(__file__))
-long_description_file_path = os.path.join(package_path, 'README.rst')
+long_description_file_path = os.path.join(package_path, 'README.md')
+long_description_content_type = 'text/markdown'
 long_description = ''
 try:
     with open(long_description_file_path) as f:
