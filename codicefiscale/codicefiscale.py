@@ -54,11 +54,11 @@ _OMOCODIA_SUBS_INDEXES = [6, 7, 9, 10, 12, 13, 14]
 _DATA = data.get_indexed_data(slugify)
 
 CODICEFISCALE_RE = re.compile(r'^'
-                              '([a-z]{3})'
-                              '([a-z]{3})'
-                              '(([a-z\d]{2})([abcdehlmprst]{1})([a-z\d]{2}))'
-                              '([a-z]{1}[a-z\d]{3})'
-                              '([a-z]{1})$', re.IGNORECASE)
+                              r'([a-z]{3})'
+                              r'([a-z]{3})'
+                              r'(([a-z\d]{2})([abcdehlmprst]{1})([a-z\d]{2}))'
+                              r'([a-z]{1}[a-z\d]{3})'
+                              r'([a-z]{1})$', re.IGNORECASE)
 
 
 def _get_consonants(s):
@@ -320,7 +320,7 @@ def is_omocode(code):
     data = decode(code)
     codes = data['omocodes']
     codes.pop(0)
-    return (code in codes)
+    return code in codes
 
 
 def is_valid(code):
