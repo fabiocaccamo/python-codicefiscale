@@ -26,6 +26,7 @@ setup(
     version=__version__,
     description='python-codicefiscale is a tiny library for encode/decode Italian fiscal code - codifica/decodifica del Codice Fiscale.',
     long_description=long_description,
+    long_description_content_type=long_description_content_type,
     author='Fabio Caccamo',
     author_email='fabio.caccamo@gmail.com',
     url='%s/%s' % (github_url, package_name, ),
