@@ -1,2 +1,4 @@
 packaging
+python-dateutil
+python-slugify
 tox
