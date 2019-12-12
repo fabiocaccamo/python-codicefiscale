@@ -1,14 +1,13 @@
 # -*- coding: utf-8 -*-
 
-from datetime import datetime
-
 from codicefiscale import codicefiscale
-from codicefiscale import version
+from codicefiscale.version import __version__
+from datetime import datetime
+from packaging import version
+from unittest import TestCase
 
-import unittest
 
-
-class CodiceFiscaleTestCase(unittest.TestCase):
+class CodiceFiscaleTestCase(TestCase):
 
     def test_encode_surname(self):
 
@@ -485,6 +484,9 @@ class CodiceFiscaleTestCase(unittest.TestCase):
         self.assertFalse(codicefiscale.is_valid('CCCFBA85D00L219')) # wrong birthdate day
         self.assertFalse(codicefiscale.is_valid('CCCFBA85D99L219')) # wrong birthdate day
 
+    def test_version(self):
+
+        self.assertTrue(isinstance(version.parse(__version__), version.Version))
 
 if __name__ == '__main__':
     unittest.main()
