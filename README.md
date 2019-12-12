@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/fabiocaccamo/python-codicefiscale.svg?branch=master)](https://travis-ci.org/fabiocaccamo/python-codicefiscale)
+[![CircleCI](https://circleci.com/gh/fabiocaccamo/python-codicefiscale.svg?style=svg)](https://circleci.com/gh/fabiocaccamo/python-codicefiscale)
 [![codecov](https://codecov.io/gh/fabiocaccamo/python-codicefiscale/branch/master/graph/badge.svg)](https://codecov.io/gh/fabiocaccamo/python-codicefiscale)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/375ce4fc87dc44e88271f7da9f5f69d1)](https://www.codacy.com/app/fabiocaccamo/python-codicefiscale)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/fabiocaccamo/python-codicefiscale/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/fabiocaccamo/python-codicefiscale/?branch=master)
