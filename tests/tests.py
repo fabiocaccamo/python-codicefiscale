@@ -4,10 +4,10 @@ from codicefiscale import codicefiscale
 from codicefiscale.version import __version__
 from datetime import datetime
 from packaging import version
-from unittest import TestCase
+import unittest
 
 
-class CodiceFiscaleTestCase(TestCase):
+class CodiceFiscaleTestCase(unittest.TestCase):
 
     def test_encode_surname(self):
 
