@@ -81,9 +81,30 @@ codicefiscale.is_omocode('CCCFBA85D03L219P')
 # False
 ```
 
-### Test
+## Testing
+```bash
+# create python 3.8 virtual environment
+virtualenv testing_codicefiscale -p "python3.8" --no-site-packages
 
-`tox` / `python setup.py test` / `python -m unittest tests.tests`
+# activate virtualenv
+cd testing_codicefiscale && . bin/activate
+
+# clone repo
+git clone https://github.com/fabiocaccamo/python-codicefiscale.git src && cd src
+
+# install requirements
+pip install --upgrade pip
+pip install -r requirements.txt
+
+# run tests using tox (best choice)
+tox
+
+# or run tests using unittest
+python -m unittest tests.tests
+
+# or run tests using setuptools
+python setup.py test
+```
 
 ---
 
