@@ -100,7 +100,15 @@ def _get_omocodes(code):
 
 
 def encode_surname(surname):
+    """
+    Encode surname to the code used in italian fiscal code.
 
+    :param surname: The surname
+    :type surname: string
+
+    :returns: The code used in italian fiscal code
+    :rtype: string
+    """
     surname_slug = slugify(surname)
     surname_consonants = _get_consonants(surname_slug)
     surname_vowels = _get_vowels(surname_slug)
@@ -110,7 +118,15 @@ def encode_surname(surname):
 
 
 def encode_name(name):
+    """
+    Encodes name to the code used in italian fiscal code.
 
+    :param name: The name
+    :type name: string
+
+    :returns: The code used in italian fiscal code
+    :rtype: string
+    """
     name_slug = slugify(name)
     name_consonants = _get_consonants(name_slug)
 
@@ -124,7 +140,17 @@ def encode_name(name):
 
 
 def encode_birthdate(birthdate, sex):
+    """
+    Encodes birthdate to the code used in italian fiscal code.
 
+    :param birthdate: The birthdate
+    :type birthdate: datetime or string
+    :param sex: The sex, 'M' or 'F'
+    :type sex: string
+
+    :returns: The code used in italian fiscal code
+    :rtype: string
+    """
     if not birthdate:
         raise ValueError('[codicefiscale] '
                          '"birthdate" argument cant be None')
@@ -160,7 +186,15 @@ def encode_birthdate(birthdate, sex):
 
 
 def encode_birthplace(birthplace):
+    """
+    Encodes birthplace to the code used in italian fiscal code.
 
+    :param birthplace: The birthplace
+    :type birthplace: string
+
+    :returns: The code used in italian fiscal code
+    :rtype: string
+    """
     if not birthplace:
         raise ValueError('[codicefiscale] '
                          '"birthplace" argument cant be None')
@@ -195,7 +229,15 @@ def encode_birthplace(birthplace):
 
 
 def encode_cin(code):
+    """
+    Encodes cin to the code used in italian fiscal code.
 
+    :param code: The code
+    :type code: string
+
+    :returns: The code used in italian fiscal code
+    :rtype: string
+    """
     if not code:
         raise ValueError('[codicefiscale] '
                          '"code" argument cant be None')
@@ -214,7 +256,23 @@ def encode_cin(code):
 
 
 def encode(surname, name, sex, birthdate, birthplace):
+    """
+    Encodes the italian fiscal code.
 
+    :param surname: The surname
+    :type surname: string
+    :param name: The name
+    :type name: string
+    :param sex: The sex, 'M' or 'F'
+    :type sex: string
+    :param birthdate: The birthdate
+    :type birthdate: datetime or string
+    :param birthplace: The birthplace
+    :type birthplace: string
+
+    :returns: The italian fiscal code
+    :rtype: string
+    """
     code = ''
     code += encode_surname(surname)
     code += encode_name(name)
@@ -228,7 +286,15 @@ def encode(surname, name, sex, birthdate, birthplace):
 
 
 def decode_raw(code):
+    """
+    Decodes the raw data associated to the code.
 
+    :param code: The code
+    :type code: string
+
+    :returns: The raw data associated to the code.
+    :rtype: dict
+    """
     code = slugify(code)
     code = code.replace('-', '')
     code = code.upper()
@@ -257,7 +323,15 @@ def decode_raw(code):
 
 
 def decode(code):
+    """
+    Decodes the italian fiscal code.
 
+    :param code: The code
+    :type code: string
+
+    :returns: The data associated to the code and some additional info.
+    :rtype: dict
+    """
     raw = decode_raw(code)
 
     code = raw['code']
@@ -317,6 +391,15 @@ def decode(code):
 
 
 def is_omocode(code):
+    """
+    Determines whether the specified code is omocode or not.
+
+    :param code: The code
+    :type code: string
+
+    :returns: True if the specified code is omocode, False otherwise.
+    :rtype: boolean
+    """
     data = decode(code)
     codes = data['omocodes']
     codes.pop(0)
@@ -324,6 +407,15 @@ def is_omocode(code):
 
 
 def is_valid(code):
+    """
+    Determines whether the specified code is valid.
+
+    :param code: The code
+    :type code: string
+
+    :returns: True if the specified code is valid, False otherwise.
+    :rtype: boolean
+    """
     try:
         decode(code)
         return True
