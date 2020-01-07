@@ -1,14 +1,14 @@
-[![Py versions](https://img.shields.io/pypi/pyversions/python-codicefiscale.svg?logoColor=white&color=blue&logo=python)](https://www.python.org/)
-[![PyPI version](https://img.shields.io/pypi/v/python-codicefiscale.svg?color=blue)](https://pypi.org/project/python-codicefiscale/)
-[![PyPI downloads](https://img.shields.io/pypi/dm/python-codicefiscale.svg?color=blue)](https://pypi.org/project/python-codicefiscale/)
+[![Python Versions](https://img.shields.io/pypi/pyversions/python-codicefiscale.svg?logoColor=white&color=blue&logo=python)](https://www.python.org/)
+[![PyPI Version](https://img.shields.io/pypi/v/python-codicefiscale.svg?color=blue&logo=pypi&logoColor=white)](https://pypi.org/project/python-codicefiscale/)
+[![PyPI Downloads](https://img.shields.io/pypi/dm/python-codicefiscale.svg?color=blue&logo=pypi&logoColor=white)](https://pypi.org/project/python-codicefiscale/)
 [![Stars](https://img.shields.io/github/stars/fabiocaccamo/python-codicefiscale?logo=github)](https://github.com/fabiocaccamo/python-codicefiscale/)
 [![License](https://img.shields.io/pypi/l/python-codicefiscale.svg?color=blue&)](https://github.com/fabiocaccamo/python-codicefiscale/blob/master/LICENSE)
 
-[![CircleCI](https://circleci.com/gh/fabiocaccamo/python-codicefiscale.svg?style=svg)](https://circleci.com/gh/fabiocaccamo/python-codicefiscale)
-[![Build Status](https://travis-ci.org/fabiocaccamo/python-codicefiscale.svg?branch=master)](https://travis-ci.org/fabiocaccamo/python-codicefiscale)
-[![codecov](https://codecov.io/gh/fabiocaccamo/python-codicefiscale/branch/master/graph/badge.svg)](https://codecov.io/gh/fabiocaccamo/python-codicefiscale)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/375ce4fc87dc44e88271f7da9f5f69d1)](https://www.codacy.com/app/fabiocaccamo/python-codicefiscale)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/fabiocaccamo/python-codicefiscale/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/fabiocaccamo/python-codicefiscale/?branch=master)
+[![Travis Build Status](https://img.shields.io/travis/fabiocaccamo/python-codicefiscale?logo=travis)](https://travis-ci.org/fabiocaccamo/python-codicefiscale)
+[![CircleCI Build Status](https://img.shields.io/circleci/build/gh/fabiocaccamo/python-codicefiscale?logo=circleci)](https://circleci.com/gh/fabiocaccamo/python-codicefiscale)
+[![Codecov Coverage](https://img.shields.io/codecov/c/gh/fabiocaccamo/python-codicefiscale?logo=codecov)](https://codecov.io/gh/fabiocaccamo/python-codicefiscale)
+[![Codacy Code Quality](https://img.shields.io/codacy/grade/375ce4fc87dc44e88271f7da9f5f69d1?logo=codacy)](https://www.codacy.com/app/fabiocaccamo/python-codicefiscale)
+[![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/quality/g/fabiocaccamo/python-codicefiscale?logo=scrutinizer)](https://scrutinizer-ci.com/g/fabiocaccamo/python-codicefiscale/?branch=master)
 [![Requirements Status](https://requires.io/github/fabiocaccamo/python-codicefiscale/requirements.svg?branch=master)](https://requires.io/github/fabiocaccamo/python-codicefiscale/requirements/?branch=master)
 
 # python-codicefiscale
