@@ -9,6 +9,8 @@
 [![Codecov Coverage](https://img.shields.io/codecov/c/gh/fabiocaccamo/python-codicefiscale?logo=codecov)](https://codecov.io/gh/fabiocaccamo/python-codicefiscale)
 [![Codacy Code Quality](https://img.shields.io/codacy/grade/375ce4fc87dc44e88271f7da9f5f69d1?logo=codacy)](https://www.codacy.com/app/fabiocaccamo/python-codicefiscale)
 [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/quality/g/fabiocaccamo/python-codicefiscale?logo=scrutinizer)](https://scrutinizer-ci.com/g/fabiocaccamo/python-codicefiscale/?branch=master)
+[![Code Climate Maintainability](https://img.shields.io/codeclimate/maintainability-percentage/fabiocaccamo/python-codicefiscale?logo=code-climate)](https://codeclimate.com/github/fabiocaccamo/python-codicefiscale/)
+[![Code Climate Tech Debt](https://img.shields.io/codeclimate/tech-debt/fabiocaccamo/python-codicefiscale?logo=code-climate)](https://codeclimate.com/github/fabiocaccamo/python-codicefiscale/)
 [![Requirements Status](https://requires.io/github/fabiocaccamo/python-codicefiscale/requirements.svg?branch=master)](https://requires.io/github/fabiocaccamo/python-codicefiscale/requirements/?branch=master)
 
 # python-codicefiscale
