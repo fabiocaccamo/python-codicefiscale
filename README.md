@@ -1,16 +1,16 @@
-[![Python Versions](https://img.shields.io/pypi/pyversions/python-codicefiscale.svg?logoColor=white&color=blue&logo=python)](https://www.python.org/)
-[![PyPI Version](https://img.shields.io/pypi/v/python-codicefiscale.svg?color=blue&logo=pypi&logoColor=white)](https://pypi.org/project/python-codicefiscale/)
-[![PyPI Downloads](https://img.shields.io/pypi/dt/python-codicefiscale.svg?color=blue&logo=pypi&logoColor=white)](https://pypi.org/project/python-codicefiscale/)
-[![Stars](https://img.shields.io/github/stars/fabiocaccamo/python-codicefiscale?logo=github)](https://github.com/fabiocaccamo/python-codicefiscale/)
-[![License](https://img.shields.io/pypi/l/python-codicefiscale.svg?color=blue&)](https://github.com/fabiocaccamo/python-codicefiscale/blob/master/LICENSE)
+[![](https://img.shields.io/pypi/pyversions/python-codicefiscale.svg?logoColor=white&color=blue&logo=python)](https://www.python.org/)
+[![](https://img.shields.io/pypi/v/python-codicefiscale.svg?color=blue&logo=pypi&logoColor=white)](https://pypi.org/project/python-codicefiscale/)
+[![](https://pepy.tech/badge/python-codicefiscale)](https://pepy.tech/project/python-codicefiscale)
+[![](https://img.shields.io/github/stars/fabiocaccamo/python-codicefiscale?logo=github)](https://github.com/fabiocaccamo/python-codicefiscale/)
+[![](https://img.shields.io/pypi/l/python-codicefiscale.svg?color=blue&)](https://github.com/fabiocaccamo/python-codicefiscale/blob/master/LICENSE)
 
-[![Travis Build Status](https://img.shields.io/travis/fabiocaccamo/python-codicefiscale?logo=travis)](https://travis-ci.org/fabiocaccamo/python-codicefiscale)
-[![CircleCI Build Status](https://img.shields.io/circleci/build/gh/fabiocaccamo/python-codicefiscale?logo=circleci)](https://circleci.com/gh/fabiocaccamo/python-codicefiscale)
-[![Codecov Coverage](https://img.shields.io/codecov/c/gh/fabiocaccamo/python-codicefiscale?logo=codecov)](https://codecov.io/gh/fabiocaccamo/python-codicefiscale)
-[![Codacy Code Quality](https://img.shields.io/codacy/grade/375ce4fc87dc44e88271f7da9f5f69d1?logo=codacy)](https://www.codacy.com/app/fabiocaccamo/python-codicefiscale)
-[![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/quality/g/fabiocaccamo/python-codicefiscale?logo=scrutinizer)](https://scrutinizer-ci.com/g/fabiocaccamo/python-codicefiscale/?branch=master)
-[![Code Climate Maintainability](https://img.shields.io/codeclimate/maintainability/fabiocaccamo/python-codicefiscale?logo=code-climate)](https://codeclimate.com/github/fabiocaccamo/python-codicefiscale/)
-[![Requirements Status](https://requires.io/github/fabiocaccamo/python-codicefiscale/requirements.svg?branch=master)](https://requires.io/github/fabiocaccamo/python-codicefiscale/requirements/?branch=master)
+[![](https://img.shields.io/travis/fabiocaccamo/python-codicefiscale?logo=travis)](https://travis-ci.org/fabiocaccamo/python-codicefiscale)
+[![](https://img.shields.io/circleci/build/gh/fabiocaccamo/python-codicefiscale?logo=circleci)](https://circleci.com/gh/fabiocaccamo/python-codicefiscale)
+[![](https://img.shields.io/codecov/c/gh/fabiocaccamo/python-codicefiscale?logo=codecov)](https://codecov.io/gh/fabiocaccamo/python-codicefiscale)
+[![](https://img.shields.io/codacy/grade/375ce4fc87dc44e88271f7da9f5f69d1?logo=codacy)](https://www.codacy.com/app/fabiocaccamo/python-codicefiscale)
+[![](https://img.shields.io/scrutinizer/quality/g/fabiocaccamo/python-codicefiscale?logo=scrutinizer)](https://scrutinizer-ci.com/g/fabiocaccamo/python-codicefiscale/?branch=master)
+[![](https://img.shields.io/codeclimate/maintainability/fabiocaccamo/python-codicefiscale?logo=code-climate)](https://codeclimate.com/github/fabiocaccamo/python-codicefiscale/)
+[![](https://requires.io/github/fabiocaccamo/python-codicefiscale/requirements.svg?branch=master)](https://requires.io/github/fabiocaccamo/python-codicefiscale/requirements/?branch=master)
 
 # python-codicefiscale
 python-codicefiscale is a tiny library for encode/decode Italian fiscal code - **codifica/decodifica del Codice Fiscale**.
