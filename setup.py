@@ -9,6 +9,7 @@ exec(open('codicefiscale/version.py').read())
 
 github_url = 'https://github.com/fabiocaccamo'
 package_name = 'python-codicefiscale'
+package_url = {}/{}.format(github_url, package_name)
 package_path = os.path.abspath(os.path.dirname(__file__))
 long_description_file_path = os.path.join(package_path, 'README.md')
 long_description_content_type = 'text/markdown'
@@ -29,8 +30,8 @@ setup(
     long_description_content_type=long_description_content_type,
     author='Fabio Caccamo',
     author_email='fabio.caccamo@gmail.com',
-    url='%s/%s' % (github_url, package_name, ),
-    download_url='%s/%s/archive/%s.tar.gz' % (github_url, package_name, __version__, ),
+    url=package_url,
+    download_url='{}/archive/{}.tar.gz'.format(package_url, __version__),
     keywords=['codicefiscale', 'codice', 'fiscale', 'cf', 'fiscal code', ],
     install_requires=[
         'python-dateutil',
