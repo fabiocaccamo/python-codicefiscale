@@ -9,7 +9,7 @@ exec(open('codicefiscale/version.py').read())
 
 github_url = 'https://github.com/fabiocaccamo'
 package_name = 'python-codicefiscale'
-package_url = {}/{}.format(github_url, package_name)
+package_url = '{}/{}'.format(github_url, package_name)
 package_path = os.path.abspath(os.path.dirname(__file__))
 long_description_file_path = os.path.join(package_path, 'README.md')
 long_description_content_type = 'text/markdown'
