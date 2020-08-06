@@ -2,6 +2,7 @@
 [![](https://img.shields.io/pypi/v/python-codicefiscale.svg?color=blue&logo=pypi&logoColor=white)](https://pypi.org/project/python-codicefiscale/)
 [![](https://pepy.tech/badge/python-codicefiscale)](https://pepy.tech/project/python-codicefiscale)
 [![](https://img.shields.io/github/stars/fabiocaccamo/python-codicefiscale?logo=github)](https://github.com/fabiocaccamo/python-codicefiscale/)
+[![](https://badges.pufler.dev/visits/fabiocaccamo/python-codicefiscale?label=visitors&color=blue)](https://badges.pufler.dev)
 [![](https://img.shields.io/pypi/l/python-codicefiscale.svg?color=blue&)](https://github.com/fabiocaccamo/python-codicefiscale/blob/master/LICENSE)
 
 [![](https://img.shields.io/travis/fabiocaccamo/python-codicefiscale?logo=travis)](https://travis-ci.org/fabiocaccamo/python-codicefiscale)
