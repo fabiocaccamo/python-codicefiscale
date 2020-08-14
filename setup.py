@@ -38,7 +38,6 @@ setup(
         'python-slugify',
     ],
     tests_require=[
-        'packaging',
     ],
     classifiers=[
         'Development Status :: 5 - Production/Stable',

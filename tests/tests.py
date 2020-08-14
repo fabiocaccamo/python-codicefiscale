@@ -3,7 +3,7 @@
 from codicefiscale import codicefiscale
 from codicefiscale.version import __version__
 from datetime import datetime
-from packaging import version
+import re
 import unittest
 
 
@@ -360,7 +360,7 @@ class CodiceFiscaleTestCase(unittest.TestCase):
 
             result = obj['result']
             obj_decoded = codicefiscale.decode(obj['input'])
-            print(obj_decoded)
+            # print(obj_decoded)
 
             sex = obj_decoded.get('sex')
             self.assertFalse(sex is None)
@@ -485,8 +485,8 @@ class CodiceFiscaleTestCase(unittest.TestCase):
         self.assertFalse(codicefiscale.is_valid('CCCFBA85D99L219')) # wrong birthdate day
 
     def test_version(self):
-
-        self.assertTrue(isinstance(version.parse(__version__), version.Version))
+        version_pattern = re.compile('^(([\d]+)\.([\d]+)\.([\d]+))$')
+        self.assertTrue(version_pattern.match(__version__))
 
 if __name__ == '__main__':
     unittest.main()
