@@ -90,8 +90,8 @@ codicefiscale.is_omocode('CCCFBA85D03L219P')
 
 ## Testing
 ```bash
-# create python 3.8 virtual environment
-virtualenv testing_codicefiscale -p "python3.8" --no-site-packages
+# create python virtual environment
+virtualenv testing_codicefiscale
 
 # activate virtualenv
 cd testing_codicefiscale && . bin/activate
@@ -100,8 +100,6 @@ cd testing_codicefiscale && . bin/activate
 git clone https://github.com/fabiocaccamo/python-codicefiscale.git src && cd src
 
 # install requirements
-pip install --upgrade pip
-pip install -r requirements-dev.txt
 pip install -r requirements.txt
 
 # run tests using tox
