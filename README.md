@@ -117,4 +117,4 @@ python setup.py test
 ---
 
 ## License
-Released under [MIT License](LICENSE).
+Released under [MIT License](LICENSE.txt).
