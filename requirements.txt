@@ -1,4 +1,5 @@
-packaging
+codecov
+coverage
 python-dateutil
 python-slugify
 tox
