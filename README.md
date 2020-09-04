@@ -112,7 +112,5 @@ python -m unittest tests.tests
 python setup.py test
 ```
 
----
-
 ## License
 Released under [MIT License](LICENSE.txt).
