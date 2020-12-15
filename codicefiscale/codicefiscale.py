@@ -200,20 +200,12 @@ def encode_birthplace(birthplace):
                          '"birthplace" argument cant be None')
 
     def find_birthplace_code(birthplace):
-
         birthplace_slug = slugify(birthplace)
-        birthplace_code = ''
-
-        if len(birthplace_slug) == 4:
-            birthplace_code = \
-                birthplace_slug[0].upper() + \
-                birthplace_slug[1:].translate(_OMOCODIA_DECODE_TRANS)
-
+        birthplace_code = birthplace_slug.upper()
         birthplace_data = _DATA['municipalities'].get(
             birthplace_slug, _DATA['countries'].get(
                 birthplace_slug, _DATA['codes'].get(
                     birthplace_code, {})))
-
         return birthplace_data.get('code', '')
 
     birthplace_code = \
