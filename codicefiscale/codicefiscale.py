@@ -231,12 +231,14 @@ def encode_cin(code):
     :rtype: string
     """
     if not code:
-        raise ValueError('[codicefiscale] '
-                         '"code" argument cant be None')
+        raise ValueError(
+            '[codicefiscale] "code" argument cant be None')
 
-    if len(code) not in [15, 16]:
-        raise ValueError('[codicefiscale] '
-                         '"code" length must be 15 or 16, not: {}'.format(len(code)))
+    code_len = len(code)
+    if code_len not in [15, 16]:
+        raise ValueError(
+            '[codicefiscale] "code" length must be 15 or 16, not: {}'.format(
+                code_len))
 
     cin_tot = 0
     for i, char in enumerate(code[0:15]):
@@ -342,13 +344,14 @@ def decode(code):
         sex = 'M'
 
     current_year = datetime.now().year
-    birthdate_year_int = int('{}{}'.format(str(current_year)[0:-2], birthdate_year))
+    birthdate_year_int = int('{}{}'.format(
+        str(current_year)[0:-2], birthdate_year))
     if birthdate_year_int > current_year:
         birthdate_year_int -= 100
     birthdate_year = str(birthdate_year_int)
-
-    birthdate_str = '{}/{}/{}'.format(birthdate_year, birthdate_month, birthdate_day)
-
+    birthdate_str = '{}/{}/{}'.format(birthdate_year,
+                                      birthdate_month,
+                                      birthdate_day)
     try:
         birthdate = datetime.strptime(birthdate_str, '%Y/%m/%d')
     except ValueError:
