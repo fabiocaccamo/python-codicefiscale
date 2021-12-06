@@ -5,6 +5,7 @@
 [![](https://badges.pufler.dev/visits/fabiocaccamo/python-codicefiscale?label=visitors&color=blue)](https://badges.pufler.dev)
 [![](https://img.shields.io/pypi/l/python-codicefiscale.svg?color=blue&)](https://github.com/fabiocaccamo/python-codicefiscale/blob/master/LICENSE)
 
+[![](https://img.shields.io/github/workflow/status/fabiocaccamo/python-codicefiscale/Python%20package?label=build&logo=github)](https://github.com/fabiocaccamo/python-codicefiscale)
 [![](https://img.shields.io/circleci/build/gh/fabiocaccamo/python-codicefiscale?logo=circleci)](https://circleci.com/gh/fabiocaccamo/python-codicefiscale)
 [![](https://img.shields.io/codecov/c/gh/fabiocaccamo/python-codicefiscale?logo=codecov)](https://codecov.io/gh/fabiocaccamo/python-codicefiscale)
 [![](https://img.shields.io/codacy/grade/375ce4fc87dc44e88271f7da9f5f69d1?logo=codacy)](https://www.codacy.com/app/fabiocaccamo/python-codicefiscale)
