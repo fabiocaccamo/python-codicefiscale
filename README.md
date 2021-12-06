@@ -101,6 +101,7 @@ git clone https://github.com/fabiocaccamo/python-codicefiscale.git src && cd src
 
 # install requirements
 pip install -r requirements.txt
+pip install -r requirements-test.txt
 
 # run tests using tox
 tox
