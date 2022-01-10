@@ -2,6 +2,7 @@
 
 from datetime import datetime
 from dateutil import parser as date_parser
+from itertools import combinations
 from slugify import slugify
 
 import re
@@ -49,7 +50,11 @@ _OMOCODIA_DIGITS = ''.join([digit for digit in _OMOCODIA])
 _OMOCODIA_LETTERS = ''.join([_OMOCODIA[digit] for digit in _OMOCODIA])
 _OMOCODIA_ENCODE_TRANS = maketrans(_OMOCODIA_DIGITS, _OMOCODIA_LETTERS)
 _OMOCODIA_DECODE_TRANS = maketrans(_OMOCODIA_LETTERS, _OMOCODIA_DIGITS)
-_OMOCODIA_SUBS_INDEXES = [6, 7, 9, 10, 12, 13, 14]
+_OMOCODIA_SUBS_INDEXES = list(reversed([6, 7, 9, 10, 12, 13, 14]))
+_OMOCODIA_SUBS_INDEXES_COMBINATIONS = [[]]
+for combo_size in range(1, len(_OMOCODIA_SUBS_INDEXES) + 1):
+    for combo in combinations(_OMOCODIA_SUBS_INDEXES, combo_size):
+        _OMOCODIA_SUBS_INDEXES_COMBINATIONS.append(list(combo))
 
 _DATA = data.get_indexed_data(slugify)
 
@@ -75,27 +80,24 @@ def _get_consonants_and_vowels(consonants, vowels):
     )[:3]).upper()
 
 
-def _get_omocodes(code):
-
+def _get_omocode(code, subs, trans):
     code_chars = list(code[0:15])
-    codes = []
-
-    for i in reversed(_OMOCODIA_SUBS_INDEXES):
-        code_chars[i] = code_chars[i].translate(_OMOCODIA_DECODE_TRANS)
-
+    for i in subs:
+        code_chars[i] = code_chars[i].translate(trans)
     code = ''.join(code_chars)
     code_cin = encode_cin(code)
     code += code_cin
-    codes.append(code)
+    return code
 
-    for i in reversed(_OMOCODIA_SUBS_INDEXES):
-        code_chars[i] = code_chars[i].translate(_OMOCODIA_ENCODE_TRANS)
 
-        code = ''.join(code_chars)
-        code_cin = encode_cin(code)
-        code += code_cin
-        codes.append(code)
-
+def _get_omocodes(code):
+    code_root = _get_omocode(
+        code, subs=_OMOCODIA_SUBS_INDEXES, trans=_OMOCODIA_DECODE_TRANS
+    )
+    codes = [
+        _get_omocode(code_root, subs=subs, trans=_OMOCODIA_ENCODE_TRANS)
+        for subs in _OMOCODIA_SUBS_INDEXES_COMBINATIONS
+    ]
     return codes
 
 
