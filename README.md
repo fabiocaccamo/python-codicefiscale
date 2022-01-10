@@ -11,6 +11,7 @@
 [![](https://img.shields.io/scrutinizer/quality/g/fabiocaccamo/python-codicefiscale?logo=scrutinizer)](https://scrutinizer-ci.com/g/fabiocaccamo/python-codicefiscale/?branch=master)
 [![](https://img.shields.io/codeclimate/maintainability/fabiocaccamo/python-codicefiscale?logo=code-climate)](https://codeclimate.com/github/fabiocaccamo/python-codicefiscale/)
 [![](https://requires.io/github/fabiocaccamo/python-codicefiscale/requirements.svg?branch=master)](https://requires.io/github/fabiocaccamo/python-codicefiscale/requirements/?branch=master)
+[![](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 # python-codicefiscale
 python-codicefiscale is a tiny library for encode/decode Italian fiscal code - **codifica/decodifica del Codice Fiscale**.
