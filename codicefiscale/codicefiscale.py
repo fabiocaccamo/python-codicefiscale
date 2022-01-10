@@ -217,15 +217,15 @@ def encode_birthdate(birthdate, sex):
     :rtype: string
     """
     if not birthdate:
-        raise ValueError("[codicefiscale] " '"birthdate" argument cant be None')
+        raise ValueError("[codicefiscale] 'birthdate' argument cant be None")
 
     if not sex:
-        raise ValueError("[codicefiscale] " '"sex" argument cant be None')
+        raise ValueError("[codicefiscale] 'sex' argument cant be None")
 
     sex = sex.upper()
 
     if sex not in ["M", "F"]:
-        raise ValueError("[codicefiscale] " '"sex" argument must be "M" or "F"')
+        raise ValueError("[codicefiscale] 'sex' argument must be 'M' or 'F'")
 
     if isinstance(birthdate, datetime):
         date_obj = birthdate
@@ -258,7 +258,7 @@ def encode_birthplace(birthplace):
     :rtype: string
     """
     if not birthplace:
-        raise ValueError("[codicefiscale] " '"birthplace" argument cant be None')
+        raise ValueError("[codicefiscale] 'birthplace' argument cant be None")
 
     def find_birthplace_code(birthplace):
         birthplace_slug = slugify(birthplace)
@@ -277,9 +277,9 @@ def encode_birthplace(birthplace):
 
     if birthplace_code == "":
         raise ValueError(
-            "[codicefiscale] "
-            '"birthplace" argument not mapped to code: '
-            '("{}" -> "")'.format(birthplace)
+            "[codicefiscale] 'birthplace' argument not mapped to code: ('{}'' -> '')".format(
+                birthplace
+            )
         )
 
     return birthplace_code
@@ -296,12 +296,12 @@ def encode_cin(code):
     :rtype: string
     """
     if not code:
-        raise ValueError('[codicefiscale] "code" argument cant be None')
+        raise ValueError("[codicefiscale] 'code' argument cant be None")
 
     code_len = len(code)
     if code_len not in [15, 16]:
         raise ValueError(
-            '[codicefiscale] "code" length must be 15 or 16, not: {}'.format(code_len)
+            "[codicefiscale] 'code' length must be 15 or 16, not: {}".format(code_len)
         )
 
     cin_tot = 0
@@ -359,7 +359,7 @@ def decode_raw(code):
 
     m = CODICEFISCALE_RE.match(code)
     if not m:
-        raise ValueError("[codicefiscale] " "invalid syntax: {}".format(code))
+        raise ValueError("[codicefiscale] invalid syntax: {}".format(code))
 
     g = m.groups()
     # print(g)
@@ -412,7 +412,7 @@ def decode(code):
     try:
         birthdate = datetime.strptime(birthdate_str, "%Y/%m/%d")
     except ValueError:
-        raise ValueError("[codicefiscale] " "invalid date: {}".format(birthdate_str))
+        raise ValueError("[codicefiscale] invalid date: {}".format(birthdate_str))
 
     birthplace = _DATA["codes"].get(
         raw["birthplace"][0] + raw["birthplace"][1:].translate(_OMOCODIA_DECODE_TRANS)
@@ -423,9 +423,9 @@ def decode(code):
     # print(cin, cin_check)
     if cin != cin_check:
         raise ValueError(
-            "[codicefiscale] "
-            "wrong CIN (Control Internal Number): "
-            'expected "{}", found "{}"'.format(cin_check, cin)
+            "[codicefiscale] wrong CIN (Control Internal Number): expected '{}', found '{}'".format(
+                cin_check, cin
+            )
         )
 
     data = {
