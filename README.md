@@ -1,16 +1,15 @@
 [![](https://img.shields.io/pypi/pyversions/python-codicefiscale.svg?logoColor=white&color=blue&logo=python)](https://www.python.org/)
 [![](https://img.shields.io/pypi/v/python-codicefiscale.svg?color=blue&logo=pypi&logoColor=white)](https://pypi.org/project/python-codicefiscale/)
-[![](https://pepy.tech/badge/python-codicefiscale)](https://pepy.tech/project/python-codicefiscale)
+[![](https://pepy.tech/badge/python-codicefiscale/month)](https://pepy.tech/project/python-codicefiscale)
 [![](https://img.shields.io/github/stars/fabiocaccamo/python-codicefiscale?logo=github)](https://github.com/fabiocaccamo/python-codicefiscale/)
 [![](https://badges.pufler.dev/visits/fabiocaccamo/python-codicefiscale?label=visitors&color=blue)](https://badges.pufler.dev)
 [![](https://img.shields.io/pypi/l/python-codicefiscale.svg?color=blue&)](https://github.com/fabiocaccamo/python-codicefiscale/blob/master/LICENSE)
 
-[![](https://img.shields.io/github/workflow/status/fabiocaccamo/python-codicefiscale/Python%20package?label=build&logo=github)](https://github.com/fabiocaccamo/python-codicefiscale)
+[![](https://img.shields.io/github/workflow/status/fabiocaccamo/python-codicefiscale/Test%20package?label=build&logo=github)](https://github.com/fabiocaccamo/python-codicefiscale)
 [![](https://img.shields.io/codecov/c/gh/fabiocaccamo/python-codicefiscale?logo=codecov)](https://codecov.io/gh/fabiocaccamo/python-codicefiscale)
 [![](https://img.shields.io/codacy/grade/8927f48c9498408f85167da9287edd86?logo=codacy)](https://www.codacy.com/app/fabiocaccamo/python-codicefiscale)
 [![](https://img.shields.io/scrutinizer/quality/g/fabiocaccamo/python-codicefiscale?logo=scrutinizer)](https://scrutinizer-ci.com/g/fabiocaccamo/python-codicefiscale/?branch=master)
 [![](https://img.shields.io/codeclimate/maintainability/fabiocaccamo/python-codicefiscale?logo=code-climate)](https://codeclimate.com/github/fabiocaccamo/python-codicefiscale/)
-[![](https://requires.io/github/fabiocaccamo/python-codicefiscale/requirements.svg?branch=master)](https://requires.io/github/fabiocaccamo/python-codicefiscale/requirements/?branch=master)
 [![](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 # python-codicefiscale
