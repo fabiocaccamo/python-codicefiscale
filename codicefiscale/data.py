@@ -8,16 +8,17 @@ def get_indexed_data(key_func):
         'countries': {},
         'codes': {},
     }
-
+    deleted_suffix = '(soppresso)'
     for municipality in _MUNICIPALITIES:
         code = municipality['code']
-        names = municipality['name'].replace('(soppresso)', '').strip().split('/')
+        names = municipality['name'].replace(deleted_suffix, '').strip().split('/')
         province = municipality['province'].lower()
         for name in names:
             key = key_func(name)
             data['municipalities'][key] = municipality
             data['municipalities'][key + '-' + province] = municipality
-        data['codes'][code] = municipality
+        if code not in data['codes'] or deleted_suffix not in municipality['name']:
+            data['codes'][code] = municipality
 
     for country in _COUNTRIES:
         code = country['code']

@@ -738,6 +738,18 @@ class CodiceFiscaleTestCase(unittest.TestCase):
             codicefiscale.is_valid("CCCFBA85D99L219")
         )  # wrong birthdate day
 
+    def test_issue_16(self):
+        """
+        Decode return GIRGENTI (soppresso) instead of AGRIGENTO
+        """
+        data = codicefiscale.decode("LNNFNC80A01A089K")
+        expected_birthplace = {
+            "code": "A089",
+            "province": "AG",
+            "name": "AGRIGENTO",
+        }
+        self.assertEqual(data["birthplace"], expected_birthplace)
+
     def test_version(self):
         version_pattern = re.compile("^(([\d]+)\.([\d]+)\.([\d]+))$")
         self.assertTrue(version_pattern.match(__version__))
