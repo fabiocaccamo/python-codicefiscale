@@ -50,6 +50,7 @@ setup(
     ],
     install_requires=[
         "python-dateutil",
+        "python-fsutil >= 0.6.0",
         "python-slugify",
     ],
     tests_require=[],

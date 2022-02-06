@@ -1,2 +1,3 @@
 python-dateutil
+python-fsutil == 0.6.0
 python-slugify

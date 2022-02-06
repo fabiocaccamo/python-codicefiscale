@@ -5,6 +5,7 @@ from dateutil import parser as date_parser
 from itertools import combinations
 from slugify import slugify
 
+import fsutil
 import re
 import string
 
@@ -13,8 +14,6 @@ try:
 except AttributeError:
     # fallback for Python 2
     maketrans = string.maketrans
-
-from . import data
 
 
 _CONSONANTS = list("bcdfghjklmnpqrstvwxyz")
@@ -82,7 +81,43 @@ for combo_size in range(1, len(_OMOCODIA_SUBS_INDEXES) + 1):
     for combo in combinations(_OMOCODIA_SUBS_INDEXES, combo_size):
         _OMOCODIA_SUBS_INDEXES_COMBINATIONS.append(list(combo))
 
-_DATA = data.get_indexed_data(slugify)
+
+def _get_data(filename):
+    return fsutil.read_file_json(fsutil.join_path(__file__, "data/{}".format(filename)))
+
+
+def _get_indexed_data():
+    municipalities = _get_data("municipalities.json")
+    countries = _get_data("countries.json")
+    data = {
+        "municipalities": {},
+        "countries": {},
+        "codes": {},
+    }
+    deleted_suffix = "(soppresso)"
+    for municipality in municipalities:
+        code = municipality["code"]
+        names = municipality["name"].replace(deleted_suffix, "").strip().split("/")
+        province = municipality["province"].lower()
+        for name in names:
+            key = slugify(name)
+            data["municipalities"][key] = municipality
+            data["municipalities"][key + "-" + province] = municipality
+        if code not in data["codes"] or deleted_suffix not in municipality["name"]:
+            data["codes"][code] = municipality
+
+    for country in countries:
+        code = country["code"]
+        names = country["name"].strip().split("/")
+        for name in names:
+            key = slugify(name)
+            data["countries"][key] = country
+        data["codes"][code] = country
+
+    return data
+
+
+_DATA = _get_indexed_data()
 
 CODICEFISCALE_RE = re.compile(
     r"^"
