@@ -25,11 +25,11 @@ jobs:
           pip install python-slugify
 
       - name: Update data
-        run: python /scripts/updatedata.py
+        run: python scripts/updatedata.py
 
       - name: Commit data
         uses: test-room-7/action-update-file@v1
         with:
-          file-path: /codicefiscale/data/municipalities.json
+          file-path: codicefiscale/data/municipalities.json
           commit-msg: "Updated `municipalities.json` data."
           github-token: ${{ secrets.GITHUB_TOKEN }}
