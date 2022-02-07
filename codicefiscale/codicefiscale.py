@@ -94,17 +94,20 @@ def _get_indexed_data():
         "countries": {},
         "codes": {},
     }
-    deleted_suffix = "(soppresso)"
+
     for municipality in municipalities:
+        if not municipality["active"]:
+            continue
         code = municipality["code"]
-        names = municipality["name"].replace(deleted_suffix, "").strip().split("/")
         province = municipality["province"].lower()
+        names = municipality["name_slugs"]
         for name in names:
-            key = slugify(name)
-            data["municipalities"][key] = municipality
-            data["municipalities"][key + "-" + province] = municipality
-        if code not in data["codes"] or deleted_suffix not in municipality["name"]:
-            data["codes"][code] = municipality
+            data["municipalities"][name] = municipality
+            data["municipalities"][name + "-" + province] = municipality
+        assert (
+            code not in data["codes"]
+        ), "Found more than one municipality with the same code, expected a one-to-one relation."
+        data["codes"][code] = municipality
 
     for country in countries:
         code = country["code"]

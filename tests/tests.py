@@ -748,7 +748,10 @@ class CodiceFiscaleTestCase(unittest.TestCase):
             "province": "AG",
             "name": "AGRIGENTO",
         }
-        self.assertEqual(data["birthplace"], expected_birthplace)
+        birthplace = data["birthplace"]
+        self.assertEqual(birthplace['code'], expected_birthplace['code'])
+        self.assertEqual(birthplace['name'].upper(), expected_birthplace['name'])
+        self.assertEqual(birthplace['province'], expected_birthplace['province'])
 
     def test_version(self):
         version_pattern = re.compile("^(([\d]+)\.([\d]+)\.([\d]+))$")
