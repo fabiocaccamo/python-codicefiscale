@@ -3,7 +3,7 @@ name: Update data
 on:
   workflow_dispatch:
   schedule:
-    cron: "0 0 * * 5" # run once a week at 00:00 on Friday.
+    - cron: "0 0 * * 5" # run once a week at 00:00 on Friday.
 
 jobs:
   resources:
