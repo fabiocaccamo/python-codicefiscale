@@ -27,7 +27,7 @@ def _update_municipalities_data():
         name_trans = item.get_str("denomtraslitterata").title()
         name_alt = item.get_str("altradenominazione").title()
         name_alt_trans = item.get_str("altradenomtraslitterata").title()
-        name_slugs = list(
+        name_slugs = sorted(
             set(
                 filter(
                     bool,
