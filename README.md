@@ -18,6 +18,7 @@ python-codicefiscale is a tiny library for encode/decode Italian fiscal code - *
 ![Codice Fiscale](https://user-images.githubusercontent.com/1035294/72058207-fa77dd80-32cf-11ea-8995-52324e7d3efe.png)
 
 ## Features
+- `NEW` **Auto-updated** data (once a week) directly from **ANPR** data-source.
 - **Transliteration** for name/surname
 - **Multiple** birthdate formats (datetime/string) *(you can see all the supported string formats in* `tests/tests.py` *)*
 - **Automatic** birthplace city/foreign-country code detection from name
@@ -28,17 +29,17 @@ python-codicefiscale is a tiny library for encode/decode Italian fiscal code - *
 
 ## Usage
 
-#### Import
+### Import
 ```python
 from codicefiscale import codicefiscale
 ```
-#### Encode
+### Encode
 ```python
 codicefiscale.encode(surname='Caccamo', name='Fabio', sex='M', birthdate='03/04/1985', birthplace='Torino')
 
 # 'CCCFBA85D03L219P'
 ```
-#### Decode
+### Decode
 ```python
 codicefiscale.decode('CCCFBA85D03L219P')
 
@@ -75,7 +76,7 @@ codicefiscale.decode('CCCFBA85D03L219P')
 # }
 ```
 
-#### Check
+### Check
 ```python
 codicefiscale.is_valid('CCCFBA85D03L219P')
 
