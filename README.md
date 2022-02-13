@@ -13,14 +13,14 @@
 [![](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 # python-codicefiscale
-python-codicefiscale is a tiny library for encode/decode Italian fiscal code - **codifica/decodifica del Codice Fiscale**.
+python-codicefiscale is a library for encode/decode Italian fiscal code - **codifica/decodifica del Codice Fiscale**.
 
 ![Codice Fiscale](https://user-images.githubusercontent.com/1035294/72058207-fa77dd80-32cf-11ea-8995-52324e7d3efe.png)
 
 ## Features
 - `NEW` **Auto-updated** data (once a week) directly from **ANPR** data-source.
 - **Transliteration** for name/surname
-- **Multiple** birthdate formats (datetime/string) *(you can see all the supported string formats in* `tests/tests.py` *)*
+- **Multiple** birthdate formats (date/string) *(you can see all the supported string formats [here](https://github.com/fabiocaccamo/python-codicefiscale/blob/master/tests/tests.py#L73))*
 - **Automatic** birthplace city/foreign-country code detection from name
 - **Omocodia** support
 
