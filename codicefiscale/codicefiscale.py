@@ -106,15 +106,17 @@ def _get_indexed_data():
             data["municipalities"][name + "-" + province] = municipality
         assert (
             code not in data["codes"]
-        ), "Found more than one municipality with the same code, expected a one-to-one relation."
+        ), "Found more than one country/municipality with the same code, expected a one-to-one relation."
         data["codes"][code] = municipality
 
     for country in countries:
         code = country["code"]
-        names = country["name"].strip().split("/")
+        names = country["name_slugs"]
         for name in names:
-            key = slugify(name)
-            data["countries"][key] = country
+            data["countries"][name] = country
+        assert (
+            code not in data["codes"]
+        ), "Found more than one country/municipality with the same code, expected a one-to-one relation."
         data["codes"][code] = country
 
     return data

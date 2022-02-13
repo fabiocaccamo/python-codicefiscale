@@ -20,9 +20,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install python-benedict
-          pip install python-fsutil
-          pip install python-slugify
+          pip install -r requirements-data.txt
 
       - name: Update data
         run: python scripts/updatedata.py
@@ -30,6 +28,8 @@ jobs:
       - name: Commit data
         uses: test-room-7/action-update-file@v1
         with:
-          file-path: codicefiscale/data/municipalities.json
-          commit-msg: "Updated `municipalities.json` data."
+          file-path: |
+            codicefiscale/data/countries.json
+            codicefiscale/data/municipalities.json
+          commit-msg: "Updated `countries.json` and/or `municipalities.json` data."
           github-token: ${{ secrets.GITHUB_TOKEN }}

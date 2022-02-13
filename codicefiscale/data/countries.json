@@ -1,279 +1,2824 @@
 [
-    { "code":"Z100", "province":"EE", "name":"ALBANIA" },
-    { "code":"Z101", "province":"EE", "name":"ANDORRA" },
-    { "code":"Z102", "province":"EE", "name":"AUSTRIA" },
-    { "code":"Z103", "province":"EE", "name":"BELGIO" },
-    { "code":"Z104", "province":"EE", "name":"BULGARIA" },
-    { "code":"Z105", "province":"EE", "name":"CECOSLOVACCHIA" },
-    { "code":"Z106", "province":"EE", "name":"CITTA DEL VATICANO / VATICANO" },
-    { "code":"Z107", "province":"EE", "name":"DANIMARCA" },
-    { "code":"Z108", "province":"EE", "name":"FAER OER" },
-    { "code":"Z109", "province":"EE", "name":"FINLANDIA" },
-    { "code":"Z110", "province":"EE", "name":"FRANCIA" },
-    { "code":"Z111", "province":"EE", "name":"GERMANIA REP. DEMOCRATICA" },
-    { "code":"Z112", "province":"EE", "name":"GERMANIA REP. FEDERALE / GERMANIA" },
-    { "code":"Z113", "province":"EE", "name":"GIBILTERRA" },
-    { "code":"Z114", "province":"EE", "name":"GRAN BRETAGNA" },
-    { "code":"Z115", "province":"EE", "name":"GRECIA" },
-    { "code":"Z116", "province":"EE", "name":"IRLANDA" },
-    { "code":"Z117", "province":"EE", "name":"ISLANDA" },
-    { "code":"Z118", "province":"EE", "name":"IUGOSLAVIA" },
-    { "code":"Z119", "province":"EE", "name":"LIECHTENSTEIN" },
-    { "code":"Z120", "province":"EE", "name":"LUSSEMBURGO" },
-    { "code":"Z121", "province":"EE", "name":"MALTA" },
-    { "code":"Z122", "province":"EE", "name":"MAN" },
-    { "code":"Z123", "province":"EE", "name":"MONACO" },
-    { "code":"Z124", "province":"EE", "name":"NORMANNE" },
-    { "code":"Z125", "province":"EE", "name":"NORVEGIA" },
-    { "code":"Z126", "province":"EE", "name":"PAESI BASSI" },
-    { "code":"Z127", "province":"EE", "name":"POLONIA" },
-    { "code":"Z128", "province":"EE", "name":"PORTOGALLO" },
-    { "code":"Z129", "province":"EE", "name":"ROMANIA" },
-    { "code":"Z130", "province":"EE", "name":"SAN MARINO" },
-    { "code":"Z131", "province":"EE", "name":"SPAGNA" },
-    { "code":"Z132", "province":"EE", "name":"SVEZIA" },
-    { "code":"Z133", "province":"EE", "name":"SVIZZERA" },
-    { "code":"Z134", "province":"EE", "name":"UNGHERIA" },
-    { "code":"Z135", "province":"EE", "name":"URSS" },
-    { "code":"Z136", "province":"EE", "name":"GEORGIA" },
-    { "code":"Z137", "province":"EE", "name":"ARMENIA" },
-    { "code":"Z138", "province":"EE", "name":"UCRAINA" },
-    { "code":"Z139", "province":"EE", "name":"BIELORUSSIA" },
-    { "code":"Z140", "province":"EE", "name":"MOLDAVIA" },
-    { "code":"Z141", "province":"EE", "name":"AZERBAIDJAN" },
-    { "code":"Z142", "province":"EE", "name":"KIRGHIZISTAN" },
-    { "code":"Z143", "province":"EE", "name":"UZBEKISTAN" },
-    { "code":"Z144", "province":"EE", "name":"ESTONIA" },
-    { "code":"Z145", "province":"EE", "name":"LETTONIA" },
-    { "code":"Z146", "province":"EE", "name":"LITUANIA" },
-    { "code":"Z147", "province":"EE", "name":"TAGIKISTAN" },
-    { "code":"Z148", "province":"EE", "name":"MACEDONIA" },
-    { "code":"Z149", "province":"EE", "name":"CROAZIA" },
-    { "code":"Z150", "province":"EE", "name":"SLOVENIA" },
-    { "code":"Z151", "province":"EE", "name":"TURKEMENISTAN" },
-    { "code":"Z152", "province":"EE", "name":"KAZAKISTAN" },
-    { "code":"Z153", "province":"EE", "name":"BOSNIA ED ERZEGOVINA / BOSNIA ERZEGOVINA" },
-    { "code":"Z154", "province":"EE", "name":"RUSSIA / FEDERAZIONE RUSSA" },
-    { "code":"Z155", "province":"EE", "name":"REPUBBLICA SLOVACCA" },
-    { "code":"Z156", "province":"EE", "name":"REPUBBLICA CECA" },
-    { "code":"Z200", "province":"EE", "name":"AFGHANISTAN" },
-    { "code":"Z201", "province":"EE", "name":"ARABIA MERIDIONALE" },
-    { "code":"Z202", "province":"EE", "name":"PROTETTORATO DELLA ARABIA MERIDIONALE" },
-    { "code":"Z203", "province":"EE", "name":"ARABIA SAUDITA" },
-    { "code":"Z204", "province":"EE", "name":"BAHREIN" },
-    { "code":"Z205", "province":"EE", "name":"BHUTAN" },
-    { "code":"Z206", "province":"EE", "name":"BIRMANIA" },
-    { "code":"Z207", "province":"EE", "name":"BRUNEI" },
-    { "code":"Z208", "province":"EE", "name":"CAMBOGIA" },
-    { "code":"Z209", "province":"EE", "name":"SRI LANKA" },
-    { "code":"Z210", "province":"EE", "name":"CINA REPUBBLICA POPOLARE / CINA / CHINA" },
-    { "code":"Z211", "province":"EE", "name":"CIPRO" },
-    { "code":"Z212", "province":"EE", "name":"COCOS" },
-    { "code":"Z213", "province":"EE", "name":"REPUBBLICA DI COREA" },
-    { "code":"Z214", "province":"EE", "name":"COREA REPUBBLICA POPOLARE" },
-    { "code":"Z215", "province":"EE", "name":"EMIRATI ARABI UNITI" },
-    { "code":"Z216", "province":"EE", "name":"FILIPPINE" },
-    { "code":"Z217", "province":"EE", "name":"CINA REPUBBLICA NAZIONALE" },
-    { "code":"Z218", "province":"EE", "name":"TERRITORIO DI GAZA" },
-    { "code":"Z219", "province":"EE", "name":"GIAPPONE" },
-    { "code":"Z220", "province":"EE", "name":"GIORDANIA" },
-    { "code":"Z221", "province":"EE", "name":"HONG KONG" },
-    { "code":"Z222", "province":"EE", "name":"INDIA" },
-    { "code":"Z223", "province":"EE", "name":"INDONESIA" },
-    { "code":"Z224", "province":"EE", "name":"IRAN" },
-    { "code":"Z225", "province":"EE", "name":"IRAQ" },
-    { "code":"Z226", "province":"EE", "name":"ISRAELE" },
-    { "code":"Z227", "province":"EE", "name":"KUWAIT" },
-    { "code":"Z228", "province":"EE", "name":"LAOS" },
-    { "code":"Z229", "province":"EE", "name":"LIBANO" },
-    { "code":"Z230", "province":"EE", "name":"MALESIA" },
-    { "code":"Z231", "province":"EE", "name":"MACAO" },
-    { "code":"Z232", "province":"EE", "name":"MALDIVE" },
-    { "code":"Z233", "province":"EE", "name":"MONGOLIA REP. POPOLARE" },
-    { "code":"Z234", "province":"EE", "name":"NEPAL" },
-    { "code":"Z235", "province":"EE", "name":"OMAN" },
-    { "code":"Z236", "province":"EE", "name":"PAKISTAN" },
-    { "code":"Z237", "province":"EE", "name":"QATAR" },
-    { "code":"Z238", "province":"EE", "name":"RYUKYU" },
-    { "code":"Z239", "province":"EE", "name":"SIKKIM" },
-    { "code":"Z240", "province":"EE", "name":"SIRIA" },
-    { "code":"Z241", "province":"EE", "name":"THAILANDIA" },
-    { "code":"Z242", "province":"EE", "name":"TIMOR" },
-    { "code":"Z243", "province":"EE", "name":"TURCHIA" },
-    { "code":"Z244", "province":"EE", "name":"VIETNAM DEL SUD" },
-    { "code":"Z245", "province":"EE", "name":"VIETNAM DEL NORD" },
-    { "code":"Z246", "province":"EE", "name":"YEMEN" },
-    { "code":"Z247", "province":"EE", "name":"MALAYSIA" },
-    { "code":"Z248", "province":"EE", "name":"SINGAPORE" },
-    { "code":"Z249", "province":"EE", "name":"BANGLADESH" },
-    { "code":"Z250", "province":"EE", "name":"YEMEN REP. DEM. POPOLARE" },
-    { "code":"Z251", "province":"EE", "name":"VIETNAM" },
-    { "code":"Z300", "province":"EE", "name":"NAMIBIA" },
-    { "code":"Z301", "province":"EE", "name":"ALGERIA" },
-    { "code":"Z302", "province":"EE", "name":"ANGOLA" },
-    { "code":"Z303", "province":"EE", "name":"BASUTOLAND SUD AFRICA BRITANNICO" },
-    { "code":"Z304", "province":"EE", "name":"BECIUANIA SUD AFRICA BRITANNICO" },
-    { "code":"Z305", "province":"EE", "name":"BURUNDI" },
-    { "code":"Z306", "province":"EE", "name":"CAMERUN" },
-    { "code":"Z307", "province":"EE", "name":"CAPO VERDE" },
-    { "code":"Z308", "province":"EE", "name":"IMPERO CENTROAFRICANO" },
-    { "code":"Z309", "province":"EE", "name":"CIAD" },
-    { "code":"Z310", "province":"EE", "name":"COMORE" },
-    { "code":"Z311", "province":"EE", "name":"CONGO REPUBBLICA POPOLARE" },
-    { "code":"Z312", "province":"EE", "name":"ZAIRE" },
-    { "code":"Z313", "province":"EE", "name":"COSTA D'AVORIO" },
-    { "code":"Z314", "province":"EE", "name":"BENIN" },
-    { "code":"Z315", "province":"EE", "name":"ETIOPIA" },
-    { "code":"Z316", "province":"EE", "name":"GABON" },
-    { "code":"Z317", "province":"EE", "name":"GAMBIA" },
-    { "code":"Z318", "province":"EE", "name":"GHANA" },
-    { "code":"Z319", "province":"EE", "name":"GUINEA" },
-    { "code":"Z320", "province":"EE", "name":"GUINEA BISSAU" },
-    { "code":"Z321", "province":"EE", "name":"GUINEA EQUATORIALE" },
-    { "code":"Z322", "province":"EE", "name":"KENYA" },
-    { "code":"Z323", "province":"EE", "name":"IFNI" },
-    { "code":"Z324", "province":"EE", "name":"LA REUNION" },
-    { "code":"Z325", "province":"EE", "name":"LIBERIA" },
-    { "code":"Z326", "province":"EE", "name":"LIBIA" },
-    { "code":"Z327", "province":"EE", "name":"MADAGASCAR" },
-    { "code":"Z328", "province":"EE", "name":"MALAWI" },
-    { "code":"Z329", "province":"EE", "name":"MALI" },
-    { "code":"Z330", "province":"EE", "name":"MAROCCO" },
-    { "code":"Z331", "province":"EE", "name":"MAURITANIA" },
-    { "code":"Z332", "province":"EE", "name":"MAURIZIO" },
-    { "code":"Z333", "province":"EE", "name":"MOZAMBICO" },
-    { "code":"Z334", "province":"EE", "name":"NIGER" },
-    { "code":"Z335", "province":"EE", "name":"NIGERIA" },
-    { "code":"Z336", "province":"EE", "name":"EGITTO" },
-    { "code":"Z337", "province":"EE", "name":"ZIMBABWE" },
-    { "code":"Z338", "province":"EE", "name":"RUANDA" },
-    { "code":"Z339", "province":"EE", "name":"SAHARA SPAGNOLO" },
-    { "code":"Z340", "province":"EE", "name":"SANT ELENA" },
-    { "code":"Z341", "province":"EE", "name":"PRINCIPE" },
-    { "code":"Z342", "province":"EE", "name":"SEICELLE" },
-    { "code":"Z343", "province":"EE", "name":"SENEGAL" },
-    { "code":"Z344", "province":"EE", "name":"SIERRA LEONE" },
-    { "code":"Z345", "province":"EE", "name":"SOMALIA" },
-    { "code":"Z346", "province":"EE", "name":"SOMALIA FRANCESE" },
-    { "code":"Z347", "province":"EE", "name":"REPUBBLICA SUDAFRICANA" },
-    { "code":"Z348", "province":"EE", "name":"SUDAN" },
-    { "code":"Z349", "province":"EE", "name":"SWAZILAND" },
-    { "code":"Z350", "province":"EE", "name":"TANGANICA" },
-    { "code":"Z351", "province":"EE", "name":"TOGO" },
-    { "code":"Z352", "province":"EE", "name":"TUNISIA" },
-    { "code":"Z353", "province":"EE", "name":"UGANDA" },
-    { "code":"Z354", "province":"EE", "name":"BURKINA FASO" },
-    { "code":"Z355", "province":"EE", "name":"ZAMBIA" },
-    { "code":"Z356", "province":"EE", "name":"ZANZIBAR" },
-    { "code":"Z357", "province":"EE", "name":"TANZANIA" },
-    { "code":"Z358", "province":"EE", "name":"BOTSWANA" },
-    { "code":"Z359", "province":"EE", "name":"LESOTHO" },
-    { "code":"Z360", "province":"EE", "name":"MAYOTTE" },
-    { "code":"Z361", "province":"EE", "name":"GIBUTI" },
-    { "code":"Z362", "province":"EE", "name":"SAHARA MERIDIONALE" },
-    { "code":"Z363", "province":"EE", "name":"SAHARA SETTENTRIONALE" },
-    { "code":"Z364", "province":"EE", "name":"BOPHUTHATSWANA" },
-    { "code":"Z365", "province":"EE", "name":"TRANSKEI" },
-    { "code":"Z366", "province":"EE", "name":"VENDA" },
-    { "code":"Z367", "province":"EE", "name":"CISKEI" },
-    { "code":"Z368", "province":"EE", "name":"ERITREA" },
-    { "code":"Z400", "province":"EE", "name":"BERMUDE" },
-    { "code":"Z401", "province":"EE", "name":"CANADA" },
-    { "code":"Z402", "province":"EE", "name":"GROENLANDIA" },
-    { "code":"Z403", "province":"EE", "name":"SAINT PIERRE ET MIQUELON" },
-    { "code":"Z404", "province":"EE", "name":"STATI UNITI D'AMERICA" },
-    { "code":"Z500", "province":"EE", "name":"ANTILLE BRITANNICHE" },
-    { "code":"Z501", "province":"EE", "name":"ANTILLE OLANDESI" },
-    { "code":"Z502", "province":"EE", "name":"BAHAMA" },
-    { "code":"Z503", "province":"EE", "name":"COSTA RICA" },
-    { "code":"Z504", "province":"EE", "name":"CUBA" },
-    { "code":"Z505", "province":"EE", "name":"REPUBBLICA DOMINICANA" },
-    { "code":"Z506", "province":"EE", "name":"EL SALVADOR" },
-    { "code":"Z507", "province":"EE", "name":"GIAMAICA" },
-    { "code":"Z508", "province":"EE", "name":"GUADALUPA" },
-    { "code":"Z509", "province":"EE", "name":"GUATEMALA" },
-    { "code":"Z510", "province":"EE", "name":"HAITI" },
-    { "code":"Z511", "province":"EE", "name":"HONDURAS" },
-    { "code":"Z512", "province":"EE", "name":"BELIZE" },
-    { "code":"Z513", "province":"EE", "name":"MARTINICA" },
-    { "code":"Z514", "province":"EE", "name":"MESSICO" },
-    { "code":"Z515", "province":"EE", "name":"NICARAGUA" },
-    { "code":"Z516", "province":"EE", "name":"PANAMA" },
-    { "code":"Z517", "province":"EE", "name":"PANAMA ZONA DEL CANALE" },
-    { "code":"Z518", "province":"EE", "name":"PUERTO RICO" },
-    { "code":"Z519", "province":"EE", "name":"TURKS" },
-    { "code":"Z520", "province":"EE", "name":"ISOLE VERGINI" },
-    { "code":"Z522", "province":"EE", "name":"BARBADOS" },
-    { "code":"Z523", "province":"EE", "name":"ANTILLE BRITANNICHE" },
-    { "code":"Z524", "province":"EE", "name":"GRENADA" },
-    { "code":"Z525", "province":"EE", "name":"ISOLE VERGINI BRITANNICHE " },
-    { "code":"Z526", "province":"EE", "name":"DOMINICA" },
-    { "code":"Z527", "province":"EE", "name":"SAINT LUCIA" },
-    { "code":"Z528", "province":"EE", "name":"SAINT VINCENT E GRENADINE" },
-    { "code":"Z529", "province":"EE", "name":"ISOLA ANGUILLA" },
-    { "code":"Z530", "province":"EE", "name":"ISOLE CAYMAN" },
-    { "code":"Z531", "province":"EE", "name":"MONTSERRAT" },
-    { "code":"Z532", "province":"EE", "name":"ANTIGUE E BARBUDA" },
-    { "code":"Z533", "province":"EE", "name":"SAINT KITTS E NEVIS" },
-    { "code":"Z600", "province":"EE", "name":"ARGENTINA" },
-    { "code":"Z601", "province":"EE", "name":"BOLIVIA" },
-    { "code":"Z602", "province":"EE", "name":"BRASILE" },
-    { "code":"Z603", "province":"EE", "name":"CILE" },
-    { "code":"Z604", "province":"EE", "name":"COLOMBIA" },
-    { "code":"Z605", "province":"EE", "name":"ECUADOR" },
-    { "code":"Z606", "province":"EE", "name":"REPUBBLICA DELLA GUAYANA" },
-    { "code":"Z607", "province":"EE", "name":"GUAYANA FRANCESE" },
-    { "code":"Z608", "province":"EE", "name":"SURINAME" },
-    { "code":"Z609", "province":"EE", "name":"MALVINE" },
-    { "code":"Z610", "province":"EE", "name":"PARAGUAY" },
-    { "code":"Z611", "province":"EE", "name":"PERU" },
-    { "code":"Z612", "province":"EE", "name":"TRINIDAD E TOBAGO" },
-    { "code":"Z613", "province":"EE", "name":"URUGUAY" },
-    { "code":"Z614", "province":"EE", "name":"VENEZUELA" },
-    { "code":"Z700", "province":"EE", "name":"AUSTRALIA" },
-    { "code":"Z701", "province":"EE", "name":"CAROLINE" },
-    { "code":"Z702", "province":"EE", "name":"CHRISTMAS" },
-    { "code":"Z703", "province":"EE", "name":"COOK" },
-    { "code":"Z704", "province":"EE", "name":"FIGI O VITI" },
-    { "code":"Z705", "province":"EE", "name":"ELLICE" },
-    { "code":"Z706", "province":"EE", "name":"GUAM" },
-    { "code":"Z707", "province":"EE", "name":"IRIAN OCCIDENTALE" },
-    { "code":"Z708", "province":"EE", "name":"MACQUARIE" },
-    { "code":"Z709", "province":"EE", "name":"MARCUS" },
-    { "code":"Z710", "province":"EE", "name":"MARIANNE" },
-    { "code":"Z711", "province":"EE", "name":"MARSHALL" },
-    { "code":"Z712", "province":"EE", "name":"MIDWAY" },
-    { "code":"Z713", "province":"EE", "name":"NAURU" },
-    { "code":"Z714", "province":"EE", "name":"SAVAGE" },
-    { "code":"Z715", "province":"EE", "name":"NORFOLK" },
-    { "code":"Z716", "province":"EE", "name":"NUOVA CALEDONIA" },
-    { "code":"Z717", "province":"EE", "name":"NUOVE EBRIDI" },
-    { "code":"Z718", "province":"EE", "name":"NUOVA GUINEA" },
-    { "code":"Z719", "province":"EE", "name":"NUOVA ZELANDA" },
-    { "code":"Z720", "province":"EE", "name":"PAPUASIA" },
-    { "code":"Z721", "province":"EE", "name":"PASQUA" },
-    { "code":"Z722", "province":"EE", "name":"PITCAIRN" },
-    { "code":"Z723", "province":"EE", "name":"POLINESIA" },
-    { "code":"Z724", "province":"EE", "name":"SALOMONE" },
-    { "code":"Z725", "province":"EE", "name":"SAMOA AMERICANE" },
-    { "code":"Z726", "province":"EE", "name":"SAMOA OCCIDENTALI" },
-    { "code":"Z727", "province":"EE", "name":"TOKELAU" },
-    { "code":"Z728", "province":"EE", "name":"TONGA O DEGLI AMICI" },
-    { "code":"Z729", "province":"EE", "name":"WALLIS" },
-    { "code":"Z730", "province":"EE", "name":"PAPUA NUOVA GUINEA" },
-    { "code":"Z731", "province":"EE", "name":"KIRIBATI" },
-    { "code":"Z732", "province":"EE", "name":"TUVALU" },
-    { "code":"Z733", "province":"EE", "name":"VANUATU" },
-    { "code":"Z734", "province":"EE", "name":"PALAU REPUBBLICA" },
-    { "code":"Z735", "province":"EE", "name":"MICRONESIA STATI FEDERALI / MICRONESIA" },
-    { "code":"Z800", "province":"EE", "name":"DIPENDENZE CANADESI" },
-    { "code":"Z801", "province":"EE", "name":"DIPENDENZE NORVEGESI" },
-    { "code":"Z802", "province":"EE", "name":"DIPENDENZE SOVIETICHE" },
-    { "code":"Z900", "province":"EE", "name":"DIPENDENZE AUSTRALIANE" },
-    { "code":"Z901", "province":"EE", "name":"DIPENDENZE BRITANNICHE" },
-    { "code":"Z902", "province":"EE", "name":"DIPENDENZE FRANCESI" },
-    { "code":"Z903", "province":"EE", "name":"DIPENDENZE NEOZELANDESI" },
-    { "code":"Z905", "province":"EE", "name":"DIPENDENZE NORVEGESI" },
-    { "code":"Z906", "province":"EE", "name":"DIPENDENZE SUDAFRICANE" },
-    { "code":"Z999", "province":"EE", "name":"APOLIDE" }
+    {
+        "active": true,
+        "code": "Z200",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Afghanistan",
+        "name_alt": "Afghanistan",
+        "name_alt_en": "Afghanistan",
+        "name_slugs": [
+            "afghanistan"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z100",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Albania",
+        "name_alt": "Albania",
+        "name_alt_en": "Albania",
+        "name_slugs": [
+            "albania"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z301",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Algeria",
+        "name_alt": "Algeria",
+        "name_alt_en": "Algeria",
+        "name_slugs": [
+            "algeria"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z101",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Andorra",
+        "name_alt": "Andorra",
+        "name_alt_en": "Andorra",
+        "name_slugs": [
+            "andorra"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z302",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Angola",
+        "name_alt": "Angola",
+        "name_alt_en": "Angola",
+        "name_slugs": [
+            "angola"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z532",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Antigua E Barbuda",
+        "name_alt": "Antigua E Barbuda",
+        "name_alt_en": "Antigua And Barbuda",
+        "name_slugs": [
+            "antigua-and-barbuda",
+            "antigua-e-barbuda"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z203",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Arabia Saudita",
+        "name_alt": "Arabia Saudita",
+        "name_alt_en": "Saudi Arabia",
+        "name_slugs": [
+            "arabia-saudita",
+            "saudi-arabia"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z600",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Argentina",
+        "name_alt": "Argentina",
+        "name_alt_en": "Argentina",
+        "name_slugs": [
+            "argentina"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z252",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Armenia",
+        "name_alt": "Armenia",
+        "name_alt_en": "Armenia",
+        "name_slugs": [
+            "armenia"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z501",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Aruba",
+        "name_alt": "",
+        "name_alt_en": "",
+        "name_slugs": [
+            "aruba"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z700",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Australia",
+        "name_alt": "Australia",
+        "name_alt_en": "Australia",
+        "name_slugs": [
+            "australia"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z102",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Austria",
+        "name_alt": "Austria",
+        "name_alt_en": "Austria",
+        "name_slugs": [
+            "austria"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z253",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Azerbaigian",
+        "name_alt": "Azerbaigian",
+        "name_alt_en": "Azerbaijan",
+        "name_slugs": [
+            "azerbaigian",
+            "azerbaijan"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z502",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Bahamas",
+        "name_alt": "Bahamas",
+        "name_alt_en": "Bahamas",
+        "name_slugs": [
+            "bahamas"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z204",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Bahrein",
+        "name_alt": "Bahrein",
+        "name_alt_en": "Bahrain",
+        "name_slugs": [
+            "bahrain",
+            "bahrein"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z249",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Bangladesh",
+        "name_alt": "Bangladesh",
+        "name_alt_en": "Bangladesh",
+        "name_slugs": [
+            "bangladesh"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z522",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Barbados",
+        "name_alt": "Barbados",
+        "name_alt_en": "Barbados",
+        "name_slugs": [
+            "barbados"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z103",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Belgio",
+        "name_alt": "Belgio",
+        "name_alt_en": "Belgium",
+        "name_slugs": [
+            "belgio",
+            "belgium"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z512",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Belize",
+        "name_alt": "Belize",
+        "name_alt_en": "Belize",
+        "name_slugs": [
+            "belize"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z314",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Benin",
+        "name_alt": "Benin (Ex Dahomey)",
+        "name_alt_en": "Benin",
+        "name_slugs": [
+            "benin",
+            "benin-ex-dahomey"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z400",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Bermuda",
+        "name_alt": "",
+        "name_alt_en": "",
+        "name_slugs": [
+            "bermuda"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z205",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Bhutan",
+        "name_alt": "Bhutan",
+        "name_alt_en": "Bhutan",
+        "name_slugs": [
+            "bhutan"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z139",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Bielorussia",
+        "name_alt": "Bielorussia",
+        "name_alt_en": "Belarus",
+        "name_slugs": [
+            "belarus",
+            "bielorussia"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z601",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Bolivia",
+        "name_alt": "Bolivia",
+        "name_alt_en": "Bolivia, Plurinational State Of",
+        "name_slugs": [
+            "bolivia",
+            "bolivia-plurinational-state-of"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z153",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Bosnia-Erzegovina",
+        "name_alt": "Bosnia-Erzegovina",
+        "name_alt_en": "Bosnia And Herzegovina",
+        "name_slugs": [
+            "bosnia-and-herzegovina",
+            "bosnia-erzegovina"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z358",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Botswana",
+        "name_alt": "Botswana",
+        "name_alt_en": "Botswana",
+        "name_slugs": [
+            "botswana"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z602",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Brasile",
+        "name_alt": "Brasile",
+        "name_alt_en": "Brazil",
+        "name_slugs": [
+            "brasile",
+            "brazil"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z207",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Brunei",
+        "name_alt": "Brunei",
+        "name_alt_en": "Brunei Darussalam",
+        "name_slugs": [
+            "brunei",
+            "brunei-darussalam"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z104",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Bulgaria",
+        "name_alt": "Bulgaria",
+        "name_alt_en": "Bulgaria",
+        "name_slugs": [
+            "bulgaria"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z354",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Burkina Faso",
+        "name_alt": "Burkina Faso (Ex Alto Volta)",
+        "name_alt_en": "Burkina Faso",
+        "name_slugs": [
+            "burkina-faso",
+            "burkina-faso-ex-alto-volta"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z305",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Burundi",
+        "name_alt": "Burundi",
+        "name_alt_en": "Burundi",
+        "name_slugs": [
+            "burundi"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z208",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Cambogia",
+        "name_alt": "Cambogia",
+        "name_alt_en": "Cambodia",
+        "name_slugs": [
+            "cambodia",
+            "cambogia"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z306",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Camerun",
+        "name_alt": "Camerun",
+        "name_alt_en": "Cameroon",
+        "name_slugs": [
+            "cameroon",
+            "camerun"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z401",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Canada",
+        "name_alt": "Canada",
+        "name_alt_en": "Canada",
+        "name_slugs": [
+            "canada"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z307",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Capo Verde",
+        "name_alt": "Capo Verde",
+        "name_alt_en": "Cape Verde",
+        "name_slugs": [
+            "cape-verde",
+            "capo-verde"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z309",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Ciad",
+        "name_alt": "Ciad",
+        "name_alt_en": "Chad",
+        "name_slugs": [
+            "chad",
+            "ciad"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z603",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Cile",
+        "name_alt": "Cile",
+        "name_alt_en": "Chile",
+        "name_slugs": [
+            "chile",
+            "cile"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z211",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Cipro",
+        "name_alt": "Cipro",
+        "name_alt_en": "Cyprus",
+        "name_slugs": [
+            "cipro",
+            "cyprus"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z604",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Colombia",
+        "name_alt": "Colombia",
+        "name_alt_en": "Colombia",
+        "name_slugs": [
+            "colombia"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z310",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Comore",
+        "name_alt": "Comore",
+        "name_alt_en": "Comoros",
+        "name_slugs": [
+            "comore",
+            "comoros"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z311",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Congo",
+        "name_alt": "Congo (Repubblica Del)",
+        "name_alt_en": "Congo",
+        "name_slugs": [
+            "congo",
+            "congo-repubblica-del"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z313",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Costa D'Avorio",
+        "name_alt": "Costa D'Avorio",
+        "name_alt_en": "C\u00f4te D'Ivoire",
+        "name_slugs": [
+            "costa-d-avorio",
+            "cote-d-ivoire"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z503",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Costa Rica",
+        "name_alt": "Costa Rica",
+        "name_alt_en": "Costa Rica",
+        "name_slugs": [
+            "costa-rica"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z149",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Croazia",
+        "name_alt": "Croazia",
+        "name_alt_en": "Croatia",
+        "name_slugs": [
+            "croatia",
+            "croazia"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z504",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Cuba",
+        "name_alt": "Cuba",
+        "name_alt_en": "Cuba",
+        "name_slugs": [
+            "cuba"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z107",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Danimarca",
+        "name_alt": "Danimarca",
+        "name_alt_en": "Denmark",
+        "name_slugs": [
+            "danimarca",
+            "denmark"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z526",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Dominica",
+        "name_alt": "Dominica",
+        "name_alt_en": "Dominica",
+        "name_slugs": [
+            "dominica"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z605",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Ecuador",
+        "name_alt": "Ecuador",
+        "name_alt_en": "Ecuador",
+        "name_slugs": [
+            "ecuador"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z336",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Egitto",
+        "name_alt": "Egitto",
+        "name_alt_en": "Egypt",
+        "name_slugs": [
+            "egitto",
+            "egypt"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z506",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "El Salvador",
+        "name_alt": "El Salvador",
+        "name_alt_en": "El Salvador",
+        "name_slugs": [
+            "el-salvador"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z215",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Emirati Arabi Uniti",
+        "name_alt": "Emirati Arabi Uniti",
+        "name_alt_en": "United Arab Emirates",
+        "name_slugs": [
+            "emirati-arabi-uniti",
+            "united-arab-emirates"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z368",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Eritrea",
+        "name_alt": "Eritrea",
+        "name_alt_en": "Eritrea",
+        "name_slugs": [
+            "eritrea"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z144",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Estonia",
+        "name_alt": "Estonia",
+        "name_alt_en": "Estonia",
+        "name_slugs": [
+            "estonia"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z349",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Eswatini",
+        "name_alt": "Swaziland",
+        "name_alt_en": "Swaziland",
+        "name_slugs": [
+            "eswatini",
+            "swaziland"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z315",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Etiopia",
+        "name_alt": "Etiopia",
+        "name_alt_en": "Ethiopia",
+        "name_slugs": [
+            "ethiopia",
+            "etiopia"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z154",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Federazione Russa",
+        "name_alt": "Russa, Federazione",
+        "name_alt_en": "Russian Federation",
+        "name_slugs": [
+            "federazione-russa",
+            "russa-federazione",
+            "russian-federation"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z704",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Figi",
+        "name_alt": "Figi",
+        "name_alt_en": "Fiji",
+        "name_slugs": [
+            "figi",
+            "fiji"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z216",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Filippine",
+        "name_alt": "Filippine",
+        "name_alt_en": "Philippines",
+        "name_slugs": [
+            "filippine",
+            "philippines"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z109",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Finlandia",
+        "name_alt": "Finlandia",
+        "name_alt_en": "Finland",
+        "name_slugs": [
+            "finland",
+            "finlandia"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z110",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Francia",
+        "name_alt": "Francia",
+        "name_alt_en": "France",
+        "name_slugs": [
+            "france",
+            "francia"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z316",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Gabon",
+        "name_alt": "Gabon",
+        "name_alt_en": "Gabon",
+        "name_slugs": [
+            "gabon"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z317",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Gambia",
+        "name_alt": "Gambia",
+        "name_alt_en": "Gambia",
+        "name_slugs": [
+            "gambia"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z254",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Georgia",
+        "name_alt": "Georgia",
+        "name_alt_en": "Georgia",
+        "name_slugs": [
+            "georgia"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z112",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Germania",
+        "name_alt": "Germania",
+        "name_alt_en": "Germany",
+        "name_slugs": [
+            "germania",
+            "germany"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z318",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Ghana",
+        "name_alt": "Ghana",
+        "name_alt_en": "Ghana",
+        "name_slugs": [
+            "ghana"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z507",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Giamaica",
+        "name_alt": "Giamaica",
+        "name_alt_en": "Jamaica",
+        "name_slugs": [
+            "giamaica",
+            "jamaica"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z219",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Giappone",
+        "name_alt": "Giappone",
+        "name_alt_en": "Japan",
+        "name_slugs": [
+            "giappone",
+            "japan"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z361",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Gibuti",
+        "name_alt": "Gibuti",
+        "name_alt_en": "Djibouti",
+        "name_slugs": [
+            "djibouti",
+            "gibuti"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z220",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Giordania",
+        "name_alt": "Giordania",
+        "name_alt_en": "Jordan",
+        "name_slugs": [
+            "giordania",
+            "jordan"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z115",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Grecia",
+        "name_alt": "Grecia",
+        "name_alt_en": "Greece",
+        "name_slugs": [
+            "grecia",
+            "greece"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z524",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Grenada",
+        "name_alt": "Grenada",
+        "name_alt_en": "Grenada",
+        "name_slugs": [
+            "grenada"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z509",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Guatemala",
+        "name_alt": "Guatemala",
+        "name_alt_en": "Guatemala",
+        "name_slugs": [
+            "guatemala"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z319",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Guinea",
+        "name_alt": "Guinea",
+        "name_alt_en": "Guinea",
+        "name_slugs": [
+            "guinea"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z320",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Guinea Bissau",
+        "name_alt": "Guinea Bissau",
+        "name_alt_en": "Guinea-Bissau",
+        "name_slugs": [
+            "guinea-bissau"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z321",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Guinea Equatoriale",
+        "name_alt": "Guinea Equatoriale",
+        "name_alt_en": "Equatorial Guinea",
+        "name_slugs": [
+            "equatorial-guinea",
+            "guinea-equatoriale"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z606",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Guyana",
+        "name_alt": "Guyana",
+        "name_alt_en": "Guyana",
+        "name_slugs": [
+            "guyana"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z510",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Haiti",
+        "name_alt": "Haiti",
+        "name_alt_en": "Haiti",
+        "name_slugs": [
+            "haiti"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z511",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Honduras",
+        "name_alt": "Honduras",
+        "name_alt_en": "Honduras",
+        "name_slugs": [
+            "honduras"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z222",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "India",
+        "name_alt": "India",
+        "name_alt_en": "India",
+        "name_slugs": [
+            "india"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z223",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Indonesia",
+        "name_alt": "Indonesia",
+        "name_alt_en": "Indonesia",
+        "name_slugs": [
+            "indonesia"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z224",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Iran",
+        "name_alt": "Iran, Repubblica Islamica Del",
+        "name_alt_en": "Iran, Islamic Republic Of",
+        "name_slugs": [
+            "iran",
+            "iran-islamic-republic-of",
+            "iran-repubblica-islamica-del"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z225",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Iraq",
+        "name_alt": "Iraq",
+        "name_alt_en": "Iraq",
+        "name_slugs": [
+            "iraq"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z116",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Irlanda",
+        "name_alt": "Irlanda",
+        "name_alt_en": "Ireland",
+        "name_slugs": [
+            "ireland",
+            "irlanda"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z117",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Islanda",
+        "name_alt": "Islanda",
+        "name_alt_en": "Iceland",
+        "name_slugs": [
+            "iceland",
+            "islanda"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z530",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Isole Cayman",
+        "name_alt": "",
+        "name_alt_en": "",
+        "name_slugs": [
+            "isole-cayman"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z703",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Isole Cook",
+        "name_alt": "",
+        "name_alt_en": "",
+        "name_slugs": [
+            "isole-cook"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z108",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Isole Faer Oer",
+        "name_alt": "",
+        "name_alt_en": "",
+        "name_slugs": [
+            "isole-faer-oer"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z711",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Isole Marshall",
+        "name_alt": "Marshall, Isole",
+        "name_alt_en": "Marshall Islands",
+        "name_slugs": [
+            "isole-marshall",
+            "marshall-islands",
+            "marshall-isole"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z724",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Isole Salomone",
+        "name_alt": "Salomone, Isole",
+        "name_alt_en": "Solomon Islands",
+        "name_slugs": [
+            "isole-salomone",
+            "salomone-isole",
+            "solomon-islands"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z519",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Isole Turks E Caicos",
+        "name_alt": "",
+        "name_alt_en": "",
+        "name_slugs": [
+            "isole-turks-e-caicos"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z525",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Isole Vergini Britanniche",
+        "name_alt": "",
+        "name_alt_en": "",
+        "name_slugs": [
+            "isole-vergini-britanniche"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z729",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Isole Wallis E Futuna",
+        "name_alt": "",
+        "name_alt_en": "",
+        "name_slugs": [
+            "isole-wallis-e-futuna"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z226",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Israele",
+        "name_alt": "Israele",
+        "name_alt_en": "Israel",
+        "name_slugs": [
+            "israel",
+            "israele"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z255",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Kazakhstan",
+        "name_alt": "Kazakhstan",
+        "name_alt_en": "Kazakhstan",
+        "name_slugs": [
+            "kazakhstan"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z322",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Kenya",
+        "name_alt": "Kenya",
+        "name_alt_en": "Kenya",
+        "name_slugs": [
+            "kenya"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z256",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Kirghizistan",
+        "name_alt": "Kirghizistan",
+        "name_alt_en": "Kyrgyzstan",
+        "name_slugs": [
+            "kirghizistan",
+            "kyrgyzstan"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z731",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Kiribati",
+        "name_alt": "Kiribati",
+        "name_alt_en": "Kiribati",
+        "name_slugs": [
+            "kiribati"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z160",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Kosovo",
+        "name_alt": "Kosovo",
+        "name_alt_en": "Kosovo",
+        "name_slugs": [
+            "kosovo"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z227",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Kuwait",
+        "name_alt": "Kuwait",
+        "name_alt_en": "Kuwait",
+        "name_slugs": [
+            "kuwait"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z228",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Laos",
+        "name_alt": "Laos",
+        "name_alt_en": "Lao People'S Democratic Republic",
+        "name_slugs": [
+            "lao-people-s-democratic-republic",
+            "laos"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z359",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Lesotho",
+        "name_alt": "Lesotho",
+        "name_alt_en": "Lesotho",
+        "name_slugs": [
+            "lesotho"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z145",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Lettonia",
+        "name_alt": "Lettonia",
+        "name_alt_en": "Latvia",
+        "name_slugs": [
+            "latvia",
+            "lettonia"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z229",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Libano",
+        "name_alt": "Libano",
+        "name_alt_en": "Lebanon",
+        "name_slugs": [
+            "lebanon",
+            "libano"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z325",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Liberia",
+        "name_alt": "Liberia",
+        "name_alt_en": "Liberia",
+        "name_slugs": [
+            "liberia"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z326",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Libia",
+        "name_alt": "Libia",
+        "name_alt_en": "Libyan Arab Jamahiriya",
+        "name_slugs": [
+            "libia",
+            "libyan-arab-jamahiriya"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z119",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Liechtenstein",
+        "name_alt": "Liechtenstein",
+        "name_alt_en": "Liechtenstein",
+        "name_slugs": [
+            "liechtenstein"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z146",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Lituania",
+        "name_alt": "Lituania",
+        "name_alt_en": "Lithuania",
+        "name_slugs": [
+            "lithuania",
+            "lituania"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z120",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Lussemburgo",
+        "name_alt": "Lussemburgo",
+        "name_alt_en": "Luxembourg",
+        "name_slugs": [
+            "lussemburgo",
+            "luxembourg"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z148",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Macedonia Del Nord",
+        "name_alt": "Macedonia, Repubblica Di",
+        "name_alt_en": "Macedonia (Fyrom)",
+        "name_slugs": [
+            "macedonia-del-nord",
+            "macedonia-fyrom",
+            "macedonia-repubblica-di"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z327",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Madagascar",
+        "name_alt": "Madagascar",
+        "name_alt_en": "Madagascar",
+        "name_slugs": [
+            "madagascar"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z328",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Malawi",
+        "name_alt": "Malawi",
+        "name_alt_en": "Malawi",
+        "name_slugs": [
+            "malawi"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z247",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Malaysia",
+        "name_alt": "Malaysia",
+        "name_alt_en": "Malaysia",
+        "name_slugs": [
+            "malaysia"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z232",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Maldive",
+        "name_alt": "Maldive",
+        "name_alt_en": "Maldives",
+        "name_slugs": [
+            "maldive",
+            "maldives"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z329",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Mali",
+        "name_alt": "Mali",
+        "name_alt_en": "Mali",
+        "name_slugs": [
+            "mali"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z121",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Malta",
+        "name_alt": "Malta",
+        "name_alt_en": "Malta",
+        "name_slugs": [
+            "malta"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z330",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Marocco",
+        "name_alt": "Marocco",
+        "name_alt_en": "Morocco",
+        "name_slugs": [
+            "marocco",
+            "morocco"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z513",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Martinica",
+        "name_alt": "",
+        "name_alt_en": "",
+        "name_slugs": [
+            "martinica"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z331",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Mauritania",
+        "name_alt": "Mauritania",
+        "name_alt_en": "Mauritania",
+        "name_slugs": [
+            "mauritania"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z332",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Mauritius",
+        "name_alt": "Mauritius",
+        "name_alt_en": "Mauritius",
+        "name_slugs": [
+            "mauritius"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z360",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Mayotte",
+        "name_alt": "",
+        "name_alt_en": "",
+        "name_slugs": [
+            "mayotte"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z514",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Messico",
+        "name_alt": "Messico",
+        "name_alt_en": "Mexico",
+        "name_slugs": [
+            "messico",
+            "mexico"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z140",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Moldova",
+        "name_alt": "Moldova",
+        "name_alt_en": "Moldova, Republic Of",
+        "name_slugs": [
+            "moldova",
+            "moldova-republic-of"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z123",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Monaco",
+        "name_alt": "Monaco",
+        "name_alt_en": "Monaco",
+        "name_slugs": [
+            "monaco"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z233",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Mongolia",
+        "name_alt": "Mongolia",
+        "name_alt_en": "Mongolia",
+        "name_slugs": [
+            "mongolia"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z159",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Montenegro",
+        "name_alt": "Montenegro",
+        "name_alt_en": "Montenegro",
+        "name_slugs": [
+            "montenegro"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z333",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Mozambico",
+        "name_alt": "Mozambico",
+        "name_alt_en": "Mozambique",
+        "name_slugs": [
+            "mozambico",
+            "mozambique"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z206",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Myanmar",
+        "name_alt": "Myanmar (Ex Birmania)",
+        "name_alt_en": "Myanmar",
+        "name_slugs": [
+            "myanmar",
+            "myanmar-ex-birmania"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z300",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Namibia",
+        "name_alt": "Namibia",
+        "name_alt_en": "Namibia",
+        "name_slugs": [
+            "namibia"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z713",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Nauru",
+        "name_alt": "Nauru",
+        "name_alt_en": "Nauru",
+        "name_slugs": [
+            "nauru"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z234",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Nepal",
+        "name_alt": "Nepal",
+        "name_alt_en": "Nepal",
+        "name_slugs": [
+            "nepal"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z515",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Nicaragua",
+        "name_alt": "Nicaragua",
+        "name_alt_en": "Nicaragua",
+        "name_slugs": [
+            "nicaragua"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z334",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Niger",
+        "name_alt": "Niger",
+        "name_alt_en": "Niger",
+        "name_slugs": [
+            "niger"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z335",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Nigeria",
+        "name_alt": "Nigeria",
+        "name_alt_en": "Nigeria",
+        "name_slugs": [
+            "nigeria"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z125",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Norvegia",
+        "name_alt": "Norvegia",
+        "name_alt_en": "Norway",
+        "name_slugs": [
+            "norvegia",
+            "norway"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z719",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Nuova Zelanda",
+        "name_alt": "Nuova Zelanda",
+        "name_alt_en": "New Zealand",
+        "name_slugs": [
+            "new-zealand",
+            "nuova-zelanda"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z235",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Oman",
+        "name_alt": "Oman",
+        "name_alt_en": "Oman",
+        "name_slugs": [
+            "oman"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z126",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Paesi Bassi",
+        "name_alt": "Paesi Bassi",
+        "name_alt_en": "Netherlands",
+        "name_slugs": [
+            "netherlands",
+            "paesi-bassi"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z236",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Pakistan",
+        "name_alt": "Pakistan",
+        "name_alt_en": "Pakistan",
+        "name_slugs": [
+            "pakistan"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z734",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Palau",
+        "name_alt": "Palau",
+        "name_alt_en": "Palau",
+        "name_slugs": [
+            "palau"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z516",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Panama",
+        "name_alt": "Panama",
+        "name_alt_en": "Panama",
+        "name_slugs": [
+            "panama"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z730",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Papua Nuova Guinea",
+        "name_alt": "Papua Nuova Guinea",
+        "name_alt_en": "Papua New Guinea",
+        "name_slugs": [
+            "papua-new-guinea",
+            "papua-nuova-guinea"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z610",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Paraguay",
+        "name_alt": "Paraguay",
+        "name_alt_en": "Paraguay",
+        "name_slugs": [
+            "paraguay"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z611",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Peru'",
+        "name_alt": "Per\u00f9",
+        "name_alt_en": "Peru",
+        "name_slugs": [
+            "peru"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z127",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Polonia",
+        "name_alt": "Polonia",
+        "name_alt_en": "Poland",
+        "name_slugs": [
+            "poland",
+            "polonia"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z128",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Portogallo",
+        "name_alt": "Portogallo",
+        "name_alt_en": "Portugal",
+        "name_slugs": [
+            "portogallo",
+            "portugal"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z237",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Qatar",
+        "name_alt": "Qatar",
+        "name_alt_en": "Qatar",
+        "name_slugs": [
+            "qatar"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z114",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Regno Unito",
+        "name_alt": "Regno Unito",
+        "name_alt_en": "United Kingdom",
+        "name_slugs": [
+            "regno-unito",
+            "united-kingdom"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z156",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Repubblica Ceca",
+        "name_alt": "Ceca, Repubblica",
+        "name_alt_en": "Czech Republic",
+        "name_slugs": [
+            "ceca-repubblica",
+            "czech-republic",
+            "repubblica-ceca"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z308",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Repubblica Centrafricana",
+        "name_alt": "Centrafricana, Repubblica",
+        "name_alt_en": "Central African Republic",
+        "name_slugs": [
+            "centrafricana-repubblica",
+            "central-african-republic",
+            "repubblica-centrafricana"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z312",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Repubblica Democratica Del Congo",
+        "name_alt": "Congo, Repubblica Democratica Del (Ex Zaire)",
+        "name_alt_en": "Congo, The Democratic Republic Of The",
+        "name_slugs": [
+            "congo-repubblica-democratica-del-ex-zaire",
+            "congo-the-democratic-republic-of-the",
+            "repubblica-democratica-del-congo"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z213",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Repubblica Di Corea",
+        "name_alt": "Corea, Repubblica (Corea Del Sud)",
+        "name_alt_en": "Korea, Republic Of",
+        "name_slugs": [
+            "corea-repubblica-corea-del-sud",
+            "korea-republic-of",
+            "repubblica-di-corea"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z505",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Repubblica Dominicana",
+        "name_alt": "Dominicana, Repubblica",
+        "name_alt_en": "Dominican Republic",
+        "name_slugs": [
+            "dominican-republic",
+            "dominicana-repubblica",
+            "repubblica-dominicana"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z210",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Repubblica Popolare Cinese",
+        "name_alt": "Cinese, Repubblica Popolare",
+        "name_alt_en": "China",
+        "name_slugs": [
+            "china",
+            "cinese-repubblica-popolare",
+            "repubblica-popolare-cinese"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z214",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Repubblica Popolare Democratica Di Corea",
+        "name_alt": "Corea, Repubblica Popolare Democratica (Corea Del Nord)",
+        "name_alt_en": "Korea, Democratic People'S Republic Of",
+        "name_slugs": [
+            "corea-repubblica-popolare-democratica-corea-del-nord",
+            "korea-democratic-people-s-republic-of",
+            "repubblica-popolare-democratica-di-corea"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z129",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Romania",
+        "name_alt": "Romania",
+        "name_alt_en": "Romania",
+        "name_slugs": [
+            "romania"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z338",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Ruanda",
+        "name_alt": "Ruanda",
+        "name_alt_en": "Rwanda",
+        "name_slugs": [
+            "ruanda",
+            "rwanda"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z533",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Saint Kitts E Nevis",
+        "name_alt": "Saint Kitts E Nevis",
+        "name_alt_en": "Saint Kitts And Nevis",
+        "name_slugs": [
+            "saint-kitts-and-nevis",
+            "saint-kitts-e-nevis"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z527",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Saint Lucia",
+        "name_alt": "Saint Lucia",
+        "name_alt_en": "Saint Lucia",
+        "name_slugs": [
+            "saint-lucia"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z403",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Saint Pierre E Miquelon",
+        "name_alt": "",
+        "name_alt_en": "",
+        "name_slugs": [
+            "saint-pierre-e-miquelon"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z528",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Saint Vincent E Grenadine",
+        "name_alt": "Saint Vincent E Grenadine",
+        "name_alt_en": "Saint Vincent And The Grenadines",
+        "name_slugs": [
+            "saint-vincent-and-the-grenadines",
+            "saint-vincent-e-grenadine"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z726",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Samoa",
+        "name_alt": "Samoa",
+        "name_alt_en": "Samoa",
+        "name_slugs": [
+            "samoa"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z130",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "San Marino",
+        "name_alt": "San Marino",
+        "name_alt_en": "San Marino",
+        "name_slugs": [
+            "san-marino"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z340",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Sant'Elena",
+        "name_alt": "",
+        "name_alt_en": "",
+        "name_slugs": [
+            "sant-elena"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z341",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Sao Tome' E Principe",
+        "name_alt": "S\u00e3o Tom\u00e9 E Principe",
+        "name_alt_en": "Sao Tome And Principe",
+        "name_slugs": [
+            "sao-tome-and-principe",
+            "sao-tome-e-principe"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z343",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Senegal",
+        "name_alt": "Senegal",
+        "name_alt_en": "Senegal",
+        "name_slugs": [
+            "senegal"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z158",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Serbia",
+        "name_alt": "Serbia, Repubblica Di",
+        "name_alt_en": "Serbia",
+        "name_slugs": [
+            "serbia",
+            "serbia-repubblica-di"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z342",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Seychelles",
+        "name_alt": "Seychelles",
+        "name_alt_en": "Seychelles",
+        "name_slugs": [
+            "seychelles"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z344",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Sierra Leone",
+        "name_alt": "Sierra Leone",
+        "name_alt_en": "Sierra Leone",
+        "name_slugs": [
+            "sierra-leone"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z248",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Singapore",
+        "name_alt": "Singapore",
+        "name_alt_en": "Singapore",
+        "name_slugs": [
+            "singapore"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z240",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Siria",
+        "name_alt": "Siria",
+        "name_alt_en": "Syrian Arab Republic",
+        "name_slugs": [
+            "siria",
+            "syrian-arab-republic"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z155",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Slovacchia",
+        "name_alt": "Slovacchia",
+        "name_alt_en": "Slovakia",
+        "name_slugs": [
+            "slovacchia",
+            "slovakia"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z150",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Slovenia",
+        "name_alt": "Slovenia",
+        "name_alt_en": "Slovenia",
+        "name_slugs": [
+            "slovenia"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z345",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Somalia",
+        "name_alt": "Somalia",
+        "name_alt_en": "Somalia",
+        "name_slugs": [
+            "somalia"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z131",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Spagna",
+        "name_alt": "Spagna",
+        "name_alt_en": "Spain",
+        "name_slugs": [
+            "spagna",
+            "spain"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z209",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Sri Lanka",
+        "name_alt": "Sri Lanka (Ex Ceylon)",
+        "name_alt_en": "Sri Lanka",
+        "name_slugs": [
+            "sri-lanka",
+            "sri-lanka-ex-ceylon"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z735",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Stati Federati Di Micronesia",
+        "name_alt": "Micronesia, Stati Federati",
+        "name_alt_en": "Micronesia, Federated States Of",
+        "name_slugs": [
+            "micronesia-federated-states-of",
+            "micronesia-stati-federati",
+            "stati-federati-di-micronesia"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z404",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Stati Uniti D'America",
+        "name_alt": "Stati Uniti D'America",
+        "name_alt_en": "United States",
+        "name_slugs": [
+            "stati-uniti-d-america",
+            "united-states"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z106",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Stato Citta' Del Vaticano",
+        "name_alt": "Stato Della Citt\u00e0 Del Vaticano",
+        "name_alt_en": "Vatican City State",
+        "name_slugs": [
+            "stato-citta-del-vaticano",
+            "stato-della-citta-del-vaticano",
+            "vatican-city-state"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z347",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Sud Africa",
+        "name_alt": "Sud Africa",
+        "name_alt_en": "South Africa",
+        "name_slugs": [
+            "south-africa",
+            "sud-africa"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z907",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Sud Sudan",
+        "name_alt": "Sud Sudan, Repubblica Del",
+        "name_alt_en": "South Sudan, Republic Of",
+        "name_slugs": [
+            "south-sudan-republic-of",
+            "sud-sudan",
+            "sud-sudan-repubblica-del"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z348",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Sudan",
+        "name_alt": "Sudan",
+        "name_alt_en": "Sudan",
+        "name_slugs": [
+            "sudan"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z608",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Suriname",
+        "name_alt": "Suriname",
+        "name_alt_en": "Suriname",
+        "name_slugs": [
+            "suriname"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z132",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Svezia",
+        "name_alt": "Svezia",
+        "name_alt_en": "Sweden",
+        "name_slugs": [
+            "svezia",
+            "sweden"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z133",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Svizzera",
+        "name_alt": "Svizzera",
+        "name_alt_en": "Switzerland",
+        "name_slugs": [
+            "svizzera",
+            "switzerland"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z257",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Tagikistan",
+        "name_alt": "Tagikistan",
+        "name_alt_en": "Tajikistan",
+        "name_slugs": [
+            "tagikistan",
+            "tajikistan"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z217",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Taiwan",
+        "name_alt": "Taiwan (Ex Formosa)",
+        "name_alt_en": "Taiwan, Province Of China",
+        "name_slugs": [
+            "taiwan",
+            "taiwan-ex-formosa",
+            "taiwan-province-of-china"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z357",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Tanzania",
+        "name_alt": "Tanzania",
+        "name_alt_en": "Tanzania, United Republic Of",
+        "name_slugs": [
+            "tanzania",
+            "tanzania-united-republic-of"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z161",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Territori Dell'Autonomia Palestinese",
+        "name_alt": "Territori Dell'Autonomia Palestinese",
+        "name_alt_en": "Palestinian Territory, Occupied",
+        "name_slugs": [
+            "palestinian-territory-occupied",
+            "territori-dell-autonomia-palestinese"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z241",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Thailandia",
+        "name_alt": "Thailandia",
+        "name_alt_en": "Thailand",
+        "name_slugs": [
+            "thailand",
+            "thailandia"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z242",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Timor Orientale",
+        "name_alt": "Timor Orientale",
+        "name_alt_en": "East Timor",
+        "name_slugs": [
+            "east-timor",
+            "timor-orientale"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z351",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Togo",
+        "name_alt": "Togo",
+        "name_alt_en": "Togo",
+        "name_slugs": [
+            "togo"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z728",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Tonga",
+        "name_alt": "Tonga",
+        "name_alt_en": "Tonga",
+        "name_slugs": [
+            "tonga"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z612",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Trinidad E Tobago",
+        "name_alt": "Trinidad E Tobago",
+        "name_alt_en": "Trinidad And Tobago",
+        "name_slugs": [
+            "trinidad-and-tobago",
+            "trinidad-e-tobago"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z352",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Tunisia",
+        "name_alt": "Tunisia",
+        "name_alt_en": "Tunisia",
+        "name_slugs": [
+            "tunisia"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z243",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Turchia",
+        "name_alt": "Turchia",
+        "name_alt_en": "Turkey",
+        "name_slugs": [
+            "turchia",
+            "turkey"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z258",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Turkmenistan",
+        "name_alt": "Turkmenistan",
+        "name_alt_en": "Turkmenistan",
+        "name_slugs": [
+            "turkmenistan"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z732",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Tuvalu",
+        "name_alt": "Tuvalu",
+        "name_alt_en": "Tuvalu",
+        "name_slugs": [
+            "tuvalu"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z138",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Ucraina",
+        "name_alt": "Ucraina",
+        "name_alt_en": "Ukraine",
+        "name_slugs": [
+            "ucraina",
+            "ukraine"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z353",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Uganda",
+        "name_alt": "Uganda",
+        "name_alt_en": "Uganda",
+        "name_slugs": [
+            "uganda"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z134",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Ungheria",
+        "name_alt": "Ungheria",
+        "name_alt_en": "Hungary",
+        "name_slugs": [
+            "hungary",
+            "ungheria"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z613",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Uruguay",
+        "name_alt": "Uruguay",
+        "name_alt_en": "Uruguay",
+        "name_slugs": [
+            "uruguay"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z259",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Uzbekistan",
+        "name_alt": "Uzbekistan",
+        "name_alt_en": "Uzbekistan",
+        "name_slugs": [
+            "uzbekistan"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z733",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Vanuatu",
+        "name_alt": "Vanuatu",
+        "name_alt_en": "Vanuatu",
+        "name_slugs": [
+            "vanuatu"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z614",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Venezuela",
+        "name_alt": "Venezuela",
+        "name_alt_en": "Venezuela, Bolivarian Republic Of",
+        "name_slugs": [
+            "venezuela",
+            "venezuela-bolivarian-republic-of"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z251",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Vietnam",
+        "name_alt": "Vietnam",
+        "name_alt_en": "Viet Nam",
+        "name_slugs": [
+            "viet-nam",
+            "vietnam"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z246",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Yemen",
+        "name_alt": "Yemen",
+        "name_alt_en": "Yemen",
+        "name_slugs": [
+            "yemen"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z355",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Zambia",
+        "name_alt": "Zambia",
+        "name_alt_en": "Zambia",
+        "name_slugs": [
+            "zambia"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
+        "code": "Z337",
+        "date_created": "01/01/1900 00:00:00",
+        "date_deleted": "",
+        "name": "Zimbabwe",
+        "name_alt": "Zimbabwe (Ex Rhodesia)",
+        "name_alt_en": "Zimbabwe",
+        "name_slugs": [
+            "zimbabwe",
+            "zimbabwe-ex-rhodesia"
+        ],
+        "province": "EE"
+    }
 ]
