@@ -77,7 +77,7 @@ for combo_size in range(1, len(_OMOCODIA_SUBS_INDEXES) + 1):
 
 
 def _get_data(filename):
-    return fsutil.read_file_json(fsutil.join_path(__file__, "data/{}".format(filename)))
+    return fsutil.read_file_json(fsutil.join_path(__file__, f"data/{filename}"))
 
 
 def _get_indexed_data():
@@ -234,7 +234,7 @@ def encode_birthdate(birthdate, sex):
         try:
             date_obj = date_parser.parse(date_slug, **date_kwargs)
         except ValueError as e:
-            raise ValueError("[codicefiscale] {}".format(e))
+            raise ValueError(f"[codicefiscale] {e}")
 
     year_code = str(date_obj.year)[2:]
     month_code = _MONTHS[date_obj.month - 1]
@@ -273,9 +273,7 @@ def encode_birthplace(birthplace):
 
     if birthplace_code == "":
         raise ValueError(
-            "[codicefiscale] 'birthplace' argument not mapped to code: ('{}'' -> '')".format(
-                birthplace
-            )
+            f"[codicefiscale] 'birthplace' argument not mapped to code: ('{birthplace}' -> '')"
         )
 
     return birthplace_code
@@ -297,7 +295,7 @@ def encode_cin(code):
     code_len = len(code)
     if code_len not in [15, 16]:
         raise ValueError(
-            "[codicefiscale] 'code' length must be 15 or 16, not: {}".format(code_len)
+            f"[codicefiscale] 'code' length must be 15 or 16, not: {code_len}"
         )
 
     cin_tot = 0
@@ -355,7 +353,7 @@ def decode_raw(code):
 
     m = CODICEFISCALE_RE.match(code)
     if not m:
-        raise ValueError("[codicefiscale] invalid syntax: {}".format(code))
+        raise ValueError(f"[codicefiscale] invalid syntax: {code}")
 
     g = m.groups()
     # print(g)
@@ -400,15 +398,16 @@ def decode(code):
         sex = "M"
 
     current_year = datetime.now().year
-    birthdate_year_int = int("{}{}".format(str(current_year)[0:-2], birthdate_year))
+    current_year_century_prefix = str(current_year)[0:-2]
+    birthdate_year_int = int(f"{current_year_century_prefix}{birthdate_year}")
     if birthdate_year_int > current_year:
         birthdate_year_int -= 100
     birthdate_year = str(birthdate_year_int)
-    birthdate_str = "{}/{}/{}".format(birthdate_year, birthdate_month, birthdate_day)
+    birthdate_str = f"{birthdate_year}/{birthdate_month}/{birthdate_day}"
     try:
         birthdate = datetime.strptime(birthdate_str, "%Y/%m/%d")
     except ValueError:
-        raise ValueError("[codicefiscale] invalid date: {}".format(birthdate_str))
+        raise ValueError(f"[codicefiscale] invalid date: {birthdate_str}")
 
     birthplace = _DATA["codes"].get(
         raw["birthplace"][0] + raw["birthplace"][1:].translate(_OMOCODIA_DECODE_TRANS)
@@ -419,9 +418,7 @@ def decode(code):
     # print(cin, cin_check)
     if cin != cin_check:
         raise ValueError(
-            "[codicefiscale] wrong CIN (Control Internal Number): expected '{}', found '{}'".format(
-                cin_check, cin
-            )
+            f"[codicefiscale] wrong CIN (Control Internal Number): expected '{cin_check}', found '{cin}'"
         )
 
     data = {
