@@ -9,12 +9,6 @@ import fsutil
 import re
 import string
 
-try:
-    maketrans = "".maketrans
-except AttributeError:
-    # fallback for Python 2
-    maketrans = string.maketrans
-
 
 _CONSONANTS = list("bcdfghjklmnpqrstvwxyz")
 _VOWELS = list("aeiou")
@@ -73,8 +67,8 @@ _OMOCODIA = {
 }
 _OMOCODIA_DIGITS = "".join([digit for digit in _OMOCODIA])
 _OMOCODIA_LETTERS = "".join([_OMOCODIA[digit] for digit in _OMOCODIA])
-_OMOCODIA_ENCODE_TRANS = maketrans(_OMOCODIA_DIGITS, _OMOCODIA_LETTERS)
-_OMOCODIA_DECODE_TRANS = maketrans(_OMOCODIA_LETTERS, _OMOCODIA_DIGITS)
+_OMOCODIA_ENCODE_TRANS = "".maketrans(_OMOCODIA_DIGITS, _OMOCODIA_LETTERS)
+_OMOCODIA_DECODE_TRANS = "".maketrans(_OMOCODIA_LETTERS, _OMOCODIA_DIGITS)
 _OMOCODIA_SUBS_INDEXES = list(reversed([6, 7, 9, 10, 12, 13, 14]))
 _OMOCODIA_SUBS_INDEXES_COMBINATIONS = [[]]
 for combo_size in range(1, len(_OMOCODIA_SUBS_INDEXES) + 1):

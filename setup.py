@@ -51,8 +51,7 @@ setup(
     install_requires=[
         "python-dateutil ~= 2.8.0",
         "python-fsutil >= 0.6.0",
-        "python-slugify == 5.0.0; python_version < '3.6'",
-        "python-slugify ~= 6.0.1; python_version >= '3.6'",
+        "python-slugify ~= 6.0.1",
     ],
     tests_require=[],
     classifiers=[
@@ -62,11 +61,7 @@ setup(
         "License :: OSI Approved :: MIT License",
         "Natural Language :: English",
         "Operating System :: OS Independent",
-        "Programming Language :: Python :: 2",
-        "Programming Language :: Python :: 2.7",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.4",
-        "Programming Language :: Python :: 3.5",
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
