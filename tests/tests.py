@@ -436,15 +436,21 @@ class CodiceFiscaleTestCase(unittest.TestCase):
                 "input": "RSSMRA68A01H501Y",
                 "result": {"sex": "M", "birthdate": "01/01/1968", "birthplace": "Roma"},
             },
+            {
+                "input": "RSSMRA50B17A558W",
+                "result": {
+                    "sex": "M",
+                    "birthdate": "17/02/1950",
+                    "birthplace": "Porretta Terme",
+                },
+            },
         ]
 
         for obj in data:
             # with self.subTest(obj=obj):
-
             result = obj["result"]
             obj_decoded = codicefiscale.decode(obj["input"])
             #  print(obj_decoded)
-
             sex = obj_decoded.get("sex")
             self.assertFalse(sex is None)
             self.assertEqual(sex, result["sex"])

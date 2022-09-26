@@ -90,28 +90,24 @@ def _get_indexed_data():
     }
 
     for municipality in municipalities:
-        if not municipality["active"]:
-            continue
         code = municipality["code"]
         province = municipality["province"].lower()
         names = municipality["name_slugs"]
         for name in names:
             data["municipalities"][name] = municipality
             data["municipalities"][name + "-" + province] = municipality
-        assert (
-            code not in data["codes"]
-        ), "Found more than one country/municipality with the same code, expected a one-to-one relation."
-        data["codes"][code] = municipality
+        if code not in data["codes"]:
+            data["codes"][code] = []
+        data["codes"][code].append(municipality)
 
     for country in countries:
         code = country["code"]
         names = country["name_slugs"]
         for name in names:
             data["countries"][name] = country
-        assert (
-            code not in data["codes"]
-        ), "Found more than one country/municipality with the same code, expected a one-to-one relation."
-        data["codes"][code] = country
+        if code not in data["codes"]:
+            data["codes"][code] = []
+        data["codes"][code].append(country)
 
     return data
 
@@ -262,10 +258,14 @@ def encode_birthplace(birthplace):
         birthplace_data = _DATA["municipalities"].get(
             birthplace_slug,
             _DATA["countries"].get(
-                birthplace_slug, _DATA["codes"].get(birthplace_code, {})
+                birthplace_slug
             ),
         )
-        return birthplace_data.get("code", "")
+        if birthplace_data:
+            return birthplace_data.get("code", "")
+        if birthplace_code in _DATA["codes"]:
+            return birthplace_code
+        return ""
 
     birthplace_code = find_birthplace_code(birthplace) or find_birthplace_code(
         re.split(r",|\(", birthplace)[0]
@@ -409,9 +409,22 @@ def decode(code):
     except ValueError:
         raise ValueError(f"[codicefiscale] invalid date: {birthdate_str}")
 
-    birthplace = _DATA["codes"].get(
-        raw["birthplace"][0] + raw["birthplace"][1:].translate(_OMOCODIA_DECODE_TRANS)
-    )
+    codes = _DATA["codes"].get(raw["birthplace"][0] + raw["birthplace"][1:].translate(_OMOCODIA_DECODE_TRANS))
+    birthplace = None
+    for c in codes:
+        date_created = datetime.min
+        try:
+            date_created = datetime.strptime(c['date_created'], "%Y-%m-%d")
+        except ValueError:
+            date_created = datetime.min
+
+        try:
+            date_deleted = datetime.strptime(c['date_deleted'], "%Y-%m-%d")
+        except ValueError:
+            date_deleted = datetime.max
+        if date_created <= birthdate and date_deleted >= birthdate:
+            birthplace = c
+            break
 
     cin = raw["cin"]
     cin_check = encode_cin(code)
