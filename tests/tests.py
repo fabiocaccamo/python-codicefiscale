@@ -350,6 +350,16 @@ class CodiceFiscaleTestCase(unittest.TestCase):
                 },
                 "result": "TKKYKU87B68L219F",
             },
+            {
+                "input": {
+                    "surname": "Rossi",
+                    "name": "Mario",
+                    "sex": "M",
+                    "birthdate": "17/02/1950",
+                    "birthplace": "Porretta Terme",
+                },
+                "result": "RSSMRA50B17A558W",
+            },
         ]
 
         for obj in data:
@@ -755,9 +765,9 @@ class CodiceFiscaleTestCase(unittest.TestCase):
             "name": "AGRIGENTO",
         }
         birthplace = data["birthplace"]
-        self.assertEqual(birthplace['code'], expected_birthplace['code'])
-        self.assertEqual(birthplace['name'].upper(), expected_birthplace['name'])
-        self.assertEqual(birthplace['province'], expected_birthplace['province'])
+        self.assertEqual(birthplace["code"], expected_birthplace["code"])
+        self.assertEqual(birthplace["name"].upper(), expected_birthplace["name"])
+        self.assertEqual(birthplace["province"], expected_birthplace["province"])
 
     def test_version(self):
         version_pattern = re.compile("^(([\d]+)\.([\d]+)\.([\d]+))$")
