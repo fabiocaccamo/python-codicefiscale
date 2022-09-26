@@ -410,6 +410,7 @@ def decode(code):
         raise ValueError(f"[codicefiscale] invalid date: {birthdate_str}")
 
     codes = _DATA["codes"].get(raw["birthplace"][0] + raw["birthplace"][1:].translate(_OMOCODIA_DECODE_TRANS))
+    birthplace = None
     for c in codes:
         date_created = datetime.min
         try:
