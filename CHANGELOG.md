@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.0](https://github.com/fabiocaccamo/python-codicefiscale/releases/tag/0.5.0) - 2022-09-22
+-   Add municipality validity date support. Fix #12 and #23 by [danisana](https://github.com/danisana) in #24.
+-   Replace `str.format` with `f-strings`.
+-   Update `countries.json` and `municipalities.json` data.
+-   Update and pin requirements.
+
 ## [0.4.0](https://github.com/fabiocaccamo/python-codicefiscale/releases/tag/0.4.0) - 2022-02-18
 -   Dropped python 2.7 and python 3.5 support.
 -   Pinned requirements versions.
