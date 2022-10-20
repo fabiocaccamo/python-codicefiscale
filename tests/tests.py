@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 
-from codicefiscale import codicefiscale
-from codicefiscale.version import __version__
-from datetime import datetime
 import re
 import unittest
+from datetime import datetime
+
+from codicefiscale import codicefiscale
+from codicefiscale.version import __version__
 
 
 class CodiceFiscaleTestCase(unittest.TestCase):
