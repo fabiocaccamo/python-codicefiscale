@@ -1,14 +1,13 @@
 # -*- coding: utf-8 -*-
 
-from datetime import datetime
-from dateutil import parser as date_parser
-from itertools import combinations
-from slugify import slugify
-
-import fsutil
 import re
 import string
+from datetime import datetime
+from itertools import combinations
 
+import fsutil
+from dateutil import parser as date_parser
+from slugify import slugify
 
 _CONSONANTS = list("bcdfghjklmnpqrstvwxyz")
 _VOWELS = list("aeiou")
