@@ -418,6 +418,8 @@ def decode(code):
     )
     birthplace = None
     birthplaces_options = _DATA["codes"].get(birthplace_code)
+    if not birthplaces_options:
+        raise ValueError(f"[codicefiscale] wrong birthplace code: '{birthplace_code}'")
     for birthplace_option in birthplaces_options:
         date_created = _get_date(birthplace_option["date_created"]) or datetime.min
         date_deleted = _get_date(birthplace_option["date_deleted"]) or datetime.max

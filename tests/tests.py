@@ -728,6 +728,11 @@ class CodiceFiscaleTestCase(unittest.TestCase):
         self.assertEqual(len(decoded["omocodes"]), 128)
         self.assertEqual(decoded["omocodes"], expected_omocodes)
 
+    def test_decode_with_invalid_birthplace(self):
+        code = "FRTMXM74L15D354A"
+        valid = codicefiscale.is_valid(code)
+        self.assertFalse(valid)
+
     def test_is_omocode(self):
 
         self.assertFalse(codicefiscale.is_omocode("CCCFBA85D03L219P"))
