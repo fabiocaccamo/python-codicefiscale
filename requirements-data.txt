@@ -1,5 +1,5 @@
 openpyxl == 3.0.10
-python-benedict == 0.26.0
+python-benedict == 0.27.0
 python-fsutil == 0.7.0
 python-slugify == 6.1.2
 requests == 2.28.1
