@@ -50,7 +50,7 @@ setup(
     install_requires=[
         "python-dateutil ~= 2.8.0, < 3.0.0",
         "python-fsutil >= 0.6.0, < 1.0.0",
-        "python-slugify >= 6.0.1, < 6.2.0",
+        "python-slugify >= 6.0.1, < 7.1.0",
     ],
     tests_require=[],
     classifiers=[
