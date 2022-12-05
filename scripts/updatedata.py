@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import fsutil
 from benedict import benedict
 from openpyxl import load_workbook
