@@ -3,7 +3,14 @@ import unittest
 from datetime import datetime
 
 from codicefiscale import codicefiscale
-from codicefiscale.version import __version__
+from codicefiscale.metadata import (
+    __author__,
+    __copyright__,
+    __description__,
+    __license__,
+    __title__,
+    __version__,
+)
 
 
 class CodiceFiscaleTestCase(unittest.TestCase):
@@ -772,6 +779,20 @@ class CodiceFiscaleTestCase(unittest.TestCase):
         self.assertEqual(birthplace["code"], expected_birthplace["code"])
         self.assertEqual(birthplace["name"].upper(), expected_birthplace["name"])
         self.assertEqual(birthplace["province"], expected_birthplace["province"])
+
+    def test_metadata(self):
+        self.assertTrue(
+            all(
+                [
+                    __author__,
+                    __copyright__,
+                    __description__,
+                    __license__,
+                    __title__,
+                    __version__,
+                ]
+            )
+        )
 
     def test_version(self):
         version_pattern = re.compile("^(([\d]+)\.([\d]+)\.([\d]+))$")

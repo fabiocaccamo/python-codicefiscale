@@ -4,14 +4,17 @@ import os
 
 from setuptools import find_packages, setup
 
-exec(open("codicefiscale/version.py").read())
+exec(open("codicefiscale/metadata.py").read())
 
-github_url = "https://github.com/fabiocaccamo"
+package_name = "python-codicefiscale"
+package_url = f"https://github.com/fabiocaccamo/{package_name}"
+package_path = os.path.abspath(os.path.dirname(__file__))
+download_url = f"{package_url}/archive/{__version__}.tar.gz"
+documentation_url = f"{package_url}#readme"
+issues_url = f"{package_url}/issues"
 sponsor_url = "https://github.com/sponsors/fabiocaccamo/"
 twitter_url = "https://twitter.com/fabiocaccamo"
-package_name = "python-codicefiscale"
-package_url = "{}/{}".format(github_url, package_name)
-package_path = os.path.abspath(os.path.dirname(__file__))
+
 long_description_file_path = os.path.join(package_path, "README.md")
 long_description_content_type = "text/markdown"
 long_description = ""
@@ -26,16 +29,16 @@ setup(
     packages=find_packages(exclude=["contrib", "docs", "tests*"]),
     include_package_data=True,
     version=__version__,
-    description="python-codicefiscale is a tiny library for encode/decode Italian fiscal code - codifica/decodifica del Codice Fiscale.",
+    description=__description__,
     long_description=long_description,
     long_description_content_type=long_description_content_type,
-    author="Fabio Caccamo",
-    author_email="fabio.caccamo@gmail.com",
+    author=__author__,
+    author_email=__email__,
     url=package_url,
-    download_url="{}/archive/{}.tar.gz".format(package_url, __version__),
+    download_url=download_url,
     project_urls={
-        "Documentation": "{}#readme".format(package_url),
-        "Issues": "{}/issues".format(package_url),
+        "Documentation": documentation_url,
+        "Issues": issues_url,
         "Funding": sponsor_url,
         "Twitter": twitter_url,
     },
