@@ -111,11 +111,11 @@ _DATA = _get_indexed_data()
 
 CODICEFISCALE_RE = re.compile(
     r"^"
-    r"([a-z]{3})"
-    r"([a-z]{3})"
-    r"(([a-z\d]{2})([abcdehlmprst]{1})([a-z\d]{2}))"
-    r"([a-z]{1}[a-z\d]{3})"
-    r"([a-z]{1})$",
+    r"(?P<surname>[a-z]{3})"
+    r"(?P<name>[a-z]{3})"
+    r"(?P<birthdate>(?P<birthdate_year>[a-z\d]{2})(?P<birthdate_month>[abcdehlmprst]{1})(?P<birthdate_day>[a-z\d]{2}))"
+    r"(?P<birthplace>[a-z]{1}[a-z\d]{3})"
+    r"(?P<cin>[a-z]{1})$",
     re.IGNORECASE,
 )
 
@@ -353,23 +353,20 @@ def decode_raw(code):
     code = code.replace("-", "")
     code = code.upper()
 
-    m = CODICEFISCALE_RE.match(code)
-    if not m:
+    match = CODICEFISCALE_RE.match(code)
+    if not match:
         raise ValueError(f"[codicefiscale] invalid syntax: {code}")
-
-    g = m.groups()
-    # print(g)
 
     data = {
         "code": code,
-        "surname": g[0],
-        "name": g[1],
-        "birthdate": g[2],
-        "birthdate_year": g[3],
-        "birthdate_month": g[4],
-        "birthdate_day": g[5],
-        "birthplace": g[6],
-        "cin": g[7],
+        "surname": match["surname"],
+        "name": match["name"],
+        "birthdate": match["birthdate"],
+        "birthdate_year": match["birthdate_year"],
+        "birthdate_month": match["birthdate_month"],
+        "birthdate_day": match["birthdate_day"],
+        "birthplace": match["birthplace"],
+        "cin": match["cin"],
     }
 
     return data
