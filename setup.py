@@ -48,11 +48,13 @@ setup(
         "fiscale",
         "cf",
         "fiscal code",
+        "italia",
+        "italy",
     ],
     install_requires=[
         "python-dateutil ~= 2.8.0, < 3.0.0",
         "python-fsutil >= 0.8.0, < 1.0.0",
-        "python-slugify >= 6.0.1, < 7.1.0",
+        "python-slugify >= 7.0.0, < 8.0.0",
     ],
     tests_require=[],
     classifiers=[
@@ -63,7 +65,6 @@ setup(
         "Natural Language :: English",
         "Operating System :: OS Independent",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
