@@ -278,7 +278,9 @@ class CodiceFiscaleTestCase(unittest.TestCase):
         self.assertTrue(birthplace is not None)
         self.assertTrue(isinstance(birthplace, dict))
         # print(birthplace)
-        self.assertEqual(birthplace["code"], "Vignola")
+        self.assertEqual(birthplace["code"], "L885")
+        self.assertEqual(birthplace["name"], "Vignola")
+        self.assertEqual(birthplace["province"], "MO")
 
     def test_encode(self):
 
