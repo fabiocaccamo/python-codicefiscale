@@ -141,12 +141,22 @@ def _get_date(date, separator="-"):
         return None
     if isinstance(date, datetime):
         return date
+    date_slug = slugify(date)
+    date_parts = date_slug.split("-")[:3]
+    date_parser_options = (
+        {
+            "yearfirst": True,
+        }
+        if len(date_parts[0]) == 4
+        else {
+            "dayfirst": True,
+        }
+    )
     try:
-        date_obj = datetime.strptime(date, f"%Y{separator}%m{separator}%d")
+        date_obj = date_parser.parse(date_slug, **date_parser_options)
         return date_obj
-    except ValueError:
-        date_obj = None
-    return date_obj
+    except ValueError as e:
+        raise ValueError(f"[codicefiscale] {e}")
 
 
 def _get_birthplace(birthplace, birthdate=None):
@@ -170,7 +180,9 @@ def _get_birthplace(birthplace, birthdate=None):
 
     for birthplace_option in birthplaces_options:
         date_created = _get_date(birthplace_option["date_created"]) or datetime.min
+        date_created = date_created.replace(tzinfo=None)
         date_deleted = _get_date(birthplace_option["date_deleted"]) or datetime.max
+        date_deleted = date_deleted.replace(tzinfo=None)
         # print(birthdate_date, date_created, date_deleted)
         if birthdate_date >= date_created and birthdate_date <= date_deleted:
             return birthplace_option.copy()
@@ -197,34 +209,6 @@ def _get_omocodes(code):
         for subs in _OMOCODIA_SUBS_INDEXES_COMBINATIONS
     ]
     return codes
-
-
-def _parse_date(date, separator="-"):
-    if not date:
-        return None
-    if isinstance(date, datetime):
-        return date
-    try:
-        date_obj = datetime.strptime(date, f"%Y{separator}%m{separator}%d")
-        return date_obj
-    except ValueError:
-        pass
-    date_slug = slugify(date)
-    date_parts = date_slug.split("-")[:3]
-    date_parser_options = (
-        {
-            "yearfirst": True,
-        }
-        if len(date_parts[0]) == 4
-        else {
-            "dayfirst": True,
-        }
-    )
-    try:
-        date_obj = date_parser.parse(date_slug, **date_parser_options)
-        return date_obj
-    except ValueError as e:
-        raise ValueError(f"[codicefiscale] {e}")
 
 
 def encode_surname(surname):
@@ -279,7 +263,7 @@ def encode_birthdate(birthdate, sex):
     """
     if not birthdate:
         raise ValueError("[codicefiscale] 'birthdate' argument cant be None")
-    date = _parse_date(birthdate)
+    date = _get_date(birthdate)
 
     if not sex:
         raise ValueError("[codicefiscale] 'sex' argument cant be None")
