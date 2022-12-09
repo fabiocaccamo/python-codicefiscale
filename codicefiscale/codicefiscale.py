@@ -91,8 +91,11 @@ def _get_indexed_data():
         province = municipality["province"].lower()
         names = municipality["name_slugs"]
         for name in names:
-            data["municipalities"][name] = municipality
-            data["municipalities"][name + "-" + province] = municipality
+            name_and_province = f"{name}-{province}"
+            data["municipalities"].setdefault(name, [])
+            data["municipalities"].setdefault(name_and_province, [])
+            data["municipalities"][name].append(municipality)
+            data["municipalities"][name_and_province].append(municipality)
         data["codes"].setdefault(code, [])
         data["codes"][code].append(municipality)
 
@@ -100,7 +103,8 @@ def _get_indexed_data():
         code = country["code"]
         names = country["name_slugs"]
         for name in names:
-            data["countries"][name] = country
+            data["countries"].setdefault(name, [])
+            data["countries"][name].append(country)
         data["codes"].setdefault(code, [])
         data["codes"][code].append(country)
 
@@ -132,6 +136,60 @@ def _get_consonants_and_vowels(consonants, vowels):
     return "".join(list(consonants[:3] + vowels[:3] + (["X"] * 3))[:3]).upper()
 
 
+def _get_date(date, separator="-"):
+    if not date:
+        return None
+    if isinstance(date, datetime):
+        return date
+    date_slug = slugify(date)
+    date_parts = date_slug.split("-")[:3]
+    date_parser_options = (
+        {
+            "yearfirst": True,
+        }
+        if len(date_parts[0]) == 4
+        else {
+            "dayfirst": True,
+        }
+    )
+    try:
+        date_obj = date_parser.parse(date_slug, **date_parser_options)
+        return date_obj
+    except ValueError as e:
+        raise ValueError(f"[codicefiscale] {e}")
+
+
+def _get_birthplace(birthplace, birthdate=None):
+    birthplace_slug = slugify(birthplace)
+    birthplace_code = birthplace_slug.upper()
+    birthplaces_options = _DATA["municipalities"].get(
+        birthplace_slug,
+        _DATA["countries"].get(
+            birthplace_slug,
+            _DATA["codes"].get(
+                birthplace_code,
+            ),
+        ),
+    )
+    if not birthplaces_options:
+        return None
+
+    birthdate_date = _get_date(birthdate)
+    if not birthdate_date:
+        return birthplaces_options[0].copy()
+
+    for birthplace_option in birthplaces_options:
+        date_created = _get_date(birthplace_option["date_created"]) or datetime.min
+        date_created = date_created.replace(tzinfo=None)
+        date_deleted = _get_date(birthplace_option["date_deleted"]) or datetime.max
+        date_deleted = date_deleted.replace(tzinfo=None)
+        # print(birthdate_date, date_created, date_deleted)
+        if birthdate_date >= date_created and birthdate_date <= date_deleted:
+            return birthplace_option.copy()
+
+    return None
+
+
 def _get_omocode(code, subs, trans):
     code_chars = list(code[0:15])
     for i in subs:
@@ -151,14 +209,6 @@ def _get_omocodes(code):
         for subs in _OMOCODIA_SUBS_INDEXES_COMBINATIONS
     ]
     return codes
-
-
-def _get_date(s):
-    try:
-        value = datetime.strptime(s, "%Y-%m-%d")
-    except ValueError:
-        value = None
-    return value
 
 
 def encode_surname(surname):
@@ -213,36 +263,22 @@ def encode_birthdate(birthdate, sex):
     """
     if not birthdate:
         raise ValueError("[codicefiscale] 'birthdate' argument cant be None")
+    date = _get_date(birthdate)
 
     if not sex:
         raise ValueError("[codicefiscale] 'sex' argument cant be None")
-
     sex = sex.upper()
-
     if sex not in ["M", "F"]:
         raise ValueError("[codicefiscale] 'sex' argument must be 'M' or 'F'")
 
-    if isinstance(birthdate, datetime):
-        date_obj = birthdate
-    else:
-        date_slug = slugify(birthdate)
-        date_parts = date_slug.split("-")[:3]
-        date_kwargs = (
-            {"yearfirst": True} if len(date_parts[0]) == 4 else {"dayfirst": True}
-        )
-        try:
-            date_obj = date_parser.parse(date_slug, **date_kwargs)
-        except ValueError as e:
-            raise ValueError(f"[codicefiscale] {e}")
-
-    year_code = str(date_obj.year)[2:]
-    month_code = _MONTHS[date_obj.month - 1]
-    day_code = str(date_obj.day + (40 if sex == "F" else 0)).zfill(2).upper()
+    year_code = str(date.year)[2:]
+    month_code = _MONTHS[date.month - 1]
+    day_code = str(date.day + (40 if sex == "F" else 0)).zfill(2).upper()
     date_code = year_code + month_code + day_code
     return date_code
 
 
-def encode_birthplace(birthplace):
+def encode_birthplace(birthplace, birthdate=None):
     """
     Encodes birthplace to the code used in italian fiscal code.
 
@@ -255,29 +291,18 @@ def encode_birthplace(birthplace):
     if not birthplace:
         raise ValueError("[codicefiscale] 'birthplace' argument cant be None")
 
-    def find_birthplace_code(birthplace):
-        birthplace_slug = slugify(birthplace)
-        birthplace_code = birthplace_slug.upper()
-        birthplace_data = _DATA["municipalities"].get(
-            birthplace_slug,
-            _DATA["countries"].get(birthplace_slug),
-        )
-        if birthplace_data:
-            return birthplace_data.get("code", "")
-        elif birthplace_code in _DATA["codes"]:
-            return birthplace_code
-        else:
-            return ""
-
-    birthplace_code = find_birthplace_code(birthplace) or find_birthplace_code(
-        re.split(r",|\(", birthplace)[0]
+    birthplace_without_province = re.split(r",|\(", birthplace)[0]
+    birthplace_data = _get_birthplace(birthplace, birthdate,) or _get_birthplace(
+        birthplace_without_province,
+        birthdate,
     )
 
-    if birthplace_code == "":
+    if not birthplace_data:
         raise ValueError(
             f"[codicefiscale] 'birthplace' argument not mapped to code: ('{birthplace}' -> '')"
         )
 
+    birthplace_code = birthplace_data["code"]
     return birthplace_code
 
 
@@ -331,7 +356,7 @@ def encode(surname, name, sex, birthdate, birthplace):
     code += encode_surname(surname)
     code += encode_name(name)
     code += encode_birthdate(birthdate, sex)
-    code += encode_birthplace(birthplace)
+    code += encode_birthplace(birthplace, birthdate)
     code += encode_cin(code)
 
     # raise ValueError if code is not valid
@@ -398,29 +423,21 @@ def decode(code):
 
     current_year = datetime.now().year
     current_year_century_prefix = str(current_year)[0:-2]
-    birthdate_year_int = int(f"{current_year_century_prefix}{birthdate_year}")
-    if birthdate_year_int > current_year:
-        birthdate_year_int -= 100
-    birthdate_year = str(birthdate_year_int)
+    birthdate_year = int(f"{current_year_century_prefix}{birthdate_year}")
+    if birthdate_year > current_year:
+        birthdate_year -= 100
     birthdate_str = f"{birthdate_year}/{birthdate_month}/{birthdate_day}"
-    try:
-        birthdate = datetime.strptime(birthdate_str, "%Y/%m/%d")
-    except ValueError:
+    birthdate = _get_date(birthdate_str, separator="/")
+    if not birthdate:
         raise ValueError(f"[codicefiscale] invalid date: {birthdate_str}")
 
     birthplace_code = raw["birthplace"][0] + raw["birthplace"][1:].translate(
         _OMOCODIA_DECODE_TRANS
     )
-    birthplace = None
-    birthplaces_options = _DATA["codes"].get(birthplace_code)
-    if not birthplaces_options:
+    birthplace = _get_birthplace(birthplace_code, birthdate)
+    # print(birthplace)
+    if not birthplace:
         raise ValueError(f"[codicefiscale] wrong birthplace code: '{birthplace_code}'")
-    for birthplace_option in birthplaces_options:
-        date_created = _get_date(birthplace_option["date_created"]) or datetime.min
-        date_deleted = _get_date(birthplace_option["date_deleted"]) or datetime.max
-        if birthdate >= date_created and birthdate <= date_deleted:
-            birthplace = birthplace_option.copy()
-            break
 
     cin = raw["cin"]
     cin_check = encode_cin(code)
