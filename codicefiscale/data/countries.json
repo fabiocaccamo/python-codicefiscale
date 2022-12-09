@@ -2,7 +2,7 @@
     {
         "active": true,
         "code": "Z200",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Afghanistan",
         "name_alt": "Afghanistan",
@@ -15,7 +15,7 @@
     {
         "active": true,
         "code": "Z100",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Albania",
         "name_alt": "Albania",
@@ -28,7 +28,7 @@
     {
         "active": true,
         "code": "Z301",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Algeria",
         "name_alt": "Algeria",
@@ -41,7 +41,7 @@
     {
         "active": true,
         "code": "Z101",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Andorra",
         "name_alt": "Andorra",
@@ -54,7 +54,7 @@
     {
         "active": true,
         "code": "Z302",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Angola",
         "name_alt": "Angola",
@@ -67,7 +67,7 @@
     {
         "active": true,
         "code": "Z532",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Antigua E Barbuda",
         "name_alt": "Antigua E Barbuda",
@@ -81,7 +81,7 @@
     {
         "active": true,
         "code": "Z203",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Arabia Saudita",
         "name_alt": "Arabia Saudita",
@@ -95,7 +95,7 @@
     {
         "active": true,
         "code": "Z600",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Argentina",
         "name_alt": "Argentina",
@@ -108,7 +108,7 @@
     {
         "active": true,
         "code": "Z252",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Armenia",
         "name_alt": "Armenia",
@@ -121,7 +121,7 @@
     {
         "active": true,
         "code": "Z501",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Aruba",
         "name_alt": "",
@@ -134,7 +134,7 @@
     {
         "active": true,
         "code": "Z700",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Australia",
         "name_alt": "Australia",
@@ -147,7 +147,7 @@
     {
         "active": true,
         "code": "Z102",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Austria",
         "name_alt": "Austria",
@@ -160,7 +160,7 @@
     {
         "active": true,
         "code": "Z253",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Azerbaigian",
         "name_alt": "Azerbaigian",
@@ -174,7 +174,7 @@
     {
         "active": true,
         "code": "Z502",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Bahamas",
         "name_alt": "Bahamas",
@@ -187,7 +187,7 @@
     {
         "active": true,
         "code": "Z204",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Bahrein",
         "name_alt": "Bahrein",
@@ -201,7 +201,7 @@
     {
         "active": true,
         "code": "Z249",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Bangladesh",
         "name_alt": "Bangladesh",
@@ -214,7 +214,7 @@
     {
         "active": true,
         "code": "Z522",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Barbados",
         "name_alt": "Barbados",
@@ -227,7 +227,7 @@
     {
         "active": true,
         "code": "Z103",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Belgio",
         "name_alt": "Belgio",
@@ -241,7 +241,7 @@
     {
         "active": true,
         "code": "Z512",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Belize",
         "name_alt": "Belize",
@@ -254,7 +254,7 @@
     {
         "active": true,
         "code": "Z314",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Benin",
         "name_alt": "Benin (Ex Dahomey)",
@@ -268,7 +268,7 @@
     {
         "active": true,
         "code": "Z400",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Bermuda",
         "name_alt": "",
@@ -281,7 +281,7 @@
     {
         "active": true,
         "code": "Z205",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Bhutan",
         "name_alt": "Bhutan",
@@ -294,7 +294,7 @@
     {
         "active": true,
         "code": "Z139",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Bielorussia",
         "name_alt": "Bielorussia",
@@ -308,7 +308,7 @@
     {
         "active": true,
         "code": "Z601",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Bolivia",
         "name_alt": "Bolivia",
@@ -322,7 +322,7 @@
     {
         "active": true,
         "code": "Z153",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Bosnia-Erzegovina",
         "name_alt": "Bosnia-Erzegovina",
@@ -336,7 +336,7 @@
     {
         "active": true,
         "code": "Z358",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Botswana",
         "name_alt": "Botswana",
@@ -349,7 +349,7 @@
     {
         "active": true,
         "code": "Z602",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Brasile",
         "name_alt": "Brasile",
@@ -363,7 +363,7 @@
     {
         "active": true,
         "code": "Z207",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Brunei",
         "name_alt": "Brunei",
@@ -377,7 +377,7 @@
     {
         "active": true,
         "code": "Z104",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Bulgaria",
         "name_alt": "Bulgaria",
@@ -390,7 +390,7 @@
     {
         "active": true,
         "code": "Z354",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Burkina Faso",
         "name_alt": "Burkina Faso (Ex Alto Volta)",
@@ -404,7 +404,7 @@
     {
         "active": true,
         "code": "Z305",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Burundi",
         "name_alt": "Burundi",
@@ -417,7 +417,7 @@
     {
         "active": true,
         "code": "Z208",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Cambogia",
         "name_alt": "Cambogia",
@@ -431,7 +431,7 @@
     {
         "active": true,
         "code": "Z306",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Camerun",
         "name_alt": "Camerun",
@@ -445,7 +445,7 @@
     {
         "active": true,
         "code": "Z401",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Canada",
         "name_alt": "Canada",
@@ -458,7 +458,7 @@
     {
         "active": true,
         "code": "Z307",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Capo Verde",
         "name_alt": "Capo Verde",
@@ -472,7 +472,7 @@
     {
         "active": true,
         "code": "Z309",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Ciad",
         "name_alt": "Ciad",
@@ -486,7 +486,7 @@
     {
         "active": true,
         "code": "Z603",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Cile",
         "name_alt": "Cile",
@@ -500,7 +500,7 @@
     {
         "active": true,
         "code": "Z211",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Cipro",
         "name_alt": "Cipro",
@@ -514,7 +514,7 @@
     {
         "active": true,
         "code": "Z604",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Colombia",
         "name_alt": "Colombia",
@@ -527,7 +527,7 @@
     {
         "active": true,
         "code": "Z310",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Comore",
         "name_alt": "Comore",
@@ -541,7 +541,7 @@
     {
         "active": true,
         "code": "Z311",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Congo",
         "name_alt": "Congo (Repubblica Del)",
@@ -555,7 +555,7 @@
     {
         "active": true,
         "code": "Z313",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Costa D'Avorio",
         "name_alt": "Costa D'Avorio",
@@ -569,7 +569,7 @@
     {
         "active": true,
         "code": "Z503",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Costa Rica",
         "name_alt": "Costa Rica",
@@ -582,7 +582,7 @@
     {
         "active": true,
         "code": "Z149",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Croazia",
         "name_alt": "Croazia",
@@ -596,7 +596,7 @@
     {
         "active": true,
         "code": "Z504",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Cuba",
         "name_alt": "Cuba",
@@ -609,7 +609,7 @@
     {
         "active": true,
         "code": "Z107",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Danimarca",
         "name_alt": "Danimarca",
@@ -623,7 +623,7 @@
     {
         "active": true,
         "code": "Z526",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Dominica",
         "name_alt": "Dominica",
@@ -636,7 +636,7 @@
     {
         "active": true,
         "code": "Z605",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Ecuador",
         "name_alt": "Ecuador",
@@ -649,7 +649,7 @@
     {
         "active": true,
         "code": "Z336",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Egitto",
         "name_alt": "Egitto",
@@ -663,7 +663,7 @@
     {
         "active": true,
         "code": "Z506",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "El Salvador",
         "name_alt": "El Salvador",
@@ -676,7 +676,7 @@
     {
         "active": true,
         "code": "Z215",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Emirati Arabi Uniti",
         "name_alt": "Emirati Arabi Uniti",
@@ -690,7 +690,7 @@
     {
         "active": true,
         "code": "Z368",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Eritrea",
         "name_alt": "Eritrea",
@@ -703,7 +703,7 @@
     {
         "active": true,
         "code": "Z144",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Estonia",
         "name_alt": "Estonia",
@@ -716,7 +716,7 @@
     {
         "active": true,
         "code": "Z349",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Eswatini",
         "name_alt": "Swaziland",
@@ -730,7 +730,7 @@
     {
         "active": true,
         "code": "Z315",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Etiopia",
         "name_alt": "Etiopia",
@@ -744,7 +744,7 @@
     {
         "active": true,
         "code": "Z154",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Federazione Russa",
         "name_alt": "Russa, Federazione",
@@ -759,7 +759,7 @@
     {
         "active": true,
         "code": "Z704",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Figi",
         "name_alt": "Figi",
@@ -773,7 +773,7 @@
     {
         "active": true,
         "code": "Z216",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Filippine",
         "name_alt": "Filippine",
@@ -787,7 +787,7 @@
     {
         "active": true,
         "code": "Z109",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Finlandia",
         "name_alt": "Finlandia",
@@ -801,7 +801,7 @@
     {
         "active": true,
         "code": "Z110",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Francia",
         "name_alt": "Francia",
@@ -815,7 +815,7 @@
     {
         "active": true,
         "code": "Z316",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Gabon",
         "name_alt": "Gabon",
@@ -828,7 +828,7 @@
     {
         "active": true,
         "code": "Z317",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Gambia",
         "name_alt": "Gambia",
@@ -841,7 +841,7 @@
     {
         "active": true,
         "code": "Z254",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Georgia",
         "name_alt": "Georgia",
@@ -854,7 +854,7 @@
     {
         "active": true,
         "code": "Z112",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Germania",
         "name_alt": "Germania",
@@ -868,7 +868,7 @@
     {
         "active": true,
         "code": "Z318",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Ghana",
         "name_alt": "Ghana",
@@ -881,7 +881,7 @@
     {
         "active": true,
         "code": "Z507",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Giamaica",
         "name_alt": "Giamaica",
@@ -895,7 +895,7 @@
     {
         "active": true,
         "code": "Z219",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Giappone",
         "name_alt": "Giappone",
@@ -909,7 +909,7 @@
     {
         "active": true,
         "code": "Z361",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Gibuti",
         "name_alt": "Gibuti",
@@ -923,7 +923,7 @@
     {
         "active": true,
         "code": "Z220",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Giordania",
         "name_alt": "Giordania",
@@ -937,7 +937,7 @@
     {
         "active": true,
         "code": "Z115",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Grecia",
         "name_alt": "Grecia",
@@ -951,7 +951,7 @@
     {
         "active": true,
         "code": "Z524",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Grenada",
         "name_alt": "Grenada",
@@ -964,7 +964,7 @@
     {
         "active": true,
         "code": "Z509",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Guatemala",
         "name_alt": "Guatemala",
@@ -977,7 +977,7 @@
     {
         "active": true,
         "code": "Z319",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Guinea",
         "name_alt": "Guinea",
@@ -990,7 +990,7 @@
     {
         "active": true,
         "code": "Z320",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Guinea Bissau",
         "name_alt": "Guinea Bissau",
@@ -1003,7 +1003,7 @@
     {
         "active": true,
         "code": "Z321",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Guinea Equatoriale",
         "name_alt": "Guinea Equatoriale",
@@ -1017,7 +1017,7 @@
     {
         "active": true,
         "code": "Z606",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Guyana",
         "name_alt": "Guyana",
@@ -1030,7 +1030,7 @@
     {
         "active": true,
         "code": "Z510",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Haiti",
         "name_alt": "Haiti",
@@ -1043,7 +1043,7 @@
     {
         "active": true,
         "code": "Z511",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Honduras",
         "name_alt": "Honduras",
@@ -1056,7 +1056,7 @@
     {
         "active": true,
         "code": "Z222",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "India",
         "name_alt": "India",
@@ -1069,7 +1069,7 @@
     {
         "active": true,
         "code": "Z223",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Indonesia",
         "name_alt": "Indonesia",
@@ -1082,7 +1082,7 @@
     {
         "active": true,
         "code": "Z224",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Iran",
         "name_alt": "Iran, Repubblica Islamica Del",
@@ -1097,7 +1097,7 @@
     {
         "active": true,
         "code": "Z225",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Iraq",
         "name_alt": "Iraq",
@@ -1110,7 +1110,7 @@
     {
         "active": true,
         "code": "Z116",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Irlanda",
         "name_alt": "Irlanda",
@@ -1124,7 +1124,7 @@
     {
         "active": true,
         "code": "Z117",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Islanda",
         "name_alt": "Islanda",
@@ -1138,7 +1138,7 @@
     {
         "active": true,
         "code": "Z530",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Isole Cayman",
         "name_alt": "",
@@ -1151,7 +1151,7 @@
     {
         "active": true,
         "code": "Z703",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Isole Cook",
         "name_alt": "",
@@ -1164,7 +1164,7 @@
     {
         "active": true,
         "code": "Z108",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Isole Faer Oer",
         "name_alt": "",
@@ -1177,7 +1177,7 @@
     {
         "active": true,
         "code": "Z711",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Isole Marshall",
         "name_alt": "Marshall, Isole",
@@ -1192,7 +1192,7 @@
     {
         "active": true,
         "code": "Z724",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Isole Salomone",
         "name_alt": "Salomone, Isole",
@@ -1207,7 +1207,7 @@
     {
         "active": true,
         "code": "Z519",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Isole Turks E Caicos",
         "name_alt": "",
@@ -1220,7 +1220,7 @@
     {
         "active": true,
         "code": "Z525",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Isole Vergini Britanniche",
         "name_alt": "",
@@ -1233,7 +1233,7 @@
     {
         "active": true,
         "code": "Z729",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Isole Wallis E Futuna",
         "name_alt": "",
@@ -1246,7 +1246,7 @@
     {
         "active": true,
         "code": "Z226",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Israele",
         "name_alt": "Israele",
@@ -1260,7 +1260,7 @@
     {
         "active": true,
         "code": "Z255",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Kazakhstan",
         "name_alt": "Kazakhstan",
@@ -1273,7 +1273,7 @@
     {
         "active": true,
         "code": "Z322",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Kenya",
         "name_alt": "Kenya",
@@ -1286,7 +1286,7 @@
     {
         "active": true,
         "code": "Z256",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Kirghizistan",
         "name_alt": "Kirghizistan",
@@ -1300,7 +1300,7 @@
     {
         "active": true,
         "code": "Z731",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Kiribati",
         "name_alt": "Kiribati",
@@ -1313,7 +1313,7 @@
     {
         "active": true,
         "code": "Z160",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Kosovo",
         "name_alt": "Kosovo",
@@ -1326,7 +1326,7 @@
     {
         "active": true,
         "code": "Z227",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Kuwait",
         "name_alt": "Kuwait",
@@ -1339,7 +1339,7 @@
     {
         "active": true,
         "code": "Z228",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Laos",
         "name_alt": "Laos",
@@ -1353,7 +1353,7 @@
     {
         "active": true,
         "code": "Z359",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Lesotho",
         "name_alt": "Lesotho",
@@ -1366,7 +1366,7 @@
     {
         "active": true,
         "code": "Z145",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Lettonia",
         "name_alt": "Lettonia",
@@ -1380,7 +1380,7 @@
     {
         "active": true,
         "code": "Z229",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Libano",
         "name_alt": "Libano",
@@ -1394,7 +1394,7 @@
     {
         "active": true,
         "code": "Z325",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Liberia",
         "name_alt": "Liberia",
@@ -1407,7 +1407,7 @@
     {
         "active": true,
         "code": "Z326",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Libia",
         "name_alt": "Libia",
@@ -1421,7 +1421,7 @@
     {
         "active": true,
         "code": "Z119",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Liechtenstein",
         "name_alt": "Liechtenstein",
@@ -1434,7 +1434,7 @@
     {
         "active": true,
         "code": "Z146",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Lituania",
         "name_alt": "Lituania",
@@ -1448,7 +1448,7 @@
     {
         "active": true,
         "code": "Z120",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Lussemburgo",
         "name_alt": "Lussemburgo",
@@ -1462,7 +1462,7 @@
     {
         "active": true,
         "code": "Z148",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Macedonia Del Nord",
         "name_alt": "Macedonia, Repubblica Di",
@@ -1477,7 +1477,7 @@
     {
         "active": true,
         "code": "Z327",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Madagascar",
         "name_alt": "Madagascar",
@@ -1490,7 +1490,7 @@
     {
         "active": true,
         "code": "Z328",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Malawi",
         "name_alt": "Malawi",
@@ -1503,7 +1503,7 @@
     {
         "active": true,
         "code": "Z247",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Malaysia",
         "name_alt": "Malaysia",
@@ -1516,7 +1516,7 @@
     {
         "active": true,
         "code": "Z232",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Maldive",
         "name_alt": "Maldive",
@@ -1530,7 +1530,7 @@
     {
         "active": true,
         "code": "Z329",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Mali",
         "name_alt": "Mali",
@@ -1543,7 +1543,7 @@
     {
         "active": true,
         "code": "Z121",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Malta",
         "name_alt": "Malta",
@@ -1556,7 +1556,7 @@
     {
         "active": true,
         "code": "Z330",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Marocco",
         "name_alt": "Marocco",
@@ -1570,7 +1570,7 @@
     {
         "active": true,
         "code": "Z513",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Martinica",
         "name_alt": "",
@@ -1583,7 +1583,7 @@
     {
         "active": true,
         "code": "Z331",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Mauritania",
         "name_alt": "Mauritania",
@@ -1596,7 +1596,7 @@
     {
         "active": true,
         "code": "Z332",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Mauritius",
         "name_alt": "Mauritius",
@@ -1609,7 +1609,7 @@
     {
         "active": true,
         "code": "Z360",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Mayotte",
         "name_alt": "",
@@ -1622,7 +1622,7 @@
     {
         "active": true,
         "code": "Z514",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Messico",
         "name_alt": "Messico",
@@ -1636,7 +1636,7 @@
     {
         "active": true,
         "code": "Z140",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Moldova",
         "name_alt": "Moldova",
@@ -1650,7 +1650,7 @@
     {
         "active": true,
         "code": "Z123",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Monaco",
         "name_alt": "Monaco",
@@ -1663,7 +1663,7 @@
     {
         "active": true,
         "code": "Z233",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Mongolia",
         "name_alt": "Mongolia",
@@ -1676,7 +1676,7 @@
     {
         "active": true,
         "code": "Z159",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Montenegro",
         "name_alt": "Montenegro",
@@ -1689,7 +1689,7 @@
     {
         "active": true,
         "code": "Z333",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Mozambico",
         "name_alt": "Mozambico",
@@ -1703,7 +1703,7 @@
     {
         "active": true,
         "code": "Z206",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Myanmar",
         "name_alt": "Myanmar (Ex Birmania)",
@@ -1717,7 +1717,7 @@
     {
         "active": true,
         "code": "Z300",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Namibia",
         "name_alt": "Namibia",
@@ -1730,7 +1730,7 @@
     {
         "active": true,
         "code": "Z713",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Nauru",
         "name_alt": "Nauru",
@@ -1743,7 +1743,7 @@
     {
         "active": true,
         "code": "Z234",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Nepal",
         "name_alt": "Nepal",
@@ -1756,7 +1756,7 @@
     {
         "active": true,
         "code": "Z515",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Nicaragua",
         "name_alt": "Nicaragua",
@@ -1769,7 +1769,7 @@
     {
         "active": true,
         "code": "Z334",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Niger",
         "name_alt": "Niger",
@@ -1782,7 +1782,7 @@
     {
         "active": true,
         "code": "Z335",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Nigeria",
         "name_alt": "Nigeria",
@@ -1795,7 +1795,7 @@
     {
         "active": true,
         "code": "Z125",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Norvegia",
         "name_alt": "Norvegia",
@@ -1809,7 +1809,7 @@
     {
         "active": true,
         "code": "Z719",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Nuova Zelanda",
         "name_alt": "Nuova Zelanda",
@@ -1823,7 +1823,7 @@
     {
         "active": true,
         "code": "Z235",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Oman",
         "name_alt": "Oman",
@@ -1836,7 +1836,7 @@
     {
         "active": true,
         "code": "Z126",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Paesi Bassi",
         "name_alt": "Paesi Bassi",
@@ -1850,7 +1850,7 @@
     {
         "active": true,
         "code": "Z236",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Pakistan",
         "name_alt": "Pakistan",
@@ -1863,7 +1863,7 @@
     {
         "active": true,
         "code": "Z734",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Palau",
         "name_alt": "Palau",
@@ -1876,7 +1876,7 @@
     {
         "active": true,
         "code": "Z516",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Panama",
         "name_alt": "Panama",
@@ -1889,7 +1889,7 @@
     {
         "active": true,
         "code": "Z730",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Papua Nuova Guinea",
         "name_alt": "Papua Nuova Guinea",
@@ -1903,7 +1903,7 @@
     {
         "active": true,
         "code": "Z610",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Paraguay",
         "name_alt": "Paraguay",
@@ -1916,7 +1916,7 @@
     {
         "active": true,
         "code": "Z611",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Peru'",
         "name_alt": "Per\u00f9",
@@ -1929,7 +1929,7 @@
     {
         "active": true,
         "code": "Z127",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Polonia",
         "name_alt": "Polonia",
@@ -1943,7 +1943,7 @@
     {
         "active": true,
         "code": "Z128",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Portogallo",
         "name_alt": "Portogallo",
@@ -1957,7 +1957,7 @@
     {
         "active": true,
         "code": "Z237",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Qatar",
         "name_alt": "Qatar",
@@ -1970,7 +1970,7 @@
     {
         "active": true,
         "code": "Z114",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Regno Unito",
         "name_alt": "Regno Unito",
@@ -1984,7 +1984,7 @@
     {
         "active": true,
         "code": "Z156",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Repubblica Ceca",
         "name_alt": "Ceca, Repubblica",
@@ -1999,7 +1999,7 @@
     {
         "active": true,
         "code": "Z308",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Repubblica Centrafricana",
         "name_alt": "Centrafricana, Repubblica",
@@ -2014,7 +2014,7 @@
     {
         "active": true,
         "code": "Z312",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Repubblica Democratica Del Congo",
         "name_alt": "Congo, Repubblica Democratica Del (Ex Zaire)",
@@ -2029,7 +2029,7 @@
     {
         "active": true,
         "code": "Z213",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Repubblica Di Corea",
         "name_alt": "Corea, Repubblica (Corea Del Sud)",
@@ -2044,7 +2044,7 @@
     {
         "active": true,
         "code": "Z505",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Repubblica Dominicana",
         "name_alt": "Dominicana, Repubblica",
@@ -2059,7 +2059,7 @@
     {
         "active": true,
         "code": "Z210",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Repubblica Popolare Cinese",
         "name_alt": "Cinese, Repubblica Popolare",
@@ -2074,7 +2074,7 @@
     {
         "active": true,
         "code": "Z214",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Repubblica Popolare Democratica Di Corea",
         "name_alt": "Corea, Repubblica Popolare Democratica (Corea Del Nord)",
@@ -2089,7 +2089,7 @@
     {
         "active": true,
         "code": "Z129",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Romania",
         "name_alt": "Romania",
@@ -2102,7 +2102,7 @@
     {
         "active": true,
         "code": "Z338",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Ruanda",
         "name_alt": "Ruanda",
@@ -2116,7 +2116,7 @@
     {
         "active": true,
         "code": "Z533",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Saint Kitts E Nevis",
         "name_alt": "Saint Kitts E Nevis",
@@ -2130,7 +2130,7 @@
     {
         "active": true,
         "code": "Z527",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Saint Lucia",
         "name_alt": "Saint Lucia",
@@ -2143,7 +2143,7 @@
     {
         "active": true,
         "code": "Z403",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Saint Pierre E Miquelon",
         "name_alt": "",
@@ -2156,7 +2156,7 @@
     {
         "active": true,
         "code": "Z528",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Saint Vincent E Grenadine",
         "name_alt": "Saint Vincent E Grenadine",
@@ -2170,7 +2170,7 @@
     {
         "active": true,
         "code": "Z726",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Samoa",
         "name_alt": "Samoa",
@@ -2183,7 +2183,7 @@
     {
         "active": true,
         "code": "Z130",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "San Marino",
         "name_alt": "San Marino",
@@ -2196,7 +2196,7 @@
     {
         "active": true,
         "code": "Z340",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Sant'Elena",
         "name_alt": "",
@@ -2209,7 +2209,7 @@
     {
         "active": true,
         "code": "Z341",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Sao Tome' E Principe",
         "name_alt": "S\u00e3o Tom\u00e9 E Principe",
@@ -2223,7 +2223,7 @@
     {
         "active": true,
         "code": "Z343",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Senegal",
         "name_alt": "Senegal",
@@ -2236,7 +2236,7 @@
     {
         "active": true,
         "code": "Z158",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Serbia",
         "name_alt": "Serbia, Repubblica Di",
@@ -2250,7 +2250,7 @@
     {
         "active": true,
         "code": "Z342",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Seychelles",
         "name_alt": "Seychelles",
@@ -2263,7 +2263,7 @@
     {
         "active": true,
         "code": "Z344",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Sierra Leone",
         "name_alt": "Sierra Leone",
@@ -2276,7 +2276,7 @@
     {
         "active": true,
         "code": "Z248",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Singapore",
         "name_alt": "Singapore",
@@ -2289,7 +2289,7 @@
     {
         "active": true,
         "code": "Z240",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Siria",
         "name_alt": "Siria",
@@ -2303,7 +2303,7 @@
     {
         "active": true,
         "code": "Z155",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Slovacchia",
         "name_alt": "Slovacchia",
@@ -2317,7 +2317,7 @@
     {
         "active": true,
         "code": "Z150",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Slovenia",
         "name_alt": "Slovenia",
@@ -2330,7 +2330,7 @@
     {
         "active": true,
         "code": "Z345",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Somalia",
         "name_alt": "Somalia",
@@ -2343,7 +2343,7 @@
     {
         "active": true,
         "code": "Z131",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Spagna",
         "name_alt": "Spagna",
@@ -2357,7 +2357,7 @@
     {
         "active": true,
         "code": "Z209",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Sri Lanka",
         "name_alt": "Sri Lanka (Ex Ceylon)",
@@ -2371,7 +2371,7 @@
     {
         "active": true,
         "code": "Z735",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Stati Federati Di Micronesia",
         "name_alt": "Micronesia, Stati Federati",
@@ -2386,7 +2386,7 @@
     {
         "active": true,
         "code": "Z404",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Stati Uniti D'America",
         "name_alt": "Stati Uniti D'America",
@@ -2400,7 +2400,7 @@
     {
         "active": true,
         "code": "Z106",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Stato Citta' Del Vaticano",
         "name_alt": "Stato Della Citt\u00e0 Del Vaticano",
@@ -2415,7 +2415,7 @@
     {
         "active": true,
         "code": "Z347",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Sud Africa",
         "name_alt": "Sud Africa",
@@ -2429,7 +2429,7 @@
     {
         "active": true,
         "code": "Z907",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Sud Sudan",
         "name_alt": "Sud Sudan, Repubblica Del",
@@ -2444,7 +2444,7 @@
     {
         "active": true,
         "code": "Z348",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Sudan",
         "name_alt": "Sudan",
@@ -2457,7 +2457,7 @@
     {
         "active": true,
         "code": "Z608",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Suriname",
         "name_alt": "Suriname",
@@ -2470,7 +2470,7 @@
     {
         "active": true,
         "code": "Z132",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Svezia",
         "name_alt": "Svezia",
@@ -2484,7 +2484,7 @@
     {
         "active": true,
         "code": "Z133",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Svizzera",
         "name_alt": "Svizzera",
@@ -2498,7 +2498,7 @@
     {
         "active": true,
         "code": "Z257",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Tagikistan",
         "name_alt": "Tagikistan",
@@ -2512,7 +2512,7 @@
     {
         "active": true,
         "code": "Z217",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Taiwan",
         "name_alt": "Taiwan (Ex Formosa)",
@@ -2527,7 +2527,7 @@
     {
         "active": true,
         "code": "Z357",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Tanzania",
         "name_alt": "Tanzania",
@@ -2541,7 +2541,7 @@
     {
         "active": true,
         "code": "Z161",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Territori Dell'Autonomia Palestinese",
         "name_alt": "Territori Dell'Autonomia Palestinese",
@@ -2555,7 +2555,7 @@
     {
         "active": true,
         "code": "Z241",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Thailandia",
         "name_alt": "Thailandia",
@@ -2569,7 +2569,7 @@
     {
         "active": true,
         "code": "Z242",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Timor Orientale",
         "name_alt": "Timor Orientale",
@@ -2583,7 +2583,7 @@
     {
         "active": true,
         "code": "Z351",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Togo",
         "name_alt": "Togo",
@@ -2596,7 +2596,7 @@
     {
         "active": true,
         "code": "Z728",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Tonga",
         "name_alt": "Tonga",
@@ -2609,7 +2609,7 @@
     {
         "active": true,
         "code": "Z612",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Trinidad E Tobago",
         "name_alt": "Trinidad E Tobago",
@@ -2623,7 +2623,7 @@
     {
         "active": true,
         "code": "Z352",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Tunisia",
         "name_alt": "Tunisia",
@@ -2636,7 +2636,7 @@
     {
         "active": true,
         "code": "Z243",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Turchia",
         "name_alt": "Turchia",
@@ -2650,7 +2650,7 @@
     {
         "active": true,
         "code": "Z258",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Turkmenistan",
         "name_alt": "Turkmenistan",
@@ -2663,7 +2663,7 @@
     {
         "active": true,
         "code": "Z732",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Tuvalu",
         "name_alt": "Tuvalu",
@@ -2676,7 +2676,7 @@
     {
         "active": true,
         "code": "Z138",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Ucraina",
         "name_alt": "Ucraina",
@@ -2690,7 +2690,7 @@
     {
         "active": true,
         "code": "Z353",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Uganda",
         "name_alt": "Uganda",
@@ -2703,7 +2703,7 @@
     {
         "active": true,
         "code": "Z134",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Ungheria",
         "name_alt": "Ungheria",
@@ -2717,7 +2717,7 @@
     {
         "active": true,
         "code": "Z613",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Uruguay",
         "name_alt": "Uruguay",
@@ -2730,7 +2730,7 @@
     {
         "active": true,
         "code": "Z259",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Uzbekistan",
         "name_alt": "Uzbekistan",
@@ -2743,7 +2743,7 @@
     {
         "active": true,
         "code": "Z733",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Vanuatu",
         "name_alt": "Vanuatu",
@@ -2756,7 +2756,7 @@
     {
         "active": true,
         "code": "Z614",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Venezuela",
         "name_alt": "Venezuela",
@@ -2770,7 +2770,7 @@
     {
         "active": true,
         "code": "Z251",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Vietnam",
         "name_alt": "Vietnam",
@@ -2784,7 +2784,7 @@
     {
         "active": true,
         "code": "Z246",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Yemen",
         "name_alt": "Yemen",
@@ -2797,7 +2797,7 @@
     {
         "active": true,
         "code": "Z355",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Zambia",
         "name_alt": "Zambia",
@@ -2810,7 +2810,7 @@
     {
         "active": true,
         "code": "Z337",
-        "date_created": "01/01/1900 00:00:00",
+        "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
         "name": "Zimbabwe",
         "name_alt": "Zimbabwe (Ex Rhodesia)",

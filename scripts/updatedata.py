@@ -53,9 +53,10 @@ def _update_countries_data():
         )
         province = "EE"
 
-        date_created = item.get_str("datainiziovalidita")
-        date_deleted = item.get_str("datafinevalidita")
-        if "9999" in date_deleted:
+        date_created = item.get_datetime("datainiziovalidita")
+        date_deleted = item.get_datetime("datafinevalidita")
+        date_deleted_raw = item.get_str("datafinevalidita")
+        if "9999" in date_deleted_raw:
             date_deleted = ""
 
         return {
@@ -116,9 +117,10 @@ def _update_municipalities_data():
         province = item.get("siglaprovincia", "").upper()
         assert len(province) == 2, f"Invalid province: '{province}'"
 
-        date_created = item.get_str("dataistituzione")
-        date_deleted = item.get_str("datacessazione")
-        if "9999" in date_deleted:
+        date_created = item.get_datetime("dataistituzione")
+        date_deleted = item.get_datetime("datacessazione")
+        date_deleted_raw = item.get_str("datacessazione")
+        if "9999" in date_deleted_raw:
             date_deleted = ""
 
         return {
