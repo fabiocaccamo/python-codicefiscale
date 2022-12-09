@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.6.0](https://github.com/fabiocaccamo/python-codicefiscale/releases/tag/0.6.0) - 2022-12-09
+-   Add `Python 3.11` support.
+-   Add `pre-commit`.
+-   Add `pypy` to CI.
+-   Drop `Python < 3.8` support.
+-   Updated `countries.json` and/or `municipalities.json` data.
+-   Replace `str.format` with `f-strings`.
+-   Remove encoding pragma.
+-   Decrease dependence on `CODICEFISCALE_RE` regex by naming subpatterns.
+-   Fix decoding code with invalid birthplace code. #27
+-   Fix date of birth not honored when encoding and decoding (deleted municipalities only). #37 (#40)
+-   Bump requirements and GitHub actions versions.
+
 ## [0.5.0](https://github.com/fabiocaccamo/python-codicefiscale/releases/tag/0.5.0) - 2022-09-22
 -   Add municipality validity date support. Fix #12 and #23 by [danisana](https://github.com/danisana) in #24.
 -   Replace `str.format` with `f-strings`.
