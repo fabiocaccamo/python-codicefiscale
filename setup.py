@@ -19,7 +19,7 @@ long_description_file_path = os.path.join(package_path, "README.md")
 long_description_content_type = "text/markdown"
 long_description = ""
 try:
-    with open(long_description_file_path) as f:
+    with open(long_description_file_path, "r", encoding="utf-8") as f:
         long_description = f.read()
 except IOError:
     pass
@@ -72,6 +72,5 @@ setup(
         "Programming Language :: Python :: Implementation :: PyPy",
         "Topic :: Software Development :: Build Tools",
     ],
-    license="MIT",
     test_suite="tests",
 )
