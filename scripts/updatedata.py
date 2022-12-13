@@ -3,6 +3,10 @@ from benedict import benedict
 from slugify import slugify
 
 
+def _slugify_names(*names):
+    return sorted(set(filter(bool, [slugify(name) for name in names])))
+
+
 def _update_countries_data():
     # https://www.anagrafenazionale.interno.it/il-progetto/strumenti-di-lavoro/tabelle-decodifica/
     data_url = "https://www.anagrafenazionale.interno.it/wp-content/uploads/2021/03/tabella_2_statiesteri.xlsx"
@@ -22,18 +26,8 @@ def _update_countries_data():
         assert name != "", f"Invalid name: '{name}'"
         name_alt = item.get_str("denominazioneistat").title()
         name_alt_en = item.get_str("denominazioneistat_en").title()
-        name_slugs = sorted(
-            set(
-                filter(
-                    bool,
-                    [
-                        slugify(name),
-                        slugify(name_alt),
-                        slugify(name_alt_en),
-                    ],
-                )
-            )
-        )
+        name_slugs = _slugify_names(name, name_alt, name_alt_en)
+
         province = "EE"
 
         date_created = item.get_datetime("datainiziovalidita")
@@ -54,13 +48,11 @@ def _update_countries_data():
             "province": province,
         }
 
-    output_data = list(
-        filter(bool, [map_item(benedict(item)) for item in data["values"]])
+    _write_data_json(
+        filepath="../codicefiscale/data/countries.json",
+        items=data["values"],
+        item_map_func=map_item,
     )
-    output_data = sorted(output_data, key=lambda item: item["name"])
-    output_path = "../codicefiscale/data/countries.json"
-    output_abspath = fsutil.join_path(__file__, output_path)
-    fsutil.write_file_json(output_abspath, output_data, indent=4, sort_keys=True)
 
 
 def _update_municipalities_data():
@@ -70,7 +62,6 @@ def _update_municipalities_data():
     data.standardize()
 
     def map_item(item):
-
         status = item.get("stato", "").upper()
         assert len(status) == 1 and status in ["A", "C"], f"Invalid status: '{status}'"
         active = status == "A"
@@ -84,19 +75,8 @@ def _update_municipalities_data():
         name_trans = item.get_str("denomtraslitterata").title()
         name_alt = item.get_str("altradenominazione").title()
         name_alt_trans = item.get_str("altradenomtraslitterata").title()
-        name_slugs = sorted(
-            set(
-                filter(
-                    bool,
-                    [
-                        slugify(name),
-                        slugify(name_trans),
-                        slugify(name_alt),
-                        slugify(name_alt_trans),
-                    ],
-                )
-            )
-        )
+        name_slugs = _slugify_names(name, name_trans, name_alt, name_alt_trans)
+
         province = item.get("siglaprovincia", "").upper()
         assert len(province) == 2, f"Invalid province: '{province}'"
 
@@ -119,13 +99,18 @@ def _update_municipalities_data():
             "province": province,
         }
 
-    output_data = list(
-        filter(bool, [map_item(benedict(item)) for item in data["values"]])
+    _write_data_json(
+        filepath="../codicefiscale/data/municipalities.json",
+        items=data["values"],
+        item_map_func=map_item,
     )
-    output_data = sorted(output_data, key=lambda item: item["name"])
-    output_path = "../codicefiscale/data/municipalities.json"
-    output_abspath = fsutil.join_path(__file__, output_path)
-    fsutil.write_file_json(output_abspath, output_data, indent=4, sort_keys=True)
+
+
+def _write_data_json(filepath, items, item_map_func):
+    data = list(filter(bool, [item_map_func(benedict(item)) for item in items]))
+    data = sorted(data, key=lambda item: item["name"])
+    data_filepath = fsutil.join_path(__file__, filepath)
+    fsutil.write_file_json(data_filepath, data, indent=4, sort_keys=True)
 
 
 def main():
