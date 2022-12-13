@@ -72,5 +72,4 @@ setup(
         "Programming Language :: Python :: Implementation :: PyPy",
         "Topic :: Software Development :: Build Tools",
     ],
-    test_suite="tests",
 )

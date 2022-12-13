@@ -107,9 +107,6 @@ tox
 
 # or run tests using unittest
 python -m unittest tests.tests
-
-# or run tests using setuptools
-python setup.py test
 ```
 
 ## License
