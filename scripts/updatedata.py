@@ -1,29 +1,12 @@
 import fsutil
 from benedict import benedict
-from openpyxl import load_workbook
 from slugify import slugify
 
 
 def _update_countries_data():
     # https://www.anagrafenazionale.interno.it/il-progetto/strumenti-di-lavoro/tabelle-decodifica/
     data_url = "https://www.anagrafenazionale.interno.it/wp-content/uploads/2021/03/tabella_2_statiesteri.xlsx"
-    data_path = fsutil.download_file(data_url, __file__, filename="countries.xlsx")
-
-    workbook = load_workbook(filename=data_path, read_only=True)
-    sheet = workbook.active
-
-    items = []
-    keys = []
-    for row in sheet.iter_rows(min_row=1, max_row=1):
-        keys = [cell.value for cell in row]
-    for row in sheet.iter_rows(min_row=2):
-        values = list([cell.value for cell in row])
-        items.append(dict(zip(keys, values)))
-
-    workbook.close()
-    fsutil.remove_file(data_path)
-
-    data = benedict({"values": items})
+    data = benedict.from_xls(data_url)
     data.standardize()
     # print(data.dump())
 
