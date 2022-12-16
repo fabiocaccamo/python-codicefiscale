@@ -3,6 +3,12 @@ from benedict import benedict
 from slugify import slugify
 
 
+def _expect_keys(d, keys):
+    assert all(
+        [key in d for key in keys]
+    ), f"Invalid keys {list(d.keys())}, missing one or more expected keys {keys}."
+
+
 def _slugify_names(*names):
     return sorted(set(filter(bool, [slugify(name) for name in names])))
 
@@ -17,6 +23,18 @@ def _update_countries_data():
     def map_item(item):
         if not item:
             return None
+
+        _expect_keys(
+            item,
+            [
+                "codat" "denominazione",
+                "denominazioneistat",
+                "denominazioneistat_en",
+                "datainiziovalidita",
+                "datafinevalidita",
+            ],
+        )
+
         code = item.get_str("codat").upper()
         if not code:
             return None
@@ -50,8 +68,7 @@ def _update_countries_data():
 
     _write_data_json(
         filepath="../codicefiscale/data/countries.json",
-        items=data["values"],
-        item_map_func=map_item,
+        data=[map_item(benedict(item)) for item in data["values"]],
     )
 
 
@@ -62,6 +79,24 @@ def _update_municipalities_data():
     data.standardize()
 
     def map_item(item):
+        if not item:
+            return None
+
+        _expect_keys(
+            item,
+            [
+                "stato",
+                "codcatastale",
+                "denominazione_it",
+                "denomtraslitterata",
+                "altradenominazione",
+                "altradenomtraslitterata",
+                "siglaprovincia",
+                "dataistituzione",
+                "datacessazione",
+            ],
+        )
+
         status = item.get("stato", "").upper()
         assert len(status) == 1 and status in ["A", "C"], f"Invalid status: '{status}'"
         active = status == "A"
@@ -101,13 +136,12 @@ def _update_municipalities_data():
 
     _write_data_json(
         filepath="../codicefiscale/data/municipalities.json",
-        items=data["values"],
-        item_map_func=map_item,
+        data=[map_item(benedict(item)) for item in data["values"]],
     )
 
 
-def _write_data_json(filepath, items, item_map_func):
-    data = list(filter(bool, [item_map_func(benedict(item)) for item in items]))
+def _write_data_json(filepath, data):
+    data = list(filter(bool, data))
     data = sorted(data, key=lambda item: item["name"])
     data_filepath = fsutil.join_path(__file__, filepath)
     fsutil.write_file_json(data_filepath, data, indent=4, sort_keys=True)
