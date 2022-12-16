@@ -8,8 +8,8 @@ def _slugify_names(*names):
 
 
 def _update_countries_data():
-    # https://www.anagrafenazionale.interno.it/il-progetto/strumenti-di-lavoro/tabelle-decodifica/
-    data_url = "https://www.anagrafenazionale.interno.it/wp-content/uploads/2021/03/tabella_2_statiesteri.xlsx"
+    # https://www.anagrafenazionale.interno.it/area-tecnica/tabelle-di-decodifica/
+    data_url = "https://www.anagrafenazionale.interno.it/wp-content/uploads/2022/10/tabella_2_statiesteri.xlsx"
     data = benedict.from_xls(data_url)
     data.standardize()
     # print(data.dump())
@@ -56,8 +56,8 @@ def _update_countries_data():
 
 
 def _update_municipalities_data():
-    # https://www.anagrafenazionale.interno.it/il-progetto/strumenti-di-lavoro/tabelle-decodifica/
-    data_url = "https://www.anagrafenazionale.interno.it/wp-content/uploads/ANPR_archivio_comuni.csv"
+    # https://www.anagrafenazionale.interno.it/area-tecnica/tabelle-di-decodifica/
+    data_url = "https://www.anagrafenazionale.interno.it/wp-content/uploads/2022/10/ANPR_archivio_comuni.csv"
     data = benedict.from_csv(data_url)
     data.standardize()
 
