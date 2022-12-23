@@ -4,9 +4,10 @@ from slugify import slugify
 
 
 def _expect_keys(d, keys):
-    assert all(
-        [key in d for key in keys]
-    ), f"Invalid keys {list(d.keys())}, missing one or more expected keys {keys}."
+    missing_keys = list(set(keys) - set(d.keys()))
+    assert (
+        not missing_keys
+    ), f"Invalid keys, missing one or more expected keys {missing_keys}."
 
 
 def _slugify_names(*names):
