@@ -28,7 +28,8 @@ def _update_countries_data():
         _expect_keys(
             item,
             [
-                "codat" "denominazione",
+                "codat",
+                "denominazione",
                 "denominazioneistat",
                 "denominazioneistat_en",
                 "datainiziovalidita",
