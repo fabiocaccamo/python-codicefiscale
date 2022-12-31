@@ -814,7 +814,7 @@ class CodiceFiscaleTestCase(unittest.TestCase):
         )
 
     def test_version(self):
-        version_pattern = re.compile("^(([\d]+)\.([\d]+)\.([\d]+))$")
+        version_pattern = re.compile(r"^(([\d]+)\.([\d]+)\.([\d]+))$")
         self.assertTrue(version_pattern.match(__version__))
 
 
