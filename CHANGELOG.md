@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.6.1](https://github.com/fabiocaccamo/python-benedict/releases/tag/0.6.1) - 2023-01-12
+-   Add `setup.cfg` (`setuptools` declarative syntax) generated using `setuptools-py2cfg`.
+-   Add `pyupgrade` to `pre-commit` config.
+-   Remove `tests/` from dist.
+-   Updated `countries.json` and `municipalities.json` data.
+-   Improve update script error messages and fix formatting error.
+-   Bump requirements.
+
 ## [0.6.0](https://github.com/fabiocaccamo/python-codicefiscale/releases/tag/0.6.0) - 2022-12-09
 -   Add `Python 3.11` support.
 -   Add `pre-commit`.
