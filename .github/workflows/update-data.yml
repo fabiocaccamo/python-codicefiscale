@@ -3,7 +3,7 @@ name: Update data
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 0 * * 5" # run once a week at 00:00 on Friday.
+    - cron: "0 0 1 * *" # run once a month
 
 jobs:
   resources:
@@ -15,7 +15,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.8'
+          python-version: '3.x'
 
       - name: Install dependencies
         run: |
