@@ -21,9 +21,16 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements-data.txt
+          pip install -r requirements-test.txt
 
       - name: Update data
-        run: python scripts/updatedata.py
+        run: |
+          python scripts/updatedata.py
+
+      - name: Run pre-commit
+        continue-on-error: true
+        run: |
+          pre-commit run --files codicefiscale/data/countries.json codicefiscale/data/municipalities.json
 
       - name: Commit data
         uses: test-room-7/action-update-file@v1
