@@ -1,7 +1,7 @@
 [![](https://img.shields.io/pypi/pyversions/python-codicefiscale.svg?logoColor=white&color=blue&logo=python)](https://www.python.org/)
 [![](https://img.shields.io/pypi/v/python-codicefiscale.svg?color=blue&logo=pypi&logoColor=white)](https://pypi.org/project/python-codicefiscale/)
 [![](https://pepy.tech/badge/python-codicefiscale/month)](https://pepy.tech/project/python-codicefiscale)
-[![](https://img.shields.io/github/stars/fabiocaccamo/python-codicefiscale?logo=github)](https://github.com/fabiocaccamo/python-codicefiscale/)
+[![](https://img.shields.io/github/stars/fabiocaccamo/python-codicefiscale?logo=github)](https://github.com/fabiocaccamo/python-codicefiscale/stargazers)
 [![](https://img.shields.io/pypi/l/python-codicefiscale.svg?color=blue&)](https://github.com/fabiocaccamo/python-codicefiscale/blob/main/LICENSE)
 
 [![](https://results.pre-commit.ci/badge/github/fabiocaccamo/python-codicefiscale/main.svg)](https://results.pre-commit.ci/latest/github/fabiocaccamo/python-codicefiscale/main)
