@@ -117,7 +117,7 @@ CODICEFISCALE_RE = re.compile(
     r"^"
     r"(?P<surname>[a-z]{3})"
     r"(?P<name>[a-z]{3})"
-    r"(?P<birthdate>(?P<birthdate_year>[a-z\d]{2})(?P<birthdate_month>[abcdehlmprst]{1})(?P<birthdate_day>[a-z\d]{2}))"
+    r"(?P<birthdate>(?P<birthdate_year>[a-z\d]{2})(?P<birthdate_month>[abcdehlmprst]{1})(?P<birthdate_day>[a-z\d]{2}))"  # noqa: E501
     r"(?P<birthplace>[a-z]{1}[a-z\d]{3})"
     r"(?P<cin>[a-z]{1})$",
     re.IGNORECASE,
@@ -299,7 +299,8 @@ def encode_birthplace(birthplace, birthdate=None):
 
     if not birthplace_data:
         raise ValueError(
-            f"[codicefiscale] 'birthplace' argument not mapped to code: ('{birthplace}' -> '')"
+            "[codicefiscale] 'birthplace' argument not mapped to code: "
+            f"('{birthplace}' -> '')"
         )
 
     birthplace_code = birthplace_data["code"]
@@ -444,7 +445,8 @@ def decode(code):
     # print(cin, cin_check)
     if cin != cin_check:
         raise ValueError(
-            f"[codicefiscale] wrong CIN (Control Internal Number): expected '{cin_check}', found '{cin}'"
+            "[codicefiscale] wrong CIN (Control Internal Number): "
+            f"expected '{cin_check}', found '{cin}'"
         )
 
     data = {
