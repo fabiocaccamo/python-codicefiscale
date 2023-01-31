@@ -35,6 +35,7 @@ jobs:
 
     - name: Run tests
       run: |
+        pre-commit run -a
         mypy codicefiscale --install-types --non-interactive
         coverage run --append --source=codicefiscale -m unittest
         coverage report -m
