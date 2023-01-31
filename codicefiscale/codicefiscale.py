@@ -2,15 +2,16 @@ import re
 import string
 from datetime import datetime
 from itertools import combinations
+from typing import Any, Dict, List, Literal, Optional, Pattern, Tuple, Union
 
 import fsutil
 from dateutil import parser as date_parser
 from slugify import slugify
 
-_CONSONANTS = list("bcdfghjklmnpqrstvwxyz")
-_VOWELS = list("aeiou")
-_MONTHS = list("ABCDEHLMPRST")
-_CIN = {
+_CONSONANTS: List = list("bcdfghjklmnpqrstvwxyz")
+_VOWELS: List = list("aeiou")
+_MONTHS: List = list("ABCDEHLMPRST")
+_CIN: Dict[str, Tuple[int, int]] = {
     "0": (0, 1),
     "1": (1, 0),
     "2": (2, 5),
@@ -48,9 +49,9 @@ _CIN = {
     "Y": (24, 24),
     "Z": (25, 23),
 }
-_CIN_REMAINDERS = list(string.ascii_uppercase)
+_CIN_REMAINDERS: List = list(string.ascii_uppercase)
 
-_OMOCODIA = {
+_OMOCODIA: Dict[str, str] = {
     "0": "L",
     "1": "M",
     "2": "N",
@@ -62,25 +63,29 @@ _OMOCODIA = {
     "8": "U",
     "9": "V",
 }
-_OMOCODIA_DIGITS = "".join([digit for digit in _OMOCODIA])
-_OMOCODIA_LETTERS = "".join([_OMOCODIA[digit] for digit in _OMOCODIA])
-_OMOCODIA_ENCODE_TRANS = "".maketrans(_OMOCODIA_DIGITS, _OMOCODIA_LETTERS)
-_OMOCODIA_DECODE_TRANS = "".maketrans(_OMOCODIA_LETTERS, _OMOCODIA_DIGITS)
-_OMOCODIA_SUBS_INDEXES = list(reversed([6, 7, 9, 10, 12, 13, 14]))
-_OMOCODIA_SUBS_INDEXES_COMBINATIONS = [[]]
+_OMOCODIA_DIGITS: str = "".join([digit for digit in _OMOCODIA])
+_OMOCODIA_LETTERS: str = "".join([_OMOCODIA[digit] for digit in _OMOCODIA])
+_OMOCODIA_ENCODE_TRANS: Dict[int, Optional[int]] = "".maketrans(
+    _OMOCODIA_DIGITS, _OMOCODIA_LETTERS
+)
+_OMOCODIA_DECODE_TRANS: Dict[int, Optional[int]] = "".maketrans(
+    _OMOCODIA_LETTERS, _OMOCODIA_DIGITS
+)
+_OMOCODIA_SUBS_INDEXES: List[int] = list(reversed([6, 7, 9, 10, 12, 13, 14]))
+_OMOCODIA_SUBS_INDEXES_COMBINATIONS: List[List[int]] = [[]]
 for combo_size in range(1, len(_OMOCODIA_SUBS_INDEXES) + 1):
     for combo in combinations(_OMOCODIA_SUBS_INDEXES, combo_size):
         _OMOCODIA_SUBS_INDEXES_COMBINATIONS.append(list(combo))
 
 
-def _get_data(filename):
+def _get_data(filename: str) -> Dict:
     return fsutil.read_file_json(fsutil.join_path(__file__, f"data/{filename}"))
 
 
-def _get_indexed_data():
+def _get_indexed_data() -> Dict[str, Dict]:
     municipalities = _get_data("municipalities.json")
     countries = _get_data("countries.json")
-    data = {
+    data: Dict[str, Dict] = {
         "municipalities": {},
         "countries": {},
         "codes": {},
@@ -111,9 +116,9 @@ def _get_indexed_data():
     return data
 
 
-_DATA = _get_indexed_data()
+_DATA: Dict[str, Dict] = _get_indexed_data()
 
-CODICEFISCALE_RE = re.compile(
+CODICEFISCALE_RE: Pattern = re.compile(
     r"^"
     r"(?P<surname>[a-z]{3})"
     r"(?P<name>[a-z]{3})"
@@ -124,19 +129,25 @@ CODICEFISCALE_RE = re.compile(
 )
 
 
-def _get_consonants(s):
+def _get_consonants(s: str) -> List:
     return [char for char in s if char in _CONSONANTS]
 
 
-def _get_vowels(s):
+def _get_vowels(s: str) -> List:
     return [char for char in s if char in _VOWELS]
 
 
-def _get_consonants_and_vowels(consonants, vowels):
+def _get_consonants_and_vowels(
+    consonants: List[str],
+    vowels: List[str],
+) -> str:
     return "".join(list(consonants[:3] + vowels[:3] + (["X"] * 3))[:3]).upper()
 
 
-def _get_date(date, separator="-"):
+def _get_date(
+    date: Optional[Union[datetime, str]],
+    separator: str = "-",
+) -> Union[datetime, None]:
     if not date:
         return None
     if isinstance(date, datetime):
@@ -153,13 +164,19 @@ def _get_date(date, separator="-"):
         }
     )
     try:
-        date_obj = date_parser.parse(date_slug, **date_parser_options)
+        date_obj = date_parser.parse(
+            date_slug,
+            parserinfo=date_parser.parserinfo(**date_parser_options),
+        )
         return date_obj
-    except ValueError as e:
-        raise ValueError(f"[codicefiscale] {e}")
+    except ValueError:
+        return None
 
 
-def _get_birthplace(birthplace, birthdate=None):
+def _get_birthplace(
+    birthplace: str,
+    birthdate: Optional[Union[datetime, str]] = None,
+) -> Union[Dict, None]:
     birthplace_slug = slugify(birthplace)
     birthplace_code = birthplace_slug.upper()
     birthplaces_options = _DATA["municipalities"].get(
@@ -190,7 +207,11 @@ def _get_birthplace(birthplace, birthdate=None):
     return None
 
 
-def _get_omocode(code, subs, trans):
+def _get_omocode(
+    code: str,
+    subs: List[int],
+    trans: Dict[int, Optional[int]],
+) -> str:
     code_chars = list(code[0:15])
     for i in subs:
         code_chars[i] = code_chars[i].translate(trans)
@@ -200,7 +221,7 @@ def _get_omocode(code, subs, trans):
     return code
 
 
-def _get_omocodes(code):
+def _get_omocodes(code: str) -> List[str]:
     code_root = _get_omocode(
         code, subs=_OMOCODIA_SUBS_INDEXES, trans=_OMOCODIA_DECODE_TRANS
     )
@@ -211,7 +232,7 @@ def _get_omocodes(code):
     return codes
 
 
-def encode_surname(surname):
+def encode_surname(surname: str) -> str:
     """
     Encode surname to the code used in italian fiscal code.
 
@@ -228,7 +249,7 @@ def encode_surname(surname):
     return surname_code
 
 
-def encode_name(name):
+def encode_name(name: str) -> str:
     """
     Encodes name to the code used in italian fiscal code.
 
@@ -249,7 +270,10 @@ def encode_name(name):
     return name_code
 
 
-def encode_birthdate(birthdate, sex):
+def encode_birthdate(
+    birthdate: Optional[Union[datetime, str]],
+    sex=Literal["m", "M", "f", "F"],
+) -> str:
     """
     Encodes birthdate to the code used in italian fiscal code.
 
@@ -264,6 +288,8 @@ def encode_birthdate(birthdate, sex):
     if not birthdate:
         raise ValueError("[codicefiscale] 'birthdate' argument cant be None")
     date = _get_date(birthdate)
+    if not date:
+        raise ValueError("[codicefiscale] 'date' argument cant be None")
 
     if not sex:
         raise ValueError("[codicefiscale] 'sex' argument cant be None")
@@ -278,7 +304,10 @@ def encode_birthdate(birthdate, sex):
     return date_code
 
 
-def encode_birthplace(birthplace, birthdate=None):
+def encode_birthplace(
+    birthplace: str,
+    birthdate: Union[datetime, str, None] = None,
+) -> str:
     """
     Encodes birthplace to the code used in italian fiscal code.
 
@@ -307,7 +336,7 @@ def encode_birthplace(birthplace, birthdate=None):
     return birthplace_code
 
 
-def encode_cin(code):
+def encode_cin(code: str) -> str:
     """
     Encodes cin to the code used in italian fiscal code.
 
@@ -335,7 +364,13 @@ def encode_cin(code):
     return cin_code
 
 
-def encode(surname, name, sex, birthdate, birthplace):
+def encode(
+    surname: str,
+    name: str,
+    sex: Literal["m", "M", "f", "F"],
+    birthdate: Union[datetime, str, None],
+    birthplace: str,
+):
     """
     Encodes the italian fiscal code.
 
@@ -365,7 +400,7 @@ def encode(surname, name, sex, birthdate, birthplace):
     return data["code"]
 
 
-def decode_raw(code):
+def decode_raw(code: str) -> Dict[str, str]:
     """
     Decodes the raw data associated to the code.
 
@@ -398,7 +433,7 @@ def decode_raw(code):
     return data
 
 
-def decode(code):
+def decode(code: str) -> Dict[str, Any]:
     """
     Decodes the italian fiscal code.
 
@@ -412,7 +447,7 @@ def decode(code):
 
     code = raw["code"]
 
-    birthdate_year = raw["birthdate_year"].translate(_OMOCODIA_DECODE_TRANS)
+    birthdate_year = int(raw["birthdate_year"].translate(_OMOCODIA_DECODE_TRANS))
     birthdate_month = _MONTHS.index(raw["birthdate_month"]) + 1
     birthdate_day = int(raw["birthdate_day"].translate(_OMOCODIA_DECODE_TRANS))
 
@@ -462,7 +497,7 @@ def decode(code):
     return data
 
 
-def is_omocode(code):
+def is_omocode(code: str) -> bool:
     """
     Determines whether the specified code is omocode or not.
 
@@ -478,7 +513,7 @@ def is_omocode(code):
     return code in codes
 
 
-def is_valid(code):
+def is_valid(code: str) -> bool:
     """
     Determines whether the specified code is valid.
 

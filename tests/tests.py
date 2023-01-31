@@ -242,6 +242,11 @@ class CodiceFiscaleTestCase(unittest.TestCase):
         with self.assertRaises(ValueError):
             codicefiscale.encode_birthplace("Area 51")
 
+    def test_encode_birthplace_invalid_birthdate(self):
+
+        with self.assertRaises(ValueError):
+            codicefiscale.encode_birthplace("Torino", "01/01/1888")
+
     def test_encode_cin(self):
 
         data = [
@@ -816,7 +821,3 @@ class CodiceFiscaleTestCase(unittest.TestCase):
     def test_version(self):
         version_pattern = re.compile(r"^(([\d]+)\.([\d]+)\.([\d]+))$")
         self.assertTrue(version_pattern.match(__version__))
-
-
-if __name__ == "__main__":
-    unittest.main()
