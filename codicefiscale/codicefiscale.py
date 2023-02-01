@@ -1,17 +1,19 @@
+from __future__ import annotations
+
 import re
 import string
 from datetime import datetime
 from itertools import combinations
-from typing import Any, Dict, List, Literal, Optional, Pattern, Tuple, Union
+from typing import Any, Literal, Pattern
 
 import fsutil
 from dateutil import parser as date_parser
 from slugify import slugify
 
-_CONSONANTS: List[str] = list("bcdfghjklmnpqrstvwxyz")
-_VOWELS: List[str] = list("aeiou")
-_MONTHS: List[str] = list("ABCDEHLMPRST")
-_CIN: Dict[str, Tuple[int, int]] = {
+_CONSONANTS: list[str] = list("bcdfghjklmnpqrstvwxyz")
+_VOWELS: list[str] = list("aeiou")
+_MONTHS: list[str] = list("ABCDEHLMPRST")
+_CIN: dict[str, tuple[int, int]] = {
     "0": (0, 1),
     "1": (1, 0),
     "2": (2, 5),
@@ -49,9 +51,9 @@ _CIN: Dict[str, Tuple[int, int]] = {
     "Y": (24, 24),
     "Z": (25, 23),
 }
-_CIN_REMAINDERS: List[str] = list(string.ascii_uppercase)
+_CIN_REMAINDERS: list[str] = list(string.ascii_uppercase)
 
-_OMOCODIA: Dict[str, str] = {
+_OMOCODIA: dict[str, str] = {
     "0": "L",
     "1": "M",
     "2": "N",
@@ -65,14 +67,14 @@ _OMOCODIA: Dict[str, str] = {
 }
 _OMOCODIA_DIGITS: str = "".join([digit for digit in _OMOCODIA])
 _OMOCODIA_LETTERS: str = "".join([_OMOCODIA[digit] for digit in _OMOCODIA])
-_OMOCODIA_ENCODE_TRANS: Dict[int, Optional[int]] = "".maketrans(
+_OMOCODIA_ENCODE_TRANS: dict[int, int | None] = "".maketrans(
     _OMOCODIA_DIGITS, _OMOCODIA_LETTERS
 )
-_OMOCODIA_DECODE_TRANS: Dict[int, Optional[int]] = "".maketrans(
+_OMOCODIA_DECODE_TRANS: dict[int, int | None] = "".maketrans(
     _OMOCODIA_LETTERS, _OMOCODIA_DIGITS
 )
-_OMOCODIA_SUBS_INDEXES: List[int] = list(reversed([6, 7, 9, 10, 12, 13, 14]))
-_OMOCODIA_SUBS_INDEXES_COMBINATIONS: List[List[int]] = [[]]
+_OMOCODIA_SUBS_INDEXES: list[int] = list(reversed([6, 7, 9, 10, 12, 13, 14]))
+_OMOCODIA_SUBS_INDEXES_COMBINATIONS: list[list[int]] = [[]]
 for combo_size in range(1, len(_OMOCODIA_SUBS_INDEXES) + 1):
     for combo in combinations(_OMOCODIA_SUBS_INDEXES, combo_size):
         _OMOCODIA_SUBS_INDEXES_COMBINATIONS.append(list(combo))
@@ -82,14 +84,12 @@ def _get_data(filename: str) -> Any:
     return fsutil.read_file_json(fsutil.join_path(__file__, f"data/{filename}"))
 
 
-def _get_indexed_data() -> Dict[
-    str, Dict[str, List[Dict[str, Union[bool, datetime, str, List[str]]]]]
+def _get_indexed_data() -> dict[
+    str, dict[str, list[dict[str, bool | datetime | str | list[str]]]]
 ]:
     municipalities = _get_data("municipalities.json")
     countries = _get_data("countries.json")
-    data: Dict[
-        str, Dict[str, List[Dict[str, Union[bool, datetime, str, List[str]]]]]
-    ] = {
+    data: dict[str, dict[str, list[dict[str, bool | datetime | str | list[str]]]]] = {
         "municipalities": {},
         "countries": {},
         "codes": {},
@@ -120,7 +120,7 @@ def _get_indexed_data() -> Dict[
     return data
 
 
-_DATA: Dict[str, Dict[str, List[Dict[str, Any]]]] = _get_indexed_data()
+_DATA: dict[str, dict[str, list[dict[str, Any]]]] = _get_indexed_data()
 
 CODICEFISCALE_RE: Pattern[str] = re.compile(
     r"^"
@@ -133,25 +133,25 @@ CODICEFISCALE_RE: Pattern[str] = re.compile(
 )
 
 
-def _get_consonants(s: str) -> List[str]:
+def _get_consonants(s: str) -> list[str]:
     return [char for char in s if char in _CONSONANTS]
 
 
-def _get_vowels(s: str) -> List[str]:
+def _get_vowels(s: str) -> list[str]:
     return [char for char in s if char in _VOWELS]
 
 
 def _get_consonants_and_vowels(
-    consonants: List[str],
-    vowels: List[str],
+    consonants: list[str],
+    vowels: list[str],
 ) -> str:
     return "".join(list(consonants[:3] + vowels[:3] + (["X"] * 3))[:3]).upper()
 
 
 def _get_date(
-    date: Optional[Union[datetime, str]],
+    date: datetime | str | None,
     separator: str = "-",
-) -> Union[datetime, None]:
+) -> datetime | None:
     if not date:
         return None
     if isinstance(date, datetime):
@@ -179,8 +179,8 @@ def _get_date(
 
 def _get_birthplace(
     birthplace: str,
-    birthdate: Optional[Union[datetime, str]] = None,
-) -> Optional[Union[Dict[str, Dict[str, Union[bool, datetime, str, List[str]]]], None]]:
+    birthdate: datetime | str | None = None,
+) -> dict[str, dict[str, bool | datetime | str | list[str]]] | None | None:
     birthplace_slug = slugify(birthplace)
     birthplace_code = birthplace_slug.upper()
     birthplaces_options = _DATA["municipalities"].get(
@@ -213,8 +213,8 @@ def _get_birthplace(
 
 def _get_omocode(
     code: str,
-    subs: List[int],
-    trans: Dict[int, Optional[int]],
+    subs: list[int],
+    trans: dict[int, int | None],
 ) -> str:
     code_chars = list(code[0:15])
     for i in subs:
@@ -225,7 +225,7 @@ def _get_omocode(
     return code
 
 
-def _get_omocodes(code: str) -> List[str]:
+def _get_omocodes(code: str) -> list[str]:
     code_root = _get_omocode(
         code, subs=_OMOCODIA_SUBS_INDEXES, trans=_OMOCODIA_DECODE_TRANS
     )
@@ -275,7 +275,7 @@ def encode_name(name: str) -> str:
 
 
 def encode_birthdate(
-    birthdate: Optional[Union[datetime, str]],
+    birthdate: datetime | str | None,
     sex: Literal["m", "M", "f", "F"],
 ) -> str:
     """
@@ -310,8 +310,8 @@ def encode_birthdate(
 
 def encode_birthplace(
     birthplace: str,
-    birthdate: Union[datetime, str, None] = None,
-) -> Optional[str]:
+    birthdate: datetime | str | None = None,
+) -> str | None:
     """
     Encodes birthplace to the code used in italian fiscal code.
 
@@ -372,7 +372,7 @@ def encode(
     surname: str,
     name: str,
     sex: Literal["m", "M", "f", "F"],
-    birthdate: Union[datetime, str, None],
+    birthdate: datetime | str | None,
     birthplace: str,
 ) -> str:
     """
@@ -406,7 +406,7 @@ def encode(
     return code
 
 
-def decode_raw(code: str) -> Dict[str, str]:
+def decode_raw(code: str) -> dict[str, str]:
     """
     Decodes the raw data associated to the code.
 
@@ -439,7 +439,7 @@ def decode_raw(code: str) -> Dict[str, str]:
     return data
 
 
-def decode(code: str) -> Dict[str, Any]:
+def decode(code: str) -> dict[str, Any]:
     """
     Decodes the italian fiscal code.
 
