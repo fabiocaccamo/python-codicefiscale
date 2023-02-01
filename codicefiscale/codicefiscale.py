@@ -8,9 +8,9 @@ import fsutil
 from dateutil import parser as date_parser
 from slugify import slugify
 
-_CONSONANTS: List = list("bcdfghjklmnpqrstvwxyz")
-_VOWELS: List = list("aeiou")
-_MONTHS: List = list("ABCDEHLMPRST")
+_CONSONANTS: List[str] = list("bcdfghjklmnpqrstvwxyz")
+_VOWELS: List[str] = list("aeiou")
+_MONTHS: List[str] = list("ABCDEHLMPRST")
 _CIN: Dict[str, Tuple[int, int]] = {
     "0": (0, 1),
     "1": (1, 0),
@@ -49,7 +49,7 @@ _CIN: Dict[str, Tuple[int, int]] = {
     "Y": (24, 24),
     "Z": (25, 23),
 }
-_CIN_REMAINDERS: List = list(string.ascii_uppercase)
+_CIN_REMAINDERS: List[str] = list(string.ascii_uppercase)
 
 _OMOCODIA: Dict[str, str] = {
     "0": "L",
@@ -78,14 +78,18 @@ for combo_size in range(1, len(_OMOCODIA_SUBS_INDEXES) + 1):
         _OMOCODIA_SUBS_INDEXES_COMBINATIONS.append(list(combo))
 
 
-def _get_data(filename: str) -> Dict:
+def _get_data(filename: str) -> Any:
     return fsutil.read_file_json(fsutil.join_path(__file__, f"data/{filename}"))
 
 
-def _get_indexed_data() -> Dict[str, Dict]:
+def _get_indexed_data() -> Dict[
+    str, Dict[str, List[Dict[str, Union[bool, datetime, str, List[str]]]]]
+]:
     municipalities = _get_data("municipalities.json")
     countries = _get_data("countries.json")
-    data: Dict[str, Dict] = {
+    data: Dict[
+        str, Dict[str, List[Dict[str, Union[bool, datetime, str, List[str]]]]]
+    ] = {
         "municipalities": {},
         "countries": {},
         "codes": {},
@@ -116,9 +120,9 @@ def _get_indexed_data() -> Dict[str, Dict]:
     return data
 
 
-_DATA: Dict[str, Dict] = _get_indexed_data()
+_DATA: Dict[str, Dict[str, List[Dict[str, Any]]]] = _get_indexed_data()
 
-CODICEFISCALE_RE: Pattern = re.compile(
+CODICEFISCALE_RE: Pattern[str] = re.compile(
     r"^"
     r"(?P<surname>[a-z]{3})"
     r"(?P<name>[a-z]{3})"
@@ -129,11 +133,11 @@ CODICEFISCALE_RE: Pattern = re.compile(
 )
 
 
-def _get_consonants(s: str) -> List:
+def _get_consonants(s: str) -> List[str]:
     return [char for char in s if char in _CONSONANTS]
 
 
-def _get_vowels(s: str) -> List:
+def _get_vowels(s: str) -> List[str]:
     return [char for char in s if char in _VOWELS]
 
 
@@ -176,7 +180,7 @@ def _get_date(
 def _get_birthplace(
     birthplace: str,
     birthdate: Optional[Union[datetime, str]] = None,
-) -> Union[Dict, None]:
+) -> Optional[Union[Dict[str, Dict[str, Union[bool, datetime, str, List[str]]]], None]]:
     birthplace_slug = slugify(birthplace)
     birthplace_code = birthplace_slug.upper()
     birthplaces_options = _DATA["municipalities"].get(
@@ -272,7 +276,7 @@ def encode_name(name: str) -> str:
 
 def encode_birthdate(
     birthdate: Optional[Union[datetime, str]],
-    sex=Literal["m", "M", "f", "F"],
+    sex: Literal["m", "M", "f", "F"],
 ) -> str:
     """
     Encodes birthdate to the code used in italian fiscal code.
@@ -293,21 +297,21 @@ def encode_birthdate(
 
     if not sex:
         raise ValueError("[codicefiscale] 'sex' argument cant be None")
-    sex = sex.upper()
-    if sex not in ["M", "F"]:
+    sex_code = sex.upper()
+    if sex_code not in ("M", "F"):
         raise ValueError("[codicefiscale] 'sex' argument must be 'M' or 'F'")
 
     year_code = str(date.year)[2:]
     month_code = _MONTHS[date.month - 1]
-    day_code = str(date.day + (40 if sex == "F" else 0)).zfill(2).upper()
-    date_code = year_code + month_code + day_code
+    day_code = str(date.day + (40 if sex_code == "F" else 0)).zfill(2).upper()
+    date_code = f"{year_code}{month_code}{day_code}"
     return date_code
 
 
 def encode_birthplace(
     birthplace: str,
     birthdate: Union[datetime, str, None] = None,
-) -> str:
+) -> Optional[str]:
     """
     Encodes birthplace to the code used in italian fiscal code.
 
@@ -332,7 +336,7 @@ def encode_birthplace(
             f"('{birthplace}' -> '')"
         )
 
-    birthplace_code = birthplace_data["code"]
+    birthplace_code = str(birthplace_data["code"])
     return birthplace_code
 
 
@@ -370,7 +374,7 @@ def encode(
     sex: Literal["m", "M", "f", "F"],
     birthdate: Union[datetime, str, None],
     birthplace: str,
-):
+) -> str:
     """
     Encodes the italian fiscal code.
 
@@ -388,16 +392,18 @@ def encode(
     :returns: The italian fiscal code
     :rtype: string
     """
-    code = ""
-    code += encode_surname(surname)
-    code += encode_name(name)
-    code += encode_birthdate(birthdate, sex)
-    code += encode_birthplace(birthplace, birthdate)
-    code += encode_cin(code)
+
+    surname_code = encode_surname(surname)
+    name_code = encode_name(name)
+    birthdate_code = encode_birthdate(birthdate, sex)
+    birthplace_code = encode_birthplace(birthplace, birthdate)
+    code = f"{surname_code}{name_code}{birthdate_code}{birthplace_code}"
+    cin_code = encode_cin(code)
+    code = f"{code}{cin_code}"
 
     # raise ValueError if code is not valid
-    data = decode(code)
-    return data["code"]
+    decode(code)
+    return code
 
 
 def decode_raw(code: str) -> Dict[str, str]:
