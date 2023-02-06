@@ -84,9 +84,9 @@ def _get_data(filename: str) -> Any:
     return fsutil.read_file_json(fsutil.join_path(__file__, f"data/{filename}"))
 
 
-def _get_indexed_data() -> dict[
-    str, dict[str, list[dict[str, bool | datetime | str | list[str]]]]
-]:
+def _get_indexed_data() -> (
+    dict[str, dict[str, list[dict[str, bool | datetime | str | list[str]]]]]
+):
     municipalities = _get_data("municipalities.json")
     countries = _get_data("countries.json")
     data: dict[str, dict[str, list[dict[str, bool | datetime | str | list[str]]]]] = {
@@ -325,7 +325,10 @@ def encode_birthplace(
         raise ValueError("[codicefiscale] 'birthplace' argument cant be None")
 
     birthplace_without_province = re.split(r",|\(", birthplace)[0]
-    birthplace_data = _get_birthplace(birthplace, birthdate,) or _get_birthplace(
+    birthplace_data = _get_birthplace(
+        birthplace,
+        birthdate,
+    ) or _get_birthplace(
         birthplace_without_province,
         birthdate,
     )

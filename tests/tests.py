@@ -15,7 +15,6 @@ from codicefiscale.metadata import (
 
 class CodiceFiscaleTestCase(unittest.TestCase):
     def test_encode_surname(self):
-
         data = [
             {
                 "input": "",
@@ -36,7 +35,6 @@ class CodiceFiscaleTestCase(unittest.TestCase):
             self.assertEqual(codicefiscale.encode_surname(obj["input"]), obj["result"])
 
     def test_encode_name(self):
-
         data = [
             {
                 "input": "",
@@ -77,7 +75,6 @@ class CodiceFiscaleTestCase(unittest.TestCase):
             self.assertEqual(codicefiscale.encode_name(obj["input"]), obj["result"])
 
     def test_encode_birthdate_formats(self):
-
         data = [
             {
                 "input": datetime(1985, 4, 3),
@@ -148,7 +145,6 @@ class CodiceFiscaleTestCase(unittest.TestCase):
             )
 
     def test_encode_birthdate_invalid_arguments(self):
-
         with self.assertRaises(ValueError):
             codicefiscale.encode_birthdate(None, "M")
 
@@ -162,7 +158,6 @@ class CodiceFiscaleTestCase(unittest.TestCase):
             codicefiscale.encode_birthdate("1985/1985/1985", "M")
 
     def test_encode_birthdate_sex(self):
-
         data = [
             {
                 "input": ["03/04/1985", "M"],
@@ -181,7 +176,6 @@ class CodiceFiscaleTestCase(unittest.TestCase):
             )
 
     def test_encode_birthplace_italy(self):
-
         data = [
             {
                 "input": "Torino, Italy",
@@ -212,7 +206,6 @@ class CodiceFiscaleTestCase(unittest.TestCase):
             )
 
     def test_encode_birthplace_foreign_country(self):
-
         data = [
             {
                 "input": "Lettonia",
@@ -235,7 +228,6 @@ class CodiceFiscaleTestCase(unittest.TestCase):
             )
 
     def test_encode_birthplace_invalid_arguments(self):
-
         with self.assertRaises(ValueError):
             codicefiscale.encode_birthplace(None)
 
@@ -243,12 +235,10 @@ class CodiceFiscaleTestCase(unittest.TestCase):
             codicefiscale.encode_birthplace("Area 51")
 
     def test_encode_birthplace_invalid_birthdate(self):
-
         with self.assertRaises(ValueError):
             codicefiscale.encode_birthplace("Torino", "01/01/1888")
 
     def test_encode_cin(self):
-
         data = [
             {
                 "input": "CCCFBA85D03L219",
@@ -261,7 +251,6 @@ class CodiceFiscaleTestCase(unittest.TestCase):
             self.assertEqual(codicefiscale.encode_cin(obj["input"]), obj["result"])
 
     def test_encode_cin_invalid_arguments(self):
-
         with self.assertRaises(ValueError):
             codicefiscale.encode_cin(None)
 
@@ -288,7 +277,6 @@ class CodiceFiscaleTestCase(unittest.TestCase):
         self.assertEqual(birthplace["province"], "MO")
 
     def test_encode(self):
-
         data = [
             {
                 "input": {
@@ -398,7 +386,6 @@ class CodiceFiscaleTestCase(unittest.TestCase):
             self.assertEqual(code, obj["result"])
 
     def test_decode(self):
-
         data = [
             {
                 "input": "THDSDA95P08Z330H",
@@ -506,7 +493,6 @@ class CodiceFiscaleTestCase(unittest.TestCase):
             self.assertEqual(birthplace["name"].upper(), result["birthplace"].upper())
 
     def test_decode_invalid_syntax(self):
-
         # invalid surname
         with self.assertRaises(ValueError):
             codicefiscale.decode("CC0FBA85X03L219P")
@@ -763,7 +749,6 @@ class CodiceFiscaleTestCase(unittest.TestCase):
         self.assertFalse(valid)
 
     def test_is_omocode(self):
-
         self.assertFalse(codicefiscale.is_omocode("CCCFBA85D03L219P"))
         self.assertTrue(codicefiscale.is_omocode("CCCFBA85D03L21VE"))
         self.assertTrue(codicefiscale.is_omocode("CCCFBA85D03L2MVP"))
@@ -774,7 +759,6 @@ class CodiceFiscaleTestCase(unittest.TestCase):
         self.assertTrue(codicefiscale.is_omocode("CCCFBAURDLPLNMVU"))
 
     def test_is_valid(self):
-
         self.assertTrue(codicefiscale.is_valid("CCCFBA85D03L219P"))
         self.assertTrue(codicefiscale.is_valid("CCC FBA 85 D03 L219 P"))
         self.assertTrue(codicefiscale.is_valid("CCC-FBA-85-D03-L219-P"))
