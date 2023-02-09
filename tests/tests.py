@@ -258,7 +258,8 @@ class CodiceFiscaleTestCase(unittest.TestCase):
             codicefiscale.encode_cin("CCCFBA85D03")
 
     def test_encode_issue_37(self):
-        # When encoding a CF for a person born in Vignola (MO) .encode uses code L884 (for Vignola (TN) between 1920-1929) instead of L885.
+        # when encoding a Codice Fiscale for a person born in Vignola (MO)
+        # encode uses code L884 (for Vignola (TN) between 1920-1929) instead of L885.
         data = {
             "surname": "Caccamo",
             "name": "Fabio",
@@ -580,8 +581,6 @@ class CodiceFiscaleTestCase(unittest.TestCase):
                 },
             },
         ]
-
-        codes = [obj["input"] for obj in data]
 
         for obj in data:
             # with self.subTest(obj=obj):
