@@ -43,10 +43,10 @@ def _update_countries_data():
         code = item.get_str("codat").upper()
         if not code:
             return None
-        assert len(code) == 4, f"Invalid code: '{code}'"
+        assert len(code) == 4, f"Invalid code: {code!r}"
 
         name = item.get_str("denominazione").title()
-        assert name != "", f"Invalid name: '{name}'"
+        assert name != "", f"Invalid name: {name!r}"
         name_alt = item.get_str("denominazioneistat").title()
         name_alt_en = item.get_str("denominazioneistat_en").title()
         name_slugs = _slugify_names(name, name_alt, name_alt_en)
@@ -106,11 +106,11 @@ def _update_municipalities_data():
         )
 
         status = item.get("stato", "").upper()
-        assert len(status) == 1 and status in ["A", "C"], f"Invalid status: '{status}'"
+        assert len(status) == 1 and status in ["A", "C"], f"Invalid status: {status!r}"
         active = status == "A"
 
         code = item.get_str("codcatastale").upper()
-        assert code == "ND" or len(code) == 4, f"Invalid code: '{code}'"
+        assert code == "ND" or len(code) == 4, f"Invalid code: {code!r}"
 
         name = item.get_str("denominazione_it").title()
         assert name != "", f"Invalid name: {name}"
@@ -121,7 +121,7 @@ def _update_municipalities_data():
         name_slugs = _slugify_names(name, name_trans, name_alt, name_alt_trans)
 
         province = item.get("siglaprovincia", "").upper()
-        assert len(province) == 2, f"Invalid province: '{province}'"
+        assert len(province) == 2, f"Invalid province: {province!r}"
 
         date_created = item.get_datetime("dataistituzione")
         date_deleted = item.get_datetime("datacessazione")

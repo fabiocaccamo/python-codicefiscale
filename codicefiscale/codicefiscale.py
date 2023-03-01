@@ -126,7 +126,7 @@ CODICEFISCALE_RE: Pattern[str] = re.compile(
     r"^"
     r"(?P<surname>[a-z]{3})"
     r"(?P<name>[a-z]{3})"
-    r"(?P<birthdate>(?P<birthdate_year>[a-z\d]{2})(?P<birthdate_month>[abcdehlmprst]{1})(?P<birthdate_day>[a-z\d]{2}))"  # noqa: E501
+    r"(?P<birthdate>(?P<birthdate_year>[a-z\d]{2})(?P<birthdate_month>[abcdehlmprst]{1})(?P<birthdate_day>[a-z\d]{2}))"  # noqa: B950, E501
     r"(?P<birthplace>[a-z]{1}[a-z\d]{3})"
     r"(?P<cin>[a-z]{1})$",
     re.IGNORECASE,
@@ -336,7 +336,7 @@ def encode_birthplace(
     if not birthplace_data:
         raise ValueError(
             "[codicefiscale] 'birthplace' argument not mapped to code: "
-            f"('{birthplace}' -> '')"
+            f"({birthplace!r} -> '')"
         )
 
     birthplace_code = str(birthplace_data["code"])
@@ -482,7 +482,7 @@ def decode(code: str) -> dict[str, Any]:
     birthplace = _get_birthplace(birthplace_code, birthdate)
     # print(birthplace)
     if not birthplace:
-        raise ValueError(f"[codicefiscale] wrong birthplace code: '{birthplace_code}'")
+        raise ValueError(f"[codicefiscale] wrong birthplace code: {birthplace_code!r}")
 
     cin = raw["cin"]
     cin_check = encode_cin(code)
@@ -490,7 +490,7 @@ def decode(code: str) -> dict[str, Any]:
     if cin != cin_check:
         raise ValueError(
             "[codicefiscale] wrong CIN (Control Internal Number): "
-            f"expected '{cin_check}', found '{cin}'"
+            f"expected {cin_check!r}, found {cin!r}"
         )
 
     data = {
