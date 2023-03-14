@@ -35,55 +35,55 @@ from codicefiscale import codicefiscale
 ```
 ### Encode
 ```python
-codicefiscale.encode(surname='Caccamo', name='Fabio', sex='M', birthdate='03/04/1985', birthplace='Torino')
+codicefiscale.encode(surname="Caccamo", name="Fabio", sex="M", birthdate="03/04/1985", birthplace="Torino")
 
-# 'CCCFBA85D03L219P'
+# "CCCFBA85D03L219P"
 ```
 ### Decode
 ```python
-codicefiscale.decode('CCCFBA85D03L219P')
+codicefiscale.decode("CCCFBA85D03L219P")
 
 # {
-#     'code': 'CCCFBA85D03L219P',
-#     'sex': 'M',
-#     'birthdate': datetime.datetime(1985, 4, 3, 0, 0),
-#     'birthplace': {
-#         'name': 'TORINO'
-#         'province': 'TO',
-#         'code': 'L219',
+#     "code": "CCCFBA85D03L219P",
+#     "sex": "M",
+#     "birthdate": datetime.datetime(1985, 4, 3, 0, 0),
+#     "birthplace": {
+#         "name": "TORINO"
+#         "province": "TO",
+#         "code": "L219",
 #     },
-#     'omocodes': [
-#         'CCCFBA85D03L219P',
-#         'CCCFBA85D03L21VE',
-#         'CCCFBA85D03L2MVP',
-#         'CCCFBA85D03LNMVE',
-#         'CCCFBA85D0PLNMVA',
-#         'CCCFBA85DLPLNMVL',
-#         'CCCFBA8RDLPLNMVX',
-#         'CCCFBAURDLPLNMVU',
+#     "omocodes": [
+#         "CCCFBA85D03L219P",
+#         "CCCFBA85D03L21VE",
+#         "CCCFBA85D03L2MVP",
+#         "CCCFBA85D03LNMVE",
+#         "CCCFBA85D0PLNMVA",
+#         "CCCFBA85DLPLNMVL",
+#         "CCCFBA8RDLPLNMVX",
+#         "CCCFBAURDLPLNMVU",
 #     ],
-#     'raw': {
-#         'code': 'CCCFBA85D03L219P',
-#         'surname': 'CCC',
-#         'name': 'FBA',
-#         'birthdate': '85D03',
-#         'birthdate_year': '85'
-#         'birthdate_month': 'D',
-#         'birthdate_day': '03',
-#         'birthplace': 'L219',
-#         'cin': 'P',
+#     "raw": {
+#         "code": "CCCFBA85D03L219P",
+#         "surname": "CCC",
+#         "name": "FBA",
+#         "birthdate": "85D03",
+#         "birthdate_year": "85"
+#         "birthdate_month": "D",
+#         "birthdate_day": "03",
+#         "birthplace": "L219",
+#         "cin": "P",
 #     },
 # }
 ```
 
 ### Check
 ```python
-codicefiscale.is_valid('CCCFBA85D03L219P')
+codicefiscale.is_valid("CCCFBA85D03L219P")
 
 # True
 ```
 ```python
-codicefiscale.is_omocode('CCCFBA85D03L219P')
+codicefiscale.is_omocode("CCCFBA85D03L219P")
 
 # False
 ```
