@@ -67,10 +67,10 @@ _OMOCODIA: dict[str, str] = {
 }
 _OMOCODIA_DIGITS: str = "".join([digit for digit in _OMOCODIA])
 _OMOCODIA_LETTERS: str = "".join([_OMOCODIA[digit] for digit in _OMOCODIA])
-_OMOCODIA_ENCODE_TRANS: dict[int, int | None] = "".maketrans(
+_OMOCODIA_ENCODE_TRANS: dict[int, int] = "".maketrans(
     _OMOCODIA_DIGITS, _OMOCODIA_LETTERS
 )
-_OMOCODIA_DECODE_TRANS: dict[int, int | None] = "".maketrans(
+_OMOCODIA_DECODE_TRANS: dict[int, int] = "".maketrans(
     _OMOCODIA_LETTERS, _OMOCODIA_DIGITS
 )
 _OMOCODIA_SUBS_INDEXES: list[int] = list(reversed([6, 7, 9, 10, 12, 13, 14]))
@@ -214,7 +214,7 @@ def _get_birthplace(
 def _get_omocode(
     code: str,
     subs: list[int],
-    trans: dict[int, int | None],
+    trans: dict[int, int],
 ) -> str:
     code_chars = list(code[0:15])
     for i in subs:
