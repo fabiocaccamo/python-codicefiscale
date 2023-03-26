@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import cli
+from codicefiscale import cli
 
 
 def main() -> None:
