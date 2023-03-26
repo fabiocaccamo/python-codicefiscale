@@ -8,30 +8,42 @@ from codicefiscale import codicefiscale
 
 
 def _encode_from_args(args: argparse.Namespace) -> None:
-    cf = codicefiscale.encode(
-        surname=args.lastname,
-        name=args.firstname,
-        sex=args.gender,
-        birthdate=args.birthdate,
-        birthplace=args.birthplace,
-    )
-    sys.stdout.write(f"{cf}\n")
+    try:
+        cf = codicefiscale.encode(
+            surname=args.lastname,
+            name=args.firstname,
+            sex=args.gender,
+            birthdate=args.birthdate,
+            birthplace=args.birthplace,
+        )
+    except Exception as error:
+        sys.stderr.write(f"{error}\n")
+    else:
+        sys.stdout.write(f"{cf}\n")
 
 
 def _decode_from_args(args: argparse.Namespace) -> None:
-    cf_data = codicefiscale.decode(args.codicefiscale)
-    if not args.omocodes:
-        cf_data.pop("omocodes", None)
+    try:
+        cf_data = codicefiscale.decode(args.code)
+    except Exception as error:
+        sys.stderr.write(f"{error}\n")
+    else:
+        if not args.omocodes:
+            cf_data.pop("omocodes", None)
 
-    def default_encoder(obj: Any) -> Any:
-        if isinstance(obj, datetime):
-            return obj.isoformat()
-        elif isinstance(obj, set):
-            return list(obj)
-        return str(obj)
+        def default_encoder(obj: Any) -> Any:
+            if isinstance(obj, datetime):
+                return obj.isoformat()
+            elif isinstance(obj, set):
+                return list(obj)
+            return str(obj)
 
-    cf_output = json.dumps(cf_data, default=default_encoder, indent=4)
-    sys.stdout.write(f"{cf_output}\n")
+        cf_output = json.dumps(
+            cf_data,
+            default=default_encoder,
+            indent=4,
+        )
+        sys.stdout.write(f"{cf_output}\n")
 
 
 def run() -> None:
