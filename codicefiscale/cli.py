@@ -4,7 +4,7 @@ import sys
 from datetime import datetime
 from typing import Any
 
-from codicefiscale import codicefiscale
+from codicefiscale import __description__, __version__, codicefiscale
 
 
 def _encode_from_args(args: argparse.Namespace) -> None:
@@ -47,19 +47,46 @@ def _decode_from_args(args: argparse.Namespace) -> None:
 
 
 def run() -> None:
-    parser = argparse.ArgumentParser(description="Codice Fiscale Encoder/Decoder")
+    parser = argparse.ArgumentParser(
+        description=__description__,
+    )
+    parser.add_argument(
+        "--version",
+        required=False,
+        action="store_true",
+        help="Show library version",
+    )
+
     subparsers = parser.add_subparsers(
         title="subcommands",
         dest="subcommand",
         description="Choose a command",
-        required=True,
+        required=False,
+    )
+
+    decode_parser = subparsers.add_parser(
+        "decode",
+        help=(
+            "Decode an italian Codice Fiscale. "
+            "For more info run: python -m codicefiscale decode --help"
+        ),
+    )
+    decode_parser.add_argument(
+        "code",
+        help="Codice Fiscale to decode",
+    )
+    decode_parser.add_argument(
+        "--omocodes",
+        required=False,
+        action="store_true",
+        help="Include omocodes list",
     )
 
     encode_parser = subparsers.add_parser(
         "encode",
         help=(
-            "Encode an italian Codice Fiscale using the given parameters, "
-            "for more info run: python codicefiscale encode --help"
+            "Encode an italian Codice Fiscale. "
+            "For more info run: python -m codicefiscale encode --help"
         ),
     )
     encode_parser.add_argument(
@@ -89,30 +116,18 @@ def run() -> None:
         help="Place of birth (city, province)",
     )
 
-    decode_parser = subparsers.add_parser(
-        "decode",
-        help=(
-            "Decode an italian Codice Fiscale, "
-            "for more info run: python codicefiscale decode --help"
-        ),
-    )
-    decode_parser.add_argument(
-        "codicefiscale",
-        help="Codice fiscale to decode",
-    )
-    decode_parser.add_argument(
-        "--omocodes",
-        required=False,
-        action="store_true",
-        help="Include omocodes list",
-    )
-
     args = parser.parse_args()
     run_with_args(args)
 
 
 def run_with_args(args: argparse.Namespace) -> None:
-    if args.subcommand == "encode":
-        _encode_from_args(args)
+    if args.subcommand is None and args.version:
+        sys.stdout.write(f"{__version__}\n")
+        return
     elif args.subcommand == "decode":
         _decode_from_args(args)
+        return
+    elif args.subcommand == "encode":
+        _encode_from_args(args)
+        return
+    sys.stdout.write("For more info run: python -m codicefiscale --help.\n")
