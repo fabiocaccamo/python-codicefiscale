@@ -19,6 +19,7 @@ python-codicefiscale is a library for encode/decode Italian fiscal code - **codi
 
 ## Features
 - `NEW` **Auto-updated** data (once a week) directly from **ANPR** data-source.
+- `NEW` **Command Line Interface** available.
 - **Transliteration** for name/surname
 - **Multiple** birthdate formats (date/string) *(you can see all the supported string formats [here](https://github.com/fabiocaccamo/python-codicefiscale/blob/main/tests/tests.py#L73))*
 - **Automatic** birthplace city/foreign-country code detection from name
@@ -86,6 +87,12 @@ codicefiscale.is_valid("CCCFBA85D03L219P")
 codicefiscale.is_omocode("CCCFBA85D03L219P")
 
 # False
+```
+
+### Command Line Interface
+This library can be used also as a CLI tool, for more info run:
+```bash
+python -m codicefiscale --help
 ```
 
 ## Testing

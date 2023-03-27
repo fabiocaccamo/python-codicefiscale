@@ -335,8 +335,8 @@ def encode_birthplace(
 
     if not birthplace_data:
         raise ValueError(
-            "[codicefiscale] 'birthplace' argument not mapped to code: "
-            f"({birthplace!r} -> '')"
+            "[codicefiscale] 'birthplace' / 'birthdate' arguments "
+            f"({birthplace!r} / {birthdate!r}) not mapped to code"
         )
 
     birthplace_code = str(birthplace_data["code"])
