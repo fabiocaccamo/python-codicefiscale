@@ -10,6 +10,10 @@ from codicefiscale.cli import run, run_with_args
 
 
 class CodiceFiscaleCLITestCase(unittest.TestCase):
+    def assertOutput(self, command, expected_output):
+        output = subprocess.check_output(command, shell=True).decode("utf-8").strip()
+        self.assertEqual(output, expected_output)
+
     def test_version(self):
         with mock.patch("sys.stdout", new=StringIO()) as fake_output:
             args = argparse.Namespace(
@@ -21,9 +25,7 @@ class CodiceFiscaleCLITestCase(unittest.TestCase):
             self.assertEqual(output, __version__)
 
     def test_version_from_command_line(self):
-        cmd = "python -m codicefiscale --version"
-        output = subprocess.check_output(cmd, shell=True).decode("UTF-8").strip()
-        self.assertEqual(output, __version__)
+        self.assertOutput("python -m codicefiscale --version", __version__)
 
     def test_main_without_args(self):
         with mock.patch("sys.stdout", new=StringIO()) as fake_output:
@@ -34,9 +36,10 @@ class CodiceFiscaleCLITestCase(unittest.TestCase):
             )
 
     def test_main_without_args_from_command_line(self):
-        cmd = "python -m codicefiscale"
-        output = subprocess.check_output(cmd, shell=True).decode("UTF-8").strip()
-        self.assertEqual(output, "For more info run: 'python -m codicefiscale --help'")
+        self.assertOutput(
+            "python -m codicefiscale",
+            "For more info run: 'python -m codicefiscale --help'",
+        )
 
     def test_encode(self):
         with mock.patch("sys.stdout", new=StringIO()) as fake_output:
@@ -53,16 +56,17 @@ class CodiceFiscaleCLITestCase(unittest.TestCase):
             self.assertEqual(output, "RSSMRA90A01H501W")
 
     def test_encode_from_command_line(self):
-        cmd = (
-            "python -m codicefiscale encode "
-            "--firstname 'Mario' "
-            "--lastname 'Rossi' "
-            "--gender 'M' "
-            "--birthdate '01/01/1990' "
-            "--birthplace 'Roma' "
+        self.assertOutput(
+            (
+                "python -m codicefiscale encode "
+                "--firstname 'Mario' "
+                "--lastname 'Rossi' "
+                "--gender 'M' "
+                "--birthdate '01/01/1990' "
+                "--birthplace 'Roma' "
+            ),
+            "RSSMRA90A01H501W",
         )
-        output = subprocess.check_output(cmd, shell=True).decode("UTF-8").strip()
-        self.assertEqual(output, "RSSMRA90A01H501W")
 
     def test_encode_with_wrong_birthplace(self):
         with mock.patch("sys.stderr", new=StringIO()) as fake_output:
