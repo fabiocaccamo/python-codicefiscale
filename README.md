@@ -30,11 +30,13 @@ python-codicefiscale is a library for encode/decode Italian fiscal code - **codi
 
 ## Usage
 
-### Import
+### Python
+
+#### Import
 ```python
 from codicefiscale import codicefiscale
 ```
-### Encode
+#### Encode
 ```python
 codicefiscale.encode(
     lastname="Caccamo",
@@ -46,7 +48,7 @@ codicefiscale.encode(
 
 # "CCCFBA85D03L219P"
 ```
-### Decode
+#### Decode
 ```python
 codicefiscale.decode("CCCFBA85D03L219P")
 
@@ -83,7 +85,7 @@ codicefiscale.decode("CCCFBA85D03L219P")
 # }
 ```
 
-### Check
+#### Check
 ```python
 codicefiscale.is_valid("CCCFBA85D03L219P")
 
@@ -95,10 +97,20 @@ codicefiscale.is_omocode("CCCFBA85D03L219P")
 # False
 ```
 
-### Command Line Interface
+### Command Line
 This library can be used also as a CLI tool, for more info run:
 ```bash
 python -m codicefiscale --help
+```
+
+#### Encode (CLI)
+```bash
+python -m codicefiscale encode --firstname Fabio --lastname Caccamo --gender M --birthdate 03/04/1985 --birthplace Torino
+```
+
+#### Decode (CLI)
+```bash
+python -m codicefiscale decode CCCFBA85D03L219P
 ```
 
 ## Testing
