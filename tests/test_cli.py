@@ -6,19 +6,27 @@ from io import StringIO
 from unittest import mock
 
 from codicefiscale import __version__
-from codicefiscale.cli import run_with_args
+from codicefiscale.cli import run, run_with_args
 
 
 class CodiceFiscaleCLITestCase(unittest.TestCase):
-    def test_main_from_command_line(self):
-        cmd = "python -m codicefiscale"
-        output = subprocess.check_output(cmd, shell=True).decode("UTF-8").strip()
-        self.assertEqual(output, "For more info run: 'python -m codicefiscale --help'")
-
     def test_version_from_command_line(self):
         cmd = "python -m codicefiscale --version"
         output = subprocess.check_output(cmd, shell=True).decode("UTF-8").strip()
         self.assertEqual(output, __version__)
+
+    def test_main_without_args(self):
+        with mock.patch("sys.stdout", new=StringIO()) as fake_output:
+            run()
+            output = fake_output.getvalue().strip()
+            self.assertEqual(
+                output, "For more info run: 'python -m codicefiscale --help'"
+            )
+
+    def test_main_without_args_from_command_line(self):
+        cmd = "python -m codicefiscale"
+        output = subprocess.check_output(cmd, shell=True).decode("UTF-8").strip()
+        self.assertEqual(output, "For more info run: 'python -m codicefiscale --help'")
 
     def test_encode(self):
         with mock.patch("sys.stdout", new=StringIO()) as fake_output:
@@ -46,8 +54,27 @@ class CodiceFiscaleCLITestCase(unittest.TestCase):
         output = subprocess.check_output(cmd, shell=True).decode("UTF-8").strip()
         self.assertEqual(output, "RSSMRA90A01H501W")
 
+    def test_encode_with_wrong_birthplace(self):
+        with mock.patch("sys.stderr", new=StringIO()) as fake_output:
+            args = argparse.Namespace(
+                firstname="Mario",
+                lastname="Rossi",
+                gender="M",
+                birthdate="01/01/1990",
+                birthplace="Romaaa,RM",
+                subcommand="encode",
+            )
+            run_with_args(args)
+            output = fake_output.getvalue().strip()
+            self.assertEqual(
+                output,
+                (
+                    "[codicefiscale] 'birthplace' / 'birthdate' arguments "
+                    "('Romaaa,RM' / '01/01/1990') not mapped to code"
+                ),
+            )
+
     def test_decode_without_omocodes(self):
-        self.maxDiff = None
         with mock.patch("sys.stdout", new=StringIO()) as fake_output:
             args = argparse.Namespace(
                 code="RSSMRA90A01H501W",
@@ -198,7 +225,6 @@ class CodiceFiscaleCLITestCase(unittest.TestCase):
         )
 
     def test_decode_with_omocodes(self):
-        self.maxDiff = None
         with mock.patch("sys.stdout", new=StringIO()) as fake_output:
             args = argparse.Namespace(
                 code="RSSMRA90A01H501W",
@@ -533,4 +559,21 @@ class CodiceFiscaleCLITestCase(unittest.TestCase):
                         "cin": "W",
                     },
                 },
+            )
+
+    def test_decode_with_wrong_code(self):
+        with mock.patch("sys.stderr", new=StringIO()) as fake_output:
+            args = argparse.Namespace(
+                code="RSSMRA90A01H501X",
+                omocodes=False,
+                subcommand="decode",
+            )
+            run_with_args(args)
+            output = fake_output.getvalue().strip()
+            self.assertEqual(
+                output,
+                (
+                    "[codicefiscale] wrong CIN (Control Internal Number): "
+                    "expected 'W', found 'X'"
+                ),
             )
