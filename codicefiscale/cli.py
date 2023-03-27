@@ -34,7 +34,6 @@ def _decode_from_args(args: argparse.Namespace) -> None:
         def default_encoder(obj: Any) -> Any:
             if isinstance(obj, datetime):
                 return obj.isoformat()
-            return str(obj)
 
         cf_output = json.dumps(
             cf_data,
