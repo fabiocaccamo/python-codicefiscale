@@ -120,11 +120,9 @@ def run() -> None:
 def run_with_args(args: argparse.Namespace) -> None:
     if args.subcommand is None and args.version:
         sys.stdout.write(f"{__version__}\n")
-        return
     elif args.subcommand == "decode":
         _decode_from_args(args)
-        return
     elif args.subcommand == "encode":
         _encode_from_args(args)
-        return
-    sys.stdout.write("For more info run: 'python -m codicefiscale --help'\n")
+    else:
+        sys.stdout.write("For more info run: 'python -m codicefiscale --help'\n")
