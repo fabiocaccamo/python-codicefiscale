@@ -66,7 +66,7 @@ def run() -> None:
         "decode",
         help=(
             "Decode an italian Codice Fiscale. "
-            "For more info run: python -m codicefiscale decode --help"
+            "For more info run: 'python -m codicefiscale decode --help'"
         ),
     )
     decode_parser.add_argument(
@@ -84,7 +84,7 @@ def run() -> None:
         "encode",
         help=(
             "Encode an italian Codice Fiscale. "
-            "For more info run: python -m codicefiscale encode --help"
+            "For more info run: 'python -m codicefiscale encode --help'"
         ),
     )
     encode_parser.add_argument(
@@ -128,4 +128,4 @@ def run_with_args(args: argparse.Namespace) -> None:
     elif args.subcommand == "encode":
         _encode_from_args(args)
         return
-    sys.stdout.write("For more info run: python -m codicefiscale --help.\n")
+    sys.stdout.write("For more info run: 'python -m codicefiscale --help'\n")

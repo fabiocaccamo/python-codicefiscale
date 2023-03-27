@@ -10,6 +10,11 @@ from codicefiscale.cli import run_with_args
 
 
 class CodiceFiscaleCLITestCase(unittest.TestCase):
+    def test_main_from_command_line(self):
+        cmd = "python -m codicefiscale"
+        output = subprocess.check_output(cmd, shell=True).decode("UTF-8").strip()
+        self.assertEqual(output, "For more info run: 'python -m codicefiscale --help'")
+
     def test_version_from_command_line(self):
         cmd = "python -m codicefiscale --version"
         output = subprocess.check_output(cmd, shell=True).decode("UTF-8").strip()
