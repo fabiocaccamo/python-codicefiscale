@@ -36,7 +36,13 @@ from codicefiscale import codicefiscale
 ```
 ### Encode
 ```python
-codicefiscale.encode(surname="Caccamo", name="Fabio", sex="M", birthdate="03/04/1985", birthplace="Torino")
+codicefiscale.encode(
+    lastname="Caccamo",
+    firstname="Fabio",
+    gender="M",
+    birthdate="03/04/1985",
+    birthplace="Torino",
+)
 
 # "CCCFBA85D03L219P"
 ```
@@ -46,7 +52,7 @@ codicefiscale.decode("CCCFBA85D03L219P")
 
 # {
 #     "code": "CCCFBA85D03L219P",
-#     "sex": "M",
+#     "gender": "M",
 #     "birthdate": datetime.datetime(1985, 4, 3, 0, 0),
 #     "birthplace": {
 #         "name": "TORINO"
@@ -65,8 +71,8 @@ codicefiscale.decode("CCCFBA85D03L219P")
 #     ],
 #     "raw": {
 #         "code": "CCCFBA85D03L219P",
-#         "surname": "CCC",
-#         "name": "FBA",
+#         "lastname": "CCC",
+#         "firstname": "FBA",
 #         "birthdate": "85D03",
 #         "birthdate_year": "85"
 #         "birthdate_month": "D",

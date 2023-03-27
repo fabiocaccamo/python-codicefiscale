@@ -14,7 +14,7 @@ from codicefiscale.metadata import (
 
 
 class CodiceFiscaleTestCase(unittest.TestCase):
-    def test_encode_surname(self):
+    def test_encode_lastname(self):
         data = [
             {
                 "input": "",
@@ -32,9 +32,9 @@ class CodiceFiscaleTestCase(unittest.TestCase):
 
         for obj in data:
             # with self.subTest(obj=obj):
-            self.assertEqual(codicefiscale.encode_surname(obj["input"]), obj["result"])
+            self.assertEqual(codicefiscale.encode_lastname(obj["input"]), obj["result"])
 
-    def test_encode_name(self):
+    def test_encode_firstname(self):
         data = [
             {
                 "input": "",
@@ -72,7 +72,9 @@ class CodiceFiscaleTestCase(unittest.TestCase):
 
         for obj in data:
             # with self.subTest(obj=obj):
-            self.assertEqual(codicefiscale.encode_name(obj["input"]), obj["result"])
+            self.assertEqual(
+                codicefiscale.encode_firstname(obj["input"]), obj["result"]
+            )
 
     def test_encode_birthdate_formats(self):
         data = [
@@ -157,7 +159,7 @@ class CodiceFiscaleTestCase(unittest.TestCase):
         with self.assertRaises(ValueError):
             codicefiscale.encode_birthdate("1985/1985/1985", "M")
 
-    def test_encode_birthdate_sex(self):
+    def test_encode_birthdate_gender(self):
         data = [
             {
                 "input": ["03/04/1985", "M"],
@@ -261,9 +263,9 @@ class CodiceFiscaleTestCase(unittest.TestCase):
         # when encoding a Codice Fiscale for a person born in Vignola (MO)
         # encode uses code L884 (for Vignola (TN) between 1920-1929) instead of L885.
         data = {
-            "surname": "Caccamo",
-            "name": "Fabio",
-            "sex": "M",
+            "lastname": "Caccamo",
+            "firstname": "Fabio",
+            "gender": "M",
             "birthdate": "03/04/1885",
             "birthplace": "Vignola",
         }
@@ -281,9 +283,9 @@ class CodiceFiscaleTestCase(unittest.TestCase):
         data = [
             {
                 "input": {
-                    "surname": "Ait Hadda",
-                    "name": "Saad",
-                    "sex": "M",
+                    "lastname": "Ait Hadda",
+                    "firstname": "Saad",
+                    "gender": "M",
                     "birthdate": "08/09/1995",
                     "birthplace": "Marocco",
                 },
@@ -291,9 +293,9 @@ class CodiceFiscaleTestCase(unittest.TestCase):
             },
             {
                 "input": {
-                    "surname": "Belousovs",
-                    "name": "Olegs",
-                    "sex": "M",
+                    "lastname": "Belousovs",
+                    "firstname": "Olegs",
+                    "gender": "M",
                     "birthdate": "22/03/1984",
                     "birthplace": "Lettonia",
                 },
@@ -301,9 +303,9 @@ class CodiceFiscaleTestCase(unittest.TestCase):
             },
             {
                 "input": {
-                    "surname": "Bruno",
-                    "name": "Giovanni",
-                    "sex": "M",
+                    "lastname": "Bruno",
+                    "firstname": "Giovanni",
+                    "gender": "M",
                     "birthdate": "26/02/1971",
                     "birthplace": "Torino",
                 },
@@ -311,9 +313,9 @@ class CodiceFiscaleTestCase(unittest.TestCase):
             },
             {
                 "input": {
-                    "surname": "Caccamo",
-                    "name": "Fabio",
-                    "sex": "M",
+                    "lastname": "Caccamo",
+                    "firstname": "Fabio",
+                    "gender": "M",
                     "birthdate": "03/04/1985",
                     "birthplace": "Torino",
                 },
@@ -321,9 +323,9 @@ class CodiceFiscaleTestCase(unittest.TestCase):
             },
             {
                 "input": {
-                    "surname": "Gomba",
-                    "name": "Alessandro",
-                    "sex": "M",
+                    "lastname": "Gomba",
+                    "firstname": "Alessandro",
+                    "gender": "M",
                     "birthdate": "05/01/1984",
                     "birthplace": "Pinerolo",
                 },
@@ -331,9 +333,9 @@ class CodiceFiscaleTestCase(unittest.TestCase):
             },
             {
                 "input": {
-                    "surname": "Martini",
-                    "name": "Maria",
-                    "sex": "F",
+                    "lastname": "Martini",
+                    "firstname": "Maria",
+                    "gender": "F",
                     "birthdate": "16/12/1983",
                     "birthplace": "Anagni",
                 },
@@ -341,9 +343,9 @@ class CodiceFiscaleTestCase(unittest.TestCase):
             },
             {
                 "input": {
-                    "surname": "Panella",
-                    "name": "Michele",
-                    "sex": "M",
+                    "lastname": "Panella",
+                    "firstname": "Michele",
+                    "gender": "M",
                     "birthdate": "27/10/1979",
                     "birthplace": "San Severo (FG)",
                 },
@@ -351,9 +353,9 @@ class CodiceFiscaleTestCase(unittest.TestCase):
             },
             {
                 "input": {
-                    "surname": "Quatrini",
-                    "name": "Dario",
-                    "sex": "M",
+                    "lastname": "Quatrini",
+                    "firstname": "Dario",
+                    "gender": "M",
                     "birthdate": "13/09/1971",
                     "birthplace": "Pavia",
                 },
@@ -361,9 +363,9 @@ class CodiceFiscaleTestCase(unittest.TestCase):
             },
             {
                 "input": {
-                    "surname": "Takakura",
-                    "name": "Yuuki",
-                    "sex": "F",
+                    "lastname": "Takakura",
+                    "firstname": "Yuuki",
+                    "gender": "F",
                     "birthdate": "28/02/1987",
                     "birthplace": "Torino",
                 },
@@ -371,9 +373,9 @@ class CodiceFiscaleTestCase(unittest.TestCase):
             },
             {
                 "input": {
-                    "surname": "Rossi",
-                    "name": "Mario",
-                    "sex": "M",
+                    "lastname": "Rossi",
+                    "firstname": "Mario",
+                    "gender": "M",
                     "birthdate": "17/02/1950",
                     "birthplace": "Porretta Terme",
                 },
@@ -391,7 +393,7 @@ class CodiceFiscaleTestCase(unittest.TestCase):
             {
                 "input": "THDSDA95P08Z330H",
                 "result": {
-                    "sex": "M",
+                    "gender": "M",
                     "birthdate": "08/09/1995",
                     "birthplace": "Marocco",
                 },
@@ -399,7 +401,7 @@ class CodiceFiscaleTestCase(unittest.TestCase):
             {
                 "input": "BLSLGS84C22Z145O",
                 "result": {
-                    "sex": "M",
+                    "gender": "M",
                     "birthdate": "22/03/1984",
                     "birthplace": "Lettonia",
                 },
@@ -407,7 +409,7 @@ class CodiceFiscaleTestCase(unittest.TestCase):
             {
                 "input": "BRNGNN71B26L219T",
                 "result": {
-                    "sex": "M",
+                    "gender": "M",
                     "birthdate": "26/02/1971",
                     "birthplace": "Torino",
                 },
@@ -415,7 +417,7 @@ class CodiceFiscaleTestCase(unittest.TestCase):
             {
                 "input": "CCCFBA85D03L219P",
                 "result": {
-                    "sex": "M",
+                    "gender": "M",
                     "birthdate": "03/04/1985",
                     "birthplace": "Torino",
                 },
@@ -423,7 +425,7 @@ class CodiceFiscaleTestCase(unittest.TestCase):
             {
                 "input": "GMBLSN84A05G674H",
                 "result": {
-                    "sex": "M",
+                    "gender": "M",
                     "birthdate": "05/01/1984",
                     "birthplace": "Pinerolo",
                 },
@@ -431,7 +433,7 @@ class CodiceFiscaleTestCase(unittest.TestCase):
             {
                 "input": "MRTMRA83T56A269B",
                 "result": {
-                    "sex": "F",
+                    "gender": "F",
                     "birthdate": "16/12/1983",
                     "birthplace": "Anagni",
                 },
@@ -439,7 +441,7 @@ class CodiceFiscaleTestCase(unittest.TestCase):
             {
                 "input": "PNLMHL79R27I158P",
                 "result": {
-                    "sex": "M",
+                    "gender": "M",
                     "birthdate": "27/10/1979",
                     "birthplace": "San Severo",
                 },
@@ -447,7 +449,7 @@ class CodiceFiscaleTestCase(unittest.TestCase):
             {
                 "input": "QTRDRA71P13G388J",
                 "result": {
-                    "sex": "M",
+                    "gender": "M",
                     "birthdate": "13/09/1971",
                     "birthplace": "Pavia",
                 },
@@ -455,19 +457,23 @@ class CodiceFiscaleTestCase(unittest.TestCase):
             {
                 "input": "TKKYKU87B68L219F",
                 "result": {
-                    "sex": "F",
+                    "gender": "F",
                     "birthdate": "28/02/1987",
                     "birthplace": "Torino",
                 },
             },
             {
                 "input": "RSSMRA68A01H501Y",
-                "result": {"sex": "M", "birthdate": "01/01/1968", "birthplace": "Roma"},
+                "result": {
+                    "gender": "M",
+                    "birthdate": "01/01/1968",
+                    "birthplace": "Roma",
+                },
             },
             {
                 "input": "RSSMRA50B17A558W",
                 "result": {
-                    "sex": "M",
+                    "gender": "M",
                     "birthdate": "17/02/1950",
                     "birthplace": "Porretta Terme",
                 },
@@ -479,9 +485,9 @@ class CodiceFiscaleTestCase(unittest.TestCase):
             result = obj["result"]
             obj_decoded = codicefiscale.decode(obj["input"])
             #  print(obj_decoded)
-            sex = obj_decoded.get("sex")
-            self.assertFalse(sex is None)
-            self.assertEqual(sex, result["sex"])
+            gender = obj_decoded.get("gender")
+            self.assertFalse(gender is None)
+            self.assertEqual(gender, result["gender"])
 
             birthdate = obj_decoded.get("birthdate")
             self.assertFalse(birthdate is None)
@@ -494,11 +500,11 @@ class CodiceFiscaleTestCase(unittest.TestCase):
             self.assertEqual(birthplace["name"].upper(), result["birthplace"].upper())
 
     def test_decode_invalid_syntax(self):
-        # invalid surname
+        # invalid lastname
         with self.assertRaises(ValueError):
             codicefiscale.decode("CC0FBA85X03L219P")
 
-        # invalid name
+        # invalid firstname
         with self.assertRaises(ValueError):
             codicefiscale.decode("CCCFB085X03L219P")
 
@@ -519,7 +525,7 @@ class CodiceFiscaleTestCase(unittest.TestCase):
             {
                 "input": "CCCFBA85D03L219P",
                 "result": {
-                    "sex": "M",
+                    "gender": "M",
                     "birthdate": "03/04/1985",
                     "birthplace": "Torino",
                 },
@@ -527,7 +533,7 @@ class CodiceFiscaleTestCase(unittest.TestCase):
             {
                 "input": "CCCFBA85D03L21VE",
                 "result": {
-                    "sex": "M",
+                    "gender": "M",
                     "birthdate": "03/04/1985",
                     "birthplace": "Torino",
                 },
@@ -535,7 +541,7 @@ class CodiceFiscaleTestCase(unittest.TestCase):
             {
                 "input": "CCCFBA85D03L2MVP",
                 "result": {
-                    "sex": "M",
+                    "gender": "M",
                     "birthdate": "03/04/1985",
                     "birthplace": "Torino",
                 },
@@ -543,7 +549,7 @@ class CodiceFiscaleTestCase(unittest.TestCase):
             {
                 "input": "CCCFBA85D03LNMVE",
                 "result": {
-                    "sex": "M",
+                    "gender": "M",
                     "birthdate": "03/04/1985",
                     "birthplace": "Torino",
                 },
@@ -551,7 +557,7 @@ class CodiceFiscaleTestCase(unittest.TestCase):
             {
                 "input": "CCCFBA85D0PLNMVA",
                 "result": {
-                    "sex": "M",
+                    "gender": "M",
                     "birthdate": "03/04/1985",
                     "birthplace": "Torino",
                 },
@@ -559,7 +565,7 @@ class CodiceFiscaleTestCase(unittest.TestCase):
             {
                 "input": "CCCFBA85DLPLNMVL",
                 "result": {
-                    "sex": "M",
+                    "gender": "M",
                     "birthdate": "03/04/1985",
                     "birthplace": "Torino",
                 },
@@ -567,7 +573,7 @@ class CodiceFiscaleTestCase(unittest.TestCase):
             {
                 "input": "CCCFBA8RDLPLNMVX",
                 "result": {
-                    "sex": "M",
+                    "gender": "M",
                     "birthdate": "03/04/1985",
                     "birthplace": "Torino",
                 },
@@ -575,7 +581,7 @@ class CodiceFiscaleTestCase(unittest.TestCase):
             {
                 "input": "CCCFBAURDLPLNMVU",
                 "result": {
-                    "sex": "M",
+                    "gender": "M",
                     "birthdate": "03/04/1985",
                     "birthplace": "Torino",
                 },
@@ -589,9 +595,9 @@ class CodiceFiscaleTestCase(unittest.TestCase):
             result = obj["result"]
             obj_decoded = codicefiscale.decode(code)
 
-            sex = obj_decoded.get("sex")
-            self.assertFalse(sex is None)
-            self.assertEqual(sex, result["sex"])
+            gender = obj_decoded.get("gender")
+            self.assertFalse(gender is None)
+            self.assertEqual(gender, result["gender"])
 
             birthdate = obj_decoded.get("birthdate")
             self.assertFalse(birthdate is None)

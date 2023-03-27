@@ -124,8 +124,8 @@ _DATA: dict[str, dict[str, list[dict[str, Any]]]] = _get_indexed_data()
 
 CODICEFISCALE_RE: Pattern[str] = re.compile(
     r"^"
-    r"(?P<surname>[a-z]{3})"
-    r"(?P<name>[a-z]{3})"
+    r"(?P<lastname>[a-z]{3})"
+    r"(?P<firstname>[a-z]{3})"
     r"(?P<birthdate>(?P<birthdate_year>[a-z\d]{2})(?P<birthdate_month>[abcdehlmprst]{1})(?P<birthdate_day>[a-z\d]{2}))"  # noqa: B950, E501
     r"(?P<birthplace>[a-z]{1}[a-z\d]{3})"
     r"(?P<cin>[a-z]{1})$",
@@ -236,55 +236,55 @@ def _get_omocodes(code: str) -> list[str]:
     return codes
 
 
-def encode_surname(surname: str) -> str:
+def encode_lastname(lastname: str) -> str:
     """
-    Encode surname to the code used in italian fiscal code.
+    Encode lastname to the code used in italian fiscal code.
 
-    :param surname: The surname
-    :type surname: string
+    :param lastname: The lastname
+    :type lastname: string
 
     :returns: The code used in italian fiscal code
     :rtype: string
     """
-    surname_slug = slugify(surname)
-    surname_consonants = _get_consonants(surname_slug)
-    surname_vowels = _get_vowels(surname_slug)
-    surname_code = _get_consonants_and_vowels(surname_consonants, surname_vowels)
-    return surname_code
+    lastname_slug = slugify(lastname)
+    lastname_consonants = _get_consonants(lastname_slug)
+    lastname_vowels = _get_vowels(lastname_slug)
+    lastname_code = _get_consonants_and_vowels(lastname_consonants, lastname_vowels)
+    return lastname_code
 
 
-def encode_name(name: str) -> str:
+def encode_firstname(firstname: str) -> str:
     """
-    Encodes name to the code used in italian fiscal code.
+    Encodes firstname to the code used in italian fiscal code.
 
-    :param name: The name
-    :type name: string
+    :param firstname: The firstname
+    :type firstname: string
 
     :returns: The code used in italian fiscal code
     :rtype: string
     """
-    name_slug = slugify(name)
-    name_consonants = _get_consonants(name_slug)
+    firstname_slug = slugify(firstname)
+    firstname_consonants = _get_consonants(firstname_slug)
 
-    if len(name_consonants) > 3:
-        del name_consonants[1]
+    if len(firstname_consonants) > 3:
+        del firstname_consonants[1]
 
-    name_vowels = _get_vowels(name_slug)
-    name_code = _get_consonants_and_vowels(name_consonants, name_vowels)
-    return name_code
+    firstname_vowels = _get_vowels(firstname_slug)
+    firstname_code = _get_consonants_and_vowels(firstname_consonants, firstname_vowels)
+    return firstname_code
 
 
 def encode_birthdate(
     birthdate: datetime | str | None,
-    sex: Literal["m", "M", "f", "F"],
+    gender: Literal["m", "M", "f", "F"],
 ) -> str:
     """
     Encodes birthdate to the code used in italian fiscal code.
 
     :param birthdate: The birthdate
     :type birthdate: datetime or string
-    :param sex: The sex, 'M' or 'F'
-    :type sex: string
+    :param gender: The gender, 'M' or 'F'
+    :type gender: string
 
     :returns: The code used in italian fiscal code
     :rtype: string
@@ -295,15 +295,15 @@ def encode_birthdate(
     if not date:
         raise ValueError("[codicefiscale] 'date' argument cant be None")
 
-    if not sex:
-        raise ValueError("[codicefiscale] 'sex' argument cant be None")
-    sex_code = sex.upper()
-    if sex_code not in ("M", "F"):
-        raise ValueError("[codicefiscale] 'sex' argument must be 'M' or 'F'")
+    if not gender:
+        raise ValueError("[codicefiscale] 'gender' argument cant be None")
+    gender_code = gender.upper()
+    if gender_code not in ("M", "F"):
+        raise ValueError("[codicefiscale] 'gender' argument must be 'M' or 'F'")
 
     year_code = str(date.year)[2:]
     month_code = _MONTHS[date.month - 1]
-    day_code = str(date.day + (40 if sex_code == "F" else 0)).zfill(2).upper()
+    day_code = str(date.day + (40 if gender_code == "F" else 0)).zfill(2).upper()
     date_code = f"{year_code}{month_code}{day_code}"
     return date_code
 
@@ -372,21 +372,21 @@ def encode_cin(code: str) -> str:
 
 
 def encode(
-    surname: str,
-    name: str,
-    sex: Literal["m", "M", "f", "F"],
+    lastname: str,
+    firstname: str,
+    gender: Literal["m", "M", "f", "F"],
     birthdate: datetime | str | None,
     birthplace: str,
 ) -> str:
     """
     Encodes the italian fiscal code.
 
-    :param surname: The surname
-    :type surname: string
-    :param name: The name
-    :type name: string
-    :param sex: The sex, 'M' or 'F'
-    :type sex: string
+    :param lastname: The lastname
+    :type lastname: string
+    :param firstname: The firstname
+    :type firstname: string
+    :param gender: The gender, 'M' or 'F'
+    :type gender: string
     :param birthdate: The birthdate
     :type birthdate: datetime or string
     :param birthplace: The birthplace
@@ -396,11 +396,11 @@ def encode(
     :rtype: string
     """
 
-    surname_code = encode_surname(surname)
-    name_code = encode_name(name)
-    birthdate_code = encode_birthdate(birthdate, sex)
+    lastname_code = encode_lastname(lastname)
+    firstname_code = encode_firstname(firstname)
+    birthdate_code = encode_birthdate(birthdate, gender)
     birthplace_code = encode_birthplace(birthplace, birthdate)
-    code = f"{surname_code}{name_code}{birthdate_code}{birthplace_code}"
+    code = f"{lastname_code}{firstname_code}{birthdate_code}{birthplace_code}"
     cin_code = encode_cin(code)
     code = f"{code}{cin_code}"
 
@@ -429,8 +429,8 @@ def decode_raw(code: str) -> dict[str, str]:
 
     data = {
         "code": code,
-        "surname": match["surname"],
-        "name": match["name"],
+        "lastname": match["lastname"],
+        "firstname": match["firstname"],
         "birthdate": match["birthdate"],
         "birthdate_year": match["birthdate_year"],
         "birthdate_month": match["birthdate_month"],
@@ -462,9 +462,9 @@ def decode(code: str) -> dict[str, Any]:
 
     if birthdate_day > 40:
         birthdate_day -= 40
-        sex = "F"
+        gender = "F"
     else:
-        sex = "M"
+        gender = "M"
 
     current_year = datetime.now().year
     current_year_century_prefix = str(current_year)[0:-2]
@@ -496,7 +496,7 @@ def decode(code: str) -> dict[str, Any]:
     data = {
         "code": code,
         "omocodes": _get_omocodes(code),
-        "sex": sex,
+        "gender": gender,
         "birthdate": birthdate,
         "birthplace": birthplace,
         "raw": raw,

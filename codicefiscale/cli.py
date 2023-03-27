@@ -10,9 +10,9 @@ from codicefiscale import __description__, __version__, codicefiscale
 def _encode_from_args(args: argparse.Namespace) -> None:
     try:
         cf = codicefiscale.encode(
-            surname=args.lastname,
-            name=args.firstname,
-            sex=args.gender,
+            lastname=args.lastname,
+            firstname=args.firstname,
+            gender=args.gender,
             birthdate=args.birthdate,
             birthplace=args.birthplace,
         )

@@ -98,7 +98,7 @@ class CodiceFiscaleCLITestCase(unittest.TestCase):
                 """
 {
     "code": "RSSMRA90A01H501W",
-    "sex": "M",
+    "gender": "M",
     "birthdate": "1990-01-01T00:00:00",
     "birthplace": {
         "active": false,
@@ -116,8 +116,8 @@ class CodiceFiscaleCLITestCase(unittest.TestCase):
     },
     "raw": {
         "code": "RSSMRA90A01H501W",
-        "surname": "RSS",
-        "name": "MRA",
+        "lastname": "RSS",
+        "firstname": "MRA",
         "birthdate": "90A01",
         "birthdate_year": "90",
         "birthdate_month": "A",
@@ -133,7 +133,7 @@ class CodiceFiscaleCLITestCase(unittest.TestCase):
                 output_data,
                 {
                     "code": "RSSMRA90A01H501W",
-                    "sex": "M",
+                    "gender": "M",
                     "birthdate": "1990-01-01T00:00:00",
                     "birthplace": {
                         "active": False,
@@ -149,8 +149,8 @@ class CodiceFiscaleCLITestCase(unittest.TestCase):
                     },
                     "raw": {
                         "code": "RSSMRA90A01H501W",
-                        "surname": "RSS",
-                        "name": "MRA",
+                        "lastname": "RSS",
+                        "firstname": "MRA",
                         "birthdate": "90A01",
                         "birthdate_year": "90",
                         "birthdate_month": "A",
@@ -170,7 +170,7 @@ class CodiceFiscaleCLITestCase(unittest.TestCase):
             """
 {
     "code": "RSSMRA90A01H501W",
-    "sex": "M",
+    "gender": "M",
     "birthdate": "1990-01-01T00:00:00",
     "birthplace": {
         "active": false,
@@ -188,8 +188,8 @@ class CodiceFiscaleCLITestCase(unittest.TestCase):
     },
     "raw": {
         "code": "RSSMRA90A01H501W",
-        "surname": "RSS",
-        "name": "MRA",
+        "lastname": "RSS",
+        "firstname": "MRA",
         "birthdate": "90A01",
         "birthdate_year": "90",
         "birthdate_month": "A",
@@ -206,7 +206,7 @@ class CodiceFiscaleCLITestCase(unittest.TestCase):
             output_data,
             {
                 "code": "RSSMRA90A01H501W",
-                "sex": "M",
+                "gender": "M",
                 "birthdate": "1990-01-01T00:00:00",
                 "birthplace": {
                     "active": False,
@@ -222,8 +222,8 @@ class CodiceFiscaleCLITestCase(unittest.TestCase):
                 },
                 "raw": {
                     "code": "RSSMRA90A01H501W",
-                    "surname": "RSS",
-                    "name": "MRA",
+                    "lastname": "RSS",
+                    "firstname": "MRA",
                     "birthdate": "90A01",
                     "birthdate_year": "90",
                     "birthdate_month": "A",
@@ -378,7 +378,7 @@ class CodiceFiscaleCLITestCase(unittest.TestCase):
         "RSSMRAVLALMHRL1F",
         "RSSMRAVLALMHRLMX"
     ],
-    "sex": "M",
+    "gender": "M",
     "birthdate": "1990-01-01T00:00:00",
     "birthplace": {
         "active": false,
@@ -396,8 +396,8 @@ class CodiceFiscaleCLITestCase(unittest.TestCase):
     },
     "raw": {
         "code": "RSSMRA90A01H501W",
-        "surname": "RSS",
-        "name": "MRA",
+        "lastname": "RSS",
+        "firstname": "MRA",
         "birthdate": "90A01",
         "birthdate_year": "90",
         "birthdate_month": "A",
@@ -543,7 +543,7 @@ class CodiceFiscaleCLITestCase(unittest.TestCase):
                         "RSSMRAVLALMHRL1F",
                         "RSSMRAVLALMHRLMX",
                     ],
-                    "sex": "M",
+                    "gender": "M",
                     "birthdate": "1990-01-01T00:00:00",
                     "birthplace": {
                         "active": False,
@@ -559,8 +559,8 @@ class CodiceFiscaleCLITestCase(unittest.TestCase):
                     },
                     "raw": {
                         "code": "RSSMRA90A01H501W",
-                        "surname": "RSS",
-                        "name": "MRA",
+                        "lastname": "RSS",
+                        "firstname": "MRA",
                         "birthdate": "90A01",
                         "birthdate_year": "90",
                         "birthdate_month": "A",
