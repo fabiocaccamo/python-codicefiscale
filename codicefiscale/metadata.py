@@ -7,4 +7,4 @@ __description__ = (
 __email__ = "fabio.caccamo@gmail.com"
 __license__ = "MIT"
 __title__ = "codicefiscale"
-__version__ = "0.6.1"
+__version__ = "0.7.0"
