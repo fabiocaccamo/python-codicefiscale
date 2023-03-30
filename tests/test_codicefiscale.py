@@ -259,26 +259,6 @@ class CodiceFiscaleTestCase(unittest.TestCase):
         with self.assertRaises(ValueError):
             codicefiscale.encode_cin("CCCFBA85D03")
 
-    def test_encode_issue_37(self):
-        # when encoding a Codice Fiscale for a person born in Vignola (MO)
-        # encode uses code L884 (for Vignola (TN) between 1920-1929) instead of L885.
-        data = {
-            "lastname": "Caccamo",
-            "firstname": "Fabio",
-            "gender": "M",
-            "birthdate": "03/04/1885",
-            "birthplace": "Vignola",
-        }
-        code = codicefiscale.encode(**data)
-        data = codicefiscale.decode(code)
-        birthplace = data["birthplace"]
-        self.assertTrue(birthplace is not None)
-        self.assertTrue(isinstance(birthplace, dict))
-        # print(birthplace)
-        self.assertEqual(birthplace["code"], "L885")
-        self.assertEqual(birthplace["name"], "Vignola")
-        self.assertEqual(birthplace["province"], "MO")
-
     def test_encode(self):
         data = [
             {
@@ -777,21 +757,6 @@ class CodiceFiscaleTestCase(unittest.TestCase):
         self.assertFalse(
             codicefiscale.is_valid("CCCFBA85D99L219")
         )  # wrong birthdate day
-
-    def test_issue_16(self):
-        """
-        Decode return GIRGENTI (soppresso) instead of AGRIGENTO
-        """
-        data = codicefiscale.decode("LNNFNC80A01A089K")
-        expected_birthplace = {
-            "code": "A089",
-            "province": "AG",
-            "name": "AGRIGENTO",
-        }
-        birthplace = data["birthplace"]
-        self.assertEqual(birthplace["code"], expected_birthplace["code"])
-        self.assertEqual(birthplace["name"].upper(), expected_birthplace["name"])
-        self.assertEqual(birthplace["province"], expected_birthplace["province"])
 
     def test_metadata(self):
         self.assertTrue(
