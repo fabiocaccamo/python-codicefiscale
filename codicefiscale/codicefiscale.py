@@ -468,7 +468,8 @@ def decode(code: str) -> dict[str, Any]:
 
     current_year = datetime.now().year
     current_year_century_prefix = str(current_year)[0:-2]
-    birthdate_year = int(f"{current_year_century_prefix}{birthdate_year}")
+    birthdate_year_suffix = str(birthdate_year).zfill(2)
+    birthdate_year = int(f"{current_year_century_prefix}{birthdate_year_suffix}")
     if birthdate_year > current_year:
         birthdate_year -= 100
     birthdate_str = f"{birthdate_year}/{birthdate_month}/{birthdate_day}"
