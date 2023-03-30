@@ -482,7 +482,10 @@ def decode(code: str) -> dict[str, Any]:
     birthplace = _get_birthplace(birthplace_code, birthdate)
     # print(birthplace)
     if not birthplace:
-        raise ValueError(f"[codicefiscale] wrong birthplace code: {birthplace_code!r}")
+        raise ValueError(
+            "[codicefiscale] wrong birthplace code: "
+            f"{birthplace_code!r} / birthdate: {birthdate.isoformat()!r}."
+        )
 
     cin = raw["cin"]
     cin_check = encode_cin(code)
