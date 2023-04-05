@@ -65,7 +65,7 @@ _OMOCODIA: dict[str, str] = {
     "8": "U",
     "9": "V",
 }
-_OMOCODIA_DIGITS: str = "".join([digit for digit in _OMOCODIA])
+_OMOCODIA_DIGITS: str = "".join(list(_OMOCODIA))
 _OMOCODIA_LETTERS: str = "".join([_OMOCODIA[digit] for digit in _OMOCODIA])
 _OMOCODIA_ENCODE_TRANS: dict[int, int] = "".maketrans(
     _OMOCODIA_DIGITS, _OMOCODIA_LETTERS
