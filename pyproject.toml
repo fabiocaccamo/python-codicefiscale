@@ -1,3 +1,63 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "python-codicefiscale"
+description = "encode / decode italian fiscal codes - codifica / decodifica del Codice Fiscale italiano."
+authors = [
+    { name = "Fabio Caccamo", email = "fabio.caccamo@gmail.com" },
+]
+keywords = [
+    "codicefiscale",
+    "codice",
+    "fiscale",
+    "cf",
+    "fiscal code",
+    "italia",
+    "italy",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Web Environment",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: Implementation :: PyPy",
+    "Topic :: Software Development :: Build Tools",
+]
+dependencies = [
+    "python-dateutil ~= 2.8.0, < 3.0.0",
+    "python-fsutil >= 0.10.0, < 1.0.0",
+    "python-slugify >= 7.0.0, < 9.0.0",
+]
+dynamic = ["version"]
+maintainers = [
+    { name = "Fabio Caccamo", email = "fabio.caccamo@gmail.com" },
+]
+
+[project.readme]
+file = "README.md"
+content-type = "text/markdown"
+
+[project.license]
+file = "LICENSE.txt"
+content-type = "text/plain"
+
+[project.urls]
+Homepage = "https://github.com/fabiocaccamo/python-codicefiscale"
+Download = "https://github.com/fabiocaccamo/python-codicefiscale/releases"
+Documentation = "https://github.com/fabiocaccamo/python-codicefiscale#readme"
+Issues = "https://github.com/fabiocaccamo/python-codicefiscale/issues"
+Funding = "https://github.com/sponsors/fabiocaccamo/"
+Twitter = "https://twitter.com/fabiocaccamo"
+
 [tool.black]
 line-length = 88
 include = '\.pyi?$'
@@ -16,17 +76,21 @@ exclude = '''
 )/
 '''
 
+[tool.mypy]
+files = ["codicefiscale"]
+ignore_missing_imports = true
+strict = true
+
 [tool.ruff]
 ignore = []
 line-length = 88
-select = [
-    "B",
-    "B9",
-    "C",
-    "E",
-    "F",
-    "W",
-]
+select = ["B", "B9", "C", "E", "F", "W"]
 
 [tool.ruff.mccabe]
 max-complexity = 10
+
+[tool.setuptools.packages.find]
+include = ["codicefiscale*"]
+
+[tool.setuptools.dynamic.version]
+attr = "codicefiscale.metadata.__version__"
