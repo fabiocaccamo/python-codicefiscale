@@ -1,0 +1,138 @@
+[
+    {
+        "active": false,
+        "code": "Z105",
+        "date_created": "1900-01-01T00:00:00",
+        "date_deleted": "1993-01-01T00:00:00",
+        "name": "Cecoslovacchia",
+        "name_alt": "",
+        "name_alt_en": "",
+        "name_slugs": [
+            "cecoslovacchia",
+            "czechoslovakia"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": false,
+        "code": "Z111",
+        "date_created": "1900-01-01T00:00:00",
+        "date_deleted": "1990-10-03T00:00:00",
+        "name": "Repubblica Democratica Tedesca",
+        "name_alt": "",
+        "name_alt_en": "",
+        "name_slugs": [
+            "repubblica-democratica-tedesca",
+            "germania-repubblica-democatica",
+            "deutsche-demokratische-republik",
+            "ddr",
+            "germania-est",
+            "germania-orientale",
+            "ostdeutschland"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": false,
+        "code": "Z118",
+        "date_created": "1900-01-01T00:00:00",
+        "date_deleted": "2003-02-04T00:00:00",
+        "name": "Jugoslavia",
+        "name_alt": "",
+        "name_alt_en": "",
+        "name_slugs": [
+            "iugoslavia",
+            "jugoslavia",
+            "jugoslavija",
+            "yugoslavia",
+            "repubblica-socialista-federale-di-jugoslavia"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": false,
+        "code": "Z135",
+        "date_created": "1900-01-01T00:00:00",
+        "date_deleted": "1992-03-31T00:00:00",
+        "name": "Unione Repubbliche Socialiste Sovietiche",
+        "name_alt": "Unione Repubbliche Socialiste Sovietiche",
+        "name_alt_en": "Union of Soviet Socialist Republics",
+        "name_slugs": [
+            "unione-repubbliche-socialiste-sovietiche",
+            "repubbliche-dell-unione-sovietica",
+            "repubbliche-dell-unione",
+            "repubbliche-socialiste-sovietiche",
+            "soviet-union",
+            "union-of-soviet-socialist-republics",
+            "urss",
+            "u-r-s-s",
+            "ussr",
+            "u-s-s-r",
+            "sssr",
+            "s-s-s-r",
+            "sssr",
+            "s-s-s-r"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": false,
+        "code": "Z157",
+        "date_created": "2003-02-04T00:00:00",
+        "date_deleted": "2006-06-03T00:00:00",
+        "name": "Serbia e Montenegro",
+        "name_alt": "Unione Statale di Serbia e Montenegro",
+        "name_alt_en": "State Union of Serbia and Montenegro",
+        "name_slugs": [
+            "serbia-e-montenegro",
+            "unione-statale-di-serbia-e-montenegro",
+            "state-union-of-serbia-and-montenegro"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": false,
+        "code": "Z201",
+        "date_created": "1900-01-01T00:00:00",
+        "date_deleted": "1975-12-31T00:00:00",
+        "name": "Federazione dell'Arabia Meridionale",
+        "name_alt": "",
+        "name_alt_en": "",
+        "name_slugs": [
+            "federazione-dell-arabia-meridionale",
+            "arabia-meridionale-federazione"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": false,
+        "code": "Z202",
+        "date_created": "1900-01-01T00:00:00",
+        "date_deleted": "1975-12-31T00:00:00",
+        "name": "Protettorato dell'Arabia Meridionale",
+        "name_alt": "",
+        "name_alt_en": "",
+        "name_slugs": [
+            "protettorato-dell-arabia-meridionale",
+            "arabia-meridionale-protettorato"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": false,
+        "code": "Z250",
+        "date_created": "1975-12-31T00:00:00",
+        "date_deleted": "1990-05-22T00:00:00",
+        "name": "Yemen del Sud",
+        "name_alt": "Yemen del Sud",
+        "name_alt_en": "South Yemen",
+        "name_slugs": [
+            "yemen-del-sud",
+            "yemen-repubblica-democratica-popolare",
+            "repubblica-democratica-popolare-dello-yemen",
+            "south-yemen",
+            "people-s-democratic-republic-of-yemen"
+        ],
+        "province": "EE"
+    }
+]

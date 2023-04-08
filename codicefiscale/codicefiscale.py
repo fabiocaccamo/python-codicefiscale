@@ -88,7 +88,7 @@ def _get_indexed_data() -> (
     dict[str, dict[str, list[dict[str, bool | datetime | str | list[str]]]]]
 ):
     municipalities = _get_data("municipalities.json")
-    countries = _get_data("countries.json")
+    countries = _get_data("deleted-countries.json") + _get_data("countries.json")
     data: dict[str, dict[str, list[dict[str, bool | datetime | str | list[str]]]]] = {
         "municipalities": {},
         "countries": {},
