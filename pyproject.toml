@@ -76,6 +76,9 @@ exclude = '''
 )/
 '''
 
+[tool.isort]
+profile = "black"
+
 [tool.mypy]
 files = ["codicefiscale"]
 ignore_missing_imports = true
