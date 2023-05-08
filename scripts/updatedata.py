@@ -81,7 +81,7 @@ def _update_municipalities_data():
     # https://www.anagrafenazionale.interno.it/area-tecnica/tabelle-di-decodifica/
     data_url = (
         "https://www.anagrafenazionale.interno.it"
-        "/wp-content/uploads/2022/12/ANPR_archivio_comuni.csv"
+        "/wp-content/uploads/ANPR_archivio_comuni.csv"
     )
     data = benedict.from_csv(data_url)
     data.standardize()
