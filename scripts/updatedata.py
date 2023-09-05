@@ -2,6 +2,8 @@ import fsutil
 from benedict import benedict
 from slugify import slugify
 
+DATA_DIR = fsutil.join_path(__file__, "../codicefiscale/data/")
+
 
 def _expect_keys(d, keys):
     missing_keys = list(set(keys) - set(d.keys()))
@@ -71,9 +73,12 @@ def _update_countries_data():
             "province": province,
         }
 
+    items_data = [map_item(benedict(item)) for item in data["values"]]
+    items_data_patch = _read_data_json("countries-patch.json")
+
     _write_data_json(
-        filepath="../codicefiscale/data/countries.json",
-        data=[map_item(benedict(item)) for item in data["values"]],
+        filepath="countries.json",
+        data=items_data + items_data_patch,
     )
 
 
@@ -142,17 +147,31 @@ def _update_municipalities_data():
             "province": province,
         }
 
+    items_data = [map_item(benedict(item)) for item in data["values"]]
+    items_data_patch = _read_data_json("municipalities-patch.json")
+
     _write_data_json(
-        filepath="../codicefiscale/data/municipalities.json",
-        data=[map_item(benedict(item)) for item in data["values"]],
+        filepath="municipalities.json",
+        data=items_data + items_data_patch,
     )
+
+
+def _read_data_json(filepath):
+    data = fsutil.read_file_json(
+        fsutil.join_filepath(DATA_DIR, filepath),
+    )
+    return data
 
 
 def _write_data_json(filepath, data):
     data = list(filter(bool, data))
     data = sorted(data, key=lambda item: item["name"])
-    data_filepath = fsutil.join_path(__file__, filepath)
-    fsutil.write_file_json(data_filepath, data, indent=4, sort_keys=True)
+    fsutil.write_file_json(
+        fsutil.join_filepath(DATA_DIR, filepath),
+        data,
+        indent=4,
+        sort_keys=True,
+    )
 
 
 def main():
