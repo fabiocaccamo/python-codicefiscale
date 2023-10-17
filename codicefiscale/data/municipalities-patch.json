@@ -15,6 +15,20 @@
     },
     {
         "active": false,
+        "code": "F469",
+        "date_created": "1929-06-02T00:00:00",
+        "date_deleted": "1946-07-01T00:00:00",
+        "name": "Montechiaro D'Acqui",
+        "name_alt": "",
+        "name_alt_trans": "",
+        "name_slugs": [
+            "montechiaro-d-acqui"
+        ],
+        "name_trans": "Montechiaro D'Acqui",
+        "province": "AL"
+    },
+    {
+        "active": false,
         "code": "G133",
         "date_created": "1928-11-28T00:00:00",
         "date_deleted": "1948-04-07T00:00:00",
@@ -26,6 +40,20 @@
         ],
         "name_trans": "Ortacesus",
         "province": "CA"
+    },
+    {
+        "active": false,
+        "code": "H059",
+        "date_created": "1929-03-26T00:00:00",
+        "date_deleted": "1947-03-29T00:00:00",
+        "name": "Priero",
+        "name_alt": "",
+        "name_alt_trans": "",
+        "name_slugs": [
+            "priero"
+        ],
+        "name_trans": "Priero",
+        "province": "CN"
     },
     {
         "active": false,
