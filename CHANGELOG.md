@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.9.0](https://github.com/fabiocaccamo/python-codicefiscale/releases/tag/0.9.0) - 2023-11-06
+-   Add `Python 3.12` support.
+-   Add possibility to validate code from the command line, eg. `python -m codicefiscale validate {code}`.
+-   Add `codicefiscale.data` module with methods for exposing data.
+-   Bump requirements, pre-commit hooks and actions.
+
 ## [0.8.2](https://github.com/fabiocaccamo/python-codicefiscale/releases/tag/0.8.2) - 2023-10-02
 -   Patch some wrong municipalities data. #123
 
