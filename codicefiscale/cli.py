@@ -18,8 +18,10 @@ def _encode_from_args(args: argparse.Namespace) -> None:
         )
     except Exception as error:
         sys.stderr.write(f"{error}\n")
+        return False
     else:
         sys.stdout.write(f"{cf}\n")
+        return True
 
 
 def _decode_from_args(args: argparse.Namespace) -> None:
@@ -27,6 +29,7 @@ def _decode_from_args(args: argparse.Namespace) -> None:
         cf_data = codicefiscale.decode(args.code)
     except Exception as error:
         sys.stderr.write(f"{error}\n")
+        return None
     else:
         if not args.omocodes:
             cf_data.pop("omocodes", None)
@@ -41,6 +44,16 @@ def _decode_from_args(args: argparse.Namespace) -> None:
             indent=4,
         )
         sys.stdout.write(f"{cf_output}\n")
+        return cf_output
+
+
+def _validate_from_args(args: argparse.Namespace) -> None:
+    if codicefiscale.is_valid(args.code):
+        sys.stdout.write("✅\n")
+        return True
+    else:
+        sys.stdout.write("❌\n")
+        return False
 
 
 def run() -> None:
@@ -113,6 +126,18 @@ def run() -> None:
         help="Place of birth (city, province)",
     )
 
+    validate_parser = subparsers.add_parser(
+        "validate",
+        help=(
+            "Validate an italian Codice Fiscale. "
+            "For more info run: 'python -m codicefiscale validate --help'"
+        ),
+    )
+    validate_parser.add_argument(
+        "code",
+        help="Codice Fiscale to validate",
+    )
+
     args = parser.parse_args()
     run_with_args(args)
 
@@ -124,5 +149,7 @@ def run_with_args(args: argparse.Namespace) -> None:
         _decode_from_args(args)
     elif args.subcommand == "encode":
         _encode_from_args(args)
+    elif args.subcommand == "validate":
+        _validate_from_args(args)
     else:
         sys.stdout.write("For more info run: 'python -m codicefiscale --help'\n")

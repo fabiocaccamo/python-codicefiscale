@@ -591,3 +591,33 @@ class CodiceFiscaleCLITestCase(unittest.TestCase):
                     "expected 'W', found 'X'"
                 ),
             )
+
+    def test_validate(self):
+        with mock.patch("sys.stdout", new=StringIO()) as fake_output:
+            args = argparse.Namespace(
+                code="RSSMRA90A01H501W",
+                subcommand="validate",
+            )
+            run_with_args(args)
+            output = fake_output.getvalue().strip()
+            self.assertEqual(output, "✅")
+
+    def test_validate_from_command_line(self):
+        cmd = "python -m codicefiscale validate 'RSSMRA90A01H501W'"
+        output = subprocess.check_output(cmd, shell=True).decode("UTF-8").strip()
+        self.assertEqual(output, "✅")
+
+    def test_validate_with_wrong_code(self):
+        with mock.patch("sys.stdout", new=StringIO()) as fake_output:
+            args = argparse.Namespace(
+                code="RSSMRA90A01H501X",
+                subcommand="validate",
+            )
+            run_with_args(args)
+            output = fake_output.getvalue().strip()
+            self.assertEqual(output, "❌")
+
+    def test_validate_with_wrong_code_from_command_line(self):
+        cmd = "python -m codicefiscale validate 'RSSMRA90A01H501X'"
+        output = subprocess.check_output(cmd, shell=True).decode("UTF-8").strip()
+        self.assertEqual(output, "❌")
