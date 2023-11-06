@@ -6,9 +6,10 @@ from datetime import datetime
 from itertools import combinations
 from typing import Any, Literal, Pattern
 
-import fsutil
 from dateutil import parser as date_parser
 from slugify import slugify
+
+from codicefiscale.data import get_indexed_data
 
 _CONSONANTS: list[str] = list("bcdfghjklmnpqrstvwxyz")
 _VOWELS: list[str] = list("aeiou")
@@ -80,47 +81,7 @@ for combo_size in range(1, len(_OMOCODIA_SUBS_INDEXES) + 1):
         _OMOCODIA_SUBS_INDEXES_COMBINATIONS.append(list(combo))
 
 
-def _get_data(filename: str) -> Any:
-    return fsutil.read_file_json(fsutil.join_path(__file__, f"data/{filename}"))
-
-
-def _get_indexed_data() -> (
-    dict[str, dict[str, list[dict[str, bool | datetime | str | list[str]]]]]
-):
-    municipalities = _get_data("municipalities.json")
-    countries = _get_data("deleted-countries.json") + _get_data("countries.json")
-    data: dict[str, dict[str, list[dict[str, bool | datetime | str | list[str]]]]] = {
-        "municipalities": {},
-        "countries": {},
-        "codes": {},
-    }
-
-    for municipality in municipalities:
-        code = municipality["code"]
-        province = municipality["province"].lower()
-        names = municipality["name_slugs"]
-        for name in names:
-            name_and_province = f"{name}-{province}"
-            data["municipalities"].setdefault(name, [])
-            data["municipalities"].setdefault(name_and_province, [])
-            data["municipalities"][name].append(municipality)
-            data["municipalities"][name_and_province].append(municipality)
-        data["codes"].setdefault(code, [])
-        data["codes"][code].append(municipality)
-
-    for country in countries:
-        code = country["code"]
-        names = country["name_slugs"]
-        for name in names:
-            data["countries"].setdefault(name, [])
-            data["countries"][name].append(country)
-        data["codes"].setdefault(code, [])
-        data["codes"][code].append(country)
-
-    return data
-
-
-_DATA: dict[str, dict[str, list[dict[str, Any]]]] = _get_indexed_data()
+_DATA: dict[str, dict[str, list[dict[str, Any]]]] = get_indexed_data()
 
 CODICEFISCALE_RE: Pattern[str] = re.compile(
     r"^"
