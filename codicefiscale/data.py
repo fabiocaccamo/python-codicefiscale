@@ -10,12 +10,12 @@ def get_data(filename: str) -> Any:
     return fsutil.read_file_json(fsutil.join_path(__file__, f"data/{filename}"))
 
 
-def get_municipalities_data() -> list[dict[str, Any]]:
+def get_municipalities_data() -> Any:
     municipalities = get_data("municipalities.json")
     return municipalities
 
 
-def get_countries_data() -> list[dict[str, Any]]:
+def get_countries_data() -> Any:
     deleted_countries = get_data("deleted-countries.json")
     countries = get_data("countries.json")
     return deleted_countries + countries
