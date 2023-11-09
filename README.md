@@ -21,7 +21,7 @@ python-codicefiscale is a library for encode/decode Italian fiscal code - **codi
 - `NEW` **Auto-updated** data (once a week) directly from **ANPR** data-source.
 - `NEW` **Command Line Interface** available.
 - **Transliteration** for name/surname
-- **Multiple** birthdate formats (date/string) *(you can see all the supported string formats [here](https://github.com/fabiocaccamo/python-codicefiscale/blob/main/tests/tests.py#L73))*
+- **Multiple** birthdate formats (date/string) *(you can see all the supported string formats [here](https://github.com/fabiocaccamo/python-codicefiscale/blob/main/tests/test_codicefiscale.py#L81-L140))*
 - **Automatic** birthplace city/foreign-country code detection from name
 - **Omocodia** support
 
