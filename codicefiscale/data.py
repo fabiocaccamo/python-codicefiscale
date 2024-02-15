@@ -1,13 +1,23 @@
 from __future__ import annotations
-
+import os
+import sys
 from datetime import datetime
 from typing import Any
 
 import fsutil
 
 
+def get_data_basedir() -> str:
+    if getattr(sys, "frozen", False):
+        # standalone executable (eg. PyInstaller)
+        return os.path.dirname(sys.executable)
+    return __file__
+
+
 def get_data(filename: str) -> Any:
-    return fsutil.read_file_json(fsutil.join_path(__file__, f"data/{filename}"))
+    return fsutil.read_file_json(
+        fsutil.join_path(get_data_basedir(), f"data/{filename}")
+    )
 
 
 def get_municipalities_data() -> Any:
