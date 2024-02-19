@@ -140,10 +140,10 @@ def _get_date(
         return None
 
 
-def _get_birthplace(  # noqa: C901
+def _get_birthplace(
     birthplace: str,
     birthdate: datetime | str | None = None,
-) -> dict[str, dict[str, bool | datetime | str | list[str]]] | None | None:
+) -> dict[str, dict[str, Any]] | None:
     birthplace_slug = slugify(birthplace)
     birthplace_code = birthplace_slug.upper()
     birthplaces_options = _DATA["municipalities"].get(
@@ -170,6 +170,13 @@ def _get_birthplace(  # noqa: C901
         if birthdate_date >= date_created and birthdate_date <= date_deleted:
             return birthplace_option.copy()
 
+    return _get_birthplace_fallback(birthplaces_options, birthdate_date)
+
+
+def _get_birthplace_fallback(
+    birthplaces_options: list[dict[str, Any]],
+    birthdate_date: datetime,
+) -> dict[str, dict[str, Any]] | None:
     # avoid wrong birthplace code error when birthdate falls in
     # missing date-range in the data-source even if birthplace code is valid
     if len(birthplaces_options) > 1:
