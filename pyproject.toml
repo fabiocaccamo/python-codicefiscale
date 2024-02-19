@@ -83,12 +83,10 @@ ignore_missing_imports = true
 strict = true
 
 [tool.ruff]
-ignore = []
 line-length = 88
-select = ["B", "B9", "C", "E", "F", "W"]
-
-[tool.ruff.mccabe]
-max-complexity = 10
+lint.ignore = []
+lint.mccabe.max-complexity = 10
+lint.select = ["B", "B9", "C", "E", "F", "W"]
 
 [tool.setuptools.packages.find]
 include = ["codicefiscale*"]
