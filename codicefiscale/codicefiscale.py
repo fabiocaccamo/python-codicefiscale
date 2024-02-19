@@ -116,6 +116,7 @@ def _get_date(
     if not date:
         return None
     if isinstance(date, datetime):
+        date = date.replace(tzinfo=None)
         return date
     date_slug = slugify(date)
     date_parts = date_slug.split("-")[:3]
@@ -133,6 +134,7 @@ def _get_date(
             date_slug,
             parserinfo=date_parser.parserinfo(**date_parser_options),
         )
+        date_obj = date_obj.replace(tzinfo=None)
         return date_obj
     except ValueError:
         return None
@@ -162,9 +164,7 @@ def _get_birthplace(
 
     for birthplace_option in birthplaces_options:
         date_created = _get_date(birthplace_option["date_created"]) or datetime.min
-        date_created = date_created.replace(tzinfo=None)
         date_deleted = _get_date(birthplace_option["date_deleted"]) or datetime.max
-        date_deleted = date_deleted.replace(tzinfo=None)
         # print(birthdate_date, date_created, date_deleted)
         if birthdate_date >= date_created and birthdate_date <= date_deleted:
             return birthplace_option.copy()
