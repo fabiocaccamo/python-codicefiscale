@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import re
 import string
-from datetime import datetime
+from datetime import datetime, timedelta
 from itertools import combinations
 from typing import Any, Literal, Pattern
 
@@ -140,7 +140,7 @@ def _get_date(
         return None
 
 
-def _get_birthplace(
+def _get_birthplace(  # noqa: C901
     birthplace: str,
     birthdate: datetime | str | None = None,
 ) -> dict[str, dict[str, bool | datetime | str | list[str]]] | None | None:
@@ -162,12 +162,34 @@ def _get_birthplace(
     if not birthdate_date:
         return birthplaces_options[0].copy()
 
+    # search birthplace that has been created before / deleted after birthdate
     for birthplace_option in birthplaces_options:
         date_created = _get_date(birthplace_option["date_created"]) or datetime.min
         date_deleted = _get_date(birthplace_option["date_deleted"]) or datetime.max
         # print(birthdate_date, date_created, date_deleted)
         if birthdate_date >= date_created and birthdate_date <= date_deleted:
             return birthplace_option.copy()
+
+    # avoid wrong birthplace code error when birthdate falls in
+    # missing date-range in the data-source even if birthplace code is valid
+    if len(birthplaces_options) > 1:
+        for index in range(len(birthplaces_options) - 1):
+            birthplace_option = birthplaces_options[index]
+            birthplace_option_next = birthplaces_options[(index + 1)]
+            date_deleted = _get_date(birthplace_option["date_deleted"])
+            date_created = _get_date(birthplace_option_next["date_created"])
+            if date_deleted and date_created:
+                if birthdate_date >= date_deleted and date_deleted <= date_created:
+                    # the birthdate is in between a deleted munipality and a created one
+                    # if the deleted one has a very short active time delta,
+                    # it means that probably the deleted_at value is wrong
+                    date_created = _get_date(birthplace_option["date_created"])
+                    date_deleted = _get_date(birthplace_option["date_deleted"])
+                    if date_created and date_deleted:
+                        date_delta = date_deleted - date_created
+                        if date_delta <= timedelta(days=1):
+                            return birthplace_option.copy()
+                    return birthplace_option_next.copy()
 
     return None
 
