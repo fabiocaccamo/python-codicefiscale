@@ -1,22 +1,26 @@
+from __future__ import annotations
+
+from typing import Any
+
 import fsutil
 from benedict import benedict
 from slugify import slugify
 
-DATA_DIR = fsutil.join_path(__file__, "../codicefiscale/data/")
+DATA_DIR: str = fsutil.join_path(__file__, "../codicefiscale/data/")
 
 
-def _expect_keys(d, keys):
+def _expect_keys(d: dict[str, Any], keys: list[str]) -> None:
     missing_keys = list(set(keys) - set(d.keys()))
     assert (
         not missing_keys
     ), f"Invalid keys, missing one or more expected keys {missing_keys}."
 
 
-def _slugify_names(*names):
+def _slugify_names(*names: str) -> list[str]:
     return sorted(set(filter(bool, [slugify(name) for name in names])))
 
 
-def _update_countries_data():
+def _update_countries_data() -> None:
     # https://www.anagrafenazionale.interno.it/area-tecnica/tabelle-di-decodifica/
     data_url = (
         "https://www.anagrafenazionale.interno.it"
@@ -26,7 +30,7 @@ def _update_countries_data():
     data.standardize()
     # print(data.dump())
 
-    def map_item(item):
+    def map_item(item: benedict) -> dict[str, Any] | None:
         if not item:
             return None
 
@@ -82,7 +86,7 @@ def _update_countries_data():
     )
 
 
-def _update_municipalities_data():
+def _update_municipalities_data() -> None:
     # https://www.anagrafenazionale.interno.it/area-tecnica/tabelle-di-decodifica/
     data_url = (
         "https://www.anagrafenazionale.interno.it"
@@ -91,7 +95,7 @@ def _update_municipalities_data():
     data = benedict.from_csv(data_url)
     data.standardize()
 
-    def map_item(item):
+    def map_item(item: benedict) -> dict[str, Any] | None:
         if not item:
             return None
 
@@ -156,16 +160,16 @@ def _update_municipalities_data():
     )
 
 
-def _read_data_json(filepath):
+def _read_data_json(filepath: str) -> Any:
     data = fsutil.read_file_json(
         fsutil.join_filepath(DATA_DIR, filepath),
     )
     return data
 
 
-def _write_data_json(filepath, data):
+def _write_data_json(filepath: str, data: Any) -> None:
     data = list(filter(bool, data))
-    data = sorted(data, key=lambda item: item["name"])
+    data = sorted(data, key=lambda item: str(item["name"]))
     fsutil.write_file_json(
         fsutil.join_filepath(DATA_DIR, filepath),
         data,
@@ -174,7 +178,7 @@ def _write_data_json(filepath, data):
     )
 
 
-def main():
+def main() -> None:
     _update_countries_data()
     _update_municipalities_data()
 
