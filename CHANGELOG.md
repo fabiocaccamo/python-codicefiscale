@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.10.1](https://github.com/fabiocaccamo/python-codicefiscale/releases/tag/0.10.1) - 2024-06-06
+-   Add `mypy` to `pre-commit`.
+-   Update `mypy` config.
+-   Update `tool.ruff` config.
+-   Fix `pyproject` `Ruff` conf warnings.
+-   Updated `countries.json` and `municipalities.json` data.
+-   Bump requirements and pre-commit hooks.
+
+## [0.10.0](https://github.com/fabiocaccamo/python-codicefiscale/releases/tag/0.10.0) - 2024-02-19
+-   Fix validation error with valid code. #162 (#163)
+-   Fix typing errors.
+-   Fix `pyproject` warnings.
+-   Avoid wrong birthplace code error (when birthdate falls in missing date-range in the data-source even if birthplace code is valid).
+-   Remove timezone info from datetimes.
+-   Improve tests.
+-   Bump requirements and pre-commit hooks.
+
 ## [0.9.1](https://github.com/fabiocaccamo/python-codicefiscale/releases/tag/0.9.1) - 2024-02-15
 -   Allow access to data files when running in a frozen environment (eg. executable). #152
 -   Bump requirements and pre-commit hooks.
