@@ -1054,6 +1054,19 @@
         "province": "EE"
     },
     {
+        "active": false,
+        "code": "Z221",
+        "date_created": "1900-01-01T00:00:00",
+        "date_deleted": "",
+        "name": "Hong Kong",
+        "name_alt": "Hong Kong",
+        "name_alt_en": "Hong Kong",
+        "name_slugs": [
+            "hong-kong"
+        ],
+        "province": "EE"
+    },
+    {
         "active": true,
         "code": "Z222",
         "date_created": "1900-01-01T00:00:00",
