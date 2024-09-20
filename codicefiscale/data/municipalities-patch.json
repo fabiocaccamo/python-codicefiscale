@@ -1,2 +1,72 @@
 [
+    {
+        "active": false,
+        "code": "A609",
+        "date_created": "1927-10-10T00:00:00",
+        "date_deleted": "1947-03-29T00:00:00",
+        "name": "Bannari Di Usellus",
+        "name_alt": "",
+        "name_alt_trans": "",
+        "name_slugs": [
+            "bannari-di-usellus"
+        ],
+        "name_trans": "Bannari Di Usellus",
+        "province": "CA"
+    },
+    {
+        "active": false,
+        "code": "E086",
+        "date_created": "1940-02-13T00:00:00",
+        "date_deleted": "1945-04-20T00:00:00",
+        "name": "Gonnesa",
+        "name_alt": "",
+        "name_alt_trans": "",
+        "name_slugs": [
+            "gonnesa"
+        ],
+        "name_trans": "Gonnesa",
+        "province": "CA"
+    },
+    {
+        "active": false,
+        "code": "E972",
+        "date_created": "1928-11-04T00:00:00",
+        "date_deleted": "1948-05-26T00:00:00",
+        "name": "Marrubiu",
+        "name_alt": "",
+        "name_alt_trans": "",
+        "name_slugs": [
+            "marrubiu"
+        ],
+        "name_trans": "Marrubiu",
+        "province": "CA"
+    },
+    {
+        "active": false,
+        "code": "F270",
+        "date_created": "1928-06-15T00:00:00",
+        "date_deleted": "1951-01-11T00:00:00",
+        "name": "Mogorella",
+        "name_alt": "",
+        "name_alt_trans": "",
+        "name_slugs": [
+            "mogorella"
+        ],
+        "name_trans": "Mogorella",
+        "province": "CA"
+    },
+    {
+        "active": false,
+        "code": "A368",
+        "date_created":  "1928-11-04T00:00:00",
+        "date_deleted":  "1947-01-23T00:00:00",
+        "name": "San Nicol\u00f2 D'Arcidano",
+        "name_alt": "",
+        "name_alt_trans": "",
+        "name_slugs": [
+            "san-nicolo-d-arcidano"
+        ],
+        "name_trans": "San Nicolo' D'Arcidano",
+        "province": "CA"
+    }
 ]
