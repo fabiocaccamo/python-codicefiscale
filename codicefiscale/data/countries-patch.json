@@ -11,5 +11,18 @@
       "hong-kong"
     ],
     "province": "EE"
+  },
+  {
+    "active": false,
+    "code": "Z350",
+    "date_created": "1916-01-01T00:00:00",
+    "date_deleted": "1964-04-25T00:00:00",
+    "name": "Tanganica",
+    "name_alt": "Tanganica",
+    "name_alt_en": "Tanganica",
+    "name_slugs": [
+      "tanganica"
+    ],
+    "province": "EE"
   }
 ]
