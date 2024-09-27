@@ -1,6 +1,20 @@
 [
     {
         "active": false,
+        "code": "A355",
+        "date_created": "1928-01-01T00:00:00",
+        "date_deleted": "1928-05-11T00:00:00",
+        "name": "Arbatax Di Tortol\u00ec",
+        "name_alt": "",
+        "name_alt_trans": "",
+        "name_slugs": [
+            "arbatax-di-tortoli"
+        ],
+        "name_trans": "Arbatax Di Tortoli'",
+        "province": "NU"
+    },
+    {
+        "active": false,
         "code": "A609",
         "date_created": "1927-10-10T00:00:00",
         "date_deleted": "1947-03-29T00:00:00",
@@ -15,6 +29,34 @@
     },
     {
         "active": false,
+        "code": "B250",
+        "date_created": "1925-01-01T00:00:00",
+        "date_deleted": "1960-03-11T00:00:00",
+        "name": "Buggerru",
+        "name_alt": "",
+        "name_alt_trans": "",
+        "name_slugs": [
+            "buggerru"
+        ],
+        "name_trans": "Buggerru",
+        "province": "CA"
+    },
+    {
+        "active": false,
+        "code": "C135",
+        "date_created": "1936-01-01T00:00:00",
+        "date_deleted": "1947-07-09T00:00:00",
+        "name": "Castellana Sicula",
+        "name_alt": "",
+        "name_alt_trans": "",
+        "name_slugs": [
+            "castellana-sicula"
+        ],
+        "name_trans": "Castellana Sicula",
+        "province": "PA"
+    },
+    {
+        "active": false,
         "code": "E086",
         "date_created": "1940-02-13T00:00:00",
         "date_deleted": "1945-04-20T00:00:00",
@@ -26,6 +68,20 @@
         ],
         "name_trans": "Gonnesa",
         "province": "CA"
+    },
+    {
+        "active": false,
+        "code": "E747",
+        "date_created": "1941-01-01T00:00:00",
+        "date_deleted": "1947-10-25T00:00:00",
+        "name": "Luogosanto",
+        "name_alt": "",
+        "name_alt_trans": "",
+        "name_slugs": [
+            "luogosanto"
+        ],
+        "name_trans": "Luogosanto",
+        "province": "SS"
     },
     {
         "active": false,
@@ -53,6 +109,20 @@
             "mogorella"
         ],
         "name_trans": "Mogorella",
+        "province": "CA"
+    },
+    {
+        "active": false,
+        "code": "F991",
+        "date_created": "1934-01-01:T00:00:00",
+        "date_deleted": "1958-01-25T00:00:00",
+        "name": "Nuxis",
+        "name_alt": "",
+        "name_alt_trans": "",
+        "name_slugs": [
+            "nuxis"
+        ],
+        "name_trans": "Nuxis",
         "province": "CA"
     },
     {
