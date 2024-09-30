@@ -4,10 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.10.3](https://github.com/fabiocaccamo/python-codicefiscale/releases/tag/0.10.3) - 2024-09-30
+-   Add missing country and municipalities. (by [@tommysolinas](https://github.com/tommysolinas) in #198)
+-   Add `pypy-3.10` to test matrix.
+
 ## [0.10.2](https://github.com/fabiocaccamo/python-codicefiscale/releases/tag/0.10.2) - 2024-09-20
--   Updated `countries.json` and `municipalities.json` data.
--   Added missing country to `countries-patch.json`. (by [@tommysolinas](https://github.com/tommysolinas) in #195)
--   Added missing municipalities to `municipalities-patch.json`. (by [@tommysolinas](https://github.com/tommysolinas) in #194)
+-   Update `countries.json` and `municipalities.json` data.
+-   Add missing country to `countries-patch.json`. (by [@tommysolinas](https://github.com/tommysolinas) in #195)
+-   Add missing municipalities to `municipalities-patch.json`. (by [@tommysolinas](https://github.com/tommysolinas) in #194)
 -   Bump requirements and `pre-commit` hooks.
 
 ## [0.10.1](https://github.com/fabiocaccamo/python-codicefiscale/releases/tag/0.10.1) - 2024-06-06
@@ -15,7 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 -   Update `mypy` config.
 -   Update `tool.ruff` config.
 -   Fix `pyproject` `Ruff` conf warnings.
--   Updated `countries.json` and `municipalities.json` data.
+-   Update `countries.json` and `municipalities.json` data.
 -   Bump requirements and pre-commit hooks.
 
 ## [0.10.0](https://github.com/fabiocaccamo/python-codicefiscale/releases/tag/0.10.0) - 2024-02-19
