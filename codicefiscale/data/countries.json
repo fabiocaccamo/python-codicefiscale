@@ -1232,6 +1232,19 @@
     },
     {
         "active": true,
+        "code": "Z520",
+        "date_created": "1900-01-01T00:00:00",
+        "date_deleted": "",
+        "name": "Isole Vergini Americane",
+        "name_alt": "",
+        "name_alt_en": "",
+        "name_slugs": [
+            "isole-vergini-americane"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
         "code": "Z525",
         "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
@@ -2534,6 +2547,19 @@
             "taiwan",
             "taiwan-ex-formosa",
             "taiwan-province-of-china"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": false,
+        "code": "Z350",
+        "date_created": "1916-01-01T00:00:00",
+        "date_deleted": "1964-04-25T00:00:00",
+        "name": "Tanganica",
+        "name_alt": "Tanganica",
+        "name_alt_en": "Tanganica",
+        "name_slugs": [
+            "tanganica"
         ],
         "province": "EE"
     },
