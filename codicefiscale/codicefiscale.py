@@ -4,7 +4,8 @@ import re
 import string
 from datetime import datetime, timedelta
 from itertools import combinations
-from typing import Any, Literal, Pattern
+from typing import Any, Literal
+from re import Pattern
 
 from dateutil import parser as date_parser
 from slugify import slugify
