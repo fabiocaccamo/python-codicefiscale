@@ -11,6 +11,12 @@ class Issue0203TestCase(unittest.TestCase):
         And the person is more than 100 years old
         """
         try:
-            codicefiscale.encode('Mario', 'Rossi', 'm', datetime.now() - timedelta(days=150 * 365), 'Gallico')
+            codicefiscale.encode(
+                "Mario",
+                "Rossi",
+                "m",
+                datetime.now() - timedelta(days=150 * 365),
+                "Gallico",
+            )
         except ValueError as e:
             self.fail(f"codicefiscale.encode raised an exception: {e}")
