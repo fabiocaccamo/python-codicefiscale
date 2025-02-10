@@ -11,9 +11,9 @@ DATA_DIR: str = fsutil.join_path(__file__, "../codicefiscale/data/")
 
 def _expect_keys(d: dict[str, Any], keys: list[str]) -> None:
     missing_keys = list(set(keys) - set(d.keys()))
-    assert (
-        not missing_keys
-    ), f"Invalid keys, missing one or more expected keys {missing_keys}."
+    assert not missing_keys, (
+        f"Invalid keys, missing one or more expected keys {missing_keys}."
+    )
 
 
 def _slugify_names(*names: str) -> list[str]:

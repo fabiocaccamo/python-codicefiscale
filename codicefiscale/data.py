@@ -31,9 +31,9 @@ def get_countries_data() -> Any:
     return deleted_countries + countries
 
 
-def get_indexed_data() -> (
-    dict[str, dict[str, list[dict[str, bool | datetime | str | list[str]]]]]
-):
+def get_indexed_data() -> dict[
+    str, dict[str, list[dict[str, bool | datetime | str | list[str]]]]
+]:
     municipalities = get_municipalities_data()
     countries = get_countries_data()
     data: dict[str, dict[str, list[dict[str, bool | datetime | str | list[str]]]]] = {
