@@ -463,21 +463,32 @@ def decode(code: str) -> dict[str, Any]:
     birthdate_year = int(f"{current_year_century_prefix}{birthdate_year_suffix}")
     if birthdate_year > current_year:
         birthdate_year -= 100
-    birthdate_str = f"{birthdate_year}/{birthdate_month}/{birthdate_day}"
-    birthdate = _get_date(birthdate_str, separator="/")
-    if not birthdate:
-        raise ValueError(f"[codicefiscale] invalid date: {birthdate_str}")
 
-    birthplace_code = raw["birthplace"][0] + raw["birthplace"][1:].translate(
-        _OMOCODIA_DECODE_TRANS
-    )
-    birthplace = _get_birthplace(birthplace_code, birthdate)
-    # print(birthplace)
-    if not birthplace:
-        raise ValueError(
-            "[codicefiscale] wrong birthplace code: "
-            f"{birthplace_code!r} / birthdate: {birthdate.isoformat()!r}."
-        )
+    attempt = 1
+    while True:
+        birthdate_str = f"{birthdate_year}/{birthdate_month}/{birthdate_day}"
+
+        try:
+            birthdate = _get_date(birthdate_str, separator="/")
+            if not birthdate:
+                raise ValueError(f"[codicefiscale] invalid date: {birthdate_str}")
+
+            birthplace_code = raw["birthplace"][0] + raw["birthplace"][1:].translate(
+                _OMOCODIA_DECODE_TRANS
+            )
+            birthplace = _get_birthplace(birthplace_code, birthdate)
+            # print(birthplace)
+            if not birthplace:
+                raise ValueError(
+                    "[codicefiscale] wrong birthplace code: "
+                    f"{birthplace_code!r} / birthdate: {birthdate.isoformat()!r}."
+                )
+            break
+        except ValueError as e:
+            attempt += 1
+            birthdate_year -= 100
+            if attempt > 3:
+                raise e
 
     cin = raw["cin"]
     cin_check = encode_cin(code)
