@@ -77,11 +77,15 @@ exclude = '''
 '''
 
 [tool.mypy]
-files = ["codicefiscale"]
+files = ["src"]
 ignore_missing_imports = true
 install_types = true
 non_interactive = true
 strict = true
+
+[tool.pytest.ini_options]
+pythonpath = "src"
+testpaths = ["tests"]
 
 [tool.ruff]
 line-length = 88
@@ -93,8 +97,9 @@ select = ["B", "B9", "C", "E", "F", "I", "W"]
 [tool.ruff.lint.mccabe]
 max-complexity = 10
 
-[tool.setuptools.packages.find]
-include = ["codicefiscale*"]
+[tool.setuptools]
+package-dir = {"" = "src"}
+packages = ["codicefiscale"]
 
 [tool.setuptools.dynamic.version]
 attr = "codicefiscale.metadata.__version__"
