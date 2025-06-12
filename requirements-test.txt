@@ -3,5 +3,5 @@ coverage == 7.6.*
 mypy == 1.11.*
 pre-commit == 4.0.*
 pytest==8.3.*
-pytest-cov == 6.0.*
+pytest-cov == 6.2.*
 tox == 4.22.*
