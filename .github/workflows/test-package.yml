@@ -47,7 +47,7 @@ jobs:
         pytest tests --cov=codicefiscale --cov-report=term-missing --cov-fail-under=90
 
     - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v4
+      uses: codecov/codecov-action@v5
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
         fail_ci_if_error: false
