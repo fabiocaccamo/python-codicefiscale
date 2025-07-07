@@ -6,7 +6,7 @@ import fsutil
 from benedict import benedict
 from slugify import slugify
 
-DATA_DIR: str = fsutil.join_path(__file__, "../codicefiscale/data/")
+DATA_DIR: str = fsutil.join_path(__file__, "../src/codicefiscale/data/")
 
 
 def _expect_keys(d: dict[str, Any], keys: list[str]) -> None:
