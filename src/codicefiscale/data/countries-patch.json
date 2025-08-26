@@ -26,6 +26,19 @@
         "province": "EE"
     },
     {
+        "active": true,
+        "code": "Z518",
+        "date_created": "1900-01-01T00:00:00",
+        "date_deleted": "",
+        "name": "Porto Rico",
+        "name_alt": "Porto Rico",
+        "name_alt_en": "Puerto Rico",
+        "name_slugs": [
+            "porto-rico"
+        ],
+        "province": "EE"
+    },
+    {
         "active": false,
         "code": "Z350",
         "date_created": "1916-01-01T00:00:00",
