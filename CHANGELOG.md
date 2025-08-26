@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.10.4](https://github.com/fabiocaccamo/python-codicefiscale/releases/tag/0.10.4) - 2025-08-26
+-   Update countries and municipalities data.
+-   Bump requirements and pre-commit hooks.
+
 ## [0.10.3](https://github.com/fabiocaccamo/python-codicefiscale/releases/tag/0.10.3) - 2024-09-30
 -   Add missing country and municipalities. (by [@tommysolinas](https://github.com/tommysolinas) in #198)
 -   Add `pypy-3.10` to test matrix.
