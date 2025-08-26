@@ -34,7 +34,7 @@ jobs:
           pre-commit run --files src/codicefiscale/data/countries.json src/codicefiscale/data/municipalities.json
 
       - name: Commit data
-        uses: test-room-7/action-update-file@v1
+        uses: test-room-7/action-update-file@v2
         with:
           file-path: |
             src/codicefiscale/data/countries.json
