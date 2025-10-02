@@ -98,6 +98,10 @@ codicefiscale.is_omocode("CCCFBA85D03L219P")
 ```
 
 ### Command Line
+
+> [!CAUTION]
+> If sensitive data is written to a log entry it could be exposed to an attacker who gains access to the logs.
+
 This library can be used also as a CLI tool, for more info run:
 ```bash
 python -m codicefiscale --help
