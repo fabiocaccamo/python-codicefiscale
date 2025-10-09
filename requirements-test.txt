@@ -1,7 +1,7 @@
 -e .
 coverage == 7.10.*
-mypy == 1.17.*
+mypy == 1.18.*
 pre-commit == 4.3.*
 pytest==8.4.*
-pytest-cov == 6.2.*
-tox == 4.28.*
+pytest-cov == 7.0.*
+tox == 4.30.*
