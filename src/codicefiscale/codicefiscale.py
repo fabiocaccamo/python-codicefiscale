@@ -474,21 +474,35 @@ def decode(code: str) -> dict[str, Any]:
     birthdate_year = int(f"{current_year_century_prefix}{birthdate_year_suffix}")
     if birthdate_year > current_year:
         birthdate_year -= 100
-    birthdate_str = f"{birthdate_year}/{birthdate_month}/{birthdate_day}"
-    birthdate = _get_date(birthdate_str, separator="/")
-    if not birthdate:
-        raise ValueError(f"[codicefiscale] invalid date: {birthdate_str}")
 
-    birthplace_code = raw["birthplace"][0] + raw["birthplace"][1:].translate(
-        _OMOCODIA_DECODE_TRANS
-    )
-    birthplace = _get_birthplace(birthplace_code, birthdate)
-    # print(birthplace)
-    if not birthplace:
-        raise ValueError(
-            "[codicefiscale] wrong birthplace code: "
-            f"{birthplace_code!r} / birthdate: {birthdate.isoformat()!r}."
-        )
+    birthdate_or_birthplace_error = None
+    for _ in range(2):
+        birthdate_str = f"{birthdate_year}/{birthdate_month}/{birthdate_day}"
+        try:
+            birthdate = _get_date(birthdate_str, separator="/")
+            if not birthdate:
+                raise ValueError(f"[codicefiscale] invalid date: {birthdate_str}")
+
+            birthplace_code = raw["birthplace"][0] + raw["birthplace"][1:].translate(
+                _OMOCODIA_DECODE_TRANS
+            )
+            birthplace = _get_birthplace(birthplace_code, birthdate)
+            # print(birthplace)
+            if not birthplace:
+                raise ValueError(
+                    "[codicefiscale] wrong birthplace code: "
+                    f"{birthplace_code!r} / birthdate: {birthdate.isoformat()!r}."
+                )
+            break
+        except ValueError as error:
+            # attempt to handle people over 100 years old
+            if birthdate_or_birthplace_error is None:
+                birthdate_or_birthplace_error = error
+            birthdate_year -= 100
+    else:
+        # raise the first raised error
+        if birthdate_or_birthplace_error:
+            raise birthdate_or_birthplace_error
 
     cin = raw["cin"]
     cin_check = encode_cin(code)
