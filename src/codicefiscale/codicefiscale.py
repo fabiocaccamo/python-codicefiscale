@@ -180,8 +180,9 @@ def _get_birthplace_fallback(
 ) -> dict[str, dict[str, Any]] | None:
     # avoid wrong birthplace code error when birthdate falls in
     # missing date-range in the data-source even if birthplace code is valid
-    if len(birthplaces_options) > 1:
-        for index in range(len(birthplaces_options) - 1):
+    birthplaces_options_count = len(birthplaces_options)
+    if birthplaces_options_count > 1:
+        for index in range(birthplaces_options_count - 1):
             birthplace_option = birthplaces_options[index]
             birthplace_option_next = birthplaces_options[(index + 1)]
             date_deleted = _get_date(birthplace_option["date_deleted"])
@@ -199,6 +200,16 @@ def _get_birthplace_fallback(
                             return birthplace_option.copy()
                     return birthplace_option_next.copy()
 
+    # Fix issues #210, #213
+    # sometimes the code has been assigned after date of birth and
+    # the municipality was not yet active at birthdate time,
+    # let's return the first municipality created after birthdate_date
+    for index in range(birthplaces_options_count):
+        birthplace_option = birthplaces_options[index]
+        date_created = _get_date(birthplace_option["date_created"])
+        if date_created:
+            if birthdate_date <= date_created:
+                return birthplace_option.copy()
     return None
 
 

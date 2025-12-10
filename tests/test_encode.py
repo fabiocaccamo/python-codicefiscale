@@ -246,10 +246,10 @@ def test_encode_birthplace_invalid_arguments():
         codicefiscale.encode_birthplace("Area 51")
 
 
-def test_encode_birthplace_invalid_birthdate():
-    """Test invalid birthdate for encoding birthplaces."""
-    with pytest.raises(ValueError):
-        codicefiscale.encode_birthplace("Torino", "01/01/1888")
+def test_encode_birthplace_created_after_birthdate():
+    """Test encoding birthplace created after birthdate."""
+    result = codicefiscale.encode_birthplace("Torino", "01/01/1888")
+    assert result == "L219"
 
 
 def test_encode_cin(cin_test_cases):
