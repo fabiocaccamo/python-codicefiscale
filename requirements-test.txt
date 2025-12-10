@@ -1,5 +1,5 @@
 -e .
-coverage == 7.12.*
+coverage == 7.13.*
 mypy == 1.19.*
 pre-commit == 4.5.*
 pytest==9.0.*
