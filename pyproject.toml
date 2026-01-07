@@ -43,6 +43,9 @@ maintainers = [
     { name = "Fabio Caccamo", email = "fabio.caccamo@gmail.com" },
 ]
 
+[project.scripts]
+codicefiscale = "codicefiscale.main:main"
+
 [project.readme]
 file = "README.md"
 content-type = "text/markdown"
