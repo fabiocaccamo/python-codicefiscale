@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.11.1](https://github.com/fabiocaccamo/python-codicefiscale/releases/tag/0.11.1) - 2026-01-07
+-   Add `pipx` support. #245
+-   Bump actions.
+
 ## [0.11.0](https://github.com/fabiocaccamo/python-codicefiscale/releases/tag/0.11.0) - 2025-12-10
 -   Add `Python 3.14` support.
 -   Fix birthplace encoding/decoding when the municipality has been created after the birthdate. #210 #213
