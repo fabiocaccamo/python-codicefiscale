@@ -62,11 +62,11 @@ def test_encode_from_command_line():
     assert_output(
         (
             "python -m codicefiscale encode "
-            "--firstname 'Mario' "
-            "--lastname 'Rossi' "
-            "--gender 'M' "
-            "--birthdate '01/01/1990' "
-            "--birthplace 'Roma' "
+            "--firstname Mario "
+            "--lastname Rossi "
+            "--gender M "
+            "--birthdate 01/01/1990 "
+            "--birthplace Roma "
         ),
         "RSSMRA90A01H501W",
     )
