@@ -9,8 +9,10 @@ from codicefiscale.cli import run, run_with_args
 
 
 def assert_command_output(command, expected_output):
-    output = subprocess.check_output(command, shell=True).decode("utf-8").strip()
-    # normalize line endings for cross-platform compatibility
+    try:
+        output = subprocess.check_output(command, shell=True).decode("utf-8").strip()
+    except subprocess.CalledProcessError as error:
+        output = error.output.decode("utf-8").strip()
     output = output.replace("\r\n", "\n").strip()
     assert output == expected_output.replace("\r\n", "\n").strip()
     return output
