@@ -8,9 +8,12 @@ from codicefiscale import __version__
 from codicefiscale.cli import run, run_with_args
 
 
-def assert_output(command, expected_output):
+def assert_command_output(command, expected_output):
     output = subprocess.check_output(command, shell=True).decode("utf-8").strip()
-    assert output == expected_output
+    # normalize line endings for cross-platform compatibility
+    output = output.replace("\r\n", "\n").strip()
+    assert output == expected_output.replace("\r\n", "\n").strip()
+    return output
 
 
 def test_version():
@@ -25,7 +28,7 @@ def test_version():
 
 
 def test_version_from_command_line():
-    assert_output("python -m codicefiscale --version", __version__)
+    assert_command_output("python -m codicefiscale --version", __version__)
 
 
 def test_main_without_args():
@@ -37,7 +40,7 @@ def test_main_without_args():
 
 
 def test_main_without_args_from_command_line():
-    assert_output(
+    assert_command_output(
         "python -m codicefiscale",
         "For more info run: 'python -m codicefiscale --help'",
     )
@@ -59,7 +62,7 @@ def test_encode():
 
 
 def test_encode_from_command_line():
-    assert_output(
+    assert_command_output(
         (
             "python -m codicefiscale encode "
             "--firstname Mario "
@@ -168,10 +171,7 @@ def test_decode_without_omocodes():
 
 def test_decode_without_omocodes_from_command_line():
     cmd = "python -m codicefiscale decode 'RSSMRA90A01H501W'"
-    output = subprocess.check_output(cmd, shell=True).decode("UTF-8").strip()
-    assert (
-        output
-        == """
+    expected_output = """
 {
     "code": "RSSMRA90A01H501W",
     "gender": "M",
@@ -202,9 +202,8 @@ def test_decode_without_omocodes_from_command_line():
         "cin": "W"
     }
 }
-""".strip()
-    )
-
+"""
+    output = assert_command_output(cmd, expected_output)
     output_data = json.loads(output)
     assert output_data == {
         "code": "RSSMRA90A01H501W",
@@ -599,8 +598,7 @@ def test_validate():
 
 def test_validate_from_command_line():
     cmd = "python -m codicefiscale validate 'RSSMRA90A01H501W'"
-    output = subprocess.check_output(cmd, shell=True).decode("UTF-8").strip()
-    assert output == "✅"
+    assert_command_output(cmd, "✅")
 
 
 def test_validate_with_wrong_code():
@@ -616,5 +614,4 @@ def test_validate_with_wrong_code():
 
 def test_validate_with_wrong_code_from_command_line():
     cmd = "python -m codicefiscale validate 'RSSMRA90A01H501X'"
-    output = subprocess.check_output(cmd, shell=True).decode("UTF-8").strip()
-    assert output == "❌"
+    assert_command_output(cmd, "❌")
