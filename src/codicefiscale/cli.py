@@ -43,11 +43,11 @@ def _decode_from_args(args: argparse.Namespace) -> None:
         sys.stdout.write(f"{cf_output}\n")
 
 
-def _validate_from_args(args: argparse.Namespace) -> None:
+def _validate_from_args(args: argparse.Namespace) -> int:
     if codicefiscale.is_valid(args.code):
-        sys.stdout.write("✅\n")
+        return 0
     else:
-        sys.stdout.write("❌\n")
+        return 1
 
 
 def run() -> None:
@@ -144,6 +144,6 @@ def run_with_args(args: argparse.Namespace) -> None:
     elif args.subcommand == "encode":
         _encode_from_args(args)
     elif args.subcommand == "validate":
-        _validate_from_args(args)
+        sys.exit(_validate_from_args(args))
     else:
         sys.stdout.write("For more info run: 'python -m codicefiscale --help'\n")

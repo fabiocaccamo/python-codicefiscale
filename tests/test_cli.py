@@ -5,7 +5,7 @@ from io import StringIO
 from unittest import mock
 
 from codicefiscale import __version__
-from codicefiscale.cli import run, run_with_args
+from codicefiscale.cli import _validate_from_args, run, run_with_args
 
 
 def assert_command_output(command, expected_output):
@@ -588,32 +588,30 @@ def test_decode_with_wrong_code():
 
 
 def test_validate():
-    with mock.patch("sys.stdout", new=StringIO()) as fake_output:
-        args = argparse.Namespace(
-            code="RSSMRA90A01H501W",
-            subcommand="validate",
-        )
-        run_with_args(args)
-        output = fake_output.getvalue().strip()
-        assert output == "✅"
+    args = argparse.Namespace(
+        code="RSSMRA90A01H501W",
+        subcommand="validate",
+    )
+    exit_code = _validate_from_args(args)
+    assert exit_code == 0
 
 
 def test_validate_from_command_line():
     cmd = "python -m codicefiscale validate RSSMRA90A01H501W"
-    assert_command_output(cmd, "✅")
+    result = subprocess.run(cmd, shell=True)
+    assert result.returncode == 0
 
 
 def test_validate_with_wrong_code():
-    with mock.patch("sys.stdout", new=StringIO()) as fake_output:
-        args = argparse.Namespace(
-            code="RSSMRA90A01H501X",
-            subcommand="validate",
-        )
-        run_with_args(args)
-        output = fake_output.getvalue().strip()
-        assert output == "❌"
+    args = argparse.Namespace(
+        code="RSSMRA90A01H501X",
+        subcommand="validate",
+    )
+    exit_code = _validate_from_args(args)
+    assert exit_code == 1
 
 
 def test_validate_with_wrong_code_from_command_line():
     cmd = "python -m codicefiscale validate RSSMRA90A01H501X"
-    assert_command_output(cmd, "❌")
+    result = subprocess.run(cmd, shell=True)
+    assert result.returncode == 1
