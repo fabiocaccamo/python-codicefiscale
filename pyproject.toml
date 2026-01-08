@@ -44,7 +44,7 @@ maintainers = [
 ]
 
 [project.scripts]
-codicefiscale = "codicefiscale.main:main"
+codicefiscale = "codicefiscale.__main__:main"
 
 [project.readme]
 file = "README.md"
