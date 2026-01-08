@@ -597,7 +597,7 @@ def test_validate():
 
 
 def test_validate_from_command_line():
-    cmd = "python -m codicefiscale validate 'RSSMRA90A01H501W'"
+    cmd = "python -m codicefiscale validate RSSMRA90A01H501W"
     assert_command_output(cmd, "✅")
 
 
@@ -613,5 +613,5 @@ def test_validate_with_wrong_code():
 
 
 def test_validate_with_wrong_code_from_command_line():
-    cmd = "python -m codicefiscale validate 'RSSMRA90A01H501X'"
+    cmd = "python -m codicefiscale validate RSSMRA90A01H501X"
     assert_command_output(cmd, "❌")
