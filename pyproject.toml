@@ -35,7 +35,7 @@ classifiers = [
 ]
 dependencies = [
     "python-dateutil >= 2.8, < 2.10",
-    "python-fsutil >= 0.10.0, < 1.0.0",
+    "python-fsutil >= 0.16.0, < 1.0.0",
     "python-slugify >= 7.0.0, < 9.0.0",
 ]
 dynamic = ["version"]
