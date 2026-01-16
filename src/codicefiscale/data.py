@@ -6,6 +6,7 @@ from datetime import datetime
 from typing import Any
 
 import fsutil
+from slugify import slugify
 
 
 def get_data_basedir() -> str:
@@ -46,7 +47,8 @@ def get_indexed_data() -> dict[
     for municipality in municipalities:
         code = municipality["code"]
         province = municipality["province"].lower()
-        names = municipality["name_slugs"]
+        municipality_unicode_slug = slugify(municipality["name"], allow_unicode=True)
+        names = [municipality_unicode_slug] + municipality["name_slugs"]
         for name in names:
             name_and_province = f"{name}-{province}"
             data["municipalities"].setdefault(name, [])

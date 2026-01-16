@@ -145,14 +145,18 @@ def _get_birthplace(
     birthplace: str,
     birthdate: datetime | str | None = None,
 ) -> dict[str, dict[str, Any]] | None:
+    birthplace_unicode_slug = slugify(birthplace, allow_unicode=True)
     birthplace_slug = slugify(birthplace)
     birthplace_code = birthplace_slug.upper()
     birthplaces_options = _DATA["municipalities"].get(
-        birthplace_slug,
-        _DATA["countries"].get(
+        birthplace_unicode_slug,
+        _DATA["municipalities"].get(
             birthplace_slug,
-            _DATA["codes"].get(
-                birthplace_code,
+            _DATA["countries"].get(
+                birthplace_slug,
+                _DATA["codes"].get(
+                    birthplace_code,
+                ),
             ),
         ),
     )
