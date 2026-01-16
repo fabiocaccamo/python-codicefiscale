@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.11.3](https://github.com/fabiocaccamo/python-codicefiscale/releases/tag/0.11.3) - 2026-01-16
 -   Fix problem with municipalities that have the same slugified name: e.g., Paternò (CT) vs Paterno (PZ). #246
+-   Fix tests for cross-platform compatibility.
+-   Replace unicode emojis with standard exit codes for CLI validation.
 
 ## [0.11.2](https://github.com/fabiocaccamo/python-codicefiscale/releases/tag/0.11.2) - 2026-01-08
 -   Fix `pipx` support. #245
