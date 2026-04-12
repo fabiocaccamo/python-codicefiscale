@@ -27,6 +27,20 @@
     },
     {
         "active": true,
+        "code": "Z723",
+        "date_created": "1965-01-01T00:00:00",
+        "date_deleted": "",
+        "name": "Polinesia Francese",
+        "name_alt": "Polinesia Francese (Isole)",
+        "name_alt_en": "",
+        "name_slugs": [
+            "polinesia-francese",
+            "polinesia-francese-isole"
+        ],
+        "province": "EE"
+    },
+    {
+        "active": true,
         "code": "Z518",
         "date_created": "1900-01-01T00:00:00",
         "date_deleted": "",
