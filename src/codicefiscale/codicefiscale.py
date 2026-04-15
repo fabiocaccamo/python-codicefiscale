@@ -82,10 +82,10 @@ for combo_size in range(1, len(_OMOCODIA_SUBS_INDEXES) + 1):
         _OMOCODIA_SUBS_INDEXES_COMBINATIONS.append(list(combo))
 
 
-_DATA: dict[str, dict[str, list[dict[str, Any]]]] | None = None
+_DATA: dict[str, Any] | None = None
 
 
-def _get_data() -> dict[str, dict[str, list[dict[str, Any]]]]:
+def _get_data() -> dict[str, Any]:
     global _DATA
     if _DATA is None:
         _DATA = get_indexed_data()
@@ -174,7 +174,7 @@ def _get_birthplace(
 
     birthdate_date = _get_date(birthdate)
     if not birthdate_date:
-        return birthplaces_options[0].copy()
+        return cast(dict[str, Any], birthplaces_options[0].copy())
 
     # search birthplace that has been created before / deleted after birthdate
     for birthplace_option in birthplaces_options:
@@ -182,7 +182,7 @@ def _get_birthplace(
         date_deleted = _get_date(birthplace_option["date_deleted"]) or datetime.max
         # print(birthdate_date, date_created, date_deleted)
         if birthdate_date >= date_created and birthdate_date <= date_deleted:
-            return birthplace_option.copy()
+            return cast(dict[str, Any], birthplace_option.copy())
 
     return _get_birthplace_fallback(birthplaces_options, birthdate_date)
 
