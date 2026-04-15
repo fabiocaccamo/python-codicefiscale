@@ -390,3 +390,18 @@ def test_decode_with_invalid_birthplace():
     code = "FRTMXM74L15D354A"
     valid = codicefiscale.is_valid(code)
     assert not valid, "Expected invalid fiscal code"
+
+
+def test_decode_firstname_options():
+    """Test decoding fiscal code with firstname_options verification."""
+    code = "CCCFBA85D03L219P"
+    decoded = codicefiscale.decode(code)
+
+    # check that firstname_options is present
+    firstname_options = decoded.get("firstname_options")
+    assert firstname_options is not None, "firstname_options should not be None"
+
+    # check that Fabio is in firstname_options
+    assert "Fabio" in firstname_options, (
+        f"Expected 'Fabio' in firstname_options, got {firstname_options}"
+    )

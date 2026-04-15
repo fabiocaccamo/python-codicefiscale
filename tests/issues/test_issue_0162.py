@@ -11,6 +11,7 @@ def test_issue_0162():
     assert codicefiscale.is_valid(code)
     code_data = codicefiscale.decode(code)
     code_data.pop("omocodes")
+    code_data.pop("firstname_options")
     expected_code_data = {
         "code": "DFLNTN42T20B860H",
         "gender": "M",

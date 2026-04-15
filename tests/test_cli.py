@@ -125,6 +125,10 @@ def test_decode_without_omocodes():
         "name_trans": "Roma",
         "province": "RM"
     },
+    "firstname_options": [
+        "Mario",
+        "Mauro"
+    ],
     "raw": {
         "code": "RSSMRA90A01H501W",
         "lastname": "RSS",
@@ -168,6 +172,7 @@ def test_decode_without_omocodes():
                 "birthplace": "H501",
                 "cin": "W",
             },
+            "firstname_options": ["Mario", "Mauro"],
         }
 
 
@@ -192,6 +197,10 @@ def test_decode_without_omocodes_from_command_line():
         "name_trans": "Roma",
         "province": "RM"
     },
+    "firstname_options": [
+        "Mario",
+        "Mauro"
+    ],
     "raw": {
         "code": "RSSMRA90A01H501W",
         "lastname": "RSS",
@@ -223,6 +232,7 @@ def test_decode_without_omocodes_from_command_line():
             "name_trans": "Roma",
             "province": "RM",
         },
+        "firstname_options": ["Mario", "Mauro"],
         "raw": {
             "code": "RSSMRA90A01H501W",
             "lastname": "RSS",
@@ -397,6 +407,10 @@ def test_decode_with_omocodes():
         "name_trans": "Roma",
         "province": "RM"
     },
+    "firstname_options": [
+        "Mario",
+        "Mauro"
+    ],
     "raw": {
         "code": "RSSMRA90A01H501W",
         "lastname": "RSS",
@@ -558,6 +572,7 @@ def test_decode_with_omocodes():
                 "name_trans": "Roma",
                 "province": "RM",
             },
+            "firstname_options": ["Mario", "Mauro"],
             "raw": {
                 "code": "RSSMRA90A01H501W",
                 "lastname": "RSS",

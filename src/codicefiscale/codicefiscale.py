@@ -5,7 +5,7 @@ import string
 from datetime import datetime, timedelta
 from itertools import combinations
 from re import Pattern
-from typing import Any, Literal
+from typing import Any, Literal, cast
 
 from dateutil import parser as date_parser
 from slugify import slugify
@@ -82,7 +82,15 @@ for combo_size in range(1, len(_OMOCODIA_SUBS_INDEXES) + 1):
         _OMOCODIA_SUBS_INDEXES_COMBINATIONS.append(list(combo))
 
 
-_DATA: dict[str, dict[str, list[dict[str, Any]]]] = get_indexed_data()
+_DATA: dict[str, dict[str, list[dict[str, Any]]]] | None = None
+
+
+def _get_data() -> dict[str, dict[str, list[dict[str, Any]]]]:
+    global _DATA
+    if _DATA is None:
+        _DATA = get_indexed_data()
+    return _DATA
+
 
 CODICEFISCALE_RE: Pattern[str] = re.compile(
     r"^"
@@ -144,17 +152,18 @@ def _get_date(
 def _get_birthplace(
     birthplace: str,
     birthdate: datetime | str | None = None,
-) -> dict[str, dict[str, Any]] | None:
+) -> dict[str, Any] | None:
     birthplace_unicode_slug = slugify(birthplace, allow_unicode=True)
     birthplace_slug = slugify(birthplace)
     birthplace_code = birthplace_slug.upper()
-    birthplaces_options = _DATA["municipalities"].get(
+    data = _get_data()
+    birthplaces_options = data["municipalities"].get(
         birthplace_unicode_slug,
-        _DATA["municipalities"].get(
+        data["municipalities"].get(
             birthplace_slug,
-            _DATA["countries"].get(
+            data["countries"].get(
                 birthplace_slug,
-                _DATA["codes"].get(
+                data["codes"].get(
                     birthplace_code,
                 ),
             ),
@@ -181,7 +190,7 @@ def _get_birthplace(
 def _get_birthplace_fallback(
     birthplaces_options: list[dict[str, Any]],
     birthdate_date: datetime,
-) -> dict[str, dict[str, Any]] | None:
+) -> dict[str, Any] | None:
     # avoid wrong birthplace code error when birthdate falls in
     # missing date-range in the data-source even if birthplace code is valid
     birthplaces_options_count = len(birthplaces_options)
@@ -278,6 +287,43 @@ def encode_firstname(firstname: str) -> str:
     firstname_vowels = _get_vowels(firstname_slug)
     firstname_code = _get_consonants_and_vowels(firstname_consonants, firstname_vowels)
     return firstname_code
+
+
+def decode_firstname(
+    firstname_code: str, gender: Literal["m", "M", "f", "F"] | None = None
+) -> list[str] | None:
+    """
+    Decodes firstname code to possible italian first names.
+
+    Returns a list of possible names that encode to the given code.
+    Only works for common italian names.
+
+    :param firstname_code: The 3-character firstname code
+    :type firstname_code: string
+    :param gender: Optional gender filter ('M' or 'F')
+    :type gender: string | None
+
+    :returns: List of possible first names, or None if not found
+    :rtype: list[str] | None
+    """
+    firstname_code_upper = firstname_code.upper()
+    data = _get_data()
+    names_by_gender = cast(
+        dict[str, list[str]] | None, data["names"].get(firstname_code_upper)
+    )
+
+    if not names_by_gender:
+        return None
+
+    if gender:
+        gender_upper = gender.upper()
+        if gender_upper in ("M", "F"):
+            gender_names = names_by_gender.get(gender_upper, [])
+            return gender_names if gender_names else None
+
+    # return all names (both genders) if no gender specified
+    all_names = names_by_gender.get("M", []) + names_by_gender.get("F", [])
+    return all_names if all_names else None
 
 
 def encode_birthdate(
@@ -448,7 +494,7 @@ def decode_raw(code: str) -> dict[str, str]:
     return data
 
 
-def decode(code: str) -> dict[str, Any]:
+def decode(code: str) -> dict[str, Any]:  # noqa: C901
     """
     Decodes the italian fiscal code.
 
@@ -466,11 +512,10 @@ def decode(code: str) -> dict[str, Any]:
     birthdate_month = _MONTHS.index(raw["birthdate_month"]) + 1
     birthdate_day = int(raw["birthdate_day"].translate(_OMOCODIA_DECODE_TRANS))
 
+    gender: Literal["M", "F"] = "M"
     if birthdate_day > 40:
         birthdate_day -= 40
         gender = "F"
-    else:
-        gender = "M"
 
     current_year = datetime.now().year
     current_year_century_prefix = str(current_year)[0:-2]
@@ -517,12 +562,19 @@ def decode(code: str) -> dict[str, Any]:
             f"expected {cin_check!r}, found {cin!r}"
         )
 
+    # add possible first names if birthplace is in Italy (not foreign country)
+    firstname_options = None
+    is_foreign = birthplace and birthplace.get("province") == "EE"
+    if not is_foreign:
+        firstname_options = decode_firstname(raw["firstname"], gender)
+
     data = {
         "code": code,
         "omocodes": _get_omocodes(code),
         "gender": gender,
         "birthdate": birthdate,
         "birthplace": birthplace,
+        "firstname_options": firstname_options or [],
         "raw": raw,
     }
 
