@@ -323,7 +323,7 @@ def decode_firstname(
 
     # return all names (both genders) if no gender specified
     all_names = names_by_gender.get("M", []) + names_by_gender.get("F", [])
-    return all_names if all_names else None
+    return sorted(set(all_names)) if all_names else None
 
 
 def encode_birthdate(
