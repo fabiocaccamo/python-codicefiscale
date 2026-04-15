@@ -397,11 +397,24 @@ def test_decode_firstname_options():
     code = "CCCFBA85D03L219P"
     decoded = codicefiscale.decode(code)
 
-    # check that firstname_options is present
     firstname_options = decoded.get("firstname_options")
-    assert firstname_options is not None, "firstname_options should not be None"
+    assert firstname_options is not None
+    assert "Fabio" in firstname_options
 
-    # check that Fabio is in firstname_options
-    assert "Fabio" in firstname_options, (
-        f"Expected 'Fabio' in firstname_options, got {firstname_options}"
-    )
+
+def test_decode_firstname_options_foreign_birthplace():
+    """Test that firstname_options is empty for foreign birthplaces."""
+    # foreign birthplace (Marocco - Z330)
+    foreign_code = "THDSDA95P08Z330H"
+    foreign_decoded = codicefiscale.decode(foreign_code)
+
+    assert "firstname_options" in foreign_decoded
+    assert foreign_decoded["firstname_options"] == []
+
+    # italian birthplace (Torino - L219)
+    italian_code = "CCCFBA85D03L219P"
+    italian_decoded = codicefiscale.decode(italian_code)
+
+    assert "firstname_options" in italian_decoded
+    assert len(italian_decoded["firstname_options"]) > 0
+    assert isinstance(italian_decoded["firstname_options"], list)
