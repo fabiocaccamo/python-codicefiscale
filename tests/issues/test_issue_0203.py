@@ -13,6 +13,7 @@ def test_issue_0203():
 
     code_data = codicefiscale.decode(code)
     code_data.pop("omocodes", None)
+    code_data.pop("firstname_options")
     expected_code_data = {
         "code": "MCHFDA07A01D877A",
         "gender": "M",

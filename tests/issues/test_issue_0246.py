@@ -21,6 +21,7 @@ def test_issue_0246():
 
     code_data = codicefiscale.decode(code)
     code_data.pop("omocodes", None)
+    code_data.pop("firstname_options")
     expected_code_data = {
         "code": "DGRFNC84T31G371E",
         "gender": "M",

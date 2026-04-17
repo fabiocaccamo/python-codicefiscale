@@ -18,6 +18,7 @@ def test_issue_0079():
     assert code == "RSSMRA04S29L219G"
     code_data = codicefiscale.decode("RSSMRA00S29L219C")
     code_data.pop("omocodes")
+    code_data.pop("firstname_options")
     expected_code_data = {
         "code": "RSSMRA00S29L219C",
         "gender": "M",

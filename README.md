@@ -62,6 +62,9 @@ codicefiscale.decode("CCCFBA85D03L219P")
 #         "province": "TO",
 #         "code": "L219",
 #     },
+#     "firstname_options": [
+#         "Fabio",
+#     ],
 #     "omocodes": [
 #         "CCCFBA85D03L219P",
 #         "CCCFBA85D03L21VE",
@@ -85,6 +88,9 @@ codicefiscale.decode("CCCFBA85D03L219P")
 #     },
 # }
 ```
+
+> [!TIP]
+> **Name suggestions**: The `firstname_options` field contains a list of possible first names matching the encoded firstname code. For Italian birthplaces, in approximately **60% of cases**, it returns a single name, providing near-certain identification. In other cases, it returns a list of possible names. For foreign birthplaces, the list is empty.
 
 #### Check
 ```python

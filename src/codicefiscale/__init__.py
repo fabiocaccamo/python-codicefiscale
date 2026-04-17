@@ -1,3 +1,16 @@
+from codicefiscale.codicefiscale import (
+    decode,
+    decode_firstname,
+    decode_raw,
+    encode,
+    encode_birthdate,
+    encode_birthplace,
+    encode_cin,
+    encode_firstname,
+    encode_lastname,
+    is_omocode,
+    is_valid,
+)
 from codicefiscale.metadata import (
     __author__,
     __copyright__,
@@ -14,4 +27,15 @@ __all__ = [
     "__license__",
     "__title__",
     "__version__",
+    "decode",
+    "decode_firstname",
+    "decode_raw",
+    "encode",
+    "encode_birthdate",
+    "encode_birthplace",
+    "encode_cin",
+    "encode_firstname",
+    "encode_lastname",
+    "is_omocode",
+    "is_valid",
 ]
