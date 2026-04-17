@@ -37,8 +37,7 @@ jobs:
 
       - name: Build Package
         run: |
-          pip install pip --upgrade
-          pip install build
+          pip install --require-hashes -r requirements-build-lock.txt
           python -m build
 
       - name: Publish on PyPI
