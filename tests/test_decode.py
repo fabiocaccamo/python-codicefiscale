@@ -390,3 +390,63 @@ def test_decode_with_invalid_birthplace():
     code = "FRTMXM74L15D354A"
     valid = codicefiscale.is_valid(code)
     assert not valid, "Expected invalid fiscal code"
+
+
+def test_decode_firstname_options():
+    """Test decoding fiscal code with firstname_options verification."""
+    code = "CCCFBA85D03L219P"
+    decoded = codicefiscale.decode(code)
+
+    firstname_options = decoded.get("firstname_options")
+    assert firstname_options is not None
+    assert "Fabio" in firstname_options
+
+
+def test_decode_firstname_options_foreign_birthplace():
+    """Test that firstname_options is empty for foreign birthplaces."""
+    # foreign birthplace (Marocco - Z330)
+    foreign_code = "THDSDA95P08Z330H"
+    foreign_decoded = codicefiscale.decode(foreign_code)
+
+    assert "firstname_options" in foreign_decoded
+    assert foreign_decoded["firstname_options"] == []
+
+    # italian birthplace (Torino - L219)
+    italian_code = "CCCFBA85D03L219P"
+    italian_decoded = codicefiscale.decode(italian_code)
+
+    assert "firstname_options" in italian_decoded
+    assert len(italian_decoded["firstname_options"]) > 0
+    assert isinstance(italian_decoded["firstname_options"], list)
+
+
+def test_decode_firstname():
+    """Test decode_firstname function with different parameters."""
+    # test with gender M
+    names_m = codicefiscale.decode_firstname("FBA", "M")
+    assert names_m is not None
+    assert isinstance(names_m, list)
+    assert "Fabio" in names_m
+
+    # test with gender F
+    names_f = codicefiscale.decode_firstname("FBA", "F")
+    assert names_f is not None
+    assert isinstance(names_f, list)
+    assert "Fabia" in names_f or "Fabiana" in names_f
+
+    # test without gender (should return both M and F, deduplicated)
+    names_all = codicefiscale.decode_firstname("FBA")
+    assert names_all is not None
+    assert isinstance(names_all, list)
+    assert len(names_all) == len(set(names_all))  # no duplicates
+    assert len(names_all) >= max(len(names_m), len(names_f))
+
+    # test unisex name (Alex) - should appear only once
+    names_alex = codicefiscale.decode_firstname("LXA")
+    assert names_alex is not None
+    assert len(names_alex) == len(set(names_alex))  # no duplicates
+    assert names_alex.count("Alex") == 1
+
+    # test with invalid code
+    names_invalid = codicefiscale.decode_firstname("XXX")
+    assert names_invalid is None
