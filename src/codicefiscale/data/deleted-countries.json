@@ -77,6 +77,17 @@
     },
     {
         "active": false,
+        "code": "Z136",
+        "date_created": "1900-01-01T00:00:00",
+        "date_deleted": "1994-01-01T00:00:00",
+        "name": "Georgia",
+        "name_alt": "Georgia",
+        "name_alt_en": "Georgia",
+        "name_slugs": ["georgia"],
+        "province": "EE"
+    },
+    {
+        "active": false,
         "code": "Z157",
         "date_created": "2003-02-04T00:00:00",
         "date_deleted": "2006-06-03T00:00:00",
