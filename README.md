@@ -148,6 +148,16 @@ tox
 pytest
 ```
 
+## Online Free Tool
+
+If you need to quickly calculate or verify an Italian Codice Fiscale without installing Python or using the command line, you can use an online calculator.
+
+* <a href="https://calcolocodicefiscalee.com/">Calcolo Codice Fiscale</a>
+
+This can be useful for testing examples, validating results, or generating a Codice Fiscale for occasional use.
+
+
+
 ## License
 Released under [MIT License](LICENSE.txt).
 
