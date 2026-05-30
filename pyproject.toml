@@ -3,13 +3,14 @@ requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "python-codicefiscale"
+name = "codice_fiscale"
 description = "encode / decode italian fiscal codes - codifica / decodifica del Codice Fiscale italiano."
 authors = [
-    { name = "Fabio Caccamo", email = "fabio.caccamo@gmail.com" },
+    {name = "Emanuele Cannizzaro", email = "emanuele.cannizzaro@gmail.com"},
 ]
+requires-python = ">=3.11"
 keywords = [
-    "codicefiscale",
+    "codice_fiscale",
     "codice",
     "fiscale",
     "cf",
@@ -17,11 +18,11 @@ keywords = [
     "italia",
     "italy",
 ]
+license = "MIT"
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Environment :: Web Environment",
     "Intended Audience :: Developers",
-    "License :: OSI Approved :: MIT License",
     "Natural Language :: English",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
@@ -33,15 +34,12 @@ classifiers = [
     "Topic :: Software Development :: Build Tools",
 ]
 dependencies = [
-    "cryptography>=42.0.8",
     "fastapi>=0.116.1",
-    "functions-framework>=3.9.2",
     "jinja2>=3.1.6",
     "pyjwt[crypto]>=2.10.1",
     "python-dateutil >= 2.8, < 2.10",
     "python-dotenv>=1.1.1",
     "python-fsutil >= 0.10.0, < 1.0.0",
-    "python-multipart>=0.0.20",
     "python-slugify >= 7.0.0, < 9.0.0",
     "uvicorn>=0.35.0",
 ]
@@ -55,8 +53,7 @@ maintainers = [
 api = [
     "fastapi >= 0.100.0, < 1.0.0",
     "uvicorn >= 0.20.0, < 1.0.0",
-    "pyjwt[crypto] >= 2.8.0, < 3.0.0",
-    "cryptography >= 41.0.0, < 43.0.0",
+    "aecs4u-auth",
     "python-dotenv >= 1.0.0, < 2.0.0",
     "jinja2 >= 3.1.0, < 4.0.0",
     "python-multipart >= 0.0.6, < 1.0.0",
@@ -66,15 +63,11 @@ api = [
 file = "README.md"
 content-type = "text/markdown"
 
-[project.license]
-file = "LICENSE.txt"
-content-type = "text/plain"
-
 [project.urls]
-Homepage = "https://github.com/fabiocaccamo/python-codicefiscale"
-Download = "https://github.com/fabiocaccamo/python-codicefiscale/releases"
-Documentation = "https://github.com/fabiocaccamo/python-codicefiscale#readme"
-Issues = "https://github.com/fabiocaccamo/python-codicefiscale/issues"
+Homepage = "https://github.com/fabiocaccamo/python-codice_fiscale"
+Download = "https://github.com/fabiocaccamo/python-codice_fiscale/releases"
+Documentation = "https://github.com/fabiocaccamo/python-codice_fiscale#readme"
+Issues = "https://github.com/fabiocaccamo/python-codice_fiscale/issues"
 Funding = "https://github.com/sponsors/fabiocaccamo/"
 Twitter = "https://twitter.com/fabiocaccamo"
 
@@ -97,7 +90,7 @@ exclude = '''
 '''
 
 [tool.mypy]
-files = ["codicefiscale"]
+files = ["codice_fiscale"]
 ignore_missing_imports = true
 install_types = true
 non_interactive = true
@@ -110,7 +103,7 @@ testpaths = ["tests"]
 [tool.ruff]
 line-length = 88
 target-version = "py310"
-src = ["codicefiscale", "tests"]
+src = ["codice_fiscale", "tests"]
 
 [tool.ruff.lint]
 select = [
@@ -134,7 +127,7 @@ ignore = [
 max-complexity = 10
 
 [tool.ruff.lint.isort]
-known-first-party = ["codicefiscale"]
+known-first-party = ["codice_fiscale"]
 
 [tool.ruff.format]
 quote-style = "double"
@@ -142,11 +135,14 @@ indent-style = "space"
 skip-magic-trailing-comma = false
 line-ending = "auto"
 
+[tool.uv.sources]
+aecs4u-auth = { git = "https://github.com/aecs4u/aecs4u-auth.git", branch = "main" }
+
 [tool.setuptools]
-packages = ["codicefiscale"]
+packages = ["codice_fiscale"]
 
 [tool.setuptools.dynamic.version]
-attr = "codicefiscale.metadata.__version__"
+attr = "codice_fiscale.metadata.__version__"
 
 [dependency-groups]
 dev = [
