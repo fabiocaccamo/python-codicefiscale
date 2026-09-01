@@ -255003,10 +255003,10 @@
         "province": "IM"
     },
     {
-        "active": true,
+        "active": false,
         "code": "L599",
         "date_created": "1925-08-22T00:00:00",
-        "date_deleted": "",
+        "date_deleted": "2026-05-13T00:00:00",
         "name": "Vallecrosia",
         "name_alt": "",
         "name_alt_trans": "",
@@ -255014,6 +255014,20 @@
             "vallecrosia"
         ],
         "name_trans": "Vallecrosia",
+        "province": "IM"
+    },
+    {
+        "active": true,
+        "code": "L599",
+        "date_created": "2026-05-14T00:00:00",
+        "date_deleted": "",
+        "name": "Vallecrosia Al Mare",
+        "name_alt": "",
+        "name_alt_trans": "",
+        "name_slugs": [
+            "vallecrosia-al-mare"
+        ],
+        "name_trans": "Vallecrosia Al Mare",
         "province": "IM"
     },
     {
