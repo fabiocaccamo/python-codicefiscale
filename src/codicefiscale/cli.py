@@ -15,6 +15,7 @@ def _encode_from_args(args: argparse.Namespace) -> None:
             gender=args.gender,
             birthdate=args.birthdate,
             birthplace=args.birthplace,
+            issuingdate=args.issuingdate,
         )
     except Exception as error:
         sys.stderr.write(f"{error}\n")
@@ -118,6 +119,15 @@ def run() -> None:
         "--birthplace",
         required=True,
         help="Place of birth (city, province)",
+    )
+    encode_parser.add_argument(
+        "--issuingdate",
+        required=False,
+        default=None,
+        help=(
+            "Document issuing date (DD/MM/YYYY); for foreign birthplaces, "
+            "selects the country code valid at this date"
+        ),
     )
 
     validate_parser = subparsers.add_parser(
