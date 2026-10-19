@@ -56,6 +56,7 @@ def test_encode():
             gender="M",
             birthdate="01/01/1990",
             birthplace="Roma,RM",
+            issuingdate=None,
             subcommand="encode",
         )
         run_with_args(args)
@@ -85,14 +86,30 @@ def test_encode_with_wrong_birthplace():
             gender="M",
             birthdate="01/01/1990",
             birthplace="Romaaa,RM",
+            issuingdate=None,
             subcommand="encode",
         )
         run_with_args(args)
         output = fake_output.getvalue().strip()
         assert output == (
-            "[codicefiscale] 'birthplace' / 'birthdate' arguments "
-            "('Romaaa,RM' / '01/01/1990') not mapped to code"
+            "[codicefiscale] 'birthplace' / 'birthdate' / 'issuingdate' arguments "
+            "('Romaaa,RM' / '01/01/1990' / None) not mapped to code"
         )
+
+
+def test_encode_with_issuingdate_from_command_line():
+    assert_command_output(
+        (
+            "python -m codicefiscale encode "
+            "--firstname Test "
+            "--lastname Test "
+            "--gender M "
+            "--birthdate 20/08/1987 "
+            "--birthplace Georgia "
+            "--issuingdate 01/01/2000"
+        ),
+        "TSTTST87M20Z254F",
+    )
 
 
 def test_decode_without_omocodes():

@@ -152,6 +152,7 @@ def _get_date(
 def _get_birthplace(
     birthplace: str,
     birthdate: datetime | str | None = None,
+    issuingdate: datetime | str | None = None,
 ) -> dict[str, Any] | None:
     birthplace_unicode_slug = slugify(birthplace, allow_unicode=True)
     birthplace_slug = slugify(birthplace)
@@ -173,23 +174,29 @@ def _get_birthplace(
         return None
 
     birthdate_date = _get_date(birthdate)
-    if not birthdate_date:
+    issuingdate_date = _get_date(issuingdate) if issuingdate else None
+    is_foreign = birthplaces_options[0].get("province") == "EE"
+    if is_foreign and issuingdate_date:
+        reference_date = issuingdate_date
+    elif birthdate_date:
+        reference_date = birthdate_date
+    else:
         return cast(dict[str, Any], birthplaces_options[0].copy())
 
-    # search birthplace that has been created before / deleted after birthdate
+    # search birthplace that has been created before / deleted after reference_date
     for birthplace_option in birthplaces_options:
         date_created = _get_date(birthplace_option["date_created"]) or datetime.min
         date_deleted = _get_date(birthplace_option["date_deleted"]) or datetime.max
-        # print(birthdate_date, date_created, date_deleted)
-        if birthdate_date >= date_created and birthdate_date <= date_deleted:
+        # print(reference_date, date_created, date_deleted)
+        if reference_date >= date_created and reference_date <= date_deleted:
             return cast(dict[str, Any], birthplace_option.copy())
 
-    return _get_birthplace_fallback(birthplaces_options, birthdate_date)
+    return _get_birthplace_fallback(birthplaces_options, reference_date)
 
 
 def _get_birthplace_fallback(
     birthplaces_options: list[dict[str, Any]],
-    birthdate_date: datetime,
+    reference_date: datetime,
 ) -> dict[str, Any] | None:
     # avoid wrong birthplace code error when birthdate falls in
     # missing date-range in the data-source even if birthplace code is valid
@@ -201,8 +208,8 @@ def _get_birthplace_fallback(
             date_deleted = _get_date(birthplace_option["date_deleted"])
             date_created = _get_date(birthplace_option_next["date_created"])
             if date_deleted and date_created:
-                if birthdate_date >= date_deleted and date_deleted <= date_created:
-                    # the birthdate is in between a deleted munipality and a created one
+                if reference_date >= date_deleted and date_deleted <= date_created:
+                    # the reference date is in between a deleted munipality and a created one
                     # if the deleted one has a very short active time delta,
                     # it means that probably the deleted_at value is wrong
                     date_created = _get_date(birthplace_option["date_created"])
@@ -216,12 +223,12 @@ def _get_birthplace_fallback(
     # Fix issues #210, #213
     # sometimes the code has been assigned after date of birth and
     # the municipality was not yet active at birthdate time,
-    # let's return the first municipality created after birthdate_date
+    # let's return the first municipality created after reference_date
     for index in range(birthplaces_options_count):
         birthplace_option = birthplaces_options[index]
         date_created = _get_date(birthplace_option["date_created"])
         if date_created:
-            if birthdate_date <= date_created:
+            if reference_date <= date_created:
                 return birthplace_option.copy()
     return None
 
@@ -363,12 +370,19 @@ def encode_birthdate(
 def encode_birthplace(
     birthplace: str,
     birthdate: datetime | str | None = None,
+    issuingdate: datetime | str | None = None,
 ) -> str | None:
     """
     Encodes birthplace to the code used in italian fiscal code.
 
     :param birthplace: The birthplace
     :type birthplace: string
+    :param birthdate: The birthdate
+    :type birthdate: datetime or string
+    :param issuingdate: Optional document issuing date; for foreign countries
+        (province EE) the birthplace code valid at this date is used instead of
+        the code valid at birthdate
+    :type issuingdate: datetime or string
 
     :returns: The code used in italian fiscal code
     :rtype: string
@@ -376,19 +390,33 @@ def encode_birthplace(
     if not birthplace:
         raise ValueError("[codicefiscale] 'birthplace' argument cant be None")
 
+    if issuingdate is not None:
+        issuingdate_date = _get_date(issuingdate)
+        if not issuingdate_date:
+            raise ValueError(
+                "[codicefiscale] 'issuingdate' argument is not a valid date"
+            )
+        birthdate_date = _get_date(birthdate)
+        if birthdate_date and issuingdate_date < birthdate_date:
+            raise ValueError(
+                "[codicefiscale] 'issuingdate' cannot be before 'birthdate'"
+            )
+
     birthplace_without_province = re.split(r",|\(", birthplace)[0]
     birthplace_data = _get_birthplace(
         birthplace,
         birthdate,
+        issuingdate,
     ) or _get_birthplace(
         birthplace_without_province,
         birthdate,
+        issuingdate,
     )
 
     if not birthplace_data:
         raise ValueError(
-            "[codicefiscale] 'birthplace' / 'birthdate' arguments "
-            f"({birthplace!r} / {birthdate!r}) not mapped to code"
+            "[codicefiscale] 'birthplace' / 'birthdate' / 'issuingdate' arguments "
+            f"({birthplace!r} / {birthdate!r} / {issuingdate!r}) not mapped to code"
         )
 
     birthplace_code = str(birthplace_data["code"])
@@ -429,6 +457,7 @@ def encode(
     gender: Literal["m", "M", "f", "F"],
     birthdate: datetime | str | None,
     birthplace: str,
+    issuingdate: datetime | str | None = None,
 ) -> str:
     """
     Encodes the italian fiscal code.
@@ -443,6 +472,10 @@ def encode(
     :type birthdate: datetime or string
     :param birthplace: The birthplace
     :type birthplace: string
+    :param issuingdate: Optional document issuing date; for foreign countries
+        (province EE) the birthplace code valid at this date is used instead of
+        the code valid at birthdate
+    :type issuingdate: datetime or string
 
     :returns: The italian fiscal code
     :rtype: string
@@ -451,7 +484,7 @@ def encode(
     lastname_code = encode_lastname(lastname)
     firstname_code = encode_firstname(firstname)
     birthdate_code = encode_birthdate(birthdate, gender)
-    birthplace_code = encode_birthplace(birthplace, birthdate)
+    birthplace_code = encode_birthplace(birthplace, birthdate, issuingdate)
     code = f"{lastname_code}{firstname_code}{birthdate_code}{birthplace_code}"
     cin_code = encode_cin(code)
     code = f"{code}{cin_code}"
