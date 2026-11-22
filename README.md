@@ -49,6 +49,24 @@ codicefiscale.encode(
 
 # "CCCFBA85D03L219P"
 ```
+
+For people born abroad, the birthplace code in the fiscal code reflects the country
+code assigned at **first document issuance**, not at birth. Pass optional
+`issuingdate` to select the foreign country code valid on that date (Italian
+municipalities always use the code valid at `birthdate`):
+
+```python
+codicefiscale.encode(
+    lastname="Rossi",
+    firstname="Mario",
+    gender="M",
+    birthdate="20/08/1987",
+    birthplace="Georgia",
+    issuingdate="01/01/2000",
+)
+
+# birthplace code Z254 instead of Z136 (valid at birth in 1987)
+```
 #### Decode
 ```python
 codicefiscale.decode("CCCFBA85D03L219P")
@@ -117,6 +135,12 @@ python -m codicefiscale --help
 #### Encode (CLI)
 ```bash
 python -m codicefiscale encode --firstname Fabio --lastname Caccamo --gender M --birthdate 03/04/1985 --birthplace Torino
+```
+
+Optional `--issuingdate` (foreign birthplaces only):
+
+```bash
+python -m codicefiscale encode --firstname Mario --lastname Rossi --gender M --birthdate 20/08/1987 --birthplace Georgia --issuingdate 01/01/2000
 ```
 
 #### Decode (CLI)

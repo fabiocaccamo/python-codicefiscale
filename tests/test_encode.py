@@ -270,3 +270,52 @@ def test_encode(encode_test_cases):
     """Test encoding full fiscal codes."""
     for case in encode_test_cases:
         assert codicefiscale.encode(**case["input"]) == case["result"]
+
+
+def test_encode_birthplace_foreign_with_issuingdate():
+    """Foreign birthplace code uses issuingdate when provided."""
+    birthdate = "20/08/1987"
+    assert codicefiscale.encode_birthplace("Georgia", birthdate) == "Z136"
+    assert (
+        codicefiscale.encode_birthplace("Georgia", birthdate, "01/01/2000") == "Z254"
+    )
+
+
+def test_encode_foreign_with_issuingdate():
+    """Full encode uses foreign birthplace code from issuingdate."""
+    kwargs = {
+        "lastname": "Test",
+        "firstname": "Test",
+        "gender": "M",
+        "birthdate": "20/08/1987",
+        "birthplace": "Georgia",
+    }
+    assert codicefiscale.encode(**kwargs) == "TSTTST87M20Z136E"
+    assert (
+        codicefiscale.encode(**kwargs, issuingdate="01/01/2000")
+        == "TSTTST87M20Z254F"
+    )
+    assert codicefiscale.is_valid("TSTTST87M20Z254F")
+    decoded = codicefiscale.decode("TSTTST87M20Z254F")
+    assert decoded["birthplace"]["code"] == "Z254"
+
+
+def test_encode_issuingdate_italy_unchanged():
+    """Italian municipalities ignore issuingdate for birthplace lookup."""
+    birthdate = "03/04/1985"
+    birthplace = "Torino"
+    without = codicefiscale.encode_birthplace(birthplace, birthdate)
+    with_issuing = codicefiscale.encode_birthplace(
+        birthplace, birthdate, "01/01/2020"
+    )
+    assert without == with_issuing == "L219"
+
+
+def test_encode_birthplace_issuingdate_invalid():
+    """Invalid issuingdate raises ValueError."""
+    with pytest.raises(ValueError, match="issuingdate"):
+        codicefiscale.encode_birthplace("Georgia", "20/08/1987", "not-a-date")
+    with pytest.raises(ValueError, match="before"):
+        codicefiscale.encode_birthplace(
+            "Georgia", "20/08/1987", "01/01/1980"
+        )
