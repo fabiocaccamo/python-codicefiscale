@@ -139,7 +139,7 @@ def _get_date(
         }
     )
     try:
-        date_obj = date_parser.parse(
+        date_obj: datetime = date_parser.parse(
             date_slug,
             parserinfo=date_parser.parserinfo(**date_parser_options),
         )
